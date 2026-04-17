@@ -164,6 +164,25 @@ h3 {
   min-height: 16px;
 }
 
+.toggle-field {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  width: fit-content;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.toggle-field input {
+  width: 16px;
+  min-height: 16px;
+}
+
 label {
   display: grid;
   gap: 6px;

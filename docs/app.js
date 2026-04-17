@@ -42,6 +42,7 @@ const state = {
   min: "",
   max: "",
   conditions: new Set(),
+  explicitIqOnly: false,
   battleA: "",
   battleB: "",
   battleAStage: "",
@@ -66,6 +67,7 @@ const elements = {
   minScore: document.querySelector("#min-score"),
   maxScore: document.querySelector("#max-score"),
   conditionOptions: document.querySelector("#condition-options"),
+  explicitIqFilter: document.querySelector("#explicit-iq-filter"),
   battleConditionOptions: document.querySelector("#battle-condition-options"),
   battleA: document.querySelector("#battle-a"),
   battleB: document.querySelector("#battle-b"),
@@ -116,6 +118,7 @@ function applyQueryState() {
     if (params.get(key) === "1") conditions.push(key);
   });
   state.conditions = new Set(conditions);
+  state.explicitIqOnly = params.get("explicitIq") === "1";
 }
 
 function updateUrl() {
@@ -128,6 +131,7 @@ function updateUrl() {
   if (state.min !== "") params.set("min", state.min);
   if (state.max !== "") params.set("max", state.max);
   if (state.conditions.size) params.set("conditions", [...state.conditions].join(","));
+  if (state.explicitIqOnly) params.set("explicitIq", "1");
   if (state.view === "battle") {
     if (state.battleA) params.set("a", state.battleA);
     if (state.battleB) params.set("b", state.battleB);
@@ -157,6 +161,9 @@ function syncControls() {
   document.querySelectorAll(".condition-filter").forEach((checkbox) => {
     checkbox.checked = state.conditions.has(checkbox.value);
   });
+  if (elements.explicitIqFilter) {
+    elements.explicitIqFilter.checked = state.explicitIqOnly;
+  }
 }
 
 function scoreFor(character, view = state.view) {
@@ -206,6 +213,10 @@ function filteredCharacters() {
       if (!state.conditions.size) return true;
       const flags = character.condition_flags ?? {};
       return [...state.conditions].every((key) => Boolean(flags[key]));
+    })
+    .filter((character) => {
+      if (!state.explicitIqOnly) return true;
+      return explicitIqNumber(character) !== null;
     })
     .filter((character) => {
       const score = currentScoreForFilter(character);
@@ -783,6 +794,12 @@ function bindEvents() {
     state.max = event.target.value;
     render();
   });
+  if (elements.explicitIqFilter) {
+    elements.explicitIqFilter.addEventListener("change", (event) => {
+      state.explicitIqOnly = event.target.checked;
+      render();
+    });
+  }
   [elements.conditionOptions, elements.battleConditionOptions].forEach((container) => {
     container.addEventListener("change", (event) => {
       if (!event.target.classList.contains("condition-filter")) return;
