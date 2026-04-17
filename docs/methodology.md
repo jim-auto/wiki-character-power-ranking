@@ -76,6 +76,8 @@ versions: list[object]
 
 `collection_tags` はUI検索用の派生タグです。現在はユニバース名から `jump_manga`、`marvel`、`dc` を決定的に付与します。採点には使いません。
 
+バトル比較の条件ON/OFFは `condition_flags` の照合です。選択した条件についてA/Bが本文由来フラグを持つかを表示しますが、条件一致数でスコアを加減点しません。主観的な相性補正を避けるためです。
+
 `image_url`、`image_source`、`image_alt` は表示用フィールドです。日本語版Wikipediaの `pageimages` API、または日本語版Wikipediaページに紐づくWikidata P18から取得したサムネイルだけを保存し、スコア計算や根拠抽出には使いません。
 
 `versions` は時点別の小さなキャラクターレコードです。各versionは `label`、`aliases`、`source_wikipedia_url`、`description_raw` を持ち、通常キャラクターと同じ `extracted`、`scores`、`score_evidence`、`total_score`、`iq_score`、`estimated_iq` を生成します。バトル比較で `A時点` / `B時点` がversionの `label` または `aliases` に一致した場合は、そのversionのスコアを使います。
@@ -141,5 +143,5 @@ python src/export_site_data.py
 - 自動更新: Wikipedia revision IDを保存し、更新差分だけ再取得する。
 - 複数ページ対応: キャラクター、装備、映画版などのソースを分けて扱う。
 - ルール監査: どのルールがランキングに影響しているかを集計する。
-- バトル条件: 超能力あり/なし、改造あり/なし、武器あり/なしなどの条件別比較を追加する。
+- バトル条件の拡張: 現在は条件フラグ照合のみ。将来は条件ごとに対象スコア次元を明示的に再計算する仕組みを検討する。
 - キャラクター時点の拡張: 中忍試験時点以外の最終章、映画版、装備別などを追加し、将来的には日本語版Wikipedia本文から半自動でversion候補を作る。

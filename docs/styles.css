@@ -446,6 +446,10 @@ input {
   grid-template-columns: repeat(5, minmax(130px, 1fr));
 }
 
+.battle-condition-controls {
+  margin: 0;
+}
+
 .battle-result {
   display: grid;
   gap: 16px;
@@ -472,6 +476,29 @@ input {
 
 .stage-note {
   margin: 0;
+}
+
+.condition-match-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.condition-match-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.condition-match-summary span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: #eef2f7;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 900;
 }
 
 .comparison-table {

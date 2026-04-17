@@ -25,6 +25,23 @@ MODE_LABELS = {
     "iq": "知性スコア",
     "balanced": "総合",
 }
+CONDITION_LABELS = {
+    "superpower": "超能力あり",
+    "modified": "改造あり",
+    "technology": "技術/装備",
+    "magic": "魔法/呪い",
+    "weapon": "武器あり",
+    "non_human": "人間以外",
+    "god_or_deity": "神格",
+    "alien": "宇宙人",
+    "robot_ai": "ロボット/AI",
+    "martial_artist": "格闘",
+    "military": "軍人/兵士",
+    "leader": "リーダー",
+    "detective_genius": "天才/探偵",
+    "transformation": "変身",
+    "immortal": "不死/再生",
+}
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -103,6 +120,21 @@ def mode_score(character: dict[str, Any], mode: str) -> int:
     if mode == "balanced":
         return int(character.get("total_score", 0)) + int(character.get("iq_score", 0))
     return int(character.get("total_score", 0))
+
+
+def normalize_conditions(values: list[str] | None) -> list[str]:
+    conditions: list[str] = []
+    for raw_value in values or []:
+        for value in raw_value.split(","):
+            key = value.strip()
+            if not key:
+                continue
+            if key not in CONDITION_LABELS:
+                valid = ", ".join(CONDITION_LABELS)
+                raise ValueError(f"Unknown condition: {key}. Valid conditions: {valid}")
+            if key not in conditions:
+                conditions.append(key)
+    return conditions
 
 
 def explicit_iq_text(character: dict[str, Any]) -> str:
@@ -192,6 +224,35 @@ def iq_edge(a: dict[str, Any], b: dict[str, Any], a_stage: str = "", b_stage: st
     return "互角"
 
 
+def condition_match_count(character: dict[str, Any], conditions: list[str]) -> int:
+    flags = character.get("condition_flags") or {}
+    return sum(1 for condition in conditions if bool(flags.get(condition)))
+
+
+def condition_table(a: dict[str, Any], b: dict[str, Any], conditions: list[str]) -> list[str]:
+    if not conditions:
+        return []
+
+    a_flags = a.get("condition_flags") or {}
+    b_flags = b.get("condition_flags") or {}
+    lines = [
+        "## 条件照合",
+        "",
+        f"- A条件一致: {condition_match_count(a, conditions)}/{len(conditions)}",
+        f"- B条件一致: {condition_match_count(b, conditions)}/{len(conditions)}",
+        "",
+        "| 条件 | A | B |",
+        "| --- | --- | --- |",
+    ]
+    for condition in conditions:
+        label = CONDITION_LABELS[condition]
+        a_value = "該当" if a_flags.get(condition) else "非該当"
+        b_value = "該当" if b_flags.get(condition) else "非該当"
+        lines.append(f"| {label} | {a_value} | {b_value} |")
+    lines.append("")
+    return lines
+
+
 def top_evidence(character: dict[str, Any], mode: str, limit: int) -> list[str]:
     if mode == "iq":
         evidence = list(character.get("iq_evidence") or [])
@@ -234,9 +295,11 @@ def render_battle(
     max_evidence: int,
     a_stage: str = "",
     b_stage: str = "",
+    conditions: list[str] | None = None,
 ) -> str:
     a_name = battle_display_name(a, a_stage)
     b_name = battle_display_name(b, b_stage)
+    conditions = conditions or []
     lines = [
         f"# バトル比較: {a_name} vs {b_name}",
         "",
@@ -245,12 +308,20 @@ def render_battle(
         f"- モード: {MODE_LABELS.get(mode, mode)}",
         f"- Aスコア: {mode_score(a, mode)}",
         f"- Bスコア: {mode_score(b, mode)}",
+        *(
+            [
+                f"- 条件一致: A {condition_match_count(a, conditions)}/{len(conditions)} / B {condition_match_count(b, conditions)}/{len(conditions)}",
+            ]
+            if conditions
+            else []
+        ),
         f"- 判定: {verdict(a, b, mode, a_stage, b_stage)}",
         "",
         "## スコア比較",
         "",
         *dimension_table(a, b, a_stage, b_stage),
         "",
+        *condition_table(a, b, conditions),
         f"## 根拠: {a_name}",
         "",
         *top_evidence(a, mode, max_evidence),
@@ -271,6 +342,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--a-stage", default="", help="1人目の時点ラベル。例: 中忍試験時点")
     parser.add_argument("--b-stage", default="", help="2人目の時点ラベル。例: 中忍試験時点")
     parser.add_argument("--mode", choices=["power", "iq", "balanced"], default="power")
+    parser.add_argument(
+        "--condition",
+        action="append",
+        default=[],
+        help="照合する条件キー。複数回指定、またはカンマ区切り指定が可能。例: --condition superpower,weapon",
+    )
     parser.add_argument("--max-evidence", type=int, default=3)
     parser.add_argument("--output", type=Path)
     return parser
@@ -283,7 +360,8 @@ def main() -> None:
     b = find_character(data["characters"], args.b)
     a = find_version(a, args.a_stage)
     b = find_version(b, args.b_stage)
-    output = render_battle(a, b, args.mode, args.max_evidence)
+    conditions = normalize_conditions(args.condition)
+    output = render_battle(a, b, args.mode, args.max_evidence, conditions=conditions)
 
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

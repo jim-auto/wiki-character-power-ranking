@@ -285,10 +285,12 @@ python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --m
 python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --mode iq
 python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --mode balanced
 python src/battle.py --a "日向ネジ" --b "うちはサスケ" --a-stage "中忍試験時点" --b-stage "中忍試験時点"
+python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --condition technology --condition weapon
 ```
 
 `battle.py` は完全な架空戦闘シミュレーションではありません。性格、弱点、相性、戦場、原作展開は推測せず、本文に出た根拠文とスコア差だけを表示します。
 GitHub Pages UIではA/Bのキャラクター名を検索入力から選べます。`A時点` / `B時点` には「中忍試験時点」などの段階ラベルを入れられます。該当キャラクターに `versions` がある場合は時点候補が表示され、その時点のスコアと根拠文で比較します。時点が見つからない場合は通常データで比較し、その旨を表示します。
+バトル画面の条件ON/OFFでは、超能力あり、改造あり、武器ありなどの本文由来フラグにA/Bが該当するかを照合します。条件は根拠フラグの表示であり、主観的な相性補正や減点は行いません。
 
 ## 出力例
 

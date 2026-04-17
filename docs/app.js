@@ -66,6 +66,7 @@ const elements = {
   minScore: document.querySelector("#min-score"),
   maxScore: document.querySelector("#max-score"),
   conditionOptions: document.querySelector("#condition-options"),
+  battleConditionOptions: document.querySelector("#battle-condition-options"),
   battleA: document.querySelector("#battle-a"),
   battleB: document.querySelector("#battle-b"),
   battleAStage: document.querySelector("#battle-a-stage"),
@@ -153,7 +154,7 @@ function syncControls() {
   elements.battleAStage.value = state.battleAStage;
   elements.battleBStage.value = state.battleBStage;
   elements.battleMode.value = state.battleMode;
-  elements.conditionOptions.querySelectorAll(".condition-filter").forEach((checkbox) => {
+  document.querySelectorAll(".condition-filter").forEach((checkbox) => {
     checkbox.checked = state.conditions.has(checkbox.value);
   });
 }
@@ -239,7 +240,14 @@ function populateFilters() {
     state.battleB = characters[1]?.name ?? characters[0]?.name ?? "";
   }
 
-  elements.conditionOptions.innerHTML = conditionMeta
+  const conditionOptionsHtml = renderConditionOptions();
+  elements.conditionOptions.innerHTML = conditionOptionsHtml;
+  elements.battleConditionOptions.innerHTML = conditionOptionsHtml;
+  syncControls();
+}
+
+function renderConditionOptions() {
+  return conditionMeta
     .map(
       (item) => `
         <label>
@@ -249,7 +257,6 @@ function populateFilters() {
       `,
     )
     .join("");
-  syncControls();
 }
 
 function stageOptionsHtml(character) {
@@ -536,6 +543,19 @@ function battleScore(entry) {
   return scoreFor(entry.record, state.battleMode);
 }
 
+function entryConditionFlags(entry) {
+  return entry.record?.condition_flags ?? entry.character?.condition_flags ?? {};
+}
+
+function selectedConditionKeys() {
+  return [...state.conditions].filter((key) => conditionKeys.includes(key));
+}
+
+function conditionMatchCount(entry, keys = selectedConditionKeys()) {
+  const flags = entryConditionFlags(entry);
+  return keys.filter((key) => Boolean(flags[key])).length;
+}
+
 function battleVerdict(a, b) {
   const aScore = battleScore(a);
   const bScore = battleScore(b);
@@ -546,6 +566,42 @@ function battleVerdict(a, b) {
   const winner = aScore > bScore ? a : b;
   const label = diff >= 8 ? "優勢" : "やや優勢";
   return `${battleDisplayName(winner)} が ${diff} 点差で${label}です。`;
+}
+
+function battleConditionSummary(a, b) {
+  const keys = selectedConditionKeys();
+  if (!keys.length) return "";
+  const aCount = conditionMatchCount(a, keys);
+  const bCount = conditionMatchCount(b, keys);
+  const aFlags = entryConditionFlags(a);
+  const bFlags = entryConditionFlags(b);
+  const rows = keys
+    .map((key) => {
+      const aMatch = Boolean(aFlags[key]);
+      const bMatch = Boolean(bFlags[key]);
+      return `
+        <tr>
+          <td>${escapeHtml(conditionLabels[key] ?? key)}</td>
+          <td>${aMatch ? "該当" : "非該当"}</td>
+          <td>${bMatch ? "該当" : "非該当"}</td>
+        </tr>
+      `;
+    })
+    .join("");
+  return `
+    <section class="condition-match-panel">
+      <div class="condition-match-summary">
+        <span>A 条件一致 ${aCount}/${keys.length}</span>
+        <span>B 条件一致 ${bCount}/${keys.length}</span>
+      </div>
+      <table class="comparison-table condition-table">
+        <thead>
+          <tr><th>条件</th><th>A</th><th>B</th></tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </section>
+  `;
 }
 
 function battleRows(a, b) {
@@ -642,6 +698,7 @@ function renderBattle() {
       </div>
     </div>
     ${stageNotes ? `<div class="stage-notes">${stageNotes}</div>` : ""}
+    ${battleConditionSummary(a, b)}
     <table class="comparison-table">
       <thead>
         <tr><th>項目</th><th>A</th><th>B</th><th>優勢</th></tr>
@@ -711,14 +768,16 @@ function bindEvents() {
     state.max = event.target.value;
     render();
   });
-  elements.conditionOptions.addEventListener("change", (event) => {
-    if (!event.target.classList.contains("condition-filter")) return;
-    if (event.target.checked) {
-      state.conditions.add(event.target.value);
-    } else {
-      state.conditions.delete(event.target.value);
-    }
-    render();
+  [elements.conditionOptions, elements.battleConditionOptions].forEach((container) => {
+    container.addEventListener("change", (event) => {
+      if (!event.target.classList.contains("condition-filter")) return;
+      if (event.target.checked) {
+        state.conditions.add(event.target.value);
+      } else {
+        state.conditions.delete(event.target.value);
+      }
+      render();
+    });
   });
   elements.battleA.addEventListener("input", (event) => {
     state.battleA = event.target.value;
