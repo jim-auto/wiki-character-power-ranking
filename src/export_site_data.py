@@ -31,6 +31,12 @@ EXPORT_FIELDS = [
     "image_url",
     "image_source",
     "image_alt",
+    "image_landing_url",
+    "image_creator",
+    "image_creator_url",
+    "image_license",
+    "image_license_url",
+    "image_credit",
     "versions",
 ]
 VERSION_EXPORT_FIELDS = [

@@ -422,6 +422,20 @@ function characterImage(character) {
   `;
 }
 
+function imageCredit(character) {
+  if (!character.image_credit) {
+    return "";
+  }
+  const sourceUrl = character.image_landing_url || character.image_license_url || "";
+  const sourceLabel = character.image_license
+    ? `${character.image_credit} / ${String(character.image_license).toUpperCase()}`
+    : character.image_credit;
+  if (sourceUrl) {
+    return `<div class="image-credit">画像: <a href="${escapeHtml(sourceUrl)}">${escapeHtml(sourceLabel)}</a></div>`;
+  }
+  return `<div class="image-credit">画像: ${escapeHtml(sourceLabel)}</div>`;
+}
+
 function characterCard(character, index) {
   const primaryScore = scoreFor(character);
   const titleScore = state.view === "iq" ? `知性スコア ${primaryScore}点` : `${primaryScore}/60`;
@@ -445,6 +459,7 @@ function characterCard(character, index) {
             <span>${escapeHtml(character.universe)}</span>
             <a href="${escapeHtml(character.wikipedia_url)}">出典</a>
           </div>
+          ${imageCredit(character)}
           <div class="flag-line">${flagChips}</div>
         </div>
         <div class="score-stack">

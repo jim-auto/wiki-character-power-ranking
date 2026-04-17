@@ -78,7 +78,7 @@ versions: list[object]
 
 バトル比較の条件ON/OFFは `condition_flags` の照合です。選択した条件についてA/Bが本文由来フラグを持つかを表示しますが、条件一致数でスコアを加減点しません。主観的な相性補正を避けるためです。
 
-`image_url`、`image_source`、`image_alt` は表示用フィールドです。日本語版Wikipediaの `pageimages` API、日本語版Wikipediaページに紐づくWikidata P18、キャラクター固有のWikidata P18、または明示した `image_wikidata_id` のCommons検索から取得したサムネイルだけを保存し、スコア計算や根拠抽出には使いません。
+`image_url`、`image_source`、`image_alt` は表示用フィールドです。日本語版Wikipediaの `pageimages` API、日本語版Wikipediaページに紐づくWikidata P18、キャラクター固有のWikidata P18、明示した `image_wikidata_id` のCommons検索、またはOpenverse検索から取得したサムネイルだけを保存し、スコア計算や根拠抽出には使いません。Openverse画像では `image_credit`、`image_license`、`image_landing_url` も保存します。
 
 `versions` は時点別の小さなキャラクターレコードです。各versionは `label`、`aliases`、`source_wikipedia_url`、`description_raw` を持ち、通常キャラクターと同じ `extracted`、`scores`、`score_evidence`、`total_score`、`iq_score`、`estimated_iq` を生成します。バトル比較で `A時点` / `B時点` がversionの `label` または `aliases` に一致した場合は、そのversionのスコアを使います。
 
@@ -108,7 +108,8 @@ versions: list[object]
 - ジャンプ漫画タグ: 143件
 - Marvelタグ: 105件
 - DCタグ: 76件
-- 表示用サムネイル取得済み: 232件
+- 表示用サムネイル取得済み: 287件
+- Openverse由来の非Wikimedia画像: 55件
 
 日本語版Wikipediaに単独キャラクターページがない場合、登場人物一覧や作品ページをソースにします。そのため、同じ日本語ページを複数キャラクターが共有する場合があります。どのURLへ解決されたかは `data/ja_wikipedia_resolution_report.yaml` で確認できます。
 
@@ -116,7 +117,7 @@ versions: list[object]
 
 共有ページは `src/extract_character_sections.py` で再処理します。キャラクター名、日本語ラベル、括弧を外した名前、URLフラグメントを別名として使い、見出しまたはキャラクター導入文に一致した場合だけ `description_raw` を置き換えます。REST HTMLが429で制限された場合は、通常の日本語版WikipediaページHTMLを使います。ページ全体の概要を無理に採用せず、一致しないキャラクターは既存本文を維持します。結果は `data/section_extraction_report.yaml` に記録します。
 
-画像は `src/fetch_wikipedia_images.py` で別処理にしています。共有ページの画像は作品ロゴや集合画像になりやすいため既定ではページ画像をスキップし、明らかなロゴ、タイトル画像、SVGも除外します。`pageimages` で見つからないページは、日本語版Wikipediaの `pageprops` からWikidata項目をたどり、P18画像を取得します。さらにキャラクター固有のWikidata P18画像でも補完します。`image_wikidata_id` が明示されたキャラクターは、P18がない場合だけCommons検索を使い、ファイル名にキャラ名やcosplay/costumeを含む自由画像を選びます。取得結果は `data/image_fetch_report.yaml` に記録します。
+画像は `src/fetch_wikipedia_images.py` と `src/fetch_openverse_images.py` で別処理にしています。共有ページの画像は作品ロゴや集合画像になりやすいため既定ではページ画像をスキップし、明らかなロゴ、タイトル画像、SVGも除外します。`pageimages` で見つからないページは、日本語版Wikipediaの `pageprops` からWikidata項目をたどり、P18画像を取得します。さらにキャラクター固有のWikidata P18画像でも補完します。`image_wikidata_id` が明示されたキャラクターは、P18がない場合だけCommons検索を使い、ファイル名にキャラ名やcosplay/costumeを含む自由画像を選びます。Openverse補完ではWikimedia/Commons由来の結果を除外し、`CC0`、`PDM`、`CC BY`、`CC BY-SA` の候補だけを採用します。取得結果は `data/image_fetch_report.yaml` と `data/openverse_image_report.yaml` に記録します。
 
 ## 再生成手順
 

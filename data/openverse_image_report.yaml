@@ -1,0 +1,3544 @@
+generated_at: '2026-04-17T14:39:11.125230+00:00'
+source: Openverse
+dry_run: false
+total_characters: 501
+characters_without_images_before: 269
+candidates_checked: 269
+images_found: 55
+characters_without_images_after: 214
+cleared_openverse_images: 46
+allowed_licenses:
+- by
+- by-sa
+- cc0
+- pdm
+blocked_providers:
+- wikimedia
+- wikimedia_commons
+max_queries_per_character: 2
+min_score: 70
+items:
+- name: 魔人ブウ
+  image_url: https://api.openverse.org/v1/images/375f5ff3-b628-4a34-b5ae-7282dff2e446/thumb/
+  title: New York Comic Con 2017 - Cell & Majin Buu
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/94565827@N05/37516533866
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: Rich.S.
+  score: 83
+- name: うずまきナルト
+  image_url: https://api.openverse.org/v1/images/c03c09d1-befb-4360-9527-10ae7e642d29/thumb/
+  title: Cosplay - AWA14 - Naruto Uzumaki, Sosuke Uchiha, Hinata Hyuuga, Shino Aburame and Chouji Akimichi
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2873209137
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 75
+- name: うちはサスケ
+  image_url: https://api.openverse.org/v1/images/c96e5837-8ded-4f03-aab8-c129d455503f/thumb/
+  title: Cosplay - AWA15 - Sasuke Uchiha
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/3982611608
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 75
+- name: 春野サクラ
+  image_url: https://api.openverse.org/v1/images/56348599-edf6-4141-a062-360107e22e4e/thumb/
+  title: Cosplay - AWA14 - Naruto Uzumaki and Sakura Haruno
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2874648844
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 75
+- name: はたけカカシ
+  image_url: https://api.openverse.org/v1/images/40922cb4-ace4-4c8a-9528-9914ffe3a3c3/thumb/
+  title: Cosplay - AWA14 - Naruto Uzumaki and Kakashi Hatake
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2873187863
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 75
+- name: ロロノア・ゾロ
+  image_url: https://api.openverse.org/v1/images/62a0f489-f926-4637-b008-916db6deb15b/thumb/
+  title: Cosplay Roronoa Zoro - One Piece
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/31112252@N00/32677422840
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: gaudiramone
+  score: 83
+- name: ニコ・ロビン
+  image_url: https://api.openverse.org/v1/images/85180e9e-7ad9-4fac-b00c-028a7f338d73/thumb/
+  title: Nico Robin Strong World cosplay. julio 2012.06g
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/52537477@N00/7625307480
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: Mataparda
+  score: 83
+- name: 黒崎一護
+  image_url: https://api.openverse.org/v1/images/9321602f-5c63-408c-9655-5d6da8feea7e/thumb/
+  title: Cosplay - AWA14 - Ichigo Kurosaki
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2873776591
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 75
+- name: 朽木ルキア
+  image_url: https://api.openverse.org/v1/images/7c7915e4-c48e-47dd-ac28-999184bf391a/thumb/
+  title: Cosplay - AWA15 - Rukia Kuchiki
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/3981333111
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 75
+- name: 阿散井恋次
+  image_url: https://api.openverse.org/v1/images/a7d375a5-f215-490e-9d94-aef23ae06d59/thumb/
+  title: 'Youmacon: Renji Abarai ala Mr N'
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/20957859@N07/3007380036
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: carianoff
+  score: 75
+- name: エレン・イェーガー
+  image_url: https://api.openverse.org/v1/images/b1ab4040-f36a-4bdb-b3b9-05cef8496e58/thumb/
+  title: Female Titan & Eren Yeager (Attack on Titan)
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/16531595@N00/14130639498
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: kepstin
+  score: 83
+- name: ミカサ・アッカーマン
+  image_url: https://api.openverse.org/v1/images/45f6d9e3-9c87-4c1e-9985-8dfef32dfd4e/thumb/
+  title: Mikasa Ackerman Cosplay
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/83897814@N07/11165321993
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: Musespeak
+  score: 83
+- name: サトシ
+  image_url: https://api.openverse.org/v1/images/615be4fc-bda5-4fe3-92cc-cf4f55afadcf/thumb/
+  title: Ash Ketchum
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/22007612@N05/5764005330
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: Gage Skidmore
+  score: 75
+- name: エドワード・エルリック
+  image_url: https://api.openverse.org/v1/images/21c3a803-f774-4f0d-860e-0e0b74abeaf0/thumb/
+  title: Cosplay - AWA14 - Edward Elric
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2873551561
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 83
+- name: アルフォンス・エルリック
+  image_url: https://api.openverse.org/v1/images/91526a0e-17a7-4a4d-82ba-02a90d8781f9/thumb/
+  title: Cosplay - AWA15 - Edward and Alphonse Elric
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/3982122682
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 83
+- name: 夜神月
+  image_url: https://api.openverse.org/v1/images/952df853-320e-45b9-ae40-88d25c736a0c/thumb/
+  title: DeathNoteLightYagamiCosplay
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/188949824@N08/50002403427
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: kaitoshionreal
+  score: 83
+- name: ダース・ベイダー
+  image_url: https://api.openverse.org/v1/images/6f7991f3-d781-4a0a-802c-62c825dae45b/thumb/
+  title: 2014 Darth Vader Car
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/119886413@N05/34290632775
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: Michel Curi
+  score: 83
+- name: ハーレイ・クイン
+  image_url: https://api.openverse.org/v1/images/d75ef8e6-325a-4925-a2cd-c4ea10a562bb/thumb/
+  title: Harley Quinn Cosplay at Asbury Park Comic Con 2
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/38448278@N00/8037711231
+  license: cc0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  creator: DanCentury
+  score: 71
+- name: ゴン＝フリークス
+  image_url: https://api.openverse.org/v1/images/8ca0b9d6-4c80-4a48-a70f-4d55747b5054/thumb/
+  title: Killua Zoldyck & Gon Freecss cosplayers
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/22007612@N05/52110960868
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: Gage Skidmore
+  score: 75
+- name: キルア＝ゾルディック
+  image_url: https://api.openverse.org/v1/images/8ca0b9d6-4c80-4a48-a70f-4d55747b5054/thumb/
+  title: Killua Zoldyck & Gon Freecss cosplayers
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/22007612@N05/52110960868
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: Gage Skidmore
+  score: 75
+- name: 綾波レイ
+  image_url: https://api.openverse.org/v1/images/1621fce5-475d-4a06-9b01-9ebd713ff16a/thumb/
+  title: 'Animagic 2009: Rei'
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/23968317@N08/3788884906
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: skl8em
+  score: 91
+- name: スパイク・スピーゲル
+  image_url: https://api.openverse.org/v1/images/1501584a-ec11-4b48-a15e-084aa78647ad/thumb/
+  title: Cosplay - AWA14 - Spike Spiegel
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2873144279
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 83
+- name: 木之本桜
+  image_url: https://api.openverse.org/v1/images/3d354fa2-ca1e-4f39-9f51-62ab97fe7c7f/thumb/
+  title: Cardcaptor Sakura カードキャプターさくら Sakura Kinomoto 木之本 桜 cosplay - San Antonio, Texas (2024)
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/198003881@N06/54222739492
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: coolanimeboy25
+  score: 83
+- name: ムーンナイト
+  image_url: https://api.openverse.org/v1/images/c0b48fad-4671-41e4-828f-fdd3384b690f/thumb/
+  title: WonderCon 2019 - Moon Knight Cosplay
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28277470@N05/47451005422
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: W10002
+  score: 75
+- name: 亀仙人
+  image_url: https://api.openverse.org/v1/images/b219ba8b-7156-44f4-95a9-6c82c0962ad5/thumb/
+  title: Master Roshi
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/24075890@N00/191698461
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: agius
+  score: 83
+- name: ロック・リー
+  image_url: https://api.openverse.org/v1/images/8a710e62-b809-46db-8d4e-e3101e8b0df2/thumb/
+  title: Rock Lee with the nice guy pose
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/66398726@N00/2812389800
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: metaxin
+  score: 75
+- name: 日向ヒナタ
+  image_url: https://api.openverse.org/v1/images/48eea739-d4cc-42a0-9169-021054c4e000/thumb/
+  title: Cosplay - AWA15 - Jiraiya, Hinata Hyuga, Sakura Haruno and Kakashi Hatake
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/3982501855
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 75
+- name: ボア・ハンコック
+  image_url: https://api.openverse.org/v1/images/09c38b10-8b6e-453b-b188-3fded2712529/thumb/
+  title: Boa Hancock cosplay - One Piece
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/129892578@N02/17012780790
+  license: pdm
+  license_url: https://creativecommons.org/publicdomain/mark/1.0/
+  creator: WongCosplayBr - ウォン·コスプレ
+  score: 87
+- name: 朽木白哉
+  image_url: https://api.openverse.org/v1/images/f0b6f966-5874-45d4-8dea-529f628dce17/thumb/
+  title: 05 - Ogichi(Hollow Ichigo), Yui Kakiuchi(Byakuya Kuchiki), Tosen, Renji - Bleach
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/41773804@N08/41084311381
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: 屋宜 Ricardo 清介
+  score: 75
+- name: グリムジョー・ジャガージャック
+  image_url: https://api.openverse.org/v1/images/0a6ba401-47ae-499c-b129-c3ab65db7d56/thumb/
+  title: AX 2010 - Bleach - Grimmjow Jaegerjaquez
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/22265703@N06/5118304540
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: digitizedchaos
+  score: 75
+- name: 甘露寺蜜璃
+  image_url: https://api.openverse.org/v1/images/96a3d311-ffca-40cd-ba0b-c2a3b2b63f33/thumb/
+  title: Kimetsu no Yaiba 鬼滅の刃 Mitsuri Kanroji 甘露寺 蜜璃 cosplay - San Antonio, Texas (2024)
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/198003881@N06/54301657752
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: coolanimeboy25
+  score: 83
+- name: ルーシィ・ハートフィリア
+  image_url: https://api.openverse.org/v1/images/a24cc67c-312b-441c-b840-8dc48958c9ba/thumb/
+  title: IMG_4214 - Lucy Heartfilia Cosplay
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/144563361@N04/28979374026
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: Racillian
+  score: 83
+- name: 水野亜美
+  image_url: https://api.openverse.org/v1/images/b3c22de6-cd32-41ba-9b83-51796e32997f/thumb/
+  title: Sailor Moon
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/88541408@N05/16982471357
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: Xubaet
+  score: 83
+- name: 火野レイ
+  image_url: https://api.openverse.org/v1/images/be6298fb-9b9e-4986-9061-43b5489ea2ad/thumb/
+  title: Anime Expo 2014 - Sailor Scouts cosplay
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28277470@N05/14597212005
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: W10002
+  score: 83
+- name: 木野まこと
+  image_url: https://api.openverse.org/v1/images/4e4fd7ef-ff1e-430d-a957-576b452f3eae/thumb/
+  title: Comikaze 2013 - Sailor Jupiter cosplay
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28277470@N05/10637861205
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: W10002
+  score: 83
+- name: 地場衛
+  image_url: https://api.openverse.org/v1/images/b4b1d6f0-f538-4df8-8648-e800138a955a/thumb/
+  title: Chibiusa, Mercury, Mars, Venus, Saturn, Jupiter, Uranus, Tuxedo Mask, Sailor Moon
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/74226698@N00/5059791806
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: Rob Speed
+  score: 83
+- name: 天王はるか
+  image_url: https://api.openverse.org/v1/images/be6298fb-9b9e-4986-9061-43b5489ea2ad/thumb/
+  title: Anime Expo 2014 - Sailor Scouts cosplay
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28277470@N05/14597212005
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: W10002
+  score: 83
+- name: 海王みちる
+  image_url: https://api.openverse.org/v1/images/0525f103-9153-44b0-92b8-aacf16bb3120/thumb/
+  title: 'Anime Expo 2016: Sailor Saturn, Sailor Uranus, Sailor Neptune'
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/10961357@N05/28104462032
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: Eras Photography
+  score: 83
+- name: 冥王せつな
+  image_url: https://api.openverse.org/v1/images/4d477f03-2bf5-4b1d-aa59-2ce63de5be50/thumb/
+  title: Sailor Moon
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/88541408@N05/17472380774
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: Xubaet
+  score: 83
+- name: 土萠ほたる
+  image_url: https://api.openverse.org/v1/images/be6298fb-9b9e-4986-9061-43b5489ea2ad/thumb/
+  title: Anime Expo 2014 - Sailor Scouts cosplay
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28277470@N05/14597212005
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: W10002
+  score: 83
+- name: 葛城ミサト
+  image_url: https://api.openverse.org/v1/images/0d095020-1831-4b68-b67a-aeaae7aef6fe/thumb/
+  title: Cosplay - AWA14 - Misato Katsuragi
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2873102483
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 91
+- name: 碇ゲンドウ
+  image_url: https://api.openverse.org/v1/images/4f509296-0c7a-4a2a-b0e4-0c49327dd8e0/thumb/
+  title: Gendo Ikari (Neon Evangelion Genesis) Cosplay @ Anime Weekend Atlanta 2014
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/87533346@N00/15396666422
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: djzippy
+  score: 91
+- name: ロイ・マスタング
+  image_url: https://api.openverse.org/v1/images/0d3035af-7ffe-45bd-be41-bcf378255ec4/thumb/
+  title: Roy Mustang Cosplayer & Erica @ PersaCon '09
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/87533346@N00/3759817348
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: djzippy
+  score: 83
+- name: 弥海砂
+  image_url: https://api.openverse.org/v1/images/0bd2dee1-8745-44f1-a5a9-b7d9b69bc49a/thumb/
+  title: Cosplay - AWA14 - L and Misa Amane
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2874388736
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 83
+- name: ヴァッシュ・ザ・スタンピード
+  image_url: https://api.openverse.org/v1/images/6241e799-ccb5-49a1-9c98-c333013aec2b/thumb/
+  title: Cosplay - AWA14 - Vash the Stampede
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/2873858487
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 75
+- name: ルルーシュ・ランペルージ
+  image_url: https://api.openverse.org/v1/images/5a396167-dd00-4d45-bdc9-02574c806289/thumb/
+  title: Cosplay - AWA15 - C2 and Lelouch Lamperouge
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28208534@N07/3982457055
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: mikemol
+  score: 83
+- name: 緋村剣心
+  image_url: https://api.openverse.org/v1/images/da40dbee-fc00-4efa-9580-cc94ab690cdb/thumb/
+  title: Rurouni Kenshin - Kaoru Kamiya e Kenshin Himura - Anime Festival Holidays 2008
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/20982085@N03/3088645619
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: Regis Andrade
+  score: 83
+- name: 草薙素子
+  image_url: https://api.openverse.org/v1/images/beb4ff21-7730-4874-a2a0-b1427f16fef4/thumb/
+  title: Motoko Kusanagi from GHOST IN THE SHELL(攻殻機動隊より草薙素子)
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/30355896@N02/4236762364
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: fortbragg2008
+  score: 83
+- name: ガリィ
+  image_url: https://api.openverse.org/v1/images/fa005f62-b6ea-463c-ae82-30e25015fc8b/thumb/
+  title: Battle Angel Alita
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/27935720@N00/698560059
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: hober
+  score: 73
+- name: 早乙女乱馬
+  image_url: https://api.openverse.org/v1/images/cdb357dc-21a7-4f0b-b51b-97edaf0f983a/thumb/
+  title: Ranma Saotome
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/24075890@N00/3565469756
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: agius
+  score: 75
+- name: アナキン・スカイウォーカー
+  image_url: https://api.openverse.org/v1/images/a47c8658-1e63-4c64-a02b-5c1296065956/thumb/
+  title: Anakin Skywalker
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/24075890@N00/36398757
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: agius
+  score: 83
+- name: キャシアン・アンドー
+  image_url: https://api.openverse.org/v1/images/5ef383d0-bb80-4da6-94cd-dbe1baddc747/thumb/
+  title: SDCC 2017 - Cassian and K-2SO
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28277470@N05/35308354724
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: W10002
+  score: 83
+- name: レザーフェイス
+  image_url: https://api.openverse.org/v1/images/2381728e-6ca4-4e1e-8014-852f3c2f77bf/thumb/
+  title: Wintercon 2017 - Leatherface
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/94565827@N05/37914126845
+  license: by
+  license_url: https://creativecommons.org/licenses/by/2.0/
+  creator: Rich.S.
+  score: 73
+- name: インビジブル・ウーマン
+  image_url: https://api.openverse.org/v1/images/6e2e887c-86b5-461c-9333-457f80484905/thumb/
+  title: Fantstic Four invisible Woman C2E2 Marvel Costume contest 2012
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/33121778@N02/6940125640
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: chris favero
+  score: 75
+- name: エマ・フロスト
+  image_url: https://api.openverse.org/v1/images/c12f1670-9b0e-458e-9bcc-75def87ede04/thumb/
+  title: SDCC13 - Phoenix Five Emma Frost
+  source: flickr
+  provider: flickr
+  landing_url: https://www.flickr.com/photos/28277470@N05/9348034950
+  license: by-sa
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/
+  creator: W10002
+  score: 75
+missing_items:
+- name: 孫悟飯
+  queries:
+  - '"Gohan" "Dragon Ball" cosplay'
+  - '"Gohan" cosplay'
+  attempts:
+  - query: '"Gohan" "Dragon Ball" cosplay'
+    title: Kid Gohan - Dragon Ball Z
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Gohan" cosplay'
+    title: Laura Torres
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Gohan" cosplay'
+    title: Kid Gohan - Dragon Ball Z
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Gohan" cosplay'
+    title: Animethon 20
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Gohan" cosplay'
+    title: Goku & Bulma cosplayers
+    source: flickr
+    license: by-sa
+    score: 25
+- name: フリーザ
+  queries:
+  - '"Frieza" "Dragon Ball" cosplay'
+  - '"Frieza" cosplay'
+  attempts:
+  - query: '"Frieza" cosplay'
+    title: 'Frieza: 2015 Calgary Expo – Calgary Comic & Entertainment Expo'
+    source: flickr
+    license: by
+    score: 49
+- name: トランクス
+  queries:
+  - '"Trunks (Dragon Ball)" "Dragon Ball" cosplay'
+  - '"Trunks (Dragon Ball)" cosplay'
+  - '"Trunks" "Dragon Ball" cosplay'
+  - '"Trunks" cosplay'
+  attempts: []
+- name: うちはマダラ
+  queries:
+  - '"Madara Uchiha" "Naruto" cosplay'
+  - '"Madara Uchiha" cosplay'
+  attempts:
+  - query: '"Madara Uchiha" "Naruto" cosplay'
+    title: Naruto!
+    source: flickr
+    license: by
+    score: 35
+  - query: '"Madara Uchiha" "Naruto" cosplay'
+    title: Naruto!
+    source: flickr
+    license: by
+    score: 35
+  - query: '"Madara Uchiha" "Naruto" cosplay'
+    title: Naruto!
+    source: flickr
+    license: by
+    score: 35
+  - query: '"Madara Uchiha" "Naruto" cosplay'
+    title: Naruto!
+    source: flickr
+    license: by
+    score: -61
+  - query: '"Madara Uchiha" cosplay'
+    title: Naruto!
+    source: flickr
+    license: by
+    score: 35
+- name: 自来也
+  queries:
+  - '"Jiraiya (Naruto)" "Naruto" cosplay'
+  - '"Jiraiya (Naruto)" cosplay'
+  - '"Jiraiya" "Naruto" cosplay'
+  - '"Jiraiya" cosplay'
+  attempts: []
+- name: 我愛羅
+  queries:
+  - '"Gaara" "Naruto" cosplay'
+  - '"Gaara" cosplay'
+  attempts:
+  - query: '"Gaara" "Naruto" cosplay'
+    title: Gaara cosplayer
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Gaara" "Naruto" cosplay'
+    title: Gaara
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Gaara" "Naruto" cosplay'
+    title: Gaara Cosplay
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Gaara" "Naruto" cosplay'
+    title: Gaara, Sasuke, Sakura, and Naruto Cosplay
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Gaara" "Naruto" cosplay'
+    title: '#AMG2015 Day 2 Cosplay: 044'
+    source: flickr
+    license: by
+    score: 17
+- name: ナミ
+  queries:
+  - '"Nami (One Piece)" "One Piece" cosplay'
+  - '"Nami (One Piece)" cosplay'
+  - '"Nami" "One Piece" cosplay'
+  - '"Nami" cosplay'
+  attempts: []
+- name: サンジ
+  queries:
+  - '"Sanji (One Piece)" "One Piece" cosplay'
+  - '"Sanji (One Piece)" cosplay'
+  - '"Sanji" "One Piece" cosplay'
+  - '"Sanji" cosplay'
+  attempts:
+  - query: '"Sanji (One Piece)" "One Piece" cosplay'
+    title: Japan Impact 2020 - cosplay groupe
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Sanji (One Piece)" "One Piece" cosplay'
+    title: Japan Impact 2020 - cosplay groupe
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Sanji (One Piece)" "One Piece" cosplay'
+    title: Japan Impact 2020 - cosplay groupe
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Sanji (One Piece)" "One Piece" cosplay'
+    title: Japan Impact 2020 - cosplay groupe
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Sanji (One Piece)" cosplay'
+    title: Japan Impact 2020 - cosplay groupe
+    source: flickr
+    license: by
+    score: -69
+- name: トニートニー・チョッパー
+  queries:
+  - '"Tony Tony Chopper" "One Piece" cosplay'
+  - '"Tony Tony Chopper" cosplay'
+  attempts: []
+- name: トラファルガー・ロー
+  queries:
+  - '"Trafalgar D. Water Law" "One Piece" cosplay'
+  - '"Trafalgar D. Water Law" cosplay'
+  attempts:
+  - query: '"Trafalgar D. Water Law" "One Piece" cosplay'
+    title: Destination Tokyo 2024
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Trafalgar D. Water Law" "One Piece" cosplay'
+    title: Destination Tokyo 2024
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Trafalgar D. Water Law" "One Piece" cosplay'
+    title: Destination Tokyo 2024
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Trafalgar D. Water Law" "One Piece" cosplay'
+    title: Destination Tokyo 2024
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Trafalgar D. Water Law" cosplay'
+    title: Destination Tokyo 2024
+    source: flickr
+    license: by
+    score: -69
+- name: シャンクス
+  queries:
+  - '"Shanks (One Piece)" "One Piece" cosplay'
+  - '"Shanks (One Piece)" cosplay'
+  - '"Shanks" "One Piece" cosplay'
+  - '"Shanks" cosplay'
+  attempts: []
+- name: 井上織姫
+  queries:
+  - '"Orihime Inoue" "Bleach" cosplay'
+  - '"Orihime Inoue" cosplay'
+  attempts:
+  - query: '"Orihime Inoue" "Bleach" cosplay'
+    title: Bleach
+    source: flickr
+    license: by
+    score: 35
+  - query: '"Orihime Inoue" cosplay'
+    title: Bleach
+    source: flickr
+    license: by
+    score: 35
+- name: 石田雨竜
+  queries:
+  - '"Uryū Ishida" "Bleach" cosplay'
+  - '"Uryū Ishida" cosplay'
+  attempts: []
+- name: 藍染惣右介
+  queries:
+  - '"Sōsuke Aizen" "Bleach" cosplay'
+  - '"Sōsuke Aizen" cosplay'
+  attempts: []
+- name: アルミン・アルレルト
+  queries:
+  - '"Armin Arlert" "Attack on Titan" cosplay'
+  - '"Armin Arlert" cosplay'
+  attempts:
+  - query: '"Armin Arlert" cosplay'
+    title: Shingeki no Kyojin
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Armin Arlert" cosplay'
+    title: Shingeki no Kyojin
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Armin Arlert" cosplay'
+    title: Shingeki no Kyojin
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Armin Arlert" cosplay'
+    title: Shingeki no Kyojin
+    source: flickr
+    license: by
+    score: 43
+- name: リヴァイ
+  queries:
+  - '"Levi Ackerman" "Attack on Titan" cosplay'
+  - '"Levi Ackerman" cosplay'
+  attempts:
+  - query: '"Levi Ackerman" "Attack on Titan" cosplay'
+    title: '#ACMY2015 Day 2 Cosplay: 012'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Levi Ackerman" "Attack on Titan" cosplay'
+    title: '#ACMY2015 Day 2 Cosplay: 013'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Levi Ackerman" cosplay'
+    title: '#ACMY2015 Day 2 Cosplay: 012'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Levi Ackerman" cosplay'
+    title: '#ACMY2015 Day 2 Cosplay: 013'
+    source: flickr
+    license: by
+    score: 43
+- name: 竈門炭治郎
+  queries:
+  - '"Tanjiro Kamado" "Demon Slayer" cosplay'
+  - '"Tanjiro Kamado" cosplay'
+  attempts:
+  - query: '"Tanjiro Kamado" "Demon Slayer" cosplay'
+    title: Slayerz
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Tanjiro Kamado" cosplay'
+    title: swordplayers
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Tanjiro Kamado" cosplay'
+    title: Slayerz
+    source: flickr
+    license: by
+    score: 43
+- name: 竈門禰豆子
+  queries:
+  - '"Nezuko Kamado" "Demon Slayer" cosplay'
+  - '"Nezuko Kamado" cosplay'
+  attempts: []
+- name: 我妻善逸
+  queries:
+  - '"Zenitsu Agatsuma" "Demon Slayer" cosplay'
+  - '"Zenitsu Agatsuma" cosplay'
+  attempts: []
+- name: 嘴平伊之助
+  queries:
+  - '"Inosuke Hashibira" "Demon Slayer" cosplay'
+  - '"Inosuke Hashibira" cosplay'
+  attempts:
+  - query: '"Inosuke Hashibira" "Demon Slayer" cosplay'
+    title: Slayerz
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Inosuke Hashibira" "Demon Slayer" cosplay'
+    title: De-To 2021
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Inosuke Hashibira" "Demon Slayer" cosplay'
+    title: De-To 2021
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Inosuke Hashibira" "Demon Slayer" cosplay'
+    title: De-To 2021
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Inosuke Hashibira" cosplay'
+    title: swordplayers
+    source: flickr
+    license: by
+    score: 43
+- name: 冨岡義勇
+  queries:
+  - '"Giyu Tomioka" "Demon Slayer" cosplay'
+  - '"Giyu Tomioka" cosplay'
+  attempts: []
+- name: 煉獄杏寿郎
+  queries:
+  - '"Kyojuro Rengoku" "Demon Slayer" cosplay'
+  - '"Kyojuro Rengoku" cosplay'
+  attempts: []
+- name: セーラームーン
+  queries:
+  - '"Sailor Moon (character)" "Sailor Moon" cosplay'
+  - '"Sailor Moon (character)" cosplay'
+  - '"Sailor Moon" "Sailor Moon" cosplay'
+  - '"Sailor Moon" cosplay'
+  attempts: []
+- name: L
+  queries:
+  - '"L (Death Note)" "Death Note" cosplay'
+  - '"L (Death Note)" cosplay'
+  - '"L" "Death Note" cosplay'
+  - '"L" cosplay'
+  attempts: []
+- name: アイアンマン（MCU）
+  queries:
+  - '"Iron Man''s armor (Marvel Cinematic Universe)" "MCU" cosplay'
+  - '"Iron Man''s armor (Marvel Cinematic Universe)" cosplay'
+  - '"Iron Man''s armor" "MCU" cosplay'
+  - '"Iron Man''s armor" cosplay'
+  attempts: []
+- name: ワンダ・マキシモフ（MCU）
+  queries:
+  - '"Wanda Maximoff (Marvel Cinematic Universe)" "MCU" cosplay'
+  - '"Wanda Maximoff (Marvel Cinematic Universe)" cosplay'
+  - '"Wanda Maximoff" "MCU" cosplay'
+  - '"Wanda Maximoff" cosplay'
+  attempts: []
+- name: ネオ
+  queries:
+  - '"Neo (The Matrix)" "The Matrix" cosplay'
+  - '"Neo (The Matrix)" cosplay'
+  - '"Neo" "The Matrix" cosplay'
+  - '"Neo" cosplay'
+  attempts: []
+- name: ダークサイド
+  queries:
+  - '"Darkseid" "DC" cosplay'
+  - '"Darkseid" cosplay'
+  attempts: []
+- name: スーパーガール
+  queries:
+  - '"Supergirl (Kara Zor-El)" "DC" cosplay'
+  - '"Supergirl (Kara Zor-El)" cosplay'
+  - '"Supergirl" "DC" cosplay'
+  - '"Supergirl" cosplay'
+  attempts: []
+- name: マグニートー
+  queries:
+  - '"Magneto (Marvel Comics)" "Marvel" cosplay'
+  - '"Magneto (Marvel Comics)" cosplay'
+  - '"Magneto" "Marvel" cosplay'
+  - '"Magneto" cosplay'
+  attempts: []
+- name: 緑谷出久
+  queries:
+  - '"Izuku Midoriya" "My Hero Academia" cosplay'
+  - '"Izuku Midoriya" cosplay'
+  attempts:
+  - query: '"Izuku Midoriya" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Izuku Midoriya" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Izuku Midoriya" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Izuku Midoriya" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Izuku Midoriya" "My Hero Academia" cosplay'
+    title: Destination Tokyo 2022
+    source: flickr
+    license: by
+    score: -69
+- name: 爆豪勝己
+  queries:
+  - '"Katsuki Bakugo" "My Hero Academia" cosplay'
+  - '"Katsuki Bakugo" cosplay'
+  attempts:
+  - query: '"Katsuki Bakugo" "My Hero Academia" cosplay'
+    title: Katsuki Bakugo and Izuku Midoriay hug it out
+    source: flickr
+    license: by-sa
+    score: 51
+  - query: '"Katsuki Bakugo" cosplay'
+    title: Polymanga 2018
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Katsuki Bakugo" cosplay'
+    title: Polymanga 2018
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Katsuki Bakugo" cosplay'
+    title: Polymanga 2018
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Katsuki Bakugo" cosplay'
+    title: Katsuki Bakugo and Izuku Midoriay hug it out
+    source: flickr
+    license: by-sa
+    score: 51
+- name: 麗日お茶子
+  queries:
+  - '"Ochaco Uraraka" "My Hero Academia" cosplay'
+  - '"Ochaco Uraraka" cosplay'
+  attempts:
+  - query: '"Ochaco Uraraka" cosplay'
+    title: Ochaco Uraraka cosplay by @minx_multimedia.arts
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Ochaco Uraraka" cosplay'
+    title: Ochaco Uraraka cosplay by @minx_multimedia.arts
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Ochaco Uraraka" cosplay'
+    title: Ochaco Uraraka cosplay by @minx_multimedia.arts
+    source: flickr
+    license: by-sa
+    score: 67
+- name: 轟焦凍
+  queries:
+  - '"Shoto Todoroki" "My Hero Academia" cosplay'
+  - '"Shoto Todoroki" cosplay'
+  attempts:
+  - query: '"Shoto Todoroki" "My Hero Academia" cosplay'
+    title: Shoto Todoroki cosplays
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Shoto Todoroki" "My Hero Academia" cosplay'
+    title: Shoto Todoroki cosplay
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Shoto Todoroki" "My Hero Academia" cosplay'
+    title: Shoto Todoroki cosplays
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Shoto Todoroki" "My Hero Academia" cosplay'
+    title: Shoto Todoroki cosplay
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Shoto Todoroki" "My Hero Academia" cosplay'
+    title: Shoto Todoroki cosplay
+    source: flickr
+    license: by-sa
+    score: 67
+- name: オールマイト
+  queries:
+  - '"All Might" "My Hero Academia" cosplay'
+  - '"All Might" cosplay'
+  attempts:
+  - query: '"All Might" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: 9
+  - query: '"All Might" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: 9
+  - query: '"All Might" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: 9
+  - query: '"All Might" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: 9
+  - query: '"All Might" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: 9
+- name: 死柄木弔
+  queries:
+  - '"Tomura Shigaraki" "My Hero Academia" cosplay'
+  - '"Tomura Shigaraki" cosplay'
+  attempts:
+  - query: '"Tomura Shigaraki" "My Hero Academia" cosplay'
+    title: Japan Impact 2020 - cosplay individuel
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Tomura Shigaraki" "My Hero Academia" cosplay'
+    title: Japan Impact 2020 - cosplay individuel
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Tomura Shigaraki" "My Hero Academia" cosplay'
+    title: Japan Impact 2020 - cosplay individuel
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Tomura Shigaraki" cosplay'
+    title: Japan Impact 2020 - cosplay individuel
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Tomura Shigaraki" cosplay'
+    title: Japan Impact 2020 - cosplay individuel
+    source: flickr
+    license: by
+    score: -69
+- name: 虎杖悠仁
+  queries:
+  - '"Yuji Itadori" "Jujutsu Kaisen" cosplay'
+  - '"Yuji Itadori" cosplay'
+  attempts: []
+- name: 伏黒恵
+  queries:
+  - '"Megumi Fushiguro" "Jujutsu Kaisen" cosplay'
+  - '"Megumi Fushiguro" cosplay'
+  attempts: []
+- name: 釘崎野薔薇
+  queries:
+  - '"Nobara Kugisaki" "Jujutsu Kaisen" cosplay'
+  - '"Nobara Kugisaki" cosplay'
+  attempts: []
+- name: 五条悟
+  queries:
+  - '"Satoru Gojo" "Jujutsu Kaisen" cosplay'
+  - '"Satoru Gojo" cosplay'
+  attempts: []
+- name: 両面宿儺
+  queries:
+  - '"Ryomen Sukuna" "Jujutsu Kaisen" cosplay'
+  - '"Ryomen Sukuna" cosplay'
+  attempts:
+  - query: '"Ryomen Sukuna" "Jujutsu Kaisen" cosplay'
+    title: De-To 2021
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Ryomen Sukuna" "Jujutsu Kaisen" cosplay'
+    title: De-To 2021
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Ryomen Sukuna" "Jujutsu Kaisen" cosplay'
+    title: De-To 2021
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Ryomen Sukuna" cosplay'
+    title: De-To 2021
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Ryomen Sukuna" cosplay'
+    title: De-To 2021
+    source: flickr
+    license: by
+    score: -85
+- name: クラピカ
+  queries:
+  - '"Kurapika" "Hunter x Hunter" cosplay'
+  - '"Kurapika" cosplay'
+  attempts:
+  - query: '"Kurapika" cosplay'
+    title: CIMG2730
+    source: flickr
+    license: by
+    score: 17
+- name: ケンシロウ
+  queries:
+  - '"Kenshiro" "Fist of the North Star" cosplay'
+  - '"Kenshiro" cosplay'
+  attempts: []
+- name: メルエム
+  queries:
+  - '"Meruem" "Hunter x Hunter" cosplay'
+  - '"Meruem" cosplay'
+  attempts: []
+- name: 浦飯幽助
+  queries:
+  - '"Yusuke Urameshi" "YuYu Hakusho" cosplay'
+  - '"Yusuke Urameshi" cosplay'
+  attempts: []
+- name: 飛影
+  queries:
+  - '"Hiei (YuYu Hakusho)" "YuYu Hakusho" cosplay'
+  - '"Hiei (YuYu Hakusho)" cosplay'
+  - '"Hiei" "YuYu Hakusho" cosplay'
+  - '"Hiei" cosplay'
+  attempts: []
+- name: 蔵馬
+  queries:
+  - '"Kurama (YuYu Hakusho)" "YuYu Hakusho" cosplay'
+  - '"Kurama (YuYu Hakusho)" cosplay'
+  - '"Kurama" "YuYu Hakusho" cosplay'
+  - '"Kurama" cosplay'
+  attempts:
+  - query: '"Kurama (YuYu Hakusho)" "YuYu Hakusho" cosplay'
+    title: 'Anime Expo 2015: Hei and Kurama (Yuyu Hakusho)'
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Kurama (YuYu Hakusho)" "YuYu Hakusho" cosplay'
+    title: 'Anime Expo 2015: Hei and Kurama (Yuyu Hakusho)'
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Kurama (YuYu Hakusho)" cosplay'
+    title: 'Anime Expo 2015: Hei and Kurama (Yuyu Hakusho)'
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Kurama (YuYu Hakusho)" cosplay'
+    title: 'Anime Expo 2015: Hei and Kurama (Yuyu Hakusho)'
+    source: flickr
+    license: by
+    score: 65
+- name: 桑原和真
+  queries:
+  - '"Kazuma Kuwabara" "YuYu Hakusho" cosplay'
+  - '"Kazuma Kuwabara" cosplay'
+  attempts: []
+- name: 空条承太郎
+  queries:
+  - '"Jotaro Kujo" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Jotaro Kujo" cosplay'
+  attempts: []
+- name: ディオ・ブランドー
+  queries:
+  - '"Dio Brando" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Dio Brando" cosplay'
+  attempts: []
+- name: ジョルノ・ジョバァーナ
+  queries:
+  - '"Giorno Giovanna" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Giorno Giovanna" cosplay'
+  attempts:
+  - query: '"Giorno Giovanna" "JoJo''s Bizarre Adventure" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Individuel
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Giorno Giovanna" "JoJo''s Bizarre Adventure" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Individuel
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Giorno Giovanna" "JoJo''s Bizarre Adventure" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Individuel
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Giorno Giovanna" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Individuel
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Giorno Giovanna" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Individuel
+    source: flickr
+    license: by
+    score: -69
+- name: ジョセフ・ジョースター
+  queries:
+  - '"Joseph Joestar" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Joseph Joestar" cosplay'
+  attempts: []
+- name: デンジ
+  queries:
+  - '"Denji (Chainsaw Man)" "Chainsaw Man" cosplay'
+  - '"Denji (Chainsaw Man)" cosplay'
+  - '"Denji" "Chainsaw Man" cosplay'
+  - '"Denji" cosplay'
+  attempts: []
+- name: マキマ
+  queries:
+  - '"Makima" "Chainsaw Man" cosplay'
+  - '"Makima" cosplay'
+  attempts: []
+- name: 早川アキ
+  queries:
+  - '"Aki Hayakawa" "Chainsaw Man" cosplay'
+  - '"Aki Hayakawa" cosplay'
+  attempts: []
+- name: 碇シンジ
+  queries:
+  - '"Shinji Ikari" "Neon Genesis Evangelion" cosplay'
+  - '"Shinji Ikari" cosplay'
+  attempts: []
+- name: ガッツ
+  queries:
+  - '"Guts (Berserk)" "Berserk" cosplay'
+  - '"Guts (Berserk)" cosplay'
+  - '"Guts" "Berserk" cosplay'
+  - '"Guts" cosplay'
+  attempts: []
+- name: グリフィス
+  queries:
+  - '"Griffith (Berserk)" "Berserk" cosplay'
+  - '"Griffith (Berserk)" cosplay'
+  - '"Griffith" "Berserk" cosplay'
+  - '"Griffith" cosplay'
+  attempts:
+  - query: '"Griffith (Berserk)" "Berserk" cosplay'
+    title: cartoomix_11
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Griffith (Berserk)" cosplay'
+    title: cartoomix_11
+    source: flickr
+    license: by-sa
+    score: 17
+- name: 金木研
+  queries:
+  - '"Ken Kaneki" "Tokyo Ghoul" cosplay'
+  - '"Ken Kaneki" cosplay'
+  attempts:
+  - query: '"Ken Kaneki" "Tokyo Ghoul" cosplay'
+    title: '#AMG14 Day 1 Cosplay: 058'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Ken Kaneki" "Tokyo Ghoul" cosplay'
+    title: '#ACMY2015 Day 1 Cosplay: 009'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Ken Kaneki" "Tokyo Ghoul" cosplay'
+    title: 'Kuantan CosWalk 2015 Cosplay: 010'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Ken Kaneki" "Tokyo Ghoul" cosplay'
+    title: '#ACMY2015 Day 1 Cosplay: 035'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Ken Kaneki" "Tokyo Ghoul" cosplay'
+    title: '#ACMY2015 Day 1 Cosplay: 008'
+    source: flickr
+    license: by
+    score: 43
+- name: 犬夜叉
+  queries:
+  - '"Inuyasha (character)" "Inuyasha" cosplay'
+  - '"Inuyasha (character)" cosplay'
+  - '"Inuyasha" "Inuyasha" cosplay'
+  - '"Inuyasha" cosplay'
+  attempts: []
+- name: ドラえもん
+  queries:
+  - '"Doraemon (character)" "Doraemon" cosplay'
+  - '"Doraemon (character)" cosplay'
+  - '"Doraemon" "Doraemon" cosplay'
+  - '"Doraemon" cosplay'
+  attempts: []
+- name: 野比のび太
+  queries:
+  - '"Nobita Nobi" "Doraemon" cosplay'
+  - '"Nobita Nobi" cosplay'
+  attempts: []
+- name: 影山茂夫
+  queries:
+  - '"Shigeo Kageyama" "Mob Psycho 100" cosplay'
+  - '"Shigeo Kageyama" cosplay'
+  attempts: []
+- name: ジェイソン・ボーン
+  queries:
+  - '"Jason Bourne" "Bourne" cosplay'
+  - '"Jason Bourne" cosplay'
+  attempts: []
+- name: ジョン・ウィック
+  queries:
+  - '"John Wick (character)" "John Wick" cosplay'
+  - '"John Wick (character)" cosplay'
+  - '"John Wick" "John Wick" cosplay'
+  - '"John Wick" cosplay'
+  attempts: []
+- name: イーサン・ハント
+  queries:
+  - '"Ethan Hunt" "Mission: Impossible" cosplay'
+  - '"Ethan Hunt" cosplay'
+  attempts: []
+- name: エレン・リプリー
+  queries:
+  - '"Ellen Ripley" "Alien" cosplay'
+  - '"Ellen Ripley" cosplay'
+  attempts: []
+- name: トリニティ
+  queries:
+  - '"Trinity (The Matrix)" "The Matrix" cosplay'
+  - '"Trinity (The Matrix)" cosplay'
+  - '"Trinity" "The Matrix" cosplay'
+  - '"Trinity" cosplay'
+  attempts: []
+- name: サラ・コナー
+  queries:
+  - '"Sarah Connor (Terminator)" "Terminator" cosplay'
+  - '"Sarah Connor (Terminator)" cosplay'
+  - '"Sarah Connor" "Terminator" cosplay'
+  - '"Sarah Connor" cosplay'
+  attempts: []
+- name: T-1000
+  queries:
+  - '"T-1000" "Terminator" cosplay'
+  - '"T-1000" cosplay'
+  attempts:
+  - query: '"T-1000" "Terminator" cosplay'
+    title: T-1000
+    source: flickr
+    license: by
+    score: 57
+  - query: '"T-1000" cosplay'
+    title: T-1000
+    source: flickr
+    license: by
+    score: 57
+- name: ザ・ブライド
+  queries:
+  - '"The Bride (Kill Bill)" "Kill Bill" cosplay'
+  - '"The Bride (Kill Bill)" cosplay'
+  - '"The Bride" "Kill Bill" cosplay'
+  - '"The Bride" cosplay'
+  attempts: []
+- name: サイクロップス
+  queries:
+  - '"Cyclops (Marvel Comics)" "Marvel" cosplay'
+  - '"Cyclops (Marvel Comics)" cosplay'
+  - '"Cyclops" "Marvel" cosplay'
+  - '"Cyclops" cosplay'
+  attempts: []
+- name: ストーム
+  queries:
+  - '"Storm (Marvel Comics)" "Marvel" cosplay'
+  - '"Storm (Marvel Comics)" cosplay'
+  - '"Storm" "Marvel" cosplay'
+  - '"Storm" cosplay'
+  attempts: []
+- name: ブラック・ウィドウ
+  queries:
+  - '"Black Widow (Natasha Romanoff)" "Marvel" cosplay'
+  - '"Black Widow (Natasha Romanoff)" cosplay'
+  - '"Black Widow" "Marvel" cosplay'
+  - '"Black Widow" cosplay'
+  attempts: []
+- name: サイボーグ
+  queries:
+  - '"Cyborg (DC Comics)" "DC" cosplay'
+  - '"Cyborg (DC Comics)" cosplay'
+  - '"Cyborg" "DC" cosplay'
+  - '"Cyborg" cosplay'
+  attempts: []
+- name: レイヴン
+  queries:
+  - '"Raven (DC Comics)" "DC" cosplay'
+  - '"Raven (DC Comics)" cosplay'
+  - '"Raven" "DC" cosplay'
+  - '"Raven" cosplay'
+  attempts: []
+- name: 人造人間18号
+  queries:
+  - '"Android 18" "Dragon Ball" cosplay'
+  - '"Android 18" cosplay'
+  attempts:
+  - query: '"Android 18" cosplay'
+    title: 'Anime Expo 2017: Krillin and Android 18'
+    source: flickr
+    license: by-sa
+    score: 65
+  - query: '"Android 18" cosplay'
+    title: Androids 17 & 18-7
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Android 18" cosplay'
+    title: Androids 17 & 18-4
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Android 18" cosplay'
+    title: Androids 17 & 18-1
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Android 18" cosplay'
+    title: Androids 17 & 18-3
+    source: flickr
+    license: by
+    score: 65
+- name: ヤムチャ
+  queries:
+  - '"Yamcha" "Dragon Ball" cosplay'
+  - '"Yamcha" cosplay'
+  attempts: []
+- name: ブルマ
+  queries:
+  - '"Bulma" "Dragon Ball" cosplay'
+  - '"Bulma" cosplay'
+  attempts:
+  - query: '"Bulma" cosplay'
+    title: Bulma & Trunks cosplayers
+    source: flickr
+    license: by-sa
+    score: 65
+  - query: '"Bulma" cosplay'
+    title: Goku & Bulma cosplayers
+    source: flickr
+    license: by-sa
+    score: 65
+  - query: '"Bulma" cosplay'
+    title: Long Beach Comic Expo day 2-18
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Bulma" cosplay'
+    title: Long Beach Comic Expo day 2-19
+    source: flickr
+    license: by
+    score: 25
+- name: ブロリー
+  queries:
+  - '"Broly" "Dragon Ball" cosplay'
+  - '"Broly" cosplay'
+  attempts:
+  - query: '"Broly" "Dragon Ball" cosplay'
+    title: Broly cosplayer
+    source: flickr
+    license: by-sa
+    score: 65
+  - query: '"Broly" "Dragon Ball" cosplay'
+    title: Broly cosplayer
+    source: flickr
+    license: by-sa
+    score: 65
+  - query: '"Broly" cosplay'
+    title: Broly cosplayer
+    source: flickr
+    license: by-sa
+    score: 65
+  - query: '"Broly" cosplay'
+    title: Broly cosplayer
+    source: flickr
+    license: by-sa
+    score: 65
+- name: ビルス
+  queries:
+  - '"Beerus" "Dragon Ball" cosplay'
+  - '"Beerus" cosplay'
+  attempts: []
+- name: ゴクウブラック
+  queries:
+  - '"Goku Black" "Dragon Ball" cosplay'
+  - '"Goku Black" cosplay'
+  attempts: []
+- name: 日向ネジ
+  queries:
+  - '"Neji Hyuga" "Naruto" cosplay'
+  - '"Neji Hyuga" cosplay'
+  attempts: []
+- name: 奈良シカマル
+  queries:
+  - '"Shikamaru Nara" "Naruto" cosplay'
+  - '"Shikamaru Nara" cosplay'
+  attempts: []
+- name: 大蛇丸
+  queries:
+  - '"Orochimaru" "Naruto" cosplay'
+  - '"Orochimaru" cosplay'
+  - '"Orochimaru (Naruto)" "Naruto" cosplay'
+  - '"Orochimaru (Naruto)" cosplay'
+  attempts:
+  - query: '"Orochimaru" "Naruto" cosplay'
+    title: Orochimaru & Kankuro
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Orochimaru" "Naruto" cosplay'
+    title: Naruto
+    source: flickr
+    license: by
+    score: -61
+  - query: '"Orochimaru" "Naruto" cosplay'
+    title: Lucca Comics 2009
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Orochimaru" cosplay'
+    title: Orochimaru & Kankuro
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Orochimaru" cosplay'
+    title: Naruto
+    source: flickr
+    license: by
+    score: -61
+- name: ペイン
+  queries:
+  - '"Pain" "Naruto" cosplay'
+  - '"Pain" cosplay'
+  - '"Pain (Naruto)" "Naruto" cosplay'
+  - '"Pain (Naruto)" cosplay'
+  attempts:
+  - query: '"Pain" "Naruto" cosplay'
+    title: Naruto!
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Pain" "Naruto" cosplay'
+    title: Naruto!
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Pain" "Naruto" cosplay'
+    title: Animethon 20
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Pain" "Naruto" cosplay'
+    title: Animethon 20
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Pain" "Naruto" cosplay'
+    title: Animethon 20
+    source: flickr
+    license: by
+    score: 17
+- name: うずまきボルト
+  queries:
+  - '"Boruto Uzumaki" "Naruto" cosplay'
+  - '"Boruto Uzumaki" cosplay'
+  attempts: []
+- name: ウソップ
+  queries:
+  - '"Usopp" "One Piece" cosplay'
+  - '"Usopp" cosplay'
+  attempts:
+  - query: '"Usopp" "One Piece" cosplay'
+    title: Cosplay - AWA14 - Chopper and Usopp
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Usopp" cosplay'
+    title: Cosplay - AWA14 - Chopper and Usopp
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Usopp" cosplay'
+    title: Usopp
+    source: flickr
+    license: by
+    score: 49
+- name: フランキー
+  queries:
+  - '"Franky" "One Piece" cosplay'
+  - '"Franky" cosplay'
+  - '"Franky (One Piece)" "One Piece" cosplay'
+  - '"Franky (One Piece)" cosplay'
+  attempts:
+  - query: '"Franky" cosplay'
+    title: franky
+    source: flickr
+    license: by
+    score: 65
+  - query: '"Franky" cosplay'
+    title: IMG_0087_s
+    source: flickr
+    license: by-sa
+    score: 9
+- name: ブルック
+  queries:
+  - '"Brook" "One Piece" cosplay'
+  - '"Brook" cosplay'
+  - '"Brook (One Piece)" "One Piece" cosplay'
+  - '"Brook (One Piece)" cosplay'
+  attempts:
+  - query: '"Brook" cosplay'
+    title: Dabbing Brook
+    source: flickr
+    license: by-sa
+    score: 65
+  - query: '"Brook" cosplay'
+    title: Brook
+    source: flickr
+    license: by-sa
+    score: 65
+  - query: '"Brook" cosplay'
+    title: Brook and Gojo
+    source: flickr
+    license: by-sa
+    score: 65
+- name: ジンベエ
+  queries:
+  - '"Jinbe" "One Piece" cosplay'
+  - '"Jinbe" cosplay'
+  attempts: []
+- name: ポートガス・D・エース
+  queries:
+  - '"Portgas D. Ace" "One Piece" cosplay'
+  - '"Portgas D. Ace" cosplay'
+  attempts: []
+- name: サボ
+  queries:
+  - '"Sabo" "One Piece" cosplay'
+  - '"Sabo" cosplay'
+  - '"Sabo (One Piece)" "One Piece" cosplay'
+  - '"Sabo (One Piece)" cosplay'
+  attempts: []
+- name: ドンキホーテ・ドフラミンゴ
+  queries:
+  - '"Donquixote Doflamingo" "One Piece" cosplay'
+  - '"Donquixote Doflamingo" cosplay'
+  attempts: []
+- name: カイドウ
+  queries:
+  - '"Kaido" "One Piece" cosplay'
+  - '"Kaido" cosplay'
+  attempts: []
+- name: バギー
+  queries:
+  - '"Buggy" "One Piece" cosplay'
+  - '"Buggy" cosplay'
+  - '"Buggy (One Piece)" "One Piece" cosplay'
+  - '"Buggy (One Piece)" cosplay'
+  attempts:
+  - query: '"Buggy" "One Piece" cosplay'
+    title: AX - One Piece
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Buggy" cosplay'
+    title: AX - One Piece
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Buggy" cosplay'
+    title: Lucca comics and games 2016
+    source: flickr
+    license: by-sa
+    score: -69
+- name: クロコダイル
+  queries:
+  - '"Crocodile" "One Piece" cosplay'
+  - '"Crocodile" cosplay'
+  - '"Crocodile (One Piece)" "One Piece" cosplay'
+  - '"Crocodile (One Piece)" cosplay'
+  attempts:
+  - query: '"Crocodile" "One Piece" cosplay'
+    title: One Piece
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Crocodile" "One Piece" cosplay'
+    title: Sir Crocodile
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Crocodile" cosplay'
+    title: One Piece
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Crocodile" cosplay'
+    title: Sir Crocodile
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Crocodile" cosplay'
+    title: _1060138
+    source: flickr
+    license: by-sa
+    score: 25
+- name: ジュラキュール・ミホーク
+  queries:
+  - '"Dracule Mihawk" "One Piece" cosplay'
+  - '"Dracule Mihawk" cosplay'
+  attempts:
+  - query: '"Dracule Mihawk" "One Piece" cosplay'
+    title: One Piece
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Dracule Mihawk" cosplay'
+    title: One Piece
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Dracule Mihawk" cosplay'
+    title: Dracule Mihawk
+    source: flickr
+    license: by-sa
+    score: 67
+- name: エドワード・ニューゲート
+  queries:
+  - '"Whitebeard" "One Piece" cosplay'
+  - '"Whitebeard" cosplay'
+  - '"Edward Newgate" "One Piece" cosplay'
+  - '"Edward Newgate" cosplay'
+  attempts: []
+- name: 日番谷冬獅郎
+  queries:
+  - '"Toshiro Hitsugaya" "Bleach" cosplay'
+  - '"Toshiro Hitsugaya" cosplay'
+  - '"Tōshirō Hitsugaya" "Bleach" cosplay'
+  - '"Tōshirō Hitsugaya" cosplay'
+  attempts: []
+- name: 更木剣八
+  queries:
+  - '"Kenpachi Zaraki" "Bleach" cosplay'
+  - '"Kenpachi Zaraki" cosplay'
+  attempts: []
+- name: 四楓院夜一
+  queries:
+  - '"Yoruichi Shihouin" "Bleach" cosplay'
+  - '"Yoruichi Shihouin" cosplay'
+  - '"Yoruichi Shihōin" "Bleach" cosplay'
+  - '"Yoruichi Shihōin" cosplay'
+  attempts: []
+- name: 浦原喜助
+  queries:
+  - '"Kisuke Urahara" "Bleach" cosplay'
+  - '"Kisuke Urahara" cosplay'
+  attempts:
+  - query: '"Kisuke Urahara" "Bleach" cosplay'
+    title: Urahara Cosplay
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Kisuke Urahara" cosplay'
+    title: Urahara Cosplay
+    source: flickr
+    license: by
+    score: 49
+- name: 胡蝶しのぶ
+  queries:
+  - '"Shinobu Kocho" "Demon Slayer" cosplay'
+  - '"Shinobu Kocho" cosplay'
+  attempts: []
+- name: 時透無一郎
+  queries:
+  - '"Muichiro Tokito" "Demon Slayer" cosplay'
+  - '"Muichiro Tokito" cosplay'
+  attempts: []
+- name: 宇髄天元
+  queries:
+  - '"Tengen Uzui" "Demon Slayer" cosplay'
+  - '"Tengen Uzui" cosplay'
+  attempts: []
+- name: 悲鳴嶼行冥
+  queries:
+  - '"Gyomei Himejima" "Demon Slayer" cosplay'
+  - '"Gyomei Himejima" cosplay'
+  attempts: []
+- name: 不死川実弥
+  queries:
+  - '"Sanemi Shinazugawa" "Demon Slayer" cosplay'
+  - '"Sanemi Shinazugawa" cosplay'
+  attempts: []
+- name: 鬼舞辻無惨
+  queries:
+  - '"Muzan Kibutsuji" "Demon Slayer" cosplay'
+  - '"Muzan Kibutsuji" cosplay'
+  attempts: []
+- name: 猗窩座
+  queries:
+  - '"Akaza" "Demon Slayer" cosplay'
+  - '"Akaza" cosplay'
+  - '"Akaza (Demon Slayer)" "Demon Slayer" cosplay'
+  - '"Akaza (Demon Slayer)" cosplay'
+  attempts: []
+- name: ナツ・ドラグニル
+  queries:
+  - '"Natsu Dragneel" "Fairy Tail" cosplay'
+  - '"Natsu Dragneel" cosplay'
+  attempts:
+  - query: '"Natsu Dragneel" cosplay'
+    title: blue and pink
+    source: flickr
+    license: by
+    score: 43
+- name: エルヴィン・スミス
+  queries:
+  - '"Erwin Smith" "Attack on Titan" cosplay'
+  - '"Erwin Smith" cosplay'
+  - '"Erwin Smith (Attack on Titan)" "Attack on Titan" cosplay'
+  - '"Erwin Smith (Attack on Titan)" cosplay'
+  attempts: []
+- name: アニ・レオンハート
+  queries:
+  - '"Annie Leonhart" "Attack on Titan" cosplay'
+  - '"Annie Leonhart" cosplay'
+  attempts: []
+- name: ジーク・イェーガー
+  queries:
+  - '"Zeke Yeager" "Attack on Titan" cosplay'
+  - '"Zeke Yeager" cosplay'
+  attempts: []
+- name: ヒストリア・レイス
+  queries:
+  - '"Historia Reiss" "Attack on Titan" cosplay'
+  - '"Historia Reiss" cosplay'
+  attempts:
+  - query: '"Historia Reiss" "Attack on Titan" cosplay'
+    title: '#AMG14 Day 2 Cosplay: 004'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Historia Reiss" "Attack on Titan" cosplay'
+    title: '#AMG14 Day 2 Cosplay: 003'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Historia Reiss" cosplay'
+    title: '#AMG14 Day 2 Cosplay: 004'
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Historia Reiss" cosplay'
+    title: '#AMG14 Day 2 Cosplay: 003'
+    source: flickr
+    license: by
+    score: 43
+- name: 禪院真希
+  queries:
+  - '"Maki Zenin" "Jujutsu Kaisen" cosplay'
+  - '"Maki Zenin" cosplay'
+  attempts: []
+- name: シャドウ・ギャラクティカ
+  queries:
+  - '"Sailor Galaxia" "Sailor Moon" cosplay'
+  - '"Sailor Galaxia" cosplay'
+  attempts: []
+- name: 乙骨憂太
+  queries:
+  - '"Yuta Okkotsu" "Jujutsu Kaisen" cosplay'
+  - '"Yuta Okkotsu" cosplay'
+  attempts: []
+- name: アシェラッド
+  queries:
+  - '"Askeladd" "Vinland Saga" cosplay'
+  - '"Askeladd" cosplay'
+  attempts: []
+- name: 夏油傑
+  queries:
+  - '"Suguru Geto" "Jujutsu Kaisen" cosplay'
+  - '"Suguru Geto" cosplay'
+  attempts: []
+- name: トルフィン
+  queries:
+  - '"Thorfinn" "Vinland Saga" cosplay'
+  - '"Thorfinn" cosplay'
+  - '"Thorfinn (Vinland Saga)" "Vinland Saga" cosplay'
+  - '"Thorfinn (Vinland Saga)" cosplay'
+  attempts: []
+- name: エンデヴァー
+  queries:
+  - '"Endeavor" "My Hero Academia" cosplay'
+  - '"Endeavor" cosplay'
+  - '"Endeavor (My Hero Academia)" "My Hero Academia" cosplay'
+  - '"Endeavor (My Hero Academia)" cosplay'
+  attempts:
+  - query: '"Endeavor" "My Hero Academia" cosplay'
+    title: De-To 2018
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Endeavor" "My Hero Academia" cosplay'
+    title: De-To 2018
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Endeavor" "My Hero Academia" cosplay'
+    title: De-To 2018
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Endeavor" "My Hero Academia" cosplay'
+    title: De-To 2018
+    source: flickr
+    license: by
+    score: -85
+  - query: '"Endeavor" cosplay'
+    title: Polymanga 2018
+    source: flickr
+    license: by
+    score: -69
+- name: ホークス
+  queries:
+  - '"Hawks" "My Hero Academia" cosplay'
+  - '"Hawks" cosplay'
+  - '"Hawks (My Hero Academia)" "My Hero Academia" cosplay'
+  - '"Hawks (My Hero Academia)" cosplay'
+  attempts: []
+- name: 荼毘
+  queries:
+  - '"Dabi" "My Hero Academia" cosplay'
+  - '"Dabi" cosplay'
+  - '"Dabi (My Hero Academia)" "My Hero Academia" cosplay'
+  - '"Dabi (My Hero Academia)" cosplay'
+  attempts:
+  - query: '"Dabi" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Dabi" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Dabi" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Dabi" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Dabi" "My Hero Academia" cosplay'
+    title: Himiko Togo, Overhaul, Dabi and Evil Deku/Villain Deku cosplay
+    source: flickr
+    license: by-sa
+    score: 49
+- name: トガヒミコ
+  queries:
+  - '"Himiko Toga" "My Hero Academia" cosplay'
+  - '"Himiko Toga" cosplay'
+  attempts:
+  - query: '"Himiko Toga" cosplay'
+    title: Himiko Toga and Deku
+    source: flickr
+    license: by-sa
+    score: 51
+  - query: '"Himiko Toga" cosplay'
+    title: Himiko Toga and Deku
+    source: flickr
+    license: by-sa
+    score: 51
+  - query: '"Himiko Toga" cosplay'
+    title: Himiko Toga and Deku
+    source: flickr
+    license: by-sa
+    score: 51
+- name: 切島鋭児郎
+  queries:
+  - '"Eijiro Kirishima" "My Hero Academia" cosplay'
+  - '"Eijiro Kirishima" cosplay'
+  attempts:
+  - query: '"Eijiro Kirishima" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Eijiro Kirishima" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Eijiro Kirishima" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Eijiro Kirishima" "My Hero Academia" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Eijiro Kirishima" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Groupes
+    source: flickr
+    license: by
+    score: -69
+- name: 蛙吹梅雨
+  queries:
+  - '"Tsuyu Asui" "My Hero Academia" cosplay'
+  - '"Tsuyu Asui" cosplay'
+  attempts: []
+- name: シャア・アズナブル
+  queries:
+  - '"Char Aznable" "Gundam" cosplay'
+  - '"Char Aznable" cosplay'
+  attempts: []
+- name: 相澤消太
+  queries:
+  - '"Shota Aizawa" "My Hero Academia" cosplay'
+  - '"Shota Aizawa" cosplay'
+  attempts: []
+- name: ジョナサン・ジョースター
+  queries:
+  - '"Jonathan Joestar" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Jonathan Joestar" cosplay'
+  attempts: []
+- name: 東方仗助
+  queries:
+  - '"Josuke Higashikata" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Josuke Higashikata" cosplay'
+  attempts: []
+- name: 空条徐倫
+  queries:
+  - '"Jolyne Cujoh" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Jolyne Cujoh" cosplay'
+  attempts: []
+- name: エンリコ・プッチ
+  queries:
+  - '"Enrico Pucci" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Enrico Pucci" cosplay'
+  attempts: []
+- name: 吉良吉影
+  queries:
+  - '"Yoshikage Kira" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Yoshikage Kira" cosplay'
+  attempts: []
+- name: ブローノ・ブチャラティ
+  queries:
+  - '"Bruno Bucciarati" "JoJo''s Bizarre Adventure" cosplay'
+  - '"Bruno Bucciarati" cosplay'
+  attempts: []
+- name: レオリオ
+  queries:
+  - '"Leorio Paradinight" "Hunter x Hunter" cosplay'
+  - '"Leorio Paradinight" cosplay'
+  attempts: []
+- name: クロロ＝ルシルフル
+  queries:
+  - '"Chrollo Lucilfer" "Hunter x Hunter" cosplay'
+  - '"Chrollo Lucilfer" cosplay'
+  attempts: []
+- name: アイザック＝ネテロ
+  queries:
+  - '"Isaac Netero" "Hunter x Hunter" cosplay'
+  - '"Isaac Netero" cosplay'
+  attempts: []
+- name: 武藤遊戯
+  queries:
+  - '"Yugi Mutou" "Yu-Gi-Oh!" cosplay'
+  - '"Yugi Mutou" cosplay'
+  attempts: []
+- name: 海馬瀬人
+  queries:
+  - '"Seto Kaiba" "Yu-Gi-Oh!" cosplay'
+  - '"Seto Kaiba" cosplay'
+  attempts: []
+- name: 城之内克也
+  queries:
+  - '"Joey Wheeler" "Yu-Gi-Oh!" cosplay'
+  - '"Joey Wheeler" cosplay'
+  attempts: []
+- name: ちびうさ
+  queries:
+  - '"Sailor Chibi Moon" "Sailor Moon" cosplay'
+  - '"Sailor Chibi Moon" cosplay'
+  attempts: []
+- name: カスミ
+  queries:
+  - '"Misty" "Pokemon" cosplay'
+  - '"Misty" cosplay'
+  - '"Misty (Pokémon)" "Pokemon" cosplay'
+  - '"Misty (Pokémon)" cosplay'
+  attempts:
+  - query: '"Misty" "Pokemon" cosplay'
+    title: Misty (pokemon)
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Misty" "Pokemon" cosplay'
+    title: Günstige Kostüm pokemon misty Cosplay Kostüme
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Misty" "Pokemon" cosplay'
+    title: Zombie Pokemon
+    source: flickr
+    license: by-sa
+    score: -61
+  - query: '"Misty" "Pokemon" cosplay'
+    title: the crowd goes wild
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Misty" "Pokemon" cosplay'
+    title: Pokemon and Beetlejuice group
+    source: flickr
+    license: by
+    score: 17
+- name: タケシ
+  queries:
+  - '"Brock" "Pokemon" cosplay'
+  - '"Brock" cosplay'
+  - '"Brock (Pokémon)" "Pokemon" cosplay'
+  - '"Brock (Pokémon)" cosplay'
+  attempts:
+  - query: '"Brock" "Pokemon" cosplay'
+    title: 'Fanime 2016: Brock'
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Brock" "Pokemon" cosplay'
+    title: Pokemon and Beetlejuice group
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Brock" "Pokemon" cosplay'
+    title: Pokemon Gang
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Brock" cosplay'
+    title: 'Fanime 2016: Brock'
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Brock" cosplay'
+    title: One Piece
+    source: flickr
+    license: by-sa
+    score: 9
+- name: ムサシ
+  queries:
+  - '"Jessie" "Pokemon" cosplay'
+  - '"Jessie" cosplay'
+  - '"Jessie (Pokémon)" "Pokemon" cosplay'
+  - '"Jessie (Pokémon)" cosplay'
+  attempts:
+  - query: '"Jessie" "Pokemon" cosplay'
+    title: Parasect Gijinka
+    source: flickr
+    license: by-sa
+    score: -61
+  - query: '"Jessie" "Pokemon" cosplay'
+    title: Team CaboCon
+    source: flickr
+    license: by
+    score: -61
+  - query: '"Jessie" "Pokemon" cosplay'
+    title: Team CaboCon
+    source: flickr
+    license: by
+    score: -61
+  - query: '"Jessie" cosplay'
+    title: Saboten-Con Saturday Portraits - Jessie Nigri as Yoko S.T.A.R.S.
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Jessie" cosplay'
+    title: Saboten-Con Saturday Portraits - Jessie Nigri as Yoko S.T.A.R.S.
+    source: flickr
+    license: by
+    score: 49
+- name: コジロウ
+  queries:
+  - '"James" "Pokemon" cosplay'
+  - '"James" cosplay'
+  - '"James (Pokémon)" "Pokemon" cosplay'
+  - '"James (Pokémon)" cosplay'
+  attempts:
+  - query: '"James" "Pokemon" cosplay'
+    title: Günstige Kostüm pokemon Team james Cosplay Kostüme
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"James" "Pokemon" cosplay'
+    title: Team CaboCon
+    source: flickr
+    license: by
+    score: -61
+  - query: '"James" "Pokemon" cosplay'
+    title: Team CaboCon
+    source: flickr
+    license: by
+    score: -61
+  - query: '"James" cosplay'
+    title: Günstige Kostüm pokemon Team james Cosplay Kostüme
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"James" cosplay'
+    title: Captain James T. Myers
+    source: flickr
+    license: by
+    score: 49
+- name: ニャース
+  queries:
+  - '"Meowth" "Pokemon" cosplay'
+  - '"Meowth" cosplay'
+  attempts:
+  - query: '"Meowth" "Pokemon" cosplay'
+    title: Pokemon
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Meowth" cosplay'
+    title: Pokemon
+    source: flickr
+    license: by
+    score: 17
+- name: 渚カヲル
+  queries:
+  - '"Kaworu Nagisa" "Neon Genesis Evangelion" cosplay'
+  - '"Kaworu Nagisa" cosplay'
+  attempts:
+  - query: '"Kaworu Nagisa" cosplay'
+    title: Anime Expo 2014 - Rei and Kaworu cosplay
+    source: flickr
+    license: by-sa
+    score: 57
+- name: ウィンリィ・ロックベル
+  queries:
+  - '"Winry Rockbell" "Fullmetal Alchemist" cosplay'
+  - '"Winry Rockbell" cosplay'
+  attempts: []
+- name: リザ・ホークアイ
+  queries:
+  - '"Riza Hawkeye" "Fullmetal Alchemist" cosplay'
+  - '"Riza Hawkeye" cosplay'
+  attempts:
+  - query: '"Riza Hawkeye" "Fullmetal Alchemist" cosplay'
+    title: JAFAX 16 - Cosplay - Fullmetal Alchemist
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Riza Hawkeye" "Fullmetal Alchemist" cosplay'
+    title: Destination Tokyo 2022
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Riza Hawkeye" "Fullmetal Alchemist" cosplay'
+    title: Destination Tokyo 2022
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Riza Hawkeye" "Fullmetal Alchemist" cosplay'
+    title: Destination Tokyo 2022
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Riza Hawkeye" cosplay'
+    title: JAFAX 16 - Cosplay - Fullmetal Alchemist
+    source: flickr
+    license: by
+    score: 43
+- name: スカー
+  queries:
+  - '"Scar" "Fullmetal Alchemist" cosplay'
+  - '"Scar" cosplay'
+  - '"Scar (Fullmetal Alchemist)" "Fullmetal Alchemist" cosplay'
+  - '"Scar (Fullmetal Alchemist)" cosplay'
+  attempts:
+  - query: '"Scar" cosplay'
+    title: scarface
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Scar" cosplay'
+    title: 4th Annual Comic-Con Zombiewalk
+    source: flickr
+    license: by
+    score: 9
+- name: リューク
+  queries:
+  - '"Ryuk" "Death Note" cosplay'
+  - '"Ryuk" cosplay'
+  - '"Ryuk (Death Note)" "Death Note" cosplay'
+  - '"Ryuk (Death Note)" cosplay'
+  attempts:
+  - query: '"Ryuk" "Death Note" cosplay'
+    title: bug-eyed
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Ryuk" "Death Note" cosplay'
+    title: Ryuk
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Ryuk" cosplay'
+    title: bug-eyed
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Ryuk" cosplay'
+    title: Animethon 20
+    source: flickr
+    license: by
+    score: 25
+  - query: '"Ryuk" cosplay'
+    title: monster dance party
+    source: flickr
+    license: by
+    score: 25
+- name: ニア
+  queries:
+  - '"Near" "Death Note" cosplay'
+  - '"Near" cosplay'
+  - '"Near (Death Note)" "Death Note" cosplay'
+  - '"Near (Death Note)" cosplay'
+  attempts:
+  - query: '"Near" cosplay'
+    title: Cosplay - AWA14 - Spike Spiegel and Faye Valentine
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Near" cosplay'
+    title: Cosplay - AWA14 - Popular Akutsuki
+    source: flickr
+    license: by
+    score: -69
+  - query: '"Near" cosplay'
+    title: 2022-10-29_10-25-56_ILCE-6500_DSC19299_Kiri_DxO
+    source: flickr
+    license: by-sa
+    score: -69
+  - query: '"Near" cosplay'
+    title: 2022-10-29_12-16-28_ILCE-7C_DSCDZ3797_DxO
+    source: flickr
+    license: by-sa
+    score: -69
+  - query: '"Near" cosplay'
+    title: Cosplay - AWA14 - Mario and Princess Peach
+    source: flickr
+    license: by
+    score: -69
+- name: メロ
+  queries:
+  - '"Mello" "Death Note" cosplay'
+  - '"Mello" cosplay'
+  - '"Mello (Death Note)" "Death Note" cosplay'
+  - '"Mello (Death Note)" cosplay'
+  attempts: []
+- name: アーカード
+  queries:
+  - '"Alucard" "Hellsing" cosplay'
+  - '"Alucard" cosplay'
+  - '"Alucard (Hellsing)" "Hellsing" cosplay'
+  - '"Alucard (Hellsing)" cosplay'
+  attempts:
+  - query: '"Alucard" "Hellsing" cosplay'
+    title: Seras and Alucard
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Alucard" "Hellsing" cosplay'
+    title: Cosplay - AWA14 - Alucard
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Alucard" "Hellsing" cosplay'
+    title: New York Comic Con 2015 - Seras & Alucard
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Alucard" "Hellsing" cosplay'
+    title: Rip Van Winkle [work in progress]
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Alucard" "Hellsing" cosplay'
+    title: Animethon XII
+    source: flickr
+    license: by-sa
+    score: 17
+- name: カレン・シュタットフェルト
+  queries:
+  - '"Kallen Stadtfeld" "Code Geass" cosplay'
+  - '"Kallen Stadtfeld" cosplay'
+  attempts:
+  - query: '"Kallen Stadtfeld" "Code Geass" cosplay'
+    title: JAFAX 16 - Cosplay - Code Geass
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Kallen Stadtfeld" cosplay'
+    title: JAFAX 16 - Cosplay - Code Geass
+    source: flickr
+    license: by
+    score: 43
+  - query: '"Kallen Stadtfeld" cosplay'
+    title: Cosplay - AWA15 - Kallen Stadtfeld and Lloyd Asplund
+    source: flickr
+    license: by
+    score: 67
+- name: C.C.
+  queries:
+  - '"C.C. (Code Geass)" "Code Geass" cosplay'
+  - '"C.C. (Code Geass)" cosplay'
+  - '"C.C." "Code Geass" cosplay'
+  - '"C.C." cosplay'
+  attempts:
+  - query: '"C.C. (Code Geass)" "Code Geass" cosplay'
+    title: C.C - Code Geass
+    source: flickr
+    license: by
+    score: -53
+  - query: '"C.C. (Code Geass)" "Code Geass" cosplay'
+    title: Brincando com espelhos - C.C - Code Geass
+    source: flickr
+    license: by
+    score: -53
+  - query: '"C.C. (Code Geass)" "Code Geass" cosplay'
+    title: Um drink? - C.C - Code Geass
+    source: flickr
+    license: by
+    score: -53
+  - query: '"C.C. (Code Geass)" cosplay'
+    title: C.C - Code Geass
+    source: flickr
+    license: by
+    score: -53
+  - query: '"C.C. (Code Geass)" cosplay'
+    title: Brincando com espelhos - C.C - Code Geass
+    source: flickr
+    license: by
+    score: -53
+- name: 志々雄真実
+  queries:
+  - '"Makoto Shishio" "Rurouni Kenshin" cosplay'
+  - '"Makoto Shishio" cosplay'
+  - '"Shishio Makoto" "Rurouni Kenshin" cosplay'
+  - '"Shishio Makoto" cosplay'
+  attempts: []
+- name: ラオウ
+  queries:
+  - '"Raoh" "Fist of the North Star" cosplay'
+  - '"Raoh" cosplay'
+  attempts: []
+- name: アトム
+  queries:
+  - '"Astro Boy" "Astro Boy" cosplay'
+  - '"Astro Boy" cosplay'
+  - '"Astro Boy (character)" "Astro Boy" cosplay'
+  - '"Astro Boy (character)" cosplay'
+  attempts: []
+- name: 日暮かごめ
+  queries:
+  - '"Kagome Higurashi" "Inuyasha" cosplay'
+  - '"Kagome Higurashi" cosplay'
+  attempts: []
+- name: 殺生丸
+  queries:
+  - '"Sesshomaru" "Inuyasha" cosplay'
+  - '"Sesshomaru" cosplay'
+  attempts:
+  - query: '"Sesshomaru" "Inuyasha" cosplay'
+    title: OKIMG_6020
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Sesshomaru" "Inuyasha" cosplay'
+    title: OKIMG_6025
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Sesshomaru" "Inuyasha" cosplay'
+    title: Nico Robin Strong World cosplay. julio 2012.06a
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Sesshomaru" "Inuyasha" cosplay'
+    title: Sesshomaru and Inuyasha Cosplay
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Sesshomaru" "Inuyasha" cosplay'
+    title: Japan Impact 2019 – Concours Cosplay Individuel
+    source: flickr
+    license: by
+    score: -69
+- name: ラム
+  queries:
+  - '"Lum" "Urusei Yatsura" cosplay'
+  - '"Lum" cosplay'
+  - '"Lum (Urusei Yatsura)" "Urusei Yatsura" cosplay'
+  - '"Lum (Urusei Yatsura)" cosplay'
+  attempts:
+  - query: '"Lum" cosplay'
+    title: 'San Diego Comic-Con 2008: Day 2 - Lum, Supergirl, and Emma Frost'
+    source: flickr
+    license: by-sa
+    score: 49
+- name: 天道あかね
+  queries:
+  - '"Akane Tendo" "Ranma 1/2" cosplay'
+  - '"Akane Tendo" cosplay'
+  attempts: []
+- name: ウォン（MCU）
+  queries:
+  - '"Wong (MCU)" "MCU" cosplay'
+  - '"Wong (MCU)" cosplay'
+  - '"Wong (Marvel Cinematic Universe)" "MCU" cosplay'
+  - '"Wong (Marvel Cinematic Universe)" cosplay'
+  - '"Wong" "MCU" cosplay'
+  - '"Wong" cosplay'
+  attempts: []
+- name: シュリ（MCU）
+  queries:
+  - '"Shuri (MCU)" "MCU" cosplay'
+  - '"Shuri (MCU)" cosplay'
+  - '"Shuri (Marvel Cinematic Universe)" "MCU" cosplay'
+  - '"Shuri (Marvel Cinematic Universe)" cosplay'
+  - '"Shuri" "MCU" cosplay'
+  - '"Shuri" cosplay'
+  attempts: []
+- name: ポー・ダメロン
+  queries:
+  - '"Poe Dameron" "Star Wars" cosplay'
+  - '"Poe Dameron" cosplay'
+  attempts: []
+- name: アラスター・ムーディ
+  queries:
+  - '"Alastor Moody" "Harry Potter" cosplay'
+  - '"Alastor Moody" cosplay'
+  attempts: []
+- name: ハーレイ・クイン（DCEU）
+  queries:
+  - '"Harley Quinn (DCEU)" "DCEU" cosplay'
+  - '"Harley Quinn (DCEU)" cosplay'
+  - '"Harley Quinn (DC Extended Universe)" "DCEU" cosplay'
+  - '"Harley Quinn (DC Extended Universe)" cosplay'
+  - '"Harley Quinn" "DCEU" cosplay'
+  - '"Harley Quinn" cosplay'
+  attempts: []
+- name: クラーク・ケント（DCEU）
+  queries:
+  - '"Clark Kent (DCEU)" "DCEU" cosplay'
+  - '"Clark Kent (DCEU)" cosplay'
+  - '"Clark Kent (DC Extended Universe)" "DCEU" cosplay'
+  - '"Clark Kent (DC Extended Universe)" cosplay'
+  - '"Clark Kent" "DCEU" cosplay'
+  - '"Clark Kent" cosplay'
+  attempts: []
+- name: ブルース・ウェイン（DCEU）
+  queries:
+  - '"Bruce Wayne (DCEU)" "DCEU" cosplay'
+  - '"Bruce Wayne (DCEU)" cosplay'
+  - '"Bruce Wayne (DC Extended Universe)" "DCEU" cosplay'
+  - '"Bruce Wayne (DC Extended Universe)" cosplay'
+  - '"Bruce Wayne" "DCEU" cosplay'
+  - '"Bruce Wayne" cosplay'
+  attempts: []
+- name: ダイアナ・プリンス（DCEU）
+  queries:
+  - '"Diana Prince (DCEU)" "DCEU" cosplay'
+  - '"Diana Prince (DCEU)" cosplay'
+  - '"Diana Prince (DC Extended Universe)" "DCEU" cosplay'
+  - '"Diana Prince (DC Extended Universe)" cosplay'
+  - '"Diana Prince" "DCEU" cosplay'
+  - '"Diana Prince" cosplay'
+  attempts: []
+- name: バリー・アレン（DCEU）
+  queries:
+  - '"Barry Allen (DCEU)" "DCEU" cosplay'
+  - '"Barry Allen (DCEU)" cosplay'
+  - '"Barry Allen (DC Extended Universe)" "DCEU" cosplay'
+  - '"Barry Allen (DC Extended Universe)" cosplay'
+  - '"Barry Allen" "DCEU" cosplay'
+  - '"Barry Allen" cosplay'
+  attempts: []
+- name: サムワイズ・ギャムジー
+  queries:
+  - '"Samwise Gamgee" "The Lord of the Rings" cosplay'
+  - '"Samwise Gamgee" cosplay'
+  attempts: []
+- name: マックス・ロカタンスキー
+  queries:
+  - '"Max Rockatansky" "Mad Max" cosplay'
+  - '"Max Rockatansky" cosplay'
+  attempts: []
+- name: デッカード
+  queries:
+  - '"Rick Deckard" "Blade Runner" cosplay'
+  - '"Rick Deckard" cosplay'
+  attempts: []
+- name: シンバ
+  queries:
+  - '"Simba" "Disney" cosplay'
+  - '"Simba" cosplay'
+  attempts: []
+- name: トニー・モンタナ
+  queries:
+  - '"Tony Montana" "Scarface" cosplay'
+  - '"Tony Montana" cosplay'
+  attempts: []
+- name: ハンニバル・レクター
+  queries:
+  - '"Hannibal Lecter" "Hannibal Lecter" cosplay'
+  - '"Hannibal Lecter" cosplay'
+  attempts: []
+- name: デュード
+  queries:
+  - '"The Dude" "The Big Lebowski" cosplay'
+  - '"The Dude" cosplay'
+  attempts:
+  - query: '"The Dude" cosplay'
+    title: awesome bat-shirt
+    source: flickr
+    license: by
+    score: -61
+  - query: '"The Dude" cosplay'
+    title: There Will Be Peace In Our Times
+    source: flickr
+    license: by
+    score: -69
+  - query: '"The Dude" cosplay'
+    title: I'm the Dude, She's the Dude.
+    source: flickr
+    license: by
+    score: 65
+  - query: '"The Dude" cosplay'
+    title: Sam Sparks w The Dude 4x6 JTPI 8834
+    source: flickr
+    license: by-sa
+    score: 49
+  - query: '"The Dude" cosplay'
+    title: Sam Sparks w The Dude 8x10 JTPI 8834
+    source: flickr
+    license: by-sa
+    score: 49
+- name: マキシマス
+  queries:
+  - '"Maximus" "Gladiator" cosplay'
+  - '"Maximus" cosplay'
+  - '"Maximus Decimus Meridius" "Gladiator" cosplay'
+  - '"Maximus Decimus Meridius" cosplay'
+  attempts: []
+- name: ビースト
+  queries:
+  - '"Beast" "Marvel" cosplay'
+  - '"Beast" cosplay'
+  - '"Beast (Marvel Comics)" "Marvel" cosplay'
+  - '"Beast (Marvel Comics)" cosplay'
+  attempts:
+  - query: '"Beast" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [IV]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Beast" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [II]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Beast" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [V]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Beast" "Marvel" cosplay'
+    title: DragonCon 2011 - Marvel Crossplay
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Beast" "Marvel" cosplay'
+    title: SDCC13 - The original X-Men
+    source: flickr
+    license: by-sa
+    score: 17
+- name: アイスマン
+  queries:
+  - '"Iceman" "Marvel" cosplay'
+  - '"Iceman" cosplay'
+  - '"Iceman (Marvel Comics)" "Marvel" cosplay'
+  - '"Iceman (Marvel Comics)" cosplay'
+  attempts:
+  - query: '"Iceman" "Marvel" cosplay'
+    title: Iceman
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Iceman" "Marvel" cosplay'
+    title: SDCC13 - The original X-Men
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Iceman" "Marvel" cosplay'
+    title: bobby
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Iceman" "Marvel" cosplay'
+    title: Iceman & Aquaman
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Iceman" "Marvel" cosplay'
+    title: Iceman
+    source: flickr
+    license: by
+    score: 57
+- name: ローグ
+  queries:
+  - '"Rogue" "Marvel" cosplay'
+  - '"Rogue" cosplay'
+  - '"Rogue (Marvel Comics)" "Marvel" cosplay'
+  - '"Rogue (Marvel Comics)" cosplay'
+  attempts:
+  - query: '"Rogue" "Marvel" cosplay'
+    title: power siphon Rogue
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Rogue" "Marvel" cosplay'
+    title: Abi Sue Cosplay X-Men Rogue
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Rogue" "Marvel" cosplay'
+    title: A Stark surprise!
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Rogue" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [I]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Rogue" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [IV]
+    source: flickr
+    license: by-sa
+    score: 17
+- name: サイロック
+  queries:
+  - '"Psylocke" "Marvel" cosplay'
+  - '"Psylocke" cosplay'
+  attempts:
+  - query: '"Psylocke" "Marvel" cosplay'
+    title: Dragon*Con trio
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Psylocke" "Marvel" cosplay'
+    title: Cosplay Shoot BTS
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Psylocke" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [I]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Psylocke" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [IV]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Psylocke" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [V]
+    source: flickr
+    license: by-sa
+    score: 17
+- name: アポカリプス
+  queries:
+  - '"Apocalypse" "Marvel" cosplay'
+  - '"Apocalypse" cosplay'
+  - '"Apocalypse (character)" "Marvel" cosplay'
+  - '"Apocalypse (character)" cosplay'
+  attempts:
+  - query: '"Apocalypse" "Marvel" cosplay'
+    title: Blink (Age of Apocalypse and Exiles)
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Apocalypse" "Marvel" cosplay'
+    title: '''I have to stop Apocalypse!'''
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Apocalypse" "Marvel" cosplay'
+    title: WonderCon 2019 - Apocalypse Cosplay
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Apocalypse" "Marvel" cosplay'
+    title: WonderCon 2019 - Apocalypse Cosplay (2)
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Apocalypse" cosplay'
+    title: WonderCon 2019 - Apocalypse Cosplay
+    source: flickr
+    license: by-sa
+    score: 57
+- name: キングピン
+  queries:
+  - '"Kingpin" "Marvel" cosplay'
+  - '"Kingpin" cosplay'
+  - '"Kingpin (character)" "Marvel" cosplay'
+  - '"Kingpin (character)" cosplay'
+  attempts:
+  - query: '"Kingpin" "Marvel" cosplay'
+    title: Marvel Villainy
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Kingpin" "Marvel" cosplay'
+    title: New York Comic Con 2014 - Kingpin
+    source: flickr
+    license: by
+    score: 57
+  - query: '"Kingpin" "Marvel" cosplay'
+    title: Kingpin at C2E2 Marvel Costume Contest 2012
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Kingpin" "Marvel" cosplay'
+    title: Kingpin plots his next caper at Marvel costume contest C2E2 2012
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Kingpin" "Marvel" cosplay'
+    title: 'Kingpin and Ms Marvel! #C2E2 #cosplay'
+    source: flickr
+    license: by-sa
+    score: 57
+- name: カーネイジ
+  queries:
+  - '"Carnage" "Marvel" cosplay'
+  - '"Carnage" cosplay'
+  - '"Carnage (character)" "Marvel" cosplay'
+  - '"Carnage (character)" cosplay'
+  attempts:
+  - query: '"Carnage" "Marvel" cosplay'
+    title: __IMG_0040
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Carnage" "Marvel" cosplay'
+    title: Wondercon 2016 - Carnage Cosplay
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Carnage" "Marvel" cosplay'
+    title: Wondercon 2016 - More Carnage Cosplay
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Carnage" "Marvel" cosplay'
+    title: Wondercon 2016 - Carnage Cosplay (2)
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Carnage" "Marvel" cosplay'
+    title: __IMG_0246_
+    source: flickr
+    license: by-sa
+    score: 17
+- name: ノヴァ
+  queries:
+  - '"Nova" "Marvel" cosplay'
+  - '"Nova" cosplay'
+  - '"Nova (Richard Rider)" "Marvel" cosplay'
+  - '"Nova (Richard Rider)" cosplay'
+  attempts:
+  - query: '"Nova" "Marvel" cosplay'
+    title: Guardians of the Galaxy
+    source: flickr
+    license: by-sa
+    score: 9
+  - query: '"Nova" "Marvel" cosplay'
+    title: Dolly
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Nova" "Marvel" cosplay'
+    title: DJ Judy with some friends
+    source: flickr
+    license: by-sa
+    score: -77
+  - query: '"Nova" "Marvel" cosplay'
+    title: WonderCon 2014 - Nova Recruit Cosplay
+    source: flickr
+    license: by-sa
+    score: 57
+  - query: '"Nova" "Marvel" cosplay'
+    title: Anime Expo 2014 - Nova cosplay
+    source: flickr
+    license: by-sa
+    score: 57
+- name: セントリー
+  queries:
+  - '"Sentry" "Marvel" cosplay'
+  - '"Sentry" cosplay'
+  - '"Sentry (Robert Reynolds)" "Marvel" cosplay'
+  - '"Sentry (Robert Reynolds)" cosplay'
+  attempts:
+  - query: '"Sentry" "Marvel" cosplay'
+    title: Superhero hangout
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Sentry" cosplay'
+    title: Superhero hangout
+    source: flickr
+    license: by
+    score: 17
+  - query: '"Sentry" cosplay'
+    title: 20130607 14.33.10
+    source: flickr
+    license: by
+    score: 9
+- name: シャン・チー
+  queries:
+  - '"Shang-Chi" "Marvel" cosplay'
+  - '"Shang-Chi" cosplay'
+  attempts: []
+- name: ブルズアイ
+  queries:
+  - '"Bullseye" "Marvel" cosplay'
+  - '"Bullseye" cosplay'
+  - '"Bullseye (character)" "Marvel" cosplay'
+  - '"Bullseye (character)" cosplay'
+  attempts:
+  - query: '"Bullseye" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [I]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Bullseye" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [IV]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Bullseye" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [II]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Bullseye" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [V]
+    source: flickr
+    license: by-sa
+    score: 17
+  - query: '"Bullseye" "Marvel" cosplay'
+    title: SDCC13 - Marvel Group Photo [VI]
+    source: flickr
+    license: by-sa
+    score: 17
+- name: ムーンガール
+  queries:
+  - '"Moon Girl" "Marvel" cosplay'
+  - '"Moon Girl" cosplay'
+  - '"Moon Girl (Marvel Comics)" "Marvel" cosplay'
+  - '"Moon Girl (Marvel Comics)" cosplay'
+  attempts:
+  - query: '"Moon Girl" cosplay'
+    title: Moon Girl
+    source: flickr
+    license: by
+    score: 67
+- name: ティム・ドレイク
+  queries:
+  - '"Tim Drake" "DC" cosplay'
+  - '"Tim Drake" cosplay'
+  attempts:
+  - query: '"Tim Drake" cosplay'
+    title: Comic Con 2013 - Tim Drake cosplayer
+    source: flickr
+    license: by
+    score: 67
+- name: ジェイソン・トッド
+  queries:
+  - '"Jason Todd" "DC" cosplay'
+  - '"Jason Todd" cosplay'
+  attempts:
+  - query: '"Jason Todd" "DC" cosplay'
+    title: SDCC13 - The Red Hood
+    source: flickr
+    license: by-sa
+    score: 27
+  - query: '"Jason Todd" cosplay'
+    title: SDCC13 - The Red Hood
+    source: flickr
+    license: by-sa
+    score: 27
+- name: ダミアン・ウェイン
+  queries:
+  - '"Damian Wayne" "DC" cosplay'
+  - '"Damian Wayne" cosplay'
+  attempts: []
+- name: ポイズン・アイビー
+  queries:
+  - '"Poison Ivy" "DC" cosplay'
+  - '"Poison Ivy" cosplay'
+  - '"Poison Ivy (character)" "DC" cosplay'
+  - '"Poison Ivy (character)" cosplay'
+  attempts:
+  - query: '"Poison Ivy" "DC" cosplay'
+    title: Harley Quinn, Doom, Poison Ivy
+    source: flickr
+    license: by
+    score: 67
+  - query: '"Poison Ivy" "DC" cosplay'
+    title: Poison Ivy
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Poison Ivy" "DC" cosplay'
+    title: SDCC13 - Steampunk DC
+    source: flickr
+    license: by-sa
+    score: 27
+  - query: '"Poison Ivy" "DC" cosplay'
+    title: WonderCon 2014 - Batman group cosplay
+    source: flickr
+    license: by-sa
+    score: 27
+  - query: '"Poison Ivy" "DC" cosplay'
+    title: 'San Diego Comic-Con 2008: Day 2 - Poison Ivy'
+    source: flickr
+    license: by-sa
+    score: 67
+- name: キラークロック
+  queries:
+  - '"Killer Croc" "DC" cosplay'
+  - '"Killer Croc" cosplay'
+  attempts:
+  - query: '"Killer Croc" "DC" cosplay'
+    title: 2020-02-23_11-39-59_ILCE-6500_DSC05507_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"Killer Croc" "DC" cosplay'
+    title: 2020-02-23_11-35-23_ILCE-6500_DSC05424_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"Killer Croc" "DC" cosplay'
+    title: 2020-02-23_11-16-01_ILCE-6500_DSC05178_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"Killer Croc" "DC" cosplay'
+    title: 2020-02-23_11-32-51_ILCE-6500_DSC05377_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"Killer Croc" "DC" cosplay'
+    title: 2020-02-23_11-40-34_ILCE-6500_DSC05524_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+- name: スターファイヤー
+  queries:
+  - '"Starfire" "DC" cosplay'
+  - '"Starfire" cosplay'
+  - '"Starfire (Teen Titans)" "DC" cosplay'
+  - '"Starfire (Teen Titans)" cosplay'
+  attempts:
+  - query: '"Starfire" "DC" cosplay'
+    title: New York Comic Con 2014 - Starfire
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Starfire" "DC" cosplay'
+    title: New York Comic Con 2014 - Starfire
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Starfire" "DC" cosplay'
+    title: Wondercon 2016 - Supergirl and Starfire Cosplay
+    source: flickr
+    license: by-sa
+    score: 49
+  - query: '"Starfire" "DC" cosplay'
+    title: New York Comic Con 2016 - Teen Titans
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Starfire" "DC" cosplay'
+    title: WonderCon 2019 - Starfire and Nightwing
+    source: flickr
+    license: by-sa
+    score: 49
+- name: ジョン・コンスタンティン
+  queries:
+  - '"John Constantine" "DC" cosplay'
+  - '"John Constantine" cosplay'
+  attempts:
+  - query: '"John Constantine" "DC" cosplay'
+    title: Trenchcoat Brigade
+    source: flickr
+    license: by-sa
+    score: 9
+  - query: '"John Constantine" "DC" cosplay'
+    title: Wondercon 2016 - John Constantine Cosplay
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"John Constantine" "DC" cosplay'
+    title: 2024-10-26_18-12-44_ILCE-7C_DSC14925_Kiri_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"John Constantine" "DC" cosplay'
+    title: 2024-10-26_18-16-31_ILCE-7CM2_DSCFQ4317_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"John Constantine" "DC" cosplay'
+    title: 2024-10-26_18-03-35_ILCE-7CM2_DSCFQ4062_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+- name: ブルービートル
+  queries:
+  - '"Blue Beetle" "DC" cosplay'
+  - '"Blue Beetle" cosplay'
+  - '"Blue Beetle (Jaime Reyes)" "DC" cosplay'
+  - '"Blue Beetle (Jaime Reyes)" cosplay'
+  attempts:
+  - query: '"Blue Beetle" "DC" cosplay'
+    title: San Diego Comic-Con 2012 - Female Blue Beetle and Booster Gold
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Blue Beetle" "DC" cosplay'
+    title: WonderCon 2013 - Female Booster Gold and Blue Beetle
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Blue Beetle" "DC" cosplay'
+    title: WonderCon 2013 - Booster Gold and Blue Beetle
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Blue Beetle" "DC" cosplay'
+    title: New York Comic Con 2015 - Booster Gold & Blue Beetle
+    source: flickr
+    license: by
+    score: 67
+  - query: '"Blue Beetle" "DC" cosplay'
+    title: Special Edition NYC 2015 - Zatanna, Booster Gold & Blue Beetle
+    source: flickr
+    license: by
+    score: 67
+- name: レイ・パーマー
+  queries:
+  - '"Atom" "DC" cosplay'
+  - '"Atom" cosplay'
+  - '"Atom (Ray Palmer)" "DC" cosplay'
+  - '"Atom (Ray Palmer)" cosplay'
+  attempts:
+  - query: '"Atom" cosplay'
+    title: Atom Eve & Rex Splode - Invencible - Image Comics
+    source: flickr
+    license: by-sa
+    score: 49
+  - query: '"Atom" cosplay'
+    title: 001DSC_2143
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Atom" cosplay'
+    title: 007DSC_2188
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Atom" cosplay'
+    title: 002DSC_2159
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Atom" cosplay'
+    title: 010DSC_2287
+    source: flickr
+    license: by
+    score: 9
+- name: ドゥームズデイ
+  queries:
+  - '"Doomsday" "DC" cosplay'
+  - '"Doomsday" cosplay'
+  - '"Doomsday (DC Comics)" "DC" cosplay'
+  - '"Doomsday (DC Comics)" cosplay'
+  attempts:
+  - query: '"Doomsday" "DC" cosplay'
+    title: Supergirl - New 52 - DC Comics
+    source: flickr
+    license: by-sa
+    score: 9
+  - query: '"Doomsday" cosplay'
+    title: Supergirl - New 52 - DC Comics
+    source: flickr
+    license: by-sa
+    score: 9
+- name: ロボ
+  queries:
+  - '"Lobo" "DC" cosplay'
+  - '"Lobo" cosplay'
+  - '"Lobo (DC Comics)" "DC" cosplay'
+  - '"Lobo (DC Comics)" cosplay'
+  attempts:
+  - query: '"Lobo" cosplay'
+    title: Antiheroes
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Lobo" cosplay'
+    title: main woman
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Lobo" cosplay'
+    title: San Diego Comic-Con 2014 - Lobo and Scarlet Spider
+    source: flickr
+    license: by-sa
+    score: 49
+  - query: '"Lobo" cosplay'
+    title: Sascha Lobo
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Lobo" cosplay'
+    title: Sascha Lobo
+    source: flickr
+    license: by
+    score: 49
+- name: エトリガン
+  queries:
+  - '"Etrigan" "DC" cosplay'
+  - '"Etrigan" cosplay'
+  - '"Etrigan the Demon" "DC" cosplay'
+  - '"Etrigan the Demon" cosplay'
+  attempts: []
+- name: スペクター
+  queries:
+  - '"The Spectre" "DC" cosplay'
+  - '"The Spectre" cosplay'
+  - '"Spectre (DC Comics character)" "DC" cosplay'
+  - '"Spectre (DC Comics character)" cosplay'
+  - '"Spectre" "DC" cosplay'
+  - '"Spectre" cosplay'
+  attempts: []
+- name: ハントレス
+  queries:
+  - '"Huntress" "DC" cosplay'
+  - '"Huntress" cosplay'
+  - '"Huntress (Helena Bertinelli)" "DC" cosplay'
+  - '"Huntress (Helena Bertinelli)" cosplay'
+  attempts:
+  - query: '"Huntress" "DC" cosplay'
+    title: Huntress
+    source: flickr
+    license: by-sa
+    score: 49
+  - query: '"Huntress" "DC" cosplay'
+    title: San Diego Comic-Con 2012 - Nightwing and Huntress
+    source: flickr
+    license: by-sa
+    score: 49
+  - query: '"Huntress" "DC" cosplay'
+    title: BCC_2013_047bas
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Huntress" "DC" cosplay'
+    title: Wondercon 2016 - Huntress Cosplay
+    source: flickr
+    license: by-sa
+    score: 49
+  - query: '"Huntress" "DC" cosplay'
+    title: Special Edition NYC 2014 - Huntress
+    source: flickr
+    license: by
+    score: 49
+- name: カサンドラ・カイン
+  queries:
+  - '"Cassandra Cain" "DC" cosplay'
+  - '"Cassandra Cain" cosplay'
+  attempts:
+  - query: '"Cassandra Cain" "DC" cosplay'
+    title: Wondercon 2016 - Katana and Cassandra Cain
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Cassandra Cain" "DC" cosplay'
+    title: Wondercon 2016 - Katana and Cassandra Cain (2)
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Cassandra Cain" cosplay'
+    title: Wondercon 2016 - Katana and Cassandra Cain
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Cassandra Cain" cosplay'
+    title: Wondercon 2016 - Katana and Cassandra Cain (2)
+    source: flickr
+    license: by-sa
+    score: 67
+- name: ステファニー・ブラウン
+  queries:
+  - '"Stephanie Brown" "DC" cosplay'
+  - '"Stephanie Brown" cosplay'
+  - '"Stephanie Brown (character)" "DC" cosplay'
+  - '"Stephanie Brown (character)" cosplay'
+  attempts: []
+- name: コナー・ケント
+  queries:
+  - '"Superboy" "DC" cosplay'
+  - '"Superboy" cosplay'
+  - '"Superboy (Kon-El)" "DC" cosplay'
+  - '"Superboy (Kon-El)" cosplay'
+  attempts:
+  - query: '"Superboy" "DC" cosplay'
+    title: Big Apple Comic Con 2015 - Black Canary, Power Girl & Superboy
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Superboy" "DC" cosplay'
+    title: Big Apple Comic Con 2015 - Power Girl, Black Canary, Superboy
+    source: flickr
+    license: by
+    score: 49
+  - query: '"Superboy" cosplay'
+    title: Superboy
+    source: flickr
+    license: by-sa
+    score: 49
+  - query: '"Superboy" cosplay'
+    title: teen titans
+    source: flickr
+    license: by
+    score: 9
+  - query: '"Superboy" cosplay'
+    title: to' up superman
+    source: flickr
+    license: by
+    score: 9
+- name: パワーガール
+  queries:
+  - '"Power Girl" "DC" cosplay'
+  - '"Power Girl" cosplay'
+  attempts:
+  - query: '"Power Girl" "DC" cosplay'
+    title: Power Girl 03
+    source: flickr
+    license: by
+    score: 67
+  - query: '"Power Girl" "DC" cosplay'
+    title: New York Comic Con 2014 - Power Girl
+    source: flickr
+    license: by
+    score: 67
+  - query: '"Power Girl" "DC" cosplay'
+    title: Power Girl 05
+    source: flickr
+    license: by
+    score: 67
+  - query: '"Power Girl" "DC" cosplay'
+    title: Power Girl 04
+    source: flickr
+    license: by
+    score: 67
+  - query: '"Power Girl" "DC" cosplay'
+    title: Power Girl 01
+    source: flickr
+    license: by
+    score: 67
+- name: ミスター・ミラクル
+  queries:
+  - '"Mister Miracle" "DC" cosplay'
+  - '"Mister Miracle" cosplay'
+  attempts:
+  - query: '"Mister Miracle" cosplay'
+    title: Mister Miracle
+    source: flickr
+    license: by
+    score: 67
+- name: ビッグ・バルダ
+  queries:
+  - '"Big Barda" "DC" cosplay'
+  - '"Big Barda" cosplay'
+  attempts:
+  - query: '"Big Barda" "DC" cosplay'
+    title: WonderCon 2014 - Big Barda Cosplay
+    source: flickr
+    license: by-sa
+    score: 67
+  - query: '"Big Barda" cosplay'
+    title: WonderCon 2014 - Big Barda Cosplay
+    source: flickr
+    license: by-sa
+    score: 67
+- name: ヴァンダル・サベッジ
+  queries:
+  - '"Vandal Savage" "DC" cosplay'
+  - '"Vandal Savage" cosplay'
+  attempts:
+  - query: '"Vandal Savage" cosplay'
+    title: 2022-03-05_13-16-08_ILCE-7C_DSCAJ9665_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"Vandal Savage" cosplay'
+    title: 2022-03-05_13-08-02_ILCE-7C_DSCAJ9539_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"Vandal Savage" cosplay'
+    title: 2022-03-05_13-08-41_ILCE-7C_DSCAJ9545_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"Vandal Savage" cosplay'
+    title: 2022-03-05_13-24-49_ILCE-7C_DSCAJ9777_DxO
+    source: flickr
+    license: by-sa
+    score: -85
+  - query: '"Vandal Savage" cosplay'
+    title: 2022-03-05_13-15-55_ILCE-6500_DSC14481_Kiri_DxO
+    source: flickr
+    license: by-sa
+    score: -85

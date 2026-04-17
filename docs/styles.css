@@ -293,6 +293,21 @@ input {
   text-decoration: none;
 }
 
+.image-credit {
+  max-width: 520px;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.image-credit a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
 .flag-line {
   display: flex;
   flex-wrap: wrap;
