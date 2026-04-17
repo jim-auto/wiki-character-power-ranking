@@ -340,6 +340,7 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Saitama_(One-Punch_Man)
   source_resolution: universe_fallback
   source_wikidata_id: Q62397809
+  image_wikidata_id: Q62397809
   source_wikidata_label_ja: サイタマ
 - name: セーラームーン
   wikipedia_url: https://ja.wikipedia.org/wiki/%E6%9C%88%E9%87%8E%E3%81%86%E3%81%95%E3%81%8E
@@ -1578,6 +1579,7 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Tsunade_(Naruto)
   source_name_original: Tsunade
   source_wikidata_id: Q718482
+  image_wikidata_id: Q10924557
   source_wikidata_label_ja: NARUTO -ナルト-の登場人物
 - name: 大蛇丸
   wikipedia_url: https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%9B%87%E4%B8%B8_(NARUTO)
@@ -1594,6 +1596,7 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Minato_Namikaze
   source_name_original: Minato Namikaze
   source_wikidata_id: Q718482
+  image_wikidata_id: Q700540
   source_wikidata_label_ja: NARUTO -ナルト-の登場人物
 - name: ペイン
   wikipedia_url: https://ja.wikipedia.org/wiki/NARUTO_-%E3%83%8A%E3%83%AB%E3%83%88-%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9

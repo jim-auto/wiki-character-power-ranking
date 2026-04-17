@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import time
 from collections import Counter
 from datetime import datetime, timezone
@@ -23,6 +24,8 @@ from fetch_wikipedia import DEFAULT_USER_AGENT, build_title_aliases, parse_wikip
 
 DEFAULT_INPUT = Path("data/characters.yaml")
 DEFAULT_REPORT = Path("data/image_fetch_report.yaml")
+COMMONS_SEARCH_LIMIT = 10
+COMMONS_SEARCH_MIN_SCORE = 18
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -78,13 +81,21 @@ def build_pageprops_url(host: str, titles: list[str]) -> str:
     }, quote_via=quote)}"
 
 
-def build_wikidata_entities_url(qids: list[str]) -> str:
-    return f"https://www.wikidata.org/w/api.php?{urlencode({
+def build_wikidata_entities_url(
+    qids: list[str],
+    *,
+    props: str = "claims",
+    languages: str | None = None,
+) -> str:
+    params = {
         'action': 'wbgetentities',
         'format': 'json',
         'ids': '|'.join(qids),
-        'props': 'claims',
-    }, quote_via=quote)}"
+        'props': props,
+    }
+    if languages:
+        params["languages"] = languages
+    return f"https://www.wikidata.org/w/api.php?{urlencode(params, quote_via=quote)}"
 
 
 def build_commons_imageinfo_url(filenames: list[str], thumb_size: int) -> str:
@@ -96,6 +107,17 @@ def build_commons_imageinfo_url(filenames: list[str], thumb_size: int) -> str:
         'iiprop': 'url',
         'iiurlwidth': thumb_size,
         'titles': '|'.join(titles),
+    }, quote_via=quote)}"
+
+
+def build_commons_search_url(query: str, limit: int) -> str:
+    return f"https://commons.wikimedia.org/w/api.php?{urlencode({
+        'action': 'query',
+        'format': 'json',
+        'list': 'search',
+        'srnamespace': 6,
+        'srlimit': limit,
+        'srsearch': query,
     }, quote_via=quote)}"
 
 
@@ -223,6 +245,68 @@ def fetch_wikidata_p18_filenames(
     return result
 
 
+def claim_string_values(claims: dict[str, Any], property_id: str) -> list[str]:
+    values: list[str] = []
+    for claim in claims.get(property_id, []) or []:
+        value = claim.get("mainsnak", {}).get("datavalue", {}).get("value")
+        if isinstance(value, str):
+            values.append(value)
+    return values
+
+
+def normalize_commons_category(category: str) -> str:
+    if category.startswith("Category:"):
+        return category.removeprefix("Category:").strip()
+    return category.strip()
+
+
+def fetch_wikidata_image_metadata(
+    qids: list[str],
+    *,
+    timeout: int,
+    user_agent: str,
+    batch_size: int,
+    sleep_seconds: float,
+) -> dict[str, dict[str, Any]]:
+    result: dict[str, dict[str, Any]] = {}
+    for batch in chunked(qids, batch_size):
+        payload = request_json(
+            build_wikidata_entities_url(batch, props="claims|labels|sitelinks", languages="ja|en"),
+            timeout=timeout,
+            user_agent=user_agent,
+        )
+        entities = payload.get("entities", {})
+        for qid in batch:
+            entity = entities.get(qid) or {}
+            claims = entity.get("claims", {})
+            labels = entity.get("labels", {})
+            categories = [
+                normalize_commons_category(category)
+                for category in claim_string_values(claims, "P373")
+            ]
+            commons_title = (entity.get("sitelinks", {}).get("commonswiki") or {}).get("title")
+            if isinstance(commons_title, str) and commons_title.startswith("Category:"):
+                categories.append(normalize_commons_category(commons_title))
+            result[qid] = {
+                "p18_filenames": [
+                    filename
+                    for filename in claim_string_values(claims, "P18")
+                    if not is_likely_non_character_image(filename)
+                ],
+                "commons_categories": sorted(set(category for category in categories if category)),
+                "labels": {
+                    language: str(value.get("value"))
+                    for language, value in labels.items()
+                    if isinstance(value, dict) and value.get("value")
+                },
+            }
+
+        if sleep_seconds > 0:
+            time.sleep(sleep_seconds)
+
+    return result
+
+
 def fetch_commons_thumbnails(
     filenames: list[str],
     *,
@@ -256,6 +340,119 @@ def fetch_commons_thumbnails(
 
         if sleep_seconds > 0:
             time.sleep(sleep_seconds)
+
+    return result
+
+
+def filename_from_file_title(title: str) -> str | None:
+    if not title.startswith("File:"):
+        return None
+    filename = title.removeprefix("File:").strip()
+    if not filename or is_likely_non_character_image(filename):
+        return None
+    return filename
+
+
+def text_tokens(text: str) -> set[str]:
+    lowered = text.casefold()
+    tokens = {
+        token
+        for token in re.split(r"[^0-9a-zA-Z]+", lowered)
+        if len(token) >= 3
+    }
+    return tokens - {
+        "and",
+        "anime",
+        "character",
+        "characters",
+        "comic",
+        "comics",
+        "film",
+        "from",
+        "list",
+        "manga",
+        "movie",
+        "the",
+    }
+
+
+def score_commons_filename(filename: str, contexts: list[str]) -> int:
+    normalized = filename.casefold()
+    if is_likely_non_character_image(filename):
+        return -100
+
+    score = 0
+    if any(term in normalized for term in ("cosplay", "cosplayer", "costume")):
+        score += 20
+    if any(term in normalized for term in ("booth", "paper bag", "paper_bag", "t-shirt", "t_shirt")):
+        score -= 12
+
+    tokens: set[str] = set()
+    for context in contexts:
+        tokens.update(text_tokens(context))
+    matched_tokens = [token for token in tokens if token in normalized]
+    score += len(matched_tokens) * 5
+    if len(matched_tokens) >= 2:
+        score += 5
+    return score
+
+
+def search_queries_for_metadata(metadata: dict[str, Any]) -> tuple[list[str], list[str]]:
+    contexts: list[str] = []
+    labels = metadata.get("labels") or {}
+    for language in ("en", "ja"):
+        label = labels.get(language)
+        if label:
+            contexts.append(str(label))
+    contexts.extend(str(category) for category in metadata.get("commons_categories") or [])
+
+    queries: list[str] = []
+    for context in contexts:
+        text = normalize_commons_category(context)
+        if not text:
+            continue
+        if "(" in text and ")" in text:
+            base, remainder = text.split("(", 1)
+            detail = remainder.split(")", 1)[0]
+            if base.strip() and detail.strip():
+                queries.append(f'"{base.strip()}" "{detail.strip()}" cosplay')
+        queries.append(f'"{text}" cosplay')
+
+    return list(dict.fromkeys(queries)), list(dict.fromkeys(contexts))
+
+
+def fetch_commons_search_filenames(
+    metadata_by_qid: dict[str, dict[str, Any]],
+    *,
+    timeout: int,
+    user_agent: str,
+    sleep_seconds: float,
+) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for qid, metadata in metadata_by_qid.items():
+        queries, contexts = search_queries_for_metadata(metadata)
+        best_filename: str | None = None
+        best_score = -100
+        for query in queries:
+            payload = request_json(
+                build_commons_search_url(query, COMMONS_SEARCH_LIMIT),
+                timeout=timeout,
+                user_agent=user_agent,
+            )
+            for row in payload.get("query", {}).get("search", []) or []:
+                filename = filename_from_file_title(str(row.get("title") or ""))
+                if not filename:
+                    continue
+                score = score_commons_filename(filename, contexts)
+                if score > best_score:
+                    best_filename = filename
+                    best_score = score
+
+            if sleep_seconds > 0:
+                time.sleep(sleep_seconds)
+
+        if best_filename and best_score >= COMMONS_SEARCH_MIN_SCORE:
+            result[qid] = best_filename
 
     return result
 
@@ -316,22 +513,28 @@ def fetch_wikidata_images(
 def fetch_source_wikidata_images(
     qids: list[str],
     *,
+    commons_search_qids: set[str],
     timeout: int,
     user_agent: str,
     thumb_size: int,
     batch_size: int,
     sleep_seconds: float,
 ) -> dict[str, dict[str, Any]]:
-    filenames_by_qid = fetch_wikidata_p18_filenames(
+    metadata_by_qid = fetch_wikidata_image_metadata(
         qids,
         timeout=timeout,
         user_agent=user_agent,
         batch_size=batch_size,
         sleep_seconds=sleep_seconds,
     )
-    filenames = sorted(set(filenames_by_qid.values()))
-    commons_images = fetch_commons_thumbnails(
-        filenames,
+    p18_filenames_by_qid: dict[str, str] = {}
+    for qid, metadata in metadata_by_qid.items():
+        filenames = metadata.get("p18_filenames") or []
+        if filenames:
+            p18_filenames_by_qid[qid] = str(filenames[0])
+
+    p18_commons_images = fetch_commons_thumbnails(
+        sorted(set(p18_filenames_by_qid.values())),
         timeout=timeout,
         user_agent=user_agent,
         thumb_size=thumb_size,
@@ -340,15 +543,45 @@ def fetch_source_wikidata_images(
     )
 
     result: dict[str, dict[str, Any]] = {}
-    for qid, filename in filenames_by_qid.items():
-        image = commons_images.get(filename)
+    for qid, filename in p18_filenames_by_qid.items():
+        image = p18_commons_images.get(filename)
         if not image:
             continue
         result[qid] = {
             "image_url": image["image_url"],
             "pageimage": filename,
             "wikidata_item": qid,
-            "source": "wikidata P18 via source_wikidata_id",
+            "source": "wikidata P18 via character_wikidata_id",
+        }
+
+    remaining_metadata = {
+        qid: metadata
+        for qid, metadata in metadata_by_qid.items()
+        if qid not in result and qid in commons_search_qids and metadata.get("commons_categories")
+    }
+    search_filenames_by_qid = fetch_commons_search_filenames(
+        remaining_metadata,
+        timeout=timeout,
+        user_agent=user_agent,
+        sleep_seconds=sleep_seconds,
+    )
+    search_commons_images = fetch_commons_thumbnails(
+        sorted(set(search_filenames_by_qid.values())),
+        timeout=timeout,
+        user_agent=user_agent,
+        thumb_size=thumb_size,
+        batch_size=batch_size,
+        sleep_seconds=sleep_seconds,
+    )
+    for qid, filename in search_filenames_by_qid.items():
+        image = search_commons_images.get(filename)
+        if not image:
+            continue
+        result[qid] = {
+            "image_url": image["image_url"],
+            "pageimage": filename,
+            "wikidata_item": qid,
+            "source": "commons search via character_wikidata_id",
         }
     return result
 
@@ -371,6 +604,10 @@ def is_likely_non_character_image(pageimage: str) -> bool:
 def clear_image_fields(character: dict[str, Any]) -> None:
     for key in ("image_url", "image_source", "image_alt", "image_pageimage"):
         character.pop(key, None)
+
+
+def character_image_wikidata_id(character: dict[str, Any]) -> str:
+    return str(character.get("image_wikidata_id") or character.get("source_wikidata_id") or "")
 
 
 def update_characters(
@@ -427,14 +664,20 @@ def update_characters(
         images.update(wikidata_images)
         source_qids = sorted(
             {
-                str(character.get("source_wikidata_id"))
+                character_image_wikidata_id(character)
                 for character in characters
-                if character.get("source_wikidata_id")
+                if character_image_wikidata_id(character)
                 and str(character.get("wikipedia_url") or "") not in images
             }
         )
+        commons_search_qids = {
+            str(character.get("image_wikidata_id"))
+            for character in characters
+            if character.get("image_wikidata_id")
+        }
         source_wikidata_images = fetch_source_wikidata_images(
             source_qids,
+            commons_search_qids=commons_search_qids,
             timeout=timeout,
             user_agent=user_agent,
             thumb_size=thumb_size,
@@ -449,7 +692,7 @@ def update_characters(
         url = str(character.get("wikipedia_url") or "")
         image = images.get(url)
         if not image:
-            qid = str(character.get("source_wikidata_id") or "")
+            qid = character_image_wikidata_id(character)
             image = source_wikidata_images.get(qid)
             if image:
                 source_wikidata_count += 1

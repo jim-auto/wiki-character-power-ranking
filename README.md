@@ -120,7 +120,7 @@ character:
 
 `condition_flags` は、GitHub Pages UIで条件オン/オフ検索をするためのフラグです。超能力あり、改造あり、技術/装備、魔法/呪い、武器あり、人間以外、神格、宇宙人、ロボット/AI、格闘、軍人/兵士、リーダー、天才/探偵、変身、不死/再生を扱います。
 
-`collection_tags` はUIの大分類フィルタ用タグです。現在は `jump_manga`、`marvel`、`dc` を付与します。`image_url` は日本語版Wikipediaの `pageimages` API、日本語版Wikipediaページに紐づくWikidata P18、またはキャラクター固有の `source_wikidata_id` に紐づくWikidata P18から取得した表示用サムネイルです。共有ページは作品ロゴや集合画像になりやすいため、画像取得では既定でページ画像をスキップし、キャラクター固有Wikidata画像で補完します。
+`collection_tags` はUIの大分類フィルタ用タグです。現在は `jump_manga`、`marvel`、`dc` を付与します。`image_url` は日本語版Wikipediaの `pageimages` API、日本語版Wikipediaページに紐づくWikidata P18、キャラクター固有のWikidata P18、または明示した `image_wikidata_id` のCommons検索から取得した表示用サムネイルです。共有ページは作品ロゴや集合画像になりやすいため、画像取得では既定でページ画像をスキップし、キャラクター固有Wikidata画像で補完します。
 
 `versions` はキャラクターの時点別データです。通常キャラと同じ抽出・スコアリングを行い、バトル比較では `A時点` / `B時点` に一致した version のスコアを使用します。最初のサンプルとしてNARUTO系6キャラクターに `中忍試験時点` を追加しています。
 
@@ -192,7 +192,7 @@ python src/export_site_data.py
 8. 日本語版Wikipediaの表示用サムネイルを取得する
 9. GitHub Pages用の `docs/data/characters.json` を出力する
 
-画像取得は採点とは独立しています。`src/fetch_wikipedia_images.py` はまず日本語版Wikipediaの `pageimages` を使い、足りないページは日本語版Wikipediaの `pageprops` で紐づくWikidata P18画像へフォールバックします。さらにキャラクター固有の `source_wikidata_id` がある場合は、そのWikidata P18画像でも補完します。明らかなロゴやSVGは除外します。サムネイルがないキャラクターはUI側で頭文字プレースホルダーを表示します。
+画像取得は採点とは独立しています。`src/fetch_wikipedia_images.py` はまず日本語版Wikipediaの `pageimages` を使い、足りないページは日本語版Wikipediaの `pageprops` で紐づくWikidata P18画像へフォールバックします。さらにキャラクター固有のWikidata P18画像でも補完します。`image_wikidata_id` を明示したキャラクターは、P18がない場合だけCommons検索でコスプレ等の自由画像を探します。明らかなロゴやSVGは除外します。サムネイルがないキャラクターはUI側で頭文字プレースホルダーを表示します。
 
 より長い本文を試す場合は、REST HTML本文をプレーンテキスト化するモードも使えます。Wikipedia側の429制限を受けた場合は、`Retry-After` に従って待機するか、`rest-summary` に戻します。
 
@@ -329,7 +329,7 @@ https://jim-auto.github.io/wiki-character-power-ranking/
 ## 初期データ
 
 現在のサンプルデータは501キャラクターです。全レコードの `wikipedia_url` は日本語版Wikipediaを指します。
-GitHub Pages用JSONには、ジャンプ漫画143件、Marvel 105件、DC 76件のコレクションタグが含まれます。日本語版Wikipediaの単独ページ、ページに紐づくWikidata P18、キャラクター固有Wikidata P18から取得できた表示用サムネイルは229件です。
+GitHub Pages用JSONには、ジャンプ漫画143件、Marvel 105件、DC 76件のコレクションタグが含まれます。日本語版Wikipediaの単独ページ、ページに紐づくWikidata P18、キャラクター固有Wikidata P18、明示した `image_wikidata_id` のCommons検索から取得できた表示用サムネイルは232件です。
 
 代表例:
 
