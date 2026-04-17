@@ -313,6 +313,46 @@ def fetch_wikidata_images(
     return result
 
 
+def fetch_source_wikidata_images(
+    qids: list[str],
+    *,
+    timeout: int,
+    user_agent: str,
+    thumb_size: int,
+    batch_size: int,
+    sleep_seconds: float,
+) -> dict[str, dict[str, Any]]:
+    filenames_by_qid = fetch_wikidata_p18_filenames(
+        qids,
+        timeout=timeout,
+        user_agent=user_agent,
+        batch_size=batch_size,
+        sleep_seconds=sleep_seconds,
+    )
+    filenames = sorted(set(filenames_by_qid.values()))
+    commons_images = fetch_commons_thumbnails(
+        filenames,
+        timeout=timeout,
+        user_agent=user_agent,
+        thumb_size=thumb_size,
+        batch_size=batch_size,
+        sleep_seconds=sleep_seconds,
+    )
+
+    result: dict[str, dict[str, Any]] = {}
+    for qid, filename in filenames_by_qid.items():
+        image = commons_images.get(filename)
+        if not image:
+            continue
+        result[qid] = {
+            "image_url": image["image_url"],
+            "pageimage": filename,
+            "wikidata_item": qid,
+            "source": "wikidata P18 via source_wikidata_id",
+        }
+    return result
+
+
 def is_likely_non_character_image(pageimage: str) -> bool:
     normalized = pageimage.casefold()
     blocked_terms = [
@@ -372,6 +412,7 @@ def update_characters(
     pageimage_count = len(images)
 
     wikidata_count = 0
+    source_wikidata_images: dict[str, dict[str, Any]] = {}
     if wikidata_fallback:
         fallback_candidates = [candidate for candidate in candidates if candidate[0] not in images]
         wikidata_images = fetch_wikidata_images(
@@ -384,12 +425,34 @@ def update_characters(
         )
         wikidata_count = len(wikidata_images)
         images.update(wikidata_images)
+        source_qids = sorted(
+            {
+                str(character.get("source_wikidata_id"))
+                for character in characters
+                if character.get("source_wikidata_id")
+                and str(character.get("wikipedia_url") or "") not in images
+            }
+        )
+        source_wikidata_images = fetch_source_wikidata_images(
+            source_qids,
+            timeout=timeout,
+            user_agent=user_agent,
+            thumb_size=thumb_size,
+            batch_size=batch_size,
+            sleep_seconds=sleep_seconds,
+        )
 
     found_items: list[dict[str, Any]] = []
     missing_items: list[dict[str, Any]] = []
+    source_wikidata_count = 0
     for character in characters:
         url = str(character.get("wikipedia_url") or "")
         image = images.get(url)
+        if not image:
+            qid = str(character.get("source_wikidata_id") or "")
+            image = source_wikidata_images.get(qid)
+            if image:
+                source_wikidata_count += 1
         if not image:
             if not any(item["name"] == character.get("name") and item["url"] == url for item in skipped_shared):
                 missing_items.append({"name": character.get("name"), "url": url})
@@ -417,8 +480,10 @@ def update_characters(
         "total_characters": len(characters),
         "candidate_pages": len(candidates),
         "images_found": len(found_items),
+        "characters_without_images": sum(1 for character in characters if not character.get("image_url")),
         "pageimage_images_found": pageimage_count,
         "wikidata_images_found": wikidata_count,
+        "source_wikidata_images_found": source_wikidata_count,
         "source_counts": dict(source_counts),
         "missing_images": len(missing_items),
         "skipped_shared_pages": len(skipped_shared),

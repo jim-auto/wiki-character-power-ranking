@@ -1,13 +1,16 @@
-generated_at: '2026-04-17T12:11:14.236841+00:00'
+generated_at: '2026-04-17T13:41:43.580024+00:00'
 total_characters: 501
 candidate_pages: 350
-images_found: 166
+images_found: 229
+characters_without_images: 272
 pageimage_images_found: 85
 wikidata_images_found: 81
+source_wikidata_images_found: 63
 source_counts:
   wikidata P18 via ja.wikipedia.org pageprops: 81
   ja.wikipedia.org pageimages: 85
-missing_images: 184
+  wikidata P18 via source_wikidata_id: 63
+missing_images: 174
 skipped_shared_pages: 151
 items:
 - name: 孫悟空
@@ -59,6 +62,13 @@ items:
   wikipedia_title: モンキー・D・ルフィ
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q477948
+- name: ライナー・ブラウン
+  url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Reiner_Braun._Nein_zu_Kriegen_2023_01.jpg/500px-Reiner_Braun._Nein_zu_Kriegen_2023_01.jpg
+  pageimage: Reiner Braun. Nein zu Kriegen 2023 01.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q19575873
 - name: ピカチュウ
   url: https://ja.wikipedia.org/wiki/%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Pikachu_Parade_%2814905092432%29.jpg/500px-Pikachu_Parade_%2814905092432%29.jpg
@@ -66,6 +76,76 @@ items:
   wikipedia_title: ピカチュウ
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q9351
+- name: キャプテン・アメリカ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Chris_Evans_as_Steve_Rogers_aka_Captain_America_%2834407349161%29.jpg/500px-Chris_Evans_as_Steve_Rogers_aka_Captain_America_%2834407349161%29.jpg
+  pageimage: Chris Evans as Steve Rogers aka Captain America (34407349161).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24022098
+- name: ソー（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Chris_Hemsworth_%2836109076521%29.jpg/500px-Chris_Hemsworth_%2836109076521%29.jpg
+  pageimage: Chris Hemsworth (36109076521).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24046102
+- name: ドクター・ストレンジ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Benedict_Cumberbatch_on_the_set_of_Doctor_Strange_%28cropped%29.jpg/500px-Benedict_Cumberbatch_on_the_set_of_Doctor_Strange_%28cropped%29.jpg
+  pageimage: Benedict Cumberbatch on the set of Doctor Strange (cropped).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24034722
+- name: サノス（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Thanos.png/500px-Thanos.png
+  pageimage: Thanos.png
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q64825451
+- name: ブラックパンサー（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/DibujoPicoWilliamGutierrez.jpg/500px-DibujoPicoWilliamGutierrez.jpg
+  pageimage: DibujoPicoWilliamGutierrez.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24004885
+- name: キャプテン・マーベル（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Brie_Larson_by_Gage_Skidmore.jpg/500px-Brie_Larson_by_Gage_Skidmore.jpg
+  pageimage: Brie Larson by Gage Skidmore.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q64658380
+- name: ロキ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Tom_Hiddleston_by_Gage_Skidmore_%28cropped%29.jpg/500px-Tom_Hiddleston_by_Gage_Skidmore_%28cropped%29.jpg
+  pageimage: Tom Hiddleston by Gage Skidmore (cropped).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24046118
+- name: ヴィジョン（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Paul_Bettany_%2848469131797%29_%28cropped%29.jpg/500px-Paul_Bettany_%2848469131797%29_%28cropped%29.jpg
+  pageimage: Paul Bettany (48469131797) (cropped).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24022584
+- name: ブラック・ウィドウ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Scarlett_Johansson_4%2C_2012.jpg/500px-Scarlett_Johansson_4%2C_2012.jpg
+  pageimage: Scarlett Johansson 4, 2012.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q23895063
+- name: ハルク（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Mark_Ruffalo_%2836243137665%29_%28cropped%29.jpg/500px-Mark_Ruffalo_%2836243137665%29_%28cropped%29.jpg
+  pageimage: Mark Ruffalo (36243137665) (cropped).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24050117
 - name: ヨーダ
   url: https://ja.wikipedia.org/wiki/%E3%83%A8%E3%83%BC%E3%83%80
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/2021-10-31_11-09-16_sf-connexion-Colmar.jpg/500px-2021-10-31_11-09-16_sf-connexion-Colmar.jpg
@@ -178,6 +258,13 @@ items:
   wikipedia_title: ジョーカー (バットマン)
   source: ja.wikipedia.org pageimages
   wikidata_item: null
+- name: フラッシュ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/SDCC_2014_-_Flash_%287752984350%29.jpg/500px-SDCC_2014_-_Flash_%287752984350%29.jpg
+  pageimage: SDCC 2014 - Flash (7752984350).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2258938
 - name: アクアマン
   url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%9E%E3%83%B3
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Chris_Hardwick_%26_Jason_Momoa_%2835368589944%29_%28cropped%29.jpg/500px-Chris_Hardwick_%26_Jason_Momoa_%2835368589944%29_%28cropped%29.jpg
@@ -185,6 +272,13 @@ items:
   wikipedia_title: アクアマン
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q623059
+- name: グリーンランタン
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Dragon_Con_2013_-_Injustice_Green_Lantern_%289694254229%29.jpg/500px-Dragon_Con_2013_-_Injustice_Green_Lantern_%289694254229%29.jpg
+  pageimage: Dragon Con 2013 - Injustice Green Lantern (9694254229).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2345627
 - name: マーシャン・マンハンター
   url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%BB%E3%83%9E%E3%83%B3%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Dragon_Con_2013_-_Martian_Manhunter_%289661398421%29.jpg/500px-Dragon_Con_2013_-_Martian_Manhunter_%289661398421%29.jpg
@@ -276,6 +370,13 @@ items:
   wikipedia_title: デッドプール
   source: ja.wikipedia.org pageimages
   wikidata_item: null
+- name: パワー
+  url: https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%AF%E3%83%BC_(%E3%83%81%E3%82%A7%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%9E%E3%83%B3)
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Tomie_as_Power_standing%2C_front_view_20230527a.jpg/500px-Tomie_as_Power_standing%2C_front_view_20230527a.jpg
+  pageimage: Tomie as Power standing, front view 20230527a.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q112225524
 - name: 惣流・アスカ・ラングレー
   url: https://ja.wikipedia.org/wiki/%E6%83%A3%E6%B5%81%E3%83%BB%E3%82%A2%E3%82%B9%E3%82%AB%E3%83%BB%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Asuka_Langley_Shikinami_taxi_in_Sapporo_%288503582796%29.jpg/500px-Asuka_Langley_Shikinami_taxi_in_Sapporo_%288503582796%29.jpg
@@ -297,6 +398,13 @@ items:
   wikipedia_title: ジェームズ・ボンド
   source: ja.wikipedia.org pageimages
   wikidata_item: null
+- name: ロッキー・バルボア
+  url: https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%83%E3%82%AD%E3%83%BC_%28%E6%98%A0%E7%94%BB%29
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sylvester_Stallone_Rocky_VI_2005.jpg/500px-Sylvester_Stallone_Rocky_VI_2005.jpg
+  pageimage: Sylvester Stallone Rocky VI 2005.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2289535
 - name: ジョン・ランボー
   url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%A9%E3%83%B3%E3%83%9C%E3%83%BC
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/John_Rambo.jpg/500px-John_Rambo.jpg
@@ -409,6 +517,34 @@ items:
   wikipedia_title: メイス・ウィンドゥ
   source: ja.wikipedia.org pageimages
   wikidata_item: null
+- name: エージェント・スミス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9_%28%E6%98%A0%E7%94%BB%29
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Warner_Brothers_VIP_studio_tour_-_Matrix_mannequins_%282862323128%29.jpg/500px-Warner_Brothers_VIP_studio_tour_-_Matrix_mannequins_%282862323128%29.jpg
+  pageimage: Warner Brothers VIP studio tour - Matrix mannequins (2862323128).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2085488
+- name: モーフィアス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9_%28%E6%98%A0%E7%94%BB%29
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/SDCC_15_-_Morpheus_%2819058120103%29.jpg/500px-SDCC_15_-_Morpheus_%2819058120103%29.jpg
+  pageimage: SDCC 15 - Morpheus (19058120103).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q1750842
+- name: カットニス・エヴァディーン
+  url: https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%B3%E3%82%AC%E3%83%BC%E3%83%BB%E3%82%B2%E3%83%BC%E3%83%A0
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Katniss_Everdeen_%28Jennifer_Lawrence%29_figure_at_Madame_Tussauds_London_%2831139647115%29.jpg/500px-Katniss_Everdeen_%28Jennifer_Lawrence%29_figure_at_Madame_Tussauds_London_%2831139647115%29.jpg
+  pageimage: Katniss Everdeen (Jennifer Lawrence) figure at Madame Tussauds London (31139647115).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2071301
+- name: ジーン・グレイ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Jean_Grey_2015_Calgary_Expo_%E2%80%93_Calgary_Comic_%26_Entertainment_Expo_%2817031961118%29.jpg/500px-Jean_Grey_2015_Calgary_Expo_%E2%80%93_Calgary_Comic_%26_Entertainment_Expo_%2817031961118%29.jpg
+  pageimage: Jean Grey 2015 Calgary Expo – Calgary Comic & Entertainment Expo (17031961118).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q5350072
 - name: プロフェッサーX
   url: https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%83%95%E3%82%A7%E3%83%83%E3%82%B5%E3%83%BCX_(%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF)
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/SDCC13_-_The_original_X-Men_%289348050080%29_%28cropped%29.jpg/500px-SDCC13_-_The_original_X-Men_%289348050080%29_%28cropped%29.jpg
@@ -479,6 +615,13 @@ items:
   wikipedia_title: パニッシャー
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q729150
+- name: ゴーストライダー
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Ghost_Rider.jpg/500px-Ghost_Rider.jpg
+  pageimage: Ghost Rider.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q836748
 - name: ブレイド
   url: https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AC%E3%82%A4%E3%83%89_(%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF)
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/WW_Chicago_2012_-_Blade_%287792012908%29.jpg/500px-WW_Chicago_2012_-_Blade_%287792012908%29.jpg
@@ -535,6 +678,13 @@ items:
   wikipedia_title: ディック・グレイソン
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q660051
+- name: ナイトウィング
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nightwing_cosplay.jpg/500px-Nightwing_cosplay.jpg
+  pageimage: Nightwing cosplay.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q686623
 - name: バットガール
   url: https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%83%88%E3%82%AC%E3%83%BC%E3%83%AB
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Yvonne_Craig_Batgirl.JPG/500px-Yvonne_Craig_Batgirl.JPG
@@ -556,6 +706,13 @@ items:
   wikipedia_title: ブラックキャナリー
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q599124
+- name: 人造人間17号
+  url: https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Android_Gingerbread_%282.3%29.jpg/500px-Android_Gingerbread_%282.3%29.jpg
+  pageimage: Android Gingerbread (2.3).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q79611
 - name: うちはオビト
   url: https://ja.wikipedia.org/wiki/%E3%81%86%E3%81%A1%E3%81%AF%E3%82%AA%E3%83%93%E3%83%88
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Akatki.jpg/500px-Akatki.jpg
@@ -577,6 +734,97 @@ items:
   wikipedia_title: ミュウツー
   source: ja.wikipedia.org pageimages
   wikidata_item: null
+- name: ピーター・パーカー
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Tom_Holland_by_Gage_Skidmore.jpg/500px-Tom_Holland_by_Gage_Skidmore.jpg
+  pageimage: Tom Holland by Gage Skidmore.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q23991129
+- name: クリント・バートン
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Jeremy_Renner_%2848470881006%29.jpg/500px-Jeremy_Renner_%2848470881006%29.jpg
+  pageimage: Jeremy Renner (48470881006).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24026688
+- name: サム・ウィルソン（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/2021-10-8_to_2021-10-9_-_NYCC_%28Batch_Edits_-_148%29_%2851573374738%29.jpg/500px-2021-10-8_to_2021-10-9_-_NYCC_%28Batch_Edits_-_148%29_%2851573374738%29.jpg
+  pageimage: 2021-10-8 to 2021-10-9 - NYCC (Batch Edits - 148) (51573374738).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24022345
+- name: バッキー・バーンズ（マーベル・シネマティック・ユニバース）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Sebastian_Stan_%2848469158106%29.jpg/500px-Sebastian_Stan_%2848469158106%29.jpg
+  pageimage: Sebastian Stan (48469158106).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q23991694
+- name: スコット・ラング（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/D23_Expo_2015_Ant-Man_%283%29.jpg/500px-D23_Expo_2015_Ant-Man_%283%29.jpg
+  pageimage: D23 Expo 2015 Ant-Man (3).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24026703
+- name: ホープ・ヴァン・ダイン（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Hope_van_Dyne_Cosplayer_at_Dragon_Con_2017.jpg/500px-Hope_van_Dyne_Cosplayer_at_Dragon_Con_2017.jpg
+  pageimage: Hope van Dyne Cosplayer at Dragon Con 2017.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24050133
+- name: ピーター・クイル
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chris_Pratt_by_Gage_Skidmore_3.jpg/500px-Chris_Pratt_by_Gage_Skidmore_3.jpg
+  pageimage: Chris Pratt by Gage Skidmore 3.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24050065
+- name: ガモーラ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Zoe_Saldana_by_Gage_Skidmore_3.jpg/500px-Zoe_Saldana_by_Gage_Skidmore_3.jpg
+  pageimage: Zoe Saldana by Gage Skidmore 3.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24050072
+- name: ドラックス（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Dave_Bautista_by_Gage_Skidmore_2.jpg/500px-Dave_Bautista_by_Gage_Skidmore_2.jpg
+  pageimage: Dave Bautista by Gage Skidmore 2.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24050079
+- name: グルート（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/C2E2_2016_Contest_-_Groot_%2834170224005%29.jpg/500px-C2E2_2016_Contest_-_Groot_%2834170224005%29.jpg
+  pageimage: C2E2 2016 Contest - Groot (34170224005).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24050083
+- name: ニック・フューリー（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Nick_Fury_in_New_York_Comic_Con_2013.jpg/500px-Nick_Fury_in_New_York_Comic_Con_2013.jpg
+  pageimage: Nick Fury in New York Comic Con 2013.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q23900377
+- name: ネビュラ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Karen_Gillan_by_Gage_Skidmore_3.jpg/500px-Karen_Gillan_by_Gage_Skidmore_3.jpg
+  pageimage: Karen Gillan by Gage Skidmore 3.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24050097
+- name: マンティス（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NYCC_Friday_2022_by_Curlyrnd_186.jpg/500px-NYCC_Friday_2022_by_Curlyrnd_186.jpg
+  pageimage: NYCC Friday 2022 by Curlyrnd 186.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q24050108
 - name: アソーカ・タノ
   url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%BD%E3%83%BC%E3%82%AB%E3%83%BB%E3%82%BF%E3%83%8E
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Ahsoka_Tano_costume.jpg/500px-Ahsoka_Tano_costume.jpg
@@ -640,6 +888,13 @@ items:
   wikipedia_title: マンダロリアン (スター・ウォーズのキャラクター)
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q79325377
+- name: チャイルド
+  url: https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%AD%E3%83%BC%E3%82%B0%E3%83%BC
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/El_Mandaloriano_y_Baby_Yoda_A74008620250206.jpg/500px-El_Mandaloriano_y_Baby_Yoda_A74008620250206.jpg
+  pageimage: El Mandaloriano y Baby Yoda A74008620250206.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q77001957
 - name: ロン・ウィーズリー
   url: https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%B3%E3%83%BB%E3%82%A6%E3%82%A3%E3%83%BC%E3%82%BA%E3%83%AA%E3%83%BC
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/The_Making_of_Harry_Potter_29-05-2012_%287181102459%29.jpg/500px-The_Making_of_Harry_Potter_29-05-2012_%287181102459%29.jpg
@@ -654,6 +909,20 @@ items:
   wikipedia_title: セブルス・スネイプ
   source: ja.wikipedia.org pageimages
   wikidata_item: null
+- name: ルビウス・ハグリッド
+  url: https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%93%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%8F%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/The_Making_of_Harry_Potter_29-05-2012_%28Rubeus_Hagrid%29.jpg/500px-The_Making_of_Harry_Potter_29-05-2012_%28Rubeus_Hagrid%29.jpg
+  pageimage: The Making of Harry Potter 29-05-2012 (Rubeus Hagrid).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q177439
+- name: ドラコ・マルフォイ
+  url: https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B3%E3%83%BB%E3%83%9E%E3%83%AB%E3%83%95%E3%82%A9%E3%82%A4
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Draco_Malfoy_fanart_-_Cor-Sa.jpg/500px-Draco_Malfoy_fanart_-_Cor-Sa.jpg
+  pageimage: Draco Malfoy fanart - Cor-Sa.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q179641
 - name: シリウス・ブラック
   url: https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%AA%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Claremont_square%2C_Islington_%284%29_-_geograph.org.uk_-_1523975.jpg/500px-Claremont_square%2C_Islington_%284%29_-_geograph.org.uk_-_1523975.jpg
@@ -668,6 +937,20 @@ items:
   wikipedia_title: 死喰い人
   source: ja.wikipedia.org pageimages
   wikidata_item: null
+- name: ミネルバ・マクゴナガル
+  url: https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%8D%E3%83%AB%E3%83%90%E3%83%BB%E3%83%9E%E3%82%AF%E3%82%B4%E3%83%8A%E3%82%AC%E3%83%AB
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/The_Making_of_Harry_Potter_29-05-2012_%287172838439%29.jpg/500px-The_Making_of_Harry_Potter_29-05-2012_%287172838439%29.jpg
+  pageimage: The Making of Harry Potter 29-05-2012 (7172838439).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q192179
+- name: ジニー・ウィーズリー
+  url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%8B%E3%83%BC%E3%83%BB%E3%82%A6%E3%82%A3%E3%83%BC%E3%82%BA%E3%83%AA%E3%83%BC
+  image_url: https://upload.wikimedia.org/wikipedia/commons/2/2c/Ginny_Weasley_fanart_-_Cor-Sa.jpg
+  pageimage: Ginny Weasley fanart - Cor-Sa.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q187923
 - name: ジョーカー（ダークナイト）
   url: https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%8A%E3%82%A4%E3%83%88
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/The_Dark_Knight_European_Premier_-_Leicester_square2.jpg/500px-The_Dark_Knight_European_Premier_-_Leicester_square2.jpg
@@ -724,6 +1007,13 @@ items:
   wikipedia_title: アルウェン
   source: ja.wikipedia.org pageimages
   wikidata_item: null
+- name: フュリオサ大隊長
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%83%E3%83%89%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/FIDM_Museum_-_Film_costumes_-_Mad_Max-_Fury_Road_%2824279782153%29.jpg/500px-FIDM_Museum_-_Film_costumes_-_Mad_Max-_Fury_Road_%2824279782153%29.jpg
+  pageimage: FIDM Museum - Film costumes - Mad Max- Fury Road (24279782153).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q20647453
 - name: マーティ・マクフライ
   url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BB%E3%83%9E%E3%82%AF%E3%83%95%E3%83%A9%E3%82%A4
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Cosplay_of_Marty_McFly_2015_%28cropped%29.jpg/500px-Cosplay_of_Marty_McFly_2015_%28cropped%29.jpg
@@ -731,6 +1021,27 @@ items:
   wikipedia_title: マーティ・マクフライ
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q2338941
+- name: エメット・ブラウン
+  url: https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%82%AF%E3%83%BB%E3%83%88%E3%82%A5%E3%83%BB%E3%82%B6%E3%83%BB%E3%83%95%E3%83%A5%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Doctor_Emmett_Brown_Back_to_the_Future_Cosplay.jpg/500px-Doctor_Emmett_Brown_Back_to_the_Future_Cosplay.jpg
+  pageimage: Doctor Emmett Brown Back to the Future Cosplay.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2337004
+- name: ジェイク・サリー
+  url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC_%28%E6%98%A0%E7%94%BB%29
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Avatar_Flight_of_Passage_%2833825582954%29.jpg/500px-Avatar_Flight_of_Passage_%2833825582954%29.jpg
+  pageimage: Avatar Flight of Passage (33825582954).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q1915132
+- name: ネイティリ
+  url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC_%28%E6%98%A0%E7%94%BB%29
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Portrait_of_Neytiri.jpg/500px-Portrait_of_Neytiri.jpg
+  pageimage: Portrait of Neytiri.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q3875745
 - name: エルサ
   url: https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AB%E3%82%B5_(%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC)
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Mickey%27s_Royal_Friendship_Faire_%2827459133880%29.jpg/500px-Mickey%27s_Royal_Friendship_Faire_%2827459133880%29.jpg
@@ -836,6 +1147,13 @@ items:
   wikipedia_title: ジャッジ・ドレッド
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q645597
+- name: トラヴィス・ビックル
+  url: https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Travis_Bickle.png/500px-Travis_Bickle.png
+  pageimage: Travis Bickle.png
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q3498720
 - name: ヴィトー・コルレオーネ
   url: https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%83%88%E3%83%BC%E3%83%BB%E3%82%B3%E3%83%AB%E3%83%AC%E3%82%AA%E3%83%BC%E3%83%8D
   image_url: https://upload.wikimedia.org/wikipedia/commons/4/48/Marlon_Brando_as_Vito_Corleone.png
@@ -913,6 +1231,13 @@ items:
   wikipedia_title: ヒューマン・トーチ
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q584585
+- name: シング
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Fantastic_Four_Cosplays.jpg/500px-Fantastic_Four_Cosplays.jpg
+  pageimage: Fantastic Four Cosplays.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q910204
 - name: ガンビット
   url: https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%B3%E3%83%93%E3%83%83%E3%83%88_(%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF)
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/WonderCon_2015_-_Gambit_%2816863365899%29.jpg/500px-WonderCon_2015_-_Gambit_%2816863365899%29.jpg
@@ -920,6 +1245,13 @@ items:
   wikipedia_title: ガンビット (マーベル・コミック)
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q2639150
+- name: コロッサス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Montreal_Comiccon_2015_-_Colossus_%2819267529469%29.jpg/500px-Montreal_Comiccon_2015_-_Colossus_%2819267529469%29.jpg
+  pageimage: Montreal Comiccon 2015 - Colossus (19267529469).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q60002
 - name: ナイトクローラー
   url: https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%A4%E3%83%88%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nightcrawler_cosplay.jpg/500px-Nightcrawler_cosplay.jpg
@@ -941,6 +1273,27 @@ items:
   wikipedia_title: ケーブル (コミック)
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q2267017
+- name: ビショップ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/2021-10-8_to_2021-10-9_-_NYCC_%28Touch_Edits_-_006%29_%2851573445938%29.jpg/500px-2021-10-8_to_2021-10-9_-_NYCC_%28Touch_Edits_-_006%29_%2851573445938%29.jpg
+  pageimage: 2021-10-8 to 2021-10-9 - NYCC (Touch Edits - 006) (51573445938).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2296652
+- name: ジャガーノート
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Cosplay_Juggernaut_2012.jpg/500px-Cosplay_Juggernaut_2012.jpg
+  pageimage: Cosplay Juggernaut 2012.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q841372
+- name: セイバートゥース
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/SDCC_2012_-_Sabretooth_%287573786874%29.jpg/500px-SDCC_2012_-_Sabretooth_%287573786874%29.jpg
+  pageimage: SDCC 2012 - Sabretooth (7573786874).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q431862
 - name: クレイヴン・ザ・ハンター
   url: https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AC%E3%82%A4%E3%83%B4%E3%83%B3%E3%83%BB%E3%82%B6%E3%83%BB%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC_(%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF)
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/SDCC_-_Kraven_the_Hunter_Cosplay_%2835308456084%29.jpg/500px-SDCC_-_Kraven_the_Hunter_Cosplay_%2835308456084%29.jpg
@@ -1011,6 +1364,13 @@ items:
   wikipedia_title: サブマリナー
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q613067
+- name: ヘラクレス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Dragon_Con_2013_-_Hercules_%289677489757%29.jpg/500px-Dragon_Con_2013_-_Hercules_%289677489757%29.jpg
+  pageimage: Dragon Con 2013 - Hercules (9677489757).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q534889
 - name: ミズ・マーベル
   url: https://ja.wikipedia.org/wiki/%E3%83%9F%E3%82%BA%E3%83%BB%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB_(%E3%82%AB%E3%83%9E%E3%83%A9%E3%83%BB%E3%82%AB%E3%83%BC%E3%83%B3)
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Miss_Marvel_JPEG.jpg/500px-Miss_Marvel_JPEG.jpg
@@ -1025,6 +1385,20 @@ items:
   wikipedia_title: アメリカ・チャベス
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q39069648
+- name: アイアンフィスト
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Iron_Fist.jpg/500px-Iron_Fist.jpg
+  pageimage: Iron Fist.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q1194243
+- name: パワーマン
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Luke_Cage_cosplay.jpg/500px-Luke_Cage_cosplay.jpg
+  pageimage: Luke Cage cosplay.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2267760
 - name: ジェシカ・ジョーンズ
   url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%82%A7%E3%82%B7%E3%82%AB%E3%83%BB%E3%82%B8%E3%83%A7%E3%83%BC%E3%83%B3%E3%82%BA
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Jessica_Jones_-_24801301121.jpg/500px-Jessica_Jones_-_24801301121.jpg
@@ -1039,6 +1413,20 @@ items:
   wikipedia_title: エレクトラ (キャラクター)
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q913359
+- name: スクイレル・ガール
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Squirrel_Girl_cosplay_Wizard_World_Anaheim_2011.jpg/500px-Squirrel_Girl_cosplay_Wizard_World_Anaheim_2011.jpg
+  pageimage: Squirrel Girl cosplay Wizard World Anaheim 2011.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q4353353
+- name: ウォーリー・ウェスト
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/The_Flash_in_Justice_League_TV_series.png/500px-The_Flash_in_Justice_League_TV_series.png
+  pageimage: The Flash in Justice League TV series.png
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q611576
 - name: バーバラ・ゴードン
   url: https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%83%90%E3%83%A9%E3%83%BB%E3%82%B4%E3%83%BC%E3%83%89%E3%83%B3
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Yvonne_Craig_Batgirl.JPG/500px-Yvonne_Craig_Batgirl.JPG
@@ -1060,6 +1448,13 @@ items:
   wikipedia_title: ロビン (バットマン)
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q59996
+- name: アラン・スコット
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Green_Lantern_costume_at_Pittsburgh_Comicon.jpg/500px-Green_Lantern_costume_at_Pittsburgh_Comicon.jpg
+  pageimage: Green Lantern costume at Pittsburgh Comicon.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q1839954
 - name: トゥーフェイス
   url: https://ja.wikipedia.org/wiki/%E3%83%88%E3%82%A5%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/C2E2_2013_-_Two_Face_%288683586201%29.jpg/500px-C2E2_2013_-_Two_Face_%288683586201%29.jpg
@@ -1130,6 +1525,13 @@ items:
   wikipedia_title: ビースト・ボーイ
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q575227
+- name: ドナ・トロイ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Cosplay_Wonder_Girl_Dragon_Con_2013.jpg/500px-Cosplay_Wonder_Girl_Dragon_Con_2013.jpg
+  pageimage: Cosplay Wonder Girl Dragon Con 2013.jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q3713898
 - name: ザターナ
   url: https://ja.wikipedia.org/wiki/%E3%82%B6%E3%82%BF%E3%83%BC%E3%83%8A
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Dragon_Con_2013_-_Zatanna_%289668300759%29.jpg/500px-Dragon_Con_2013_-_Zatanna_%289668300759%29.jpg
@@ -1144,6 +1546,20 @@ items:
   wikipedia_title: スワンプシング
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q1427625
+- name: ドクター・フェイト
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/2014_Dragon_Con_Cosplay_-_Doctor_Fate_%2815123297952%29.jpg/500px-2014_Dragon_Con_Cosplay_-_Doctor_Fate_%2815123297952%29.jpg
+  pageimage: 2014 Dragon Con Cosplay - Doctor Fate (15123297952).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q1233853
+- name: ブースターゴールド
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/C2E2_2013_-_Booster_Gold_%288702693744%29.jpg/500px-C2E2_2013_-_Booster_Gold_%288702693744%29.jpg
+  pageimage: C2E2 2013 - Booster Gold (8702693744).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q391201
 - name: ホークマン
   url: https://ja.wikipedia.org/wiki/%E3%83%9B%E3%83%BC%E3%82%AF%E3%83%9E%E3%83%B3
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/SDCC_2012_-_Hawkman_%287567627306%29.jpg/500px-SDCC_2012_-_Hawkman_%287567627306%29.jpg
@@ -1158,6 +1574,20 @@ items:
   wikipedia_title: ホークガール
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q2210354
+- name: ブラックアダム
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/NYCC_2011_-_Black_Adam_%286253149132%29.jpg/500px-NYCC_2011_-_Black_Adam_%286253149132%29.jpg
+  pageimage: NYCC 2011 - Black Adam (6253149132).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q391161
+- name: シネストロ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sinestro_corps_%285161744232%29.jpg/500px-Sinestro_corps_%285161744232%29.jpg
+  pageimage: Sinestro corps (5161744232).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2279525
 - name: ブレイニアック
   url: https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AC%E3%82%A4%E3%83%8B%E3%82%A2%E3%83%83%E3%82%AF_(DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9)
   image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/New_York_Comic_Con_2015_-_Brainiac_%2821442078224%29.jpg/500px-New_York_Comic_Con_2015_-_Brainiac_%2821442078224%29.jpg
@@ -1172,6 +1602,20 @@ items:
   wikipedia_title: ゾッド将軍
   source: wikidata P18 via ja.wikipedia.org pageprops
   wikidata_item: Q2260732
+- name: バットウーマン
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/WW_Chicago_2013_-_Batwoman_%289518408035%29.jpg/500px-WW_Chicago_2013_-_Batwoman_%289518408035%29.jpg
+  pageimage: WW Chicago 2013 - Batwoman (9518408035).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q48833172
+- name: ロールシャッハ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Rorschach_%289046268322%29.jpg/500px-Rorschach_%289046268322%29.jpg
+  pageimage: Rorschach (9046268322).jpg
+  wikipedia_title: null
+  source: wikidata P18 via source_wikidata_id
+  wikidata_item: Q2346769
 missing_items:
 - name: 孫悟飯
   url: https://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E9%A3%AF
@@ -1289,8 +1733,6 @@ missing_items:
   url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%82%BB%E3%83%95%E3%83%BB%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC
 - name: マキマ
   url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%AD%E3%83%9E
-- name: パワー
-  url: https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%AF%E3%83%BC_(%E3%83%81%E3%82%A7%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%9E%E3%83%B3)
 - name: 碇シンジ
   url: https://ja.wikipedia.org/wiki/%E7%A2%87%E3%82%B7%E3%83%B3%E3%82%B8
 - name: 綾波レイ
@@ -1319,8 +1761,6 @@ missing_items:
   url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%82%A6%E3%82%A3%E3%83%83%E3%82%AF_(%E6%9E%B6%E7%A9%BA%E3%81%AE%E4%BA%BA%E7%89%A9)
 - name: イーサン・ハント
   url: https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%3A%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%83%E3%82%B7%E3%83%96%E3%83%AB
-- name: ロッキー・バルボア
-  url: https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%83%E3%82%AD%E3%83%BC_%28%E6%98%A0%E7%94%BB%29
 - name: エレン・リプリー
   url: https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AC%E3%83%B3%E3%83%BB%E3%83%AA%E3%83%97%E3%83%AA%E3%83%BC
 - name: サラ・コナー
@@ -1329,8 +1769,6 @@ missing_items:
   url: https://ja.wikipedia.org/wiki/T-1000
 - name: ザ・ブライド
   url: https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%AB%E3%83%BB%E3%83%93%E3%83%AB
-- name: カットニス・エヴァディーン
-  url: https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%B3%E3%82%AC%E3%83%BC%E3%83%BB%E3%82%B2%E3%83%BC%E3%83%A0
 - name: ストーム
   url: https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%88%E3%83%BC%E3%83%A0_(%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF)
 - name: ブラック・ウィドウ
@@ -1471,32 +1909,18 @@ missing_items:
   url: https://ja.wikipedia.org/wiki/%E3%82%89%E3%82%93%E3%81%BE1/2%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
 - name: ポー・ダメロン
   url: https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%BB%E3%83%80%E3%83%A1%E3%83%AD%E3%83%B3
-- name: チャイルド
-  url: https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%AD%E3%83%BC%E3%82%B0%E3%83%BC
 - name: キャシアン・アンドー
   url: https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
-- name: ルビウス・ハグリッド
-  url: https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%93%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%8F%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89
-- name: ドラコ・マルフォイ
-  url: https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B3%E3%83%BB%E3%83%9E%E3%83%AB%E3%83%95%E3%82%A9%E3%82%A4
 - name: アラスター・ムーディ
   url: https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
-- name: ミネルバ・マクゴナガル
-  url: https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%8D%E3%83%AB%E3%83%90%E3%83%BB%E3%83%9E%E3%82%AF%E3%82%B4%E3%83%8A%E3%82%AC%E3%83%AB
-- name: ジニー・ウィーズリー
-  url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%8B%E3%83%BC%E3%83%BB%E3%82%A6%E3%82%A3%E3%83%BC%E3%82%BA%E3%83%AA%E3%83%BC
 - name: サムワイズ・ギャムジー
   url: https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%A0%E3%83%AF%E3%82%A4%E3%82%BA%E3%83%BB%E3%82%AE%E3%83%A3%E3%83%A0%E3%82%B8%E3%83%BC
-- name: エメット・ブラウン
-  url: https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%82%AF%E3%83%BB%E3%83%88%E3%82%A5%E3%83%BB%E3%82%B6%E3%83%BB%E3%83%95%E3%83%A5%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC
 - name: デッカード
   url: https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3%E3%83%8A%E3%83%BC
 - name: シンバ
   url: https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC
 - name: レザーフェイス
   url: https://ja.wikipedia.org/wiki/%E3%83%AC%E3%82%B6%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9
-- name: トラヴィス・ビックル
-  url: https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC
 - name: トニー・モンタナ
   url: https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9
 - name: ハンニバル・レクター
