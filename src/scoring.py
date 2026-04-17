@@ -16,8 +16,8 @@ DEFAULT_INPUT = Path("data/characters.yaml")
 SCORE_KEYS = ["attack", "defense", "speed", "abilities", "feats", "scale"]
 IQ_SCORE_KEY = "iq"
 EXPLICIT_IQ_PATTERNS = [
-    (re.compile(r"\bIQ\s*(?:は|が|:|：|=|約|およそ)?\s*(\d{2,3})\b", re.IGNORECASE), "explicit IQ expression"),
-    (re.compile(r"知能指数\s*(?:は|が|:|：|=|約|およそ)?\s*(\d{2,3})", re.IGNORECASE), "explicit intelligence quotient expression"),
+    (re.compile(r"(?<![A-Za-z])IQ\s*(?:は|が|:|：|=|約|およそ)?\s*(\d{2,3})(?!\d)", re.IGNORECASE), "explicit IQ expression"),
+    (re.compile(r"知能指数\s*(?:は|が|:|：|=|約|およそ)?\s*(\d{2,3})(?!\d)", re.IGNORECASE), "explicit intelligence quotient expression"),
 ]
 
 
