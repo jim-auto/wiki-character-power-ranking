@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, quote, unquote, urlencode, urlparse
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import yaml
@@ -76,21 +77,58 @@ def build_api_url(host: str, title: str, intro_only: bool) -> str:
     return f"https://{host}/w/api.php?{urlencode(params, quote_via=quote)}"
 
 
+def build_summary_url(host: str, title: str) -> str:
+    slug = quote(title.replace(" ", "_"), safe="")
+    return f"https://{host}/api/rest_v1/page/summary/{slug}"
+
+
+def request_json(
+    api_url: str,
+    *,
+    timeout: int,
+    user_agent: str,
+    retries: int,
+    retry_sleep: float,
+) -> dict[str, Any]:
+    request = Request(api_url, headers={"User-Agent": user_agent})
+    last_error: Exception | None = None
+
+    for attempt in range(retries + 1):
+        try:
+            with urlopen(request, timeout=timeout) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except HTTPError as exc:
+            last_error = exc
+            retryable = exc.code == 429 or 500 <= exc.code < 600
+            if not retryable or attempt >= retries:
+                raise
+        except URLError as exc:
+            last_error = exc
+            if attempt >= retries:
+                raise
+
+        time.sleep(retry_sleep * (attempt + 1))
+
+    raise RuntimeError(f"Could not fetch {api_url}: {last_error}")
+
+
 def fetch_extract(
     wikipedia_url: str,
     *,
     intro_only: bool = False,
     timeout: int = 20,
     user_agent: str = DEFAULT_USER_AGENT,
+    retries: int = 3,
+    retry_sleep: float = 2.0,
 ) -> dict[str, Any]:
     host, title = parse_wikipedia_url(wikipedia_url)
-    request = Request(
+    payload = request_json(
         build_api_url(host, title, intro_only),
-        headers={"User-Agent": user_agent},
+        timeout=timeout,
+        user_agent=user_agent,
+        retries=retries,
+        retry_sleep=retry_sleep,
     )
-
-    with urlopen(request, timeout=timeout) as response:
-        payload = json.loads(response.read().decode("utf-8"))
 
     pages = payload.get("query", {}).get("pages", {})
     if not pages:
@@ -113,6 +151,122 @@ def fetch_extract(
     }
 
 
+def build_title_aliases(payload: dict[str, Any]) -> dict[str, str]:
+    query = payload.get("query", {})
+    aliases: dict[str, str] = {}
+
+    for item in query.get("normalized", []) or []:
+        if item.get("from") and item.get("to"):
+            aliases[str(item["from"])] = str(item["to"])
+
+    for item in query.get("redirects", []) or []:
+        if item.get("from") and item.get("to"):
+            aliases[str(item["from"])] = str(item["to"])
+
+    return aliases
+
+
+def resolve_title(title: str, aliases: dict[str, str]) -> str:
+    current = title
+    for _ in range(4):
+        next_title = aliases.get(current)
+        if not next_title or next_title == current:
+            return current
+        current = next_title
+    return current
+
+
+def fetch_extracts(
+    wikipedia_urls: list[str],
+    *,
+    intro_only: bool = False,
+    timeout: int = 20,
+    user_agent: str = DEFAULT_USER_AGENT,
+    retries: int = 3,
+    retry_sleep: float = 2.0,
+) -> list[dict[str, Any]]:
+    parsed = [parse_wikipedia_url(url) for url in wikipedia_urls]
+    hosts = {host for host, _title in parsed}
+    if len(hosts) != 1:
+        raise ValueError("fetch_extracts requires URLs from one Wikipedia host per batch")
+
+    host = parsed[0][0]
+    titles = [title for _host, title in parsed]
+    payload = request_json(
+        build_api_url(host, "|".join(titles), intro_only),
+        timeout=timeout,
+        user_agent=user_agent,
+        retries=retries,
+        retry_sleep=retry_sleep,
+    )
+
+    pages = payload.get("query", {}).get("pages", {})
+    if not pages:
+        raise ValueError("Wikipedia returned no pages for batch")
+
+    title_aliases = build_title_aliases(payload)
+    pages_by_title = {str(page.get("title")): page for page in pages.values()}
+    results: list[dict[str, Any]] = []
+
+    for url, (_host, title) in zip(wikipedia_urls, parsed):
+        resolved_title = resolve_title(title, title_aliases)
+        page = pages_by_title.get(resolved_title) or pages_by_title.get(title)
+        if not page:
+            raise ValueError(f"Wikipedia returned no page for {url}")
+        if "missing" in page:
+            raise ValueError(f"Wikipedia page is missing: {url}")
+
+        extract = (page.get("extract") or "").strip()
+        if not extract:
+            raise ValueError(f"Wikipedia page has an empty extract: {url}")
+
+        results.append(
+            {
+                "extract": extract,
+                "title": page.get("title", title),
+                "pageid": page.get("pageid"),
+                "revision_id": page.get("lastrevid"),
+                "language_host": host,
+            }
+        )
+
+    return results
+
+
+def fetch_summary(
+    wikipedia_url: str,
+    *,
+    timeout: int = 20,
+    user_agent: str = DEFAULT_USER_AGENT,
+    retries: int = 3,
+    retry_sleep: float = 2.0,
+) -> dict[str, Any]:
+    host, title = parse_wikipedia_url(wikipedia_url)
+    payload = request_json(
+        build_summary_url(host, title),
+        timeout=timeout,
+        user_agent=user_agent,
+        retries=retries,
+        retry_sleep=retry_sleep,
+    )
+
+    extract = (payload.get("extract") or "").strip()
+    if not extract:
+        raise ValueError(f"Wikipedia summary has an empty extract: {wikipedia_url}")
+
+    return {
+        "extract": extract,
+        "title": payload.get("title", title),
+        "pageid": payload.get("pageid"),
+        "revision_id": payload.get("revision"),
+        "language_host": host,
+    }
+
+
+def chunked(items: list[Any], size: int) -> list[list[Any]]:
+    return [items[index : index + size] for index in range(0, len(items), size)]
+
+
 def update_characters(
     data: dict[str, Any],
     *,
@@ -120,29 +274,64 @@ def update_characters(
     timeout: int,
     sleep_seconds: float,
     user_agent: str,
+    retries: int,
+    retry_sleep: float,
+    missing_only: bool,
+    batch_size: int,
+    source: str,
 ) -> dict[str, Any]:
     fetched_at = datetime.now(timezone.utc).isoformat()
+    pending: list[dict[str, Any]] = []
 
     for character in data["characters"]:
+        if missing_only and str(character.get("description_raw") or "").strip():
+            continue
+
         url = character.get("wikipedia_url")
         if not url:
             raise ValueError(f"Character is missing wikipedia_url: {character!r}")
 
-        page = fetch_extract(
-            url,
-            intro_only=intro_only,
-            timeout=timeout,
-            user_agent=user_agent,
-        )
-        character["description_raw"] = page["extract"]
-        character["source_metadata"] = {
-            "wikipedia_title": page["title"],
-            "pageid": page["pageid"],
-            "revision_id": page["revision_id"],
-            "language_host": page["language_host"],
-            "fetched_at": fetched_at,
-            "intro_only": intro_only,
-        }
+        pending.append(character)
+
+    if source == "rest-summary":
+        character_batches = [[character] for character in pending]
+    else:
+        character_batches = chunked(pending, batch_size)
+
+    for character_batch in character_batches:
+        if source == "rest-summary":
+            pages = [
+                fetch_summary(
+                    str(character["wikipedia_url"]),
+                    timeout=timeout,
+                    user_agent=user_agent,
+                    retries=retries,
+                    retry_sleep=retry_sleep,
+                )
+                for character in character_batch
+            ]
+        else:
+            urls = [str(character["wikipedia_url"]) for character in character_batch]
+            pages = fetch_extracts(
+                urls,
+                intro_only=intro_only,
+                timeout=timeout,
+                user_agent=user_agent,
+                retries=retries,
+                retry_sleep=retry_sleep,
+            )
+
+        for character, page in zip(character_batch, pages):
+            character["description_raw"] = page["extract"]
+            character["source_metadata"] = {
+                "wikipedia_title": page["title"],
+                "pageid": page["pageid"],
+                "revision_id": page["revision_id"],
+                "language_host": page["language_host"],
+                "fetched_at": fetched_at,
+                "intro_only": intro_only,
+                "source": source,
+            }
 
         if sleep_seconds > 0:
             time.sleep(sleep_seconds)
@@ -163,6 +352,20 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--timeout", type=int, default=20)
     parser.add_argument("--sleep", type=float, default=0.2)
+    parser.add_argument("--retries", type=int, default=3)
+    parser.add_argument("--retry-sleep", type=float, default=2.0)
+    parser.add_argument("--batch-size", type=int, default=40)
+    parser.add_argument(
+        "--source",
+        choices=["action-api", "rest-summary"],
+        default="action-api",
+        help="Wikipedia endpoint to use for fetching text.",
+    )
+    parser.add_argument(
+        "--missing-only",
+        action="store_true",
+        help="Skip records that already have description_raw text.",
+    )
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT)
     return parser
 
@@ -176,6 +379,11 @@ def main() -> None:
         timeout=args.timeout,
         sleep_seconds=args.sleep,
         user_agent=args.user_agent,
+        retries=args.retries,
+        retry_sleep=args.retry_sleep,
+        missing_only=args.missing_only,
+        batch_size=args.batch_size,
+        source=args.source,
     )
     save_yaml(args.output, updated)
 

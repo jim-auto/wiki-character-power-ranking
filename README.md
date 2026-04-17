@@ -112,6 +112,12 @@ python src/fetch_wikipedia.py --input data/characters.yaml --output data/charact
 python src/fetch_wikipedia.py --intro-only
 ```
 
+大量取得でMediaWiki Action APIが一時的に429を返す場合は、公式REST summaryエンドポイントを使います。
+
+```bash
+python src/fetch_wikipedia.py --source rest-summary --missing-only
+```
+
 ### 2. 強さ関連の文章を抽出する
 
 ```bash
@@ -249,6 +255,8 @@ https://jim-auto.github.io/wiki-character-power-ranking/
 ```bash
 python src/sync_seed_characters.py
 python src/fetch_wikipedia.py --intro-only
+# 429が出る場合:
+# python src/fetch_wikipedia.py --source rest-summary --missing-only
 python src/extract_features.py
 python src/scoring.py
 python src/export_site_data.py
@@ -300,7 +308,7 @@ python src/export_site_data.py
 
 ## Sample Data
 
-`data/characters.yaml` には100人分のサンプルキャラクターが入っています。候補の正本は `data/seed_characters.yaml` です。
+`data/characters.yaml` には200人分のサンプルキャラクターが入っています。候補の正本は `data/seed_characters.yaml` です。
 
 - 孫悟空
 - うずまきナルト

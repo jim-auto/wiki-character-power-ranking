@@ -9,6 +9,7 @@ The project is not a canon database, fan wiki, battle-board system, or original-
 1. `data/seed_characters.yaml` stores the canonical character candidate list.
 2. `src/sync_seed_characters.py` synchronizes the seed list into `data/characters.yaml`.
 3. `src/fetch_wikipedia.py` fetches the Wikipedia page extract listed in `wikipedia_url`.
+   It can use either MediaWiki Action API extracts or the official REST summary endpoint.
 4. `src/extract_features.py` splits `description_raw` into sentences and keeps strength-related sentences.
 5. Extracted sentences are classified into:
    - `abilities`: powers, equipment, training, skills, named techniques.
@@ -62,7 +63,7 @@ iq_evidence: list[object]
 Allowed:
 
 - Wikipedia article text fetched from the page in `wikipedia_url`.
-- Wikipedia page title and revision metadata returned by the MediaWiki API.
+- Wikipedia page title and revision metadata returned by the MediaWiki API or REST summary endpoint.
 - Deterministic string rules stored in this repository.
 
 Not allowed:
@@ -75,13 +76,13 @@ Not allowed:
 
 ## Initial Milestone
 
-The sample data starts from a 100-character seed list. The first public milestone is:
+The sample data now starts from a 200-character seed list. The current public milestone is:
 
-- 50 manga/anime characters
-- 25 movie characters
-- 25 Marvel/DC comic characters
+- 90 manga/anime characters
+- 55 movie characters
+- 55 Marvel/DC comic characters
 
-The fetched text uses Wikipedia lead extracts by default for readability. For production runs, refresh `description_raw` with `src/fetch_wikipedia.py --intro-only`, then re-run extraction and scoring.
+The fetched text uses Wikipedia lead extracts by default for readability. For production runs, refresh `description_raw` with `src/fetch_wikipedia.py --intro-only`, then re-run extraction and scoring. If the Action API rate-limits a large refresh, use `src/fetch_wikipedia.py --source rest-summary --missing-only`.
 
 ## Future Extensions
 
