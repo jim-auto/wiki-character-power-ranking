@@ -24,6 +24,10 @@ EXPORT_FIELDS = [
     "iq_score",
     "iq_evidence",
     "condition_flags",
+    "collection_tags",
+    "image_url",
+    "image_source",
+    "image_alt",
 ]
 
 

@@ -38,6 +38,7 @@ const state = {
   search: "",
   media: "all",
   universe: "all",
+  collection: "all",
   min: "",
   max: "",
   conditions: new Set(),
@@ -59,6 +60,7 @@ const elements = {
   searchFilter: document.querySelector("#search-filter"),
   mediaFilter: document.querySelector("#media-filter"),
   universeFilter: document.querySelector("#universe-filter"),
+  collectionFilter: document.querySelector("#collection-filter"),
   minScore: document.querySelector("#min-score"),
   maxScore: document.querySelector("#max-score"),
   conditionOptions: document.querySelector("#condition-options"),
@@ -81,10 +83,12 @@ function applyQueryState() {
   const params = new URLSearchParams(window.location.search);
   const view = params.get("view");
   const media = params.get("media");
+  const collection = params.get("collection");
   const battleMode = params.get("battleMode");
 
   if (["power", "iq", "battle"].includes(view)) state.view = view;
   if (["all", "manga", "anime", "movie", "comic"].includes(media)) state.media = media;
+  if (["all", "jump_manga", "marvel", "dc"].includes(collection)) state.collection = collection;
   if (["power", "iq", "balanced"].includes(battleMode)) state.battleMode = battleMode;
 
   state.search = params.get("q") ?? "";
@@ -110,6 +114,7 @@ function updateUrl() {
   if (state.search) params.set("q", state.search);
   if (state.media !== "all") params.set("media", state.media);
   if (state.universe !== "all") params.set("universe", state.universe);
+  if (state.collection !== "all") params.set("collection", state.collection);
   if (state.min !== "") params.set("min", state.min);
   if (state.max !== "") params.set("max", state.max);
   if (state.conditions.size) params.set("conditions", [...state.conditions].join(","));
@@ -129,6 +134,7 @@ function syncControls() {
   elements.searchFilter.value = state.search;
   elements.mediaFilter.value = state.media;
   elements.universeFilter.value = state.universe;
+  elements.collectionFilter.value = state.collection;
   elements.minScore.value = state.min;
   elements.maxScore.value = state.max;
   elements.battleA.value = state.battleA;
@@ -169,6 +175,7 @@ function filteredCharacters() {
         character.name,
         character.universe,
         character.media_type,
+        ...(character.collection_tags ?? []),
         character.wikipedia_url,
       ]
         .join(" ")
@@ -177,6 +184,10 @@ function filteredCharacters() {
     })
     .filter((character) => state.media === "all" || character.media_type === state.media)
     .filter((character) => state.universe === "all" || character.universe === state.universe)
+    .filter(
+      (character) =>
+        state.collection === "all" || (character.collection_tags ?? []).includes(state.collection),
+    )
     .filter((character) => {
       if (!state.conditions.size) return true;
       const flags = character.condition_flags ?? {};
@@ -294,6 +305,29 @@ function evidenceForIq(character) {
     .join("");
 }
 
+function characterInitials(name) {
+  return Array.from(String(name ?? "").trim()).slice(0, 2).join("") || "?";
+}
+
+function characterImage(character) {
+  const alt = character.image_alt || character.name || "";
+  if (!character.image_url) {
+    return `<div class="character-image is-empty" aria-hidden="true"><span>${escapeHtml(characterInitials(character.name))}</span></div>`;
+  }
+  return `
+    <div class="character-image">
+      <img
+        src="${escapeHtml(character.image_url)}"
+        alt="${escapeHtml(alt)}"
+        loading="lazy"
+        decoding="async"
+        onerror="this.closest('.character-image').classList.add('is-empty'); this.remove();"
+      >
+      <span aria-hidden="true">${escapeHtml(characterInitials(character.name))}</span>
+    </div>
+  `;
+}
+
 function characterCard(character, index) {
   const primaryScore = scoreFor(character);
   const titleScore = state.view === "iq" ? `推定IQ ${primaryScore}/10` : `${primaryScore}/60`;
@@ -309,6 +343,7 @@ function characterCard(character, index) {
     <article class="character-card">
       <div class="character-main">
         <div class="rank-token">${index + 1}</div>
+        ${characterImage(character)}
         <div>
           <h3>${escapeHtml(character.name)}</h3>
           <div class="meta-line">
@@ -465,6 +500,10 @@ function bindEvents() {
   });
   elements.universeFilter.addEventListener("change", (event) => {
     state.universe = event.target.value;
+    render();
+  });
+  elements.collectionFilter.addEventListener("change", (event) => {
+    state.collection = event.target.value;
     render();
   });
   elements.minScore.addEventListener("input", (event) => {

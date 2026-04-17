@@ -16,9 +16,11 @@
 8. 抽出文を `abilities`、`feats`、`statements` に分類する。
 9. `src/scoring.py` で決定的なテキストルールを適用し、根拠文を保存する。
 10. `src/condition_flags.py` でUI用の条件フラグを作る。
-11. `src/ranking.py` で強さランキングまたは推定IQランキングを出力する。
-12. `src/battle.py` で2キャラクターを根拠スコアだけで比較する。
-13. `src/export_site_data.py` でGitHub Pages用JSONを出力する。
+11. `src/collection_tags.py` でジャンプ漫画、Marvel、DCなどのUI用コレクションタグを付ける。
+12. `src/fetch_wikipedia_images.py` で日本語版Wikipediaの表示用サムネイルを取得する。
+13. `src/ranking.py` で強さランキングまたは推定IQランキングを出力する。
+14. `src/battle.py` で2キャラクターを根拠スコアだけで比較する。
+15. `src/export_site_data.py` でGitHub Pages用JSONを出力する。
 
 ## データ契約
 
@@ -29,7 +31,11 @@ name: string
 wikipedia_url: string
 media_type: manga | anime | movie | comic
 universe: string
+collection_tags: list[string]
 description_raw: text
+image_url: string | null
+image_source: string | null
+image_alt: string | null
 extracted:
   abilities: list[string]
   feats: list[string]
@@ -62,12 +68,16 @@ condition_evidence: object
 
 `condition_flags` は、Wikipedia本文の語句一致だけで付与されます。現在は、超能力あり、改造あり、技術/装備、魔法/呪い、武器あり、人間以外、神格、宇宙人、ロボット/AI、格闘、軍人/兵士、リーダー、天才/探偵、変身、不死/再生を扱います。
 
+`collection_tags` はUI検索用の派生タグです。現在はユニバース名から `jump_manga`、`marvel`、`dc` を決定的に付与します。採点には使いません。
+
+`image_url`、`image_source`、`image_alt` は表示用フィールドです。日本語版Wikipediaの `pageimages` APIから取得したサムネイルだけを保存し、スコア計算や根拠抽出には使いません。
+
 ## 日本語版Wikipediaのみの制約
 
 許可するもの:
 
 - `wikipedia_url` に指定された日本語版Wikipedia本文
-- MediaWiki API、REST Summary、REST HTML、通常ページHTMLが返すページタイトル、pageid、revision ID、本文
+- MediaWiki API、REST Summary、REST HTML、通常ページHTMLが返すページタイトル、pageid、revision ID、本文、表示用サムネイル
 - このリポジトリ内にある決定的な文字列ルール
 
 許可しないもの:
@@ -85,12 +95,18 @@ condition_evidence: object
 - 漫画/アニメ: 209件
 - 映画: 144件
 - Marvel / DCコミック: 147件
+- ジャンプ漫画タグ: 142件
+- Marvelタグ: 105件
+- DCタグ: 76件
+- 表示用サムネイル取得済み: 85件
 
 日本語版Wikipediaに単独キャラクターページがない場合、登場人物一覧や作品ページをソースにします。そのため、同じ日本語ページを複数キャラクターが共有する場合があります。どのURLへ解決されたかは `data/ja_wikipedia_resolution_report.yaml` で確認できます。
 
 日本語名の正規化と、無関係な検索結果から作品/一覧ページへ置き換えた件数は `data/source_repair_report.yaml` に記録します。
 
 共有ページは `src/extract_character_sections.py` で再処理します。キャラクター名、日本語ラベル、括弧を外した名前、URLフラグメントを別名として使い、見出しまたはキャラクター導入文に一致した場合だけ `description_raw` を置き換えます。REST HTMLが429で制限された場合は、通常の日本語版WikipediaページHTMLを使います。ページ全体の概要を無理に採用せず、一致しないキャラクターは既存本文を維持します。結果は `data/section_extraction_report.yaml` に記録します。
+
+画像は `src/fetch_wikipedia_images.py` で別処理にしています。共有ページの画像は作品ロゴや集合画像になりやすいため既定ではスキップし、明らかなロゴ、タイトル画像、SVGも除外します。取得結果は `data/image_fetch_report.yaml` に記録します。
 
 ## 再生成手順
 
@@ -103,6 +119,8 @@ python src/extract_character_sections.py --sleep 1 --retries 0 --report data/sec
 python src/extract_features.py
 python src/scoring.py
 python src/condition_flags.py
+python src/collection_tags.py
+python src/fetch_wikipedia_images.py --sleep 0.5 --report data/image_fetch_report.yaml
 python src/export_site_data.py
 ```
 
