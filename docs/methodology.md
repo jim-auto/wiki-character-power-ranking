@@ -11,13 +11,14 @@
 3. `src/repair_japanese_sources.py` で日本語表示名と安全な作品/一覧ページフォールバックを整える。
 4. `src/sync_seed_characters.py` でseedリストを `data/characters.yaml` に同期する。
 5. `src/fetch_wikipedia.py` で `wikipedia_url` の日本語版Wikipedia本文を取得する。
-6. `src/extract_features.py` で本文を文に分割し、強さに関係する文だけを抽出する。
-7. 抽出文を `abilities`、`feats`、`statements` に分類する。
-8. `src/scoring.py` で決定的なテキストルールを適用し、根拠文を保存する。
-9. `src/condition_flags.py` でUI用の条件フラグを作る。
-10. `src/ranking.py` で強さランキングまたは推定IQランキングを出力する。
-11. `src/battle.py` で2キャラクターを根拠スコアだけで比較する。
-12. `src/export_site_data.py` でGitHub Pages用JSONを出力する。
+6. `src/extract_character_sections.py` で共有ページからキャラクター名に近い見出し・導入文を切り出す。
+7. `src/extract_features.py` で本文を文に分割し、強さに関係する文だけを抽出する。
+8. 抽出文を `abilities`、`feats`、`statements` に分類する。
+9. `src/scoring.py` で決定的なテキストルールを適用し、根拠文を保存する。
+10. `src/condition_flags.py` でUI用の条件フラグを作る。
+11. `src/ranking.py` で強さランキングまたは推定IQランキングを出力する。
+12. `src/battle.py` で2キャラクターを根拠スコアだけで比較する。
+13. `src/export_site_data.py` でGitHub Pages用JSONを出力する。
 
 ## データ契約
 
@@ -66,7 +67,7 @@ condition_evidence: object
 許可するもの:
 
 - `wikipedia_url` に指定された日本語版Wikipedia本文
-- MediaWiki APIまたはREST Summaryが返すページタイトル、pageid、revision ID
+- MediaWiki API、REST Summary、REST HTML、通常ページHTMLが返すページタイトル、pageid、revision ID、本文
 - このリポジトリ内にある決定的な文字列ルール
 
 許可しないもの:
@@ -89,6 +90,8 @@ condition_evidence: object
 
 日本語名の正規化と、無関係な検索結果から作品/一覧ページへ置き換えた件数は `data/source_repair_report.yaml` に記録します。
 
+共有ページは `src/extract_character_sections.py` で再処理します。キャラクター名、日本語ラベル、括弧を外した名前、URLフラグメントを別名として使い、見出しまたはキャラクター導入文に一致した場合だけ `description_raw` を置き換えます。REST HTMLが429で制限された場合は、通常の日本語版WikipediaページHTMLを使います。ページ全体の概要を無理に採用せず、一致しないキャラクターは既存本文を維持します。結果は `data/section_extraction_report.yaml` に記録します。
+
 ## 再生成手順
 
 ```bash
@@ -96,13 +99,14 @@ python src/resolve_ja_wikipedia.py --input data/seed_characters.yaml --output da
 python src/repair_japanese_sources.py
 python src/sync_seed_characters.py --reset-derived
 python src/fetch_wikipedia.py --source rest-summary --missing-only --sleep 0
+python src/extract_character_sections.py --sleep 1 --retries 0 --report data/section_extraction_report.yaml
 python src/extract_features.py
 python src/scoring.py
 python src/condition_flags.py
 python src/export_site_data.py
 ```
 
-公開サンプルは、安定取得のため `rest-summary` を使用しています。`rest-html` を指定すると日本語版WikipediaのHTML本文をプレーンテキスト化して使えますが、短時間に大量取得するとWikipedia側の429制限を受けるため、`--sleep` と `--save-every` の指定を推奨します。
+公開サンプルは、安定取得のため最初に `rest-summary` を使用し、その後で共有ページだけキャラクター別セクション抽出を行います。`rest-html` を指定すると日本語版WikipediaのHTML本文をプレーンテキスト化して使えますが、短時間に大量取得するとWikipedia側の429制限を受けるため、`--sleep` と `--save-every` の指定を推奨します。
 
 ## 将来拡張
 

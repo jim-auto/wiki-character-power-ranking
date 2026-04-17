@@ -1,0 +1,1233 @@
+generated_at: '2026-04-17T10:44:23.987790+00:00'
+dry_run: false
+total_characters: 500
+target_characters: 180
+target_pages: 55
+processed_pages: 55
+pages_fetched: 55
+updated: 59
+unchanged_no_match: 121
+failed_pages: []
+items:
+- name: トラファルガー・ロー
+  url: https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E6%94%BF%E5%BA%9C_(ONE_PIECE)
+  status: unchanged_no_match
+- name: ボア・ハンコック
+  url: https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E6%94%BF%E5%BA%9C_(ONE_PIECE)
+  status: unchanged_no_match
+- name: ドンキホーテ・ドフラミンゴ
+  url: https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E6%94%BF%E5%BA%9C_(ONE_PIECE)
+  status: unchanged_no_match
+- name: シャンクス
+  url: https://ja.wikipedia.org/wiki/%E5%9B%9B%E7%9A%87
+  status: unchanged_no_match
+- name: ポートガス・D・エース
+  url: https://ja.wikipedia.org/wiki/%E5%9B%9B%E7%9A%87
+  status: unchanged_no_match
+- name: バギー
+  url: https://ja.wikipedia.org/wiki/%E5%9B%9B%E7%9A%87
+  status: unchanged_no_match
+- name: クロコダイル
+  url: https://ja.wikipedia.org/wiki/%E5%9B%9B%E7%9A%87
+  status: unchanged_no_match
+- name: ジュラキュール・ミホーク
+  url: https://ja.wikipedia.org/wiki/%E5%9B%9B%E7%9A%87
+  status: unchanged_no_match
+- name: エドワード・ニューゲート
+  url: https://ja.wikipedia.org/wiki/%E5%9B%9B%E7%9A%87
+  status: unchanged_no_match
+- name: 石田雨竜
+  url: https://ja.wikipedia.org/wiki/BLEACH%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: 石田雨竜
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 132
+  excerpt: '石田雨竜
+
+    一護のクラスメートかつ仲間であり、現世における滅却師の最後の生き残り。
+
+    このときはハッシュヴァルトの手引きで「見えざる帝国」へと馳せ参じ、後にユーハバッハから後継者として指名されている。
+
+    聖文字はユーハバッハと同じ“A”。
+
+    →詳細は「 石田雨竜 」を参照'
+- name: 四楓院夜一
+  url: https://ja.wikipedia.org/wiki/BLEACH%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9#Yoruichi
+  status: updated
+  matched_alias: 四楓院夜一
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1393
+  excerpt: '四楓院 夜一 （しほういん よるいち）
+
+    声 - ゆきのさつき（旧・雪野五月） （人間） / 斎藤志郎 （猫）
+
+    身長156cm 体重42kg 1月1日 生まれ
+
+    褐色の肌をした女性。老人のような厳格な口調と声質とは裏腹に奔放な性格。一人称は「ワシ」。
+
+    普段は黒猫姿で、少ない食料を多く食べられる、服を着ないでいられるなどの自由でいられるという理由から猫の姿はかなり'
+- name: 浦原喜助
+  url: https://ja.wikipedia.org/wiki/BLEACH%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: 浦原喜助
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 161
+  excerpt: '浦原喜助（うらはら きすけ）
+
+    声 - 三木眞一郎
+
+    演 - 田辺誠一
+
+    表向きは 浦原商店 なる 駄菓子屋 店主。
+
+    実態は、現世にいる死神に対して霊的商品などを売り、ルキアの現世における行動を援助していた。
+
+    正体は先代護廷十三隊十二番隊隊長で、技術開発局創設者にして初代局長を務めた人物である。
+
+    →詳細は「 浦原喜助 」を参照'
+- name: グリムジョー・ジャガージャック
+  url: https://ja.wikipedia.org/wiki/BLEACH%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9#Grimmjow
+  status: unchanged_no_match
+- name: アルミン・アルレルト
+  url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: アルミン・アルレルト
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1100
+  excerpt: 'アルミン・アルレルト (Armin Arlert )
+
+    声 - 井上麻里奈
+
+    演 - 本郷奏多
+
+    15歳→19歳。身長163cm、体重55kg（15歳時）。11月3日生まれ 。エレンとミカサの幼馴染で、彼らと同じくシガンシナ区で生まれ育つ。特にエレンとはミカサと知り合う以前からの親友。金髪の ボブカット に茶色の眼（アニメ版では碧眼）をした少年。
+
+    845年の巨人侵'
+- name: ライナー・ブラウン
+  url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: ライナー・ブラウン
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 38
+  excerpt: 'ライナー・ブラウン
+
+    詳しくは上位10名の項を参照。「 鎧の巨人 」の継承者。'
+- name: エルヴィン・スミス
+  url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: エルヴィン・スミス
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 859
+  excerpt: 'エルヴィン・スミス (Erwin Smith)
+
+    声 - 小野大輔
+
+    調査兵団第13代団長。身長188cm。体重92kg。10月14日生まれ 。
+
+    冷静かつ聡明な性格。一見穏やかな物腰だがその行動原理は人類の前進のためであり、目的のためには手段を択ばない覚悟と非情さを備えている。柔軟な思考と 大胆な決断力を併せ持ち、その高い統率力から配下たちには深く信頼されている'
+- name: アニ・レオンハート
+  url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: アニ・レオンハート
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 39
+  excerpt: 'アニ・レオンハート
+
+    詳しくは上位10名の項を参照。「 女型の巨人 」の継承者。'
+- name: ジーク・イェーガー
+  url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: ジーク・イェーガー
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1419
+  excerpt: 'ジーク・イェーガー (Zeke Yeager)
+
+    声 - 子安武人 、 山下大輝 （少年）
+
+    「 獣の巨人 」の巨人化能力者。身長183cm、体重92kg 。大柄な体格の男性で、眼鏡をかけて髭を生やしている 。当初は巨人体で登場し、のちに本当の姿を現した。
+
+    マーレの戦士長で、ライナーたちの兄のような存在であると同時に「実力で作戦を実行する者たちのトップに立つ男」'
+- name: ヒストリア・レイス
+  url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: unchanged_no_match
+- name: 我妻善逸
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 我妻善逸
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 846
+  excerpt: '我妻 善逸（あがつま ぜんいつ）
+
+    声 - 下野紘
+
+    演 - 植田圭輔
+
+    炭治郎の同期に当たる鬼殺隊剣士。年齢は16歳 。階級は癸→庚(遊郭編時)→丙。非常に臆病で、消極的・後ろ向き思考の 利己的 な面が強い少年 。
+
+    金色（黄色）の髪と太い眉が特徴 。隊服の上に鱗文様の羽織を着用する 。彼のみなぜか、鎹 鴉 ではなく「鎹雀のチュン太郎」をつけられている 。師の桑島'
+- name: 嘴平伊之助
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 嘴平伊之助
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 897
+  excerpt: '嘴平 伊之助（はしびら いのすけ）
+
+    声 - 松岡禎丞
+
+    演 - 佐藤祐吾
+
+    炭治郎の同期に当たる鬼殺隊剣士。年齢は15歳 。猪に育てられた捨て子 。名前は本名 。階級は癸→庚(遊郭編時)→丙。
+
+    奇怪な 猪 の被り物をしているが、素顔は女性的で非常に端整な顔立ち をしており、上半身は裸で、隊服はズボンのみ 。腰や脛に毛皮を巻いている 。日輪刀はわざと刃こぼれさせた'
+- name: 冨岡義勇
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 冨岡義勇
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 911
+  excerpt: '冨岡 義勇（とみおか ぎゆう）
+
+    声 - 櫻井孝宏
+
+    演 - 本田礼生
+
+    「 水の呼吸 」を使用する 水柱（みずばしら） 。年齢は19歳→21歳 。現実的で冷めた雰囲気を見せ、感情を表に出すことはほとんどないが根は優しく情に厚い。口数が少ない上に言葉足らずのため、誤解を与えてしまう発言が多く、他の柱と衝突する事もあり 、特に実弥とは犬猿の仲。過去の負い目から自分は'
+- name: 煉獄杏寿郎
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: unchanged_no_match
+- name: 胡蝶しのぶ
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 胡蝶しのぶ
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 782
+  excerpt: '胡蝶 しのぶ（こちょう しのぶ）
+
+    声 - 早見沙織
+
+    演 - 門山葉子
+
+    「 蟲の呼吸 」を使用する 蟲柱（むしばしら） 。年齢は18歳 。蝶の羽根を模した髪飾りや羽織を着用する。 薬学 に精通し 藤の花 から「鬼を殺せる毒」を作り出した 他、鬼の毒を瞬時に見極め、その場で解毒剤を調合する事も出来る。カナヲを継子に持つ 。
+
+    女性隊士の中でも特に小柄で華奢な人物で'
+- name: 甘露寺蜜璃
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 甘露寺蜜璃
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 703
+  excerpt: '甘露寺 蜜璃（かんろじ みつり）
+
+    声 - 花澤香菜
+
+    演 - 川崎愛香里
+
+    「 恋の呼吸 」を使用する 恋柱（こいばしら） 。年齢は19歳 。元々は煉󠄁獄の継子だったが独立している。
+
+    社交的で心優しく、無視されると泣くほど繊細な性格。非常に惚れっぽく、周囲のあらゆる人物に男女問わずときめいている。伊黒には特別視されている 。刀鍛冶の里編の主要人物。
+
+    見た目こそ可'
+- name: 時透無一郎
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 時透無一郎
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 957
+  excerpt: '時透 無一郎（ときとう むいちろう）
+
+    声 - 河西健吾
+
+    演 - 奥田夢叶
+
+    「 霞の呼吸 」を使用する 霞柱（かすみばしら） 。年齢は14歳 。当代最年少の柱であり、刀を握って僅か2か月で柱となった天才。「日の呼吸の剣士」の子孫と伝わっているが、正確にはその双子の兄の「月の呼吸」の剣士・継国巌勝（黒死牟）の子孫 。日輪刀は霞のように白い刀身。刀鍛冶の里編の主要'
+- name: 宇髄天元
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 宇髄天元
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 790
+  excerpt: '宇髄 天元（うずい てんげん）
+
+    声 - 小西克幸
+
+    演 - 辻凌志朗
+
+    「 音の呼吸 」を使用する 音柱（おとばしら） 。年齢は23歳 。「派手」が口癖で、宝石が散りばめられた額当てをはめ、左目の周囲に化粧をしている派手な出で立ちの大柄な剣士 。忍の家系で闇に隠れて生きてきた反動から派手好きになった。豪快で気のいい性格で「祭りの神」を自称する 。素顔は非常に端正'
+- name: 悲鳴嶼行冥
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 悲鳴嶼行冥
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 782
+  excerpt: '悲鳴嶼 行冥（ひめじま ぎょうめい）
+
+    声 - 杉田智和
+
+    演 - チャンヘ
+
+    「 岩の呼吸 」を使用する 岩柱（いわばしら） 。年齢は27歳 。僧侶を思わせる風体で、盲目の大男 。失明は幼少期の高熱によるもの。性格は穏やかで優しく涙脆い。
+
+    柱の中では最年長のまとめ役で、耀哉の信頼も厚い 。体格と腕力は柱一で、心技体に優れ、総合的な戦闘力は突出して高い。伊之助や複'
+- name: 不死川実弥
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 不死川実弥
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 890
+  excerpt: '不死川 実弥（しなずがわ さねみ）
+
+    声 - 関智一
+
+    演 - 前田隆太朗
+
+    「 風の呼吸 」を使用する 風柱 （かぜばしら）。年齢は21歳 。不死川玄弥の兄。短い白髪の青年で身体中に傷痕がある。非常に粗暴かつ苛烈な言動が目立ち、柱の中でも鬼への憎悪や敵意はずばぬけて強い。後輩の一般隊士には非常に厳しく接する一方、先輩の柱である悲鳴嶼や槇寿郎、当主の耀哉に敬語を使'
+- name: 鬼舞辻無惨
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: unchanged_no_match
+- name: 猗窩座
+  url: https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%BB%85%E3%81%AE%E5%88%83%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: 猗窩座
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 933
+  excerpt: '猗窩座（あかざ）
+
+    声 - 石田彰
+
+    演 - 蒼木陣
+
+    上弦の参 。全身に刺青のような文様を持ち、紅梅色の短髪をした青年の鬼。人間だった頃の名残からか、鬼としては珍しく人を食うことよりも鍛錬に多くの時間を費やしていたとされる 。
+
+    愚直なまでに強さを追い求める武術家のような一面を持ち、敵であっても強者と見なした相手には敬意を払うが、その一方で弱者と見なした相手は露骨'
+- name: サイタマ
+  url: https://ja.wikipedia.org/wiki/%E3%83%AF%E3%83%B3%E3%83%91%E3%83%B3%E3%83%9E%E3%83%B3
+  status: updated
+  matched_alias: サイタマ
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 2323
+  excerpt: 'サイタマ（ハゲマント）
+
+    声 - 古川慎
+
+    C級388位（最下位）→C級342位→C級5位→C級2位→C級1位→B級101位→B級63位→B級33位→B級7位→A級39位→ヒーローネーム被害者の会・幹部（ONEの原作での順位。リメイク版でもこの順位になるかはまだ不明）
+
+    物語の主人公にして最強のキャラ。25歳、身長175cm、体重70kg。引き締まった筋肉質の身体'
+- name: アイアンマン（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: キャプテン・アメリカ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ソー（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ドクター・ストレンジ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: サノス（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ワンダ・マキシモフ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ブラックパンサー（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: キャプテン・マーベル（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ロキ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ヴィジョン（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ブラック・ウィドウ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ハルク（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ピーター・パーカー
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: クリント・バートン
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: サム・ウィルソン（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: バッキー・バーンズ（マーベル・シネマティック・ユニバース）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: スコット・ラング（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ホープ・ヴァン・ダイン（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ピーター・クイル
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ガモーラ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ドラックス（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: グルート（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ニック・フューリー（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ネビュラ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: マンティス（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ウォン（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: シュリ（MCU）
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%8D%E3%83%9E%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ダース・ベイダー
+  url: https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%BC%E3%82%B9%E3%83%BB%E3%83%99%E3%82%A4%E3%83%80%E3%83%BC
+  status: updated
+  matched_alias: ダース・ベイダー
+  alias_source: name
+  match_kind: body
+  match_score: 65
+  chars: 368
+  excerpt: 'ダース・ベイダー （ Darth Vader ）は、 SF映画 『スター・ウォーズ』シリーズ に登場する架空の人物 。このシリーズにおける代表的な アンチヒーロー でもある。 日本語 名には 表記揺れ として「ダース・ ヴェイダー 」と「ダース・ ベーダー 」が見られる。
+
+    本名および ジェダイ の騎士であった頃の名は アナキン・スカイウォーカー で、天性の才'
+- name: アナキン・スカイウォーカー
+  url: https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%BC%E3%82%B9%E3%83%BB%E3%83%99%E3%82%A4%E3%83%80%E3%83%BC
+  status: unchanged_no_match
+- name: ネオ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9_%28%E6%98%A0%E7%94%BB%29
+  status: unchanged_no_match
+- name: エージェント・スミス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9_%28%E6%98%A0%E7%94%BB%29
+  status: unchanged_no_match
+- name: トリニティ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9_%28%E6%98%A0%E7%94%BB%29
+  status: unchanged_no_match
+- name: モーフィアス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9_%28%E6%98%A0%E7%94%BB%29
+  status: unchanged_no_match
+- name: フラッシュ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: グリーンランタン
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ナイトウィング
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ウォーリー・ウェスト
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: アラン・スコット
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ドナ・トロイ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ドクター・フェイト
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ブルービートル
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ブースターゴールド
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: レイ・パーマー
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ブラックアダム
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: シネストロ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ロボ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: エトリガン
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: スペクター
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: バットウーマン
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ミスター・ミラクル
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ビッグ・バルダ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ヴァンダル・サベッジ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: ロールシャッハ
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: オールマイト
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2
+  status: updated
+  matched_alias: オールマイト
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1139
+  excerpt: 'オールマイト / 八木 俊典（やぎ としのり）
+
+    声 - 三宅健太 / 玄田哲章
+
+    前髪をV字に2本逆立てた金髪の筋骨隆々の体格、白い歯を見せた笑顔が特徴（トレードマークとなるV字に2本逆立てた前髪は、作者によると「 ヴィクトリー 」の「V」をイメージしているとのこと ）。
+
+    8代目ワン・フォー・オール継承者。平和の象徴として絶大な人気と実力を誇る「No.1ヒーロ'
+- name: 死柄木弔
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2
+  status: updated
+  matched_alias: 死柄木弔
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 681
+  excerpt: '死柄木 弔（しがらき とむら） / 志村 転弧（しむら てんこ）
+
+    声 - 内山昂輝 、 関根有咲 （幼少期）
+
+    敵（ヴィラン）連合のリーダー。異能解放軍との戦い後は「超常解放戦線」の最高指導者。20歳。多数の手（顔面・後頭部・頸部・両脇・両腕に計14）を張り付かせた痩身の男。志村菜奈の孫。
+
+    犯罪をゲームの感覚で楽しみ、苛立つと首を掻く。顔面に仮面のように付けて'
+- name: エンデヴァー
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2
+  status: updated
+  matched_alias: エンデヴァー
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 651
+  excerpt: 'エンデヴァー / 轟 炎司（とどろき えんじ）
+
+    声 - 稲田徹
+
+    燃焼系ヒーロー。雄英高校OB。事件解決数史上最多を誇る、オールマイトに次ぐNo.2ヒーロー。轟焦凍の父親。極めて上昇意欲が強く、オールマイトに強い対抗意識を抱く。実力は非常に高く、No.2に相応しい高い洞察力も持つ。記憶力も高く、エンディングについて細かく覚えていたり、妻である冷が初めてあった時'
+- name: ホークス
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2
+  status: updated
+  matched_alias: ホークス
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 394
+  excerpt: 'ホークス / 鷹見 啓悟（たかみ けいご）
+
+    声 - 中村悠一 （幼少期 - 秋山絵理 ）
+
+    ヒーロービルボードチャートJPのNO.3⇒No.2のウィングヒーロー。22歳。 福岡県 を拠点に九州で活躍する地方ヒーローだが、出張や調査で全国的に活動している。
+
+    雄英高校卒業者ではないが、18歳でデビューしてその年の下半期にはビルボードチャートトップ10入りを果たし、'
+- name: 荼毘
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2
+  status: updated
+  matched_alias: 荼毘
+  alias_source: name
+  match_kind: heading
+  match_score: 85
+  chars: 945
+  excerpt: '荼毘 （だび） / 轟 燈矢（とどろき とうや）
+
+    声 - 下野紘
+
+    開闢行動隊のリーダー。24歳。荼毘は通り名。「超常解放戦線」では、外典と共に「VIOLET」の行動隊長を務めている。
+
+    体の各部につぎはぎの跡がある。連合にはステインの思想に賛同して参加し、林間合宿襲撃後は仲間集めと称してヴィランと接触し、気に入らないと焼き殺すことを繰り返す。
+
+    その正体は死亡し'
+- name: トガヒミコ
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2
+  status: updated
+  matched_alias: トガヒミコ
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 292
+  excerpt: 'トガヒミコ / 渡我 被身子（とが ひみこ）
+
+    声 - 福圓美里
+
+    八重歯と茶髪が特徴の少女。17歳。未成年のため名前・顔ともに報道されていないが、連続失血死事件の容疑者とされる。「超常解放戦線」では、スケプティックと共に「CARMINE」の行動隊長を務める。
+
+    学生服を着て、髪型は両側を団子にしており、団子は付け根がハネている。刃物を武器にし、「血の香りがするボ'
+- name: 切島鋭児郎
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2#Kirishima
+  status: updated
+  matched_alias: 切島鋭児郎
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 523
+  excerpt: '切島 鋭児郎（きりしま えいじろう） / 烈怒頼雄斗 （ レッドライオット ）
+
+    声 - 増田俊樹
+
+    赤い髪色のスパイキーヘアに尖った歯てな右の瞼には“個性”発現時に擦ってできた傷が 特徴の男子生徒 。千葉県出身。
+
+    快活で分け隔てのない性格。悪態をつく爆豪にも積極的に接し、言い合いが起きると仲裁するなど、周囲に気を遣うことのできるクラスのムードメーカー的存在。
+
+    '
+- name: 蛙吹梅雨
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2#Tsuyu
+  status: updated
+  matched_alias: 蛙吹梅雨
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 620
+  excerpt: '蛙吹 梅雨（あすい つゆ） / FROPPY （ フロッピー ）
+
+    声 - 悠木碧
+
+    どんぐり眼の 蛙 のような風貌の女子生徒。愛知県出身。
+
+    クラスメートの女子とは特に麗日と仲が良く一緒にいる。
+
+    ヒーローコスチュームは、蛙をイメージしたデザインの緑を基調とした水中戦想定のボディスーツ。大きめのグローブやゴーグルを装備する。自身に考案したヒーロー名は、梅雨入りヒー'
+- name: 相澤消太
+  url: https://ja.wikipedia.org/wiki/%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2
+  status: unchanged_no_match
+- name: 両面宿儺
+  url: https://ja.wikipedia.org/wiki/%E5%91%AA%E8%A1%93%E5%BB%BB%E6%88%A6
+  status: updated
+  matched_alias: 両面宿儺
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 2360
+  excerpt: '両面宿儺 （りょうめんすくな）
+
+    声 - 諏訪部順一
+
+    「呪いの王」 と称される特級呪物であり、虎杖に受肉する形で登場した。劇中では単に「宿儺」と呼ばれることが多い。
+
+    宿儺が肉体の主導権を握ると、全身に文様が浮かび上がり、爪は黒く鋭く伸びる。虎杖が自我を保ったままでも、顔や手に口を出現させて声を出すことを可能とする。虎杖の体内に作った生得領域は 肋骨 のような巨'
+- name: 乙骨憂太
+  url: https://ja.wikipedia.org/wiki/%E5%91%AA%E8%A1%93%E5%BB%BB%E6%88%A6#Yuta
+  status: updated
+  matched_alias: 乙骨憂太
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1687
+  excerpt: '乙骨 憂太（おっこつ ゆうた）
+
+    声 - 緒方恵美
+
+    東京都立呪術高等専門学校 の主人公。
+
+    都立呪術高専2年生。特級呪術師。2001年3月7日生まれ。一般人の家庭出身だが、後に、 日本三大怨霊 の1人にして御三家・五条家の先祖に当たる超大物呪術師・ 菅原道真 の子孫であり、五条の「超遠縁の親戚」であることが明らかになる。
+
+    人の強さや優しさに敏感で、仲間想いな性格'
+- name: メルエム
+  url: https://ja.wikipedia.org/wiki/HUNTER%C3%97HUNTER%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: unchanged_no_match
+- name: レオリオ
+  url: https://ja.wikipedia.org/wiki/HUNTER%C3%97HUNTER%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: レオリオ
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 4
+  excerpt: レオリオ
+- name: クロロ＝ルシルフル
+  url: https://ja.wikipedia.org/wiki/HUNTER%C3%97HUNTER%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: unchanged_no_match
+- name: アイザック＝ネテロ
+  url: https://ja.wikipedia.org/wiki/HUNTER%C3%97HUNTER%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: アイザック＝ネテロ
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 39
+  excerpt: 'アイザック＝ネテロ
+
+    最終試験を担当した。
+
+    詳細は 「ハンター協会本部」 を参照'
+- name: デンジ
+  url: https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%9E%E3%83%B3
+  status: updated
+  matched_alias: デンジ
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 887
+  excerpt: 'デンジ
+
+    声 - 戸谷菊之介 （幼少期 - 井上麻里奈 ）
+
+    演 - 土屋直武 （幼少期 - 岩田陽葵 ）
+
+    本作の主人公。自称16歳 。「チェンソーの悪魔」であるポチタとともに非正規のデビルハンターとして働いていた少年 。死んだ父親が遺した借金の返済に追われる日々を送っていたが、あるとき「ゾンビの悪魔」と契約した ヤクザ たちに殺害された際に、ポチタが心臓となり'
+- name: 早川アキ
+  url: https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%9E%E3%83%B3
+  status: updated
+  matched_alias: 早川アキ
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 777
+  excerpt: '早川 アキ（はやかわ あき）
+
+    声 - 坂田将吾 （幼少期 - 村瀬歩 ）
+
+    演 - 梅津瑞樹
+
+    公安対魔特異4課の隊員で、デンジの3年先輩の男性。髪を後頭部の高い位置で結っている。父親（声 - 上田燿司 ）、母親（声 - 斎藤恵理 ）、弟のタイヨウ（声 - 中臣真菜 ）を銃の悪魔に殺され、復讐のためにデビルハンターになった。銃の悪魔討伐に命を懸けており、死すら厭'
+- name: スパイク・スピーゲル
+  url: https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%A6%E3%83%9C%E3%83%BC%E3%82%A4%E3%83%93%E3%83%90%E3%83%83%E3%83%97
+  status: updated
+  matched_alias: スパイク・スピーゲル
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 470
+  excerpt: 'スパイク・スピーゲル (Spike Spiegel)
+
+    声 - 山寺宏一
+
+    火星 生まれの27歳。
+
+    本作の主人公。もじゃもじゃ頭で長身痩躯。かつて事故で負った傷のため右目には 義眼 を嵌めている。 ジークンドー の達人で、 ブルース・リー を師と仰ぐ。 ジェリコ941 改を愛用し、レース用に開発された機体を改造した高速戦闘機「ソードフィッシュII」を操る。
+
+    普段'
+- name: グリフィス
+  url: https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%82%BB%E3%83%AB%E3%82%AF_%28%E6%BC%AB%E7%94%BB%29
+  status: updated
+  matched_alias: グリフィス
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 135
+  excerpt: 'グリフィス
+
+    「鷹の団」団長にしてガッツが追いつこうと足掻いている存在。知性戦闘力など全てにおいて完璧だったが魔に墜ち、後にゴッド・ハンド「フェムト」へと変貌する。特殊な儀式によって現世に受肉して「新生鷹の団」を結成する。再び「自分の国」を手に入れようと戦乱を巻き起こす。'
+- name: 金木研
+  url: https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E5%96%B0%E7%A8%AE%E3%83%88%E3%83%BC%E3%82%AD%E3%83%A7%E3%83%BC%E3%82%B0%E3%83%BC%E3%83%AB
+  status: updated
+  matched_alias: 金木研
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 576
+  excerpt: '金木 研（かねき けん）
+
+    声 - 花江夏樹 、 小堀友里絵 （第一部 子供時代）、 櫻井優輝 （『:re』 少年）/ 演（舞） - 小越勇輝 （1作目）→ 松田凌 （2作目） / 演（映） - 窪田正孝
+
+    本作品第一部の主人公。愛称は「カネキ」。物語開始時点で18歳。上井大学の一年生で、20区内のマンションで一人暮らしをしている。当初は黒髪だったが、ヤモリの拷'
+- name: 影山茂夫
+  url: https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%96%E3%82%B5%E3%82%A4%E3%82%B3100
+  status: updated
+  matched_alias: 影山茂夫
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1383
+  excerpt: '影山茂夫（かげやま しげお）
+
+    声 - 伊藤節生 / 演 - 濱田龍臣 （ドラマ版） / 伊藤節生（舞台版）
+
+    主人公。通称「モブ」（名前の「茂夫」を 音読み にしたもの）。 おかっぱ 頭が特徴の少年。身長157.7センチメートル、体重44.3キログラム、血液型O型、誕生日5月12日、牡牛座、寅年。14歳。塩中学校2年1組在籍。無口、無表情、無愛想で大人しく、場'
+- name: イーサン・ハント
+  url: https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%3A%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%83%E3%82%B7%E3%83%96%E3%83%AB
+  status: unchanged_no_match
+- name: ロッキー・バルボア
+  url: https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%83%E3%82%AD%E3%83%BC_%28%E6%98%A0%E7%94%BB%29
+  status: unchanged_no_match
+- name: サラ・コナー
+  url: https://ja.wikipedia.org/wiki/%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8D%E3%83%BC%E3%82%BF%E3%83%BC_%28%E6%98%A0%E7%94%BB%29
+  status: unchanged_no_match
+- name: ザ・ブライド
+  url: https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%AB%E3%83%BB%E3%83%93%E3%83%AB
+  status: updated
+  matched_alias: ベアトリクス・キドー
+  alias_source: source_wikidata_label_ja
+  match_kind: heading
+  match_score: 115
+  chars: 190
+  excerpt: 'ベアトリクス・キドー / ザ・ブライド （ 英語版 ） / ブラック・マンバ
+
+    演： ユマ・サーマン 、日本語吹替： 唐沢潤
+
+    本作の主人公。ビルとその部下らに対し復讐に燃える女性。本名が分かるのは『Vol.2』から。コッパーヘッドとの立ち回りや、オーレン石井と対峙した時には本名が語られている 。冒頭でビルが彼女と対話する際に姓を呼び、空港での航空券にはフルネー'
+- name: カットニス・エヴァディーン
+  url: https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%B3%E3%82%AC%E3%83%BC%E3%83%BB%E3%82%B2%E3%83%BC%E3%83%A0
+  status: unchanged_no_match
+- name: サイクロップス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ジーン・グレイ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ゴーストライダー
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: インビジブル・ウーマン
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: シング
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ローグ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: コロッサス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: エマ・フロスト
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: サイロック
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ビショップ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: アポカリプス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ジャガーノート
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: セイバートゥース
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: カーネイジ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ヘラクレス
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ノヴァ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: アイアンフィスト
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: パワーマン
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ブルズアイ
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: ムーンガール
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: スクイレル・ガール
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%99%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF
+  status: unchanged_no_match
+- name: 人造人間17号
+  url: https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: 人造人間17号
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 159
+  excerpt: '人造人間17号
+
+    声 - 中原茂
+
+    ドクター・ゲロに、姉の人造人間18号とともに人間をベースに改造された永久エネルギー式の人造人間。『ドラゴンボールGT』では洗脳され、悟空たちの強敵として立ちはだかるが、『ドラゴンボール超』では力の大会でかつて敵対していた悟空と共闘し、信頼関係を築いた。
+
+    人間だった頃の名前は「ラピス」。'
+- name: ゴクウブラック
+  url: https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: unchanged_no_match
+- name: 綱手
+  url: https://ja.wikipedia.org/wiki/NARUTO_-%E3%83%8A%E3%83%AB%E3%83%88-%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: 綱手
+  alias_source: name
+  match_kind: heading
+  match_score: 85
+  chars: 1918
+  excerpt: '綱手 （つなで）
+
+    声 - 勝生真沙子 、 七緒はるひ （幼少）、 沖佳苗 （少女変装時 ）
+
+    演 - 大湖せしる / 愛華みれ / 市川笑也
+
+    五代目火影。伝説の三忍の一人であり初代火影・千手柱間の初孫。髪色は金髪で 額 に小さな青い 菱形 の 模様 （これは後述する額に溜め込んだチャクラである）がある。大酒飲みで大の賭博好きだが賭け事には弱い。ナルトからは「綱'
+- name: 波風ミナト
+  url: https://ja.wikipedia.org/wiki/NARUTO_-%E3%83%8A%E3%83%AB%E3%83%88-%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: 波風ミナト
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1715
+  excerpt: '波風ミナト （なみかぜ ミナト）
+
+    声 - 森川智之 、 入野自由 （少年）
+
+    演 - 北園涼 / 坂東巳之助（歌舞伎版）
+
+    四代目火影。ナルトの父。金髪に青い眼をした容姿端麗の青年。一人称は「オレ」。かつては並はずれた速度での「瞬身の術」や、特殊な印が書かれた札を目印に瞬間移動する時空間忍術「飛雷神の術」を用いて一瞬にして敵を倒すことから「木ノ葉の黄色い閃光」と'
+- name: ペイン
+  url: https://ja.wikipedia.org/wiki/NARUTO_-%E3%83%8A%E3%83%AB%E3%83%88-%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: unchanged_no_match
+- name: ジンベエ
+  url: https://ja.wikipedia.org/wiki/ONE_PIECE%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: unchanged_no_match
+- name: サボ
+  url: https://ja.wikipedia.org/wiki/ONE_PIECE%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: サボ
+  alias_source: name
+  match_kind: heading
+  match_score: 100
+  chars: 2342
+  excerpt: 'サボ
+
+    声 - 古谷徹 （663話 - 1089話） → 入野自由 （1116話 - ） 、 竹内順子 （幼少期）
+
+    革命軍参謀総長。 エース ・ルフィの義兄弟。懸賞金6億200万ベリー 。異名は「 炎帝 」。
+
+    「東の海」 ゴア王国 出身。22歳。誕生日は 3月20日 （「さ〜」=3、「ぶ〜」=2、「お〜」=0） 。身長100cm（10歳時） →187cm 。 '
+- name: カイドウ
+  url: https://ja.wikipedia.org/wiki/ONE_PIECE%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: unchanged_no_match
+- name: アシェラッド
+  url: https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%B5%E3%82%AC#Askeladd
+  status: updated
+  matched_alias: アシェラッド
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 1214
+  excerpt: 'アシェラッド
+
+    声 - 内田直哉 / 山路和弘 （朗読劇） / 萩野崇 （舞台）
+
+    職業的ヴァイキング集団、アシェラッド兵団の首領。デンマーク出身。
+
+    飄々とした人物で、手腕は冷酷非情。常に先を読み、人の才覚や性格を見抜き操る術にも長ける。トルフィンには仇として命を狙われながらも、彼を手下として使いこなす。短髪であご髭をたくわえ、常にローマ風の 一枚プレート の胴'
+- name: トルフィン
+  url: https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%B5%E3%82%AC
+  status: updated
+  matched_alias: トルフィン
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 995
+  excerpt: 'トルフィン
+
+    声 - 上村祐翔 、 石上静香 （幼少期） / 松岡禎丞 （朗読劇、 LORD of VERMILION IV も同キャスト ） / 橋本祥平 （舞台）
+
+    物語の主人公。本名、トルフィン・トールズスソン 。 アイスランド 出身。後に「侠気のトルフィン（トルフィン・カルルセヴニ）」とあだ名される。作中における誕生日は2月3日 。
+
+    ヴァイキング集団の首'
+- name: 東方仗助
+  url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%82%B8%E3%83%A7%E3%81%AE%E5%A5%87%E5%A6%99%E3%81%AA%E5%86%92%E9%99%BA
+  status: unchanged_no_match
+- name: 空条徐倫
+  url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%82%B8%E3%83%A7%E3%81%AE%E5%A5%87%E5%A6%99%E3%81%AA%E5%86%92%E9%99%BA
+  status: unchanged_no_match
+- name: エンリコ・プッチ
+  url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%82%B8%E3%83%A7%E3%81%AE%E5%A5%87%E5%A6%99%E3%81%AA%E5%86%92%E9%99%BA
+  status: unchanged_no_match
+- name: ムサシ
+  url: https://ja.wikipedia.org/wiki/%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E5%9B%A3_(%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC)
+  status: unchanged_no_match
+- name: コジロウ
+  url: https://ja.wikipedia.org/wiki/%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E5%9B%A3_(%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC)
+  status: unchanged_no_match
+- name: ロイ・マスタング
+  url: https://ja.wikipedia.org/wiki/%E9%8B%BC%E3%81%AE%E9%8C%AC%E9%87%91%E8%A1%93%E5%B8%AB
+  status: unchanged_no_match
+- name: スカー
+  url: https://ja.wikipedia.org/wiki/%E9%8B%BC%E3%81%AE%E9%8C%AC%E9%87%91%E8%A1%93%E5%B8%AB
+  status: unchanged_no_match
+- name: アーカード
+  url: https://ja.wikipedia.org/wiki/HELLSING
+  status: updated
+  matched_alias: アーカード
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 1226
+  excerpt: 'アーカード
+
+    声 - 中田譲治
+
+    本作の主人公。ヘルシング家に仕える吸血鬼。
+
+    黒の長髪に細身の長身という青年の容姿の吸血鬼。赤いロングコートを羽織り、サングラスを掛けていることが多い。また武器として白い大型拳銃「.454カスール カスタムオートマチック」と黒い大型拳銃「ジャッカル」の2丁拳銃で戦うことを好む。性格は傲岸不遜かつ傍若無人で主人であるインテグラにも平'
+- name: ヴァッシュ・ザ・スタンピード
+  url: https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%82%A4%E3%82%AC%E3%83%B3
+  status: updated
+  matched_alias: ヴァッシュ・ザ・スタンピード
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 887
+  excerpt: 'ヴァッシュ・ザ・スタンピード
+
+    声 - 小野坂昌也 （少年時代 - 宮田幸季 ） / 松岡禎丞 （幼少期 - 黒沢ともよ ）
+
+    本作の主人公 。「 人間台風（ヒューマノイド・タイフーン） 」と恐れられる元・600億$$の賞金首にして、人類初の局地災害指定を受けた（以降は「災害に賞金は掛けられない」という理屈から賞金自体が失効）伝説のガンマン。真紅のコートに箒のよ'
+- name: アトム
+  url: https://ja.wikipedia.org/wiki/%E9%89%84%E8%85%95%E3%82%A2%E3%83%88%E3%83%A0
+  status: updated
+  matched_alias: アトム
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1515
+  excerpt: 'アトム（トビオ）
+
+    声 - 清水マリ （第1・2作、 手塚治虫が消えた!? 20世紀最後の怪事件 ）、 田上和枝 （清水マリの産休の代理で第1作97-106話のみ）、 津村まこと （第3作）、 上戸彩 （ハリウッド版）、 村川梨衣 （ろぼっとアトム）、 朴璐美 （GO!GO!）、 日笠陽子 （ PLUTO ）
+
+    アトムは初登場の作品である光文社の雑誌『少年』連載'
+- name: ガリィ
+  url: https://ja.wikipedia.org/wiki/%E9%8A%83%E5%A4%A2
+  status: updated
+  matched_alias: ガリィ
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 1321
+  excerpt: 'ガリィ
+
+    声 - 伊藤美紀
+
+    本編の主人公。 火星 で発祥した伝説の格闘技術「機甲術」（パンツァークンスト）の使い手。元の名前は 陽子（ヨーコ） 。数百年前に大気圏外から地上へ落下するが、奇跡的に一命を取り止め、仮死状態のままクズ鉄町のスクラップの山で眠っていた。イド・ダイスケに発見されて「ガリィ」と名づけられる。ガリィとは、イドが以前飼っていたペット（黒猫のオ'
+- name: 日暮かごめ
+  url: https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%A4%9C%E5%8F%89%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: 日暮かごめ
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 103
+  excerpt: '日暮かごめ（ひぐらし かごめ）
+
+    声 - ゆきのさつき （旧名義「雪乃（雪野）五月」） / 岩男潤子 （サンデーCM劇場）
+
+    本作の ヒロイン 。中学生の少女。15歳→19歳。 →詳細は「 日暮かごめ 」を参照'
+- name: 殺生丸
+  url: https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%A4%9C%E5%8F%89%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: 殺生丸
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 81
+  excerpt: '殺生丸（せっしょうまる）
+
+    声 - 成田剣
+
+    犬夜叉の異母兄。人間換算年齢19歳。実年齢は200歳以上。半妖の犬夜叉と違い、完全な妖怪。
+
+    →詳細は「 殺生丸 」を参照'
+- name: キャシアン・アンドー
+  url: https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9%E4%B8%80%E8%A6%A7
+  status: updated
+  matched_alias: キャシアン・アンドー
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 789
+  excerpt: 'キャシアン・アンドー (Cassian Andor)
+
+    反乱同盟軍の大尉で、情報部の将校として潜入任務に就いていた。デス・スターの設計図の入手と、設計者ゲイレン・アーソの暗殺を命じられており、彼の娘ジンと行動を共にする。同盟市民政府がデス・スターの設計図の奪取に消極的な姿勢を示すと、ジンたちと共に惑星スカリフの帝国安全管理施設に潜入し、設計図をラダス艦隊に送信'
+- name: ジョーカー（ダークナイト）
+  url: https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%8A%E3%82%A4%E3%83%88
+  status: updated
+  matched_alias: ジョーカー
+  alias_source: source_wikidata_label_ja
+  match_kind: heading
+  match_score: 130
+  chars: 164
+  excerpt: 'ジョーカー
+
+    演 - ヒース・レジャー
+
+    指紋やDNAの情報がデータベースにない、顔にピエロのメイクを施した素性不明の犯罪者。手段を選ばない冷酷な性格の用意周到な計画を練る知能犯。銃器の扱いにも長けている。序盤で銀行を襲い、マフィアの金を奪い取る。そして、そのマフィアたちと手を組む。口元に切り裂かれたような傷跡があるが理由は不明。'
+- name: ハーレイ・クイン（DCEU）
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%86%E3%83%B3%E3%83%87%E3%83%83%E3%83%89%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: クラーク・ケント（DCEU）
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%86%E3%83%B3%E3%83%87%E3%83%83%E3%83%89%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ブルース・ウェイン（DCEU）
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%86%E3%83%B3%E3%83%87%E3%83%83%E3%83%89%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: ダイアナ・プリンス（DCEU）
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%86%E3%83%B3%E3%83%87%E3%83%83%E3%83%89%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: バリー・アレン（DCEU）
+  url: https://ja.wikipedia.org/wiki/DC%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%86%E3%83%B3%E3%83%87%E3%83%83%E3%83%89%E3%83%BB%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B9
+  status: unchanged_no_match
+- name: アーサー・カリー（DCEU）
+  url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%9E%E3%83%B3_(%E6%98%A0%E7%94%BB)#Arthur
+  status: updated
+  matched_alias: アーサー・カリー
+  alias_source: name_without_parentheses
+  match_kind: heading
+  match_score: 105
+  chars: 110
+  excerpt: 'アーサー・カリー / アクアマン
+
+    演 - ジェイソン・モモア 、日本語吹替 - 安元洋貴
+
+    アトランティス帝国の元女王であるアトランナと、人間の父との間に生まれた。海に住む生物とのコミュニケーション能力を持つ本作の主人公。'
+- name: マックス・ロカタンスキー
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%83%E3%83%89%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: フュリオサ大隊長
+  url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%83%E3%83%89%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9
+  status: unchanged_no_match
+- name: エメット・ブラウン
+  url: https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%82%AF%E3%83%BB%E3%83%88%E3%82%A5%E3%83%BB%E3%82%B6%E3%83%BB%E3%83%95%E3%83%A5%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC
+  status: unchanged_no_match
+- name: デッカード
+  url: https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3%E3%83%8A%E3%83%BC
+  status: unchanged_no_match
+- name: ジェイク・サリー
+  url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC_%28%E6%98%A0%E7%94%BB%29
+  status: updated
+  matched_alias: ジェイク・サリー
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 574
+  excerpt: 'ジェイク・サリー （ 英語版 ）
+
+    演 - サム・ワーシントン 、日本語吹替 - 東地宏樹
+
+    本作の主人公で元海兵隊員（伍長）。 傷痍軍人 で ベネズエラでの戦争で負傷し、脊髄を損傷したため下半身不随となっている。 軍人年金の額では治療を行うことが出来ず車椅子生活を余儀なくされていたが、アバター計画に参加するはずだった科学者の双子の兄トミーが強盗に襲われ急死した'
+- name: ネイティリ
+  url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC_%28%E6%98%A0%E7%94%BB%29
+  status: updated
+  matched_alias: ネイティリ
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 232
+  excerpt: 'ネイティリ （ 英語版 ）
+
+    演 - ゾーイ・サルダナ 、日本語吹替 - 小松由佳
+
+    ナヴィの狩猟部族、オマティカヤ族の族長の娘。自身も強力な戦士。最初はジェイクに敵意を表すが、母モアトの命で彼にナヴィの生き方を教えるうちに惹かれ合っていく。
+
+    エクステンデッド・エディションでは、姉のシルワニンが森の伐採を怒ってオマティカヤ族の数人の兵士達と共にブルドーザーに放火'
+- name: シンバ
+  url: https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC
+  status: unchanged_no_match
+- name: ピンヘッド
+  url: https://ja.wikipedia.org/wiki/%E3%83%98%E3%83%AB%E3%83%BB%E3%83%AC%E3%82%A4%E3%82%B6%E3%83%BC
+  status: unchanged_no_match
+- name: ジャッジ・ドレッド
+  url: https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%83%E3%82%B8%E3%83%BB%E3%83%89%E3%83%AC%E3%83%83%E3%83%89
+  status: unchanged_no_match
+- name: トラヴィス・ビックル
+  url: https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC
+  status: unchanged_no_match
+- name: トニー・モンタナ
+  url: https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9
+  status: unchanged_no_match
+- name: ナレーター
+  url: https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%88%E3%83%BB%E3%82%AF%E3%83%A9%E3%83%96
+  status: unchanged_no_match
+- name: デュード
+  url: https://ja.wikipedia.org/wiki/%E3%83%93%E3%83%83%E3%82%B0%E3%83%BB%E3%83%AA%E3%83%9C%E3%82%A6%E3%82%B9%E3%82%AD
+  status: unchanged_no_match
+- name: ウィリー・ウォンカ
+  url: https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A7%E3%82%B3%E3%83%AC%E3%83%BC%E3%83%88%E5%B7%A5%E5%A0%B4%E3%81%AE%E7%A7%98%E5%AF%86
+  status: updated
+  matched_alias: ウィリー・ウォンカ
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 151
+  excerpt: 'ウィリー・ウォンカ（Willy Wonka）
+
+    チョコレート工場の工場長。ライバル会社の 産業スパイ のせいで従業員を大量解雇処分し、のちにウンパルンパたちを雇う。自分の後継者を探すために5枚のゴールデンチケットを探し当てるキャンペーンを開く。 田村隆一 と柳瀬尚紀の翻訳では姓が ワンカ と表記される。'
+- name: メリー・ポピンズ
+  url: https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%94%E3%83%B3%E3%82%BA
+  status: updated
+  matched_alias: メリー・ポピンズ
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 347
+  excerpt: 'メリー・ポピンズ
+
+    魔法 が使え、美人で賢く優しいスーパー ナニー （ 乳母 のこと、 ベビーシッター とは若干ニュアンスが異なる）。普段は雲の上で暮らしている。鞄の中にはたくさんの道具が詰まっており、明らかに入らない大きなサイズの物まで入っている。ジェーンとマイケルの書いたナニー募集の広告を見て、ジョージの厳格な条件を見て集まってきたナニー達を魔法で追い払っ'
+- name: ジャック・トランス
+  url: https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A3%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0_%28%E6%98%A0%E7%94%BB%29
+  status: updated
+  matched_alias: ジャック・トランス
+  alias_source: name
+  match_kind: heading
+  match_score: 130
+  chars: 1322
+  excerpt: 'ジャック・トランス
+
+    原作版のジャック・トランスは「小市民的であるが、度々 癇癪 を起こしてトラブルを起こす」という部分が強調され、 アルコール依存症 にも自ら罪悪感を抱いて苦しむ人物として登場する。学校を解雇された理由も、生徒を殴打したことが原因である。ホテルの不思議な現象に終始圧倒されて数々の暴行を働くものの、最終的には善良な意思がホテルに打ち勝つ形で家族'
+- name: ノーマン・ベイツ
+  url: https://ja.wikipedia.org/wiki/%E3%82%B5%E3%82%A4%E3%82%B3_%281960%E5%B9%B4%E3%81%AE%E6%98%A0%E7%94%BB%29
+  status: unchanged_no_match
