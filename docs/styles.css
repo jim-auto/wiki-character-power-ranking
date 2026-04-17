@@ -387,6 +387,22 @@ input {
   list-style: none;
 }
 
+.evidence-details {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.evidence-details summary {
+  cursor: pointer;
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.evidence-details[open] .evidence-list {
+  margin-top: 10px;
+}
+
 .evidence-item {
   border-left: 3px solid var(--line);
   padding-left: 10px;

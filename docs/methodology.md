@@ -70,14 +70,14 @@ condition_evidence: object
 
 `collection_tags` はUI検索用の派生タグです。現在はユニバース名から `jump_manga`、`marvel`、`dc` を決定的に付与します。採点には使いません。
 
-`image_url`、`image_source`、`image_alt` は表示用フィールドです。日本語版Wikipediaの `pageimages` APIから取得したサムネイルだけを保存し、スコア計算や根拠抽出には使いません。
+`image_url`、`image_source`、`image_alt` は表示用フィールドです。日本語版Wikipediaの `pageimages` API、または日本語版Wikipediaページに紐づくWikidata P18から取得したサムネイルだけを保存し、スコア計算や根拠抽出には使いません。
 
 ## 日本語版Wikipediaのみの制約
 
 許可するもの:
 
 - `wikipedia_url` に指定された日本語版Wikipedia本文
-- MediaWiki API、REST Summary、REST HTML、通常ページHTMLが返すページタイトル、pageid、revision ID、本文、表示用サムネイル
+- MediaWiki API、REST Summary、REST HTML、通常ページHTMLが返すページタイトル、pageid、revision ID、本文、表示用サムネイル、ページに紐づくWikidata P18
 - このリポジトリ内にある決定的な文字列ルール
 
 許可しないもの:
@@ -98,7 +98,7 @@ condition_evidence: object
 - ジャンプ漫画タグ: 142件
 - Marvelタグ: 105件
 - DCタグ: 76件
-- 表示用サムネイル取得済み: 85件
+- 表示用サムネイル取得済み: 166件
 
 日本語版Wikipediaに単独キャラクターページがない場合、登場人物一覧や作品ページをソースにします。そのため、同じ日本語ページを複数キャラクターが共有する場合があります。どのURLへ解決されたかは `data/ja_wikipedia_resolution_report.yaml` で確認できます。
 
@@ -106,7 +106,7 @@ condition_evidence: object
 
 共有ページは `src/extract_character_sections.py` で再処理します。キャラクター名、日本語ラベル、括弧を外した名前、URLフラグメントを別名として使い、見出しまたはキャラクター導入文に一致した場合だけ `description_raw` を置き換えます。REST HTMLが429で制限された場合は、通常の日本語版WikipediaページHTMLを使います。ページ全体の概要を無理に採用せず、一致しないキャラクターは既存本文を維持します。結果は `data/section_extraction_report.yaml` に記録します。
 
-画像は `src/fetch_wikipedia_images.py` で別処理にしています。共有ページの画像は作品ロゴや集合画像になりやすいため既定ではスキップし、明らかなロゴ、タイトル画像、SVGも除外します。取得結果は `data/image_fetch_report.yaml` に記録します。
+画像は `src/fetch_wikipedia_images.py` で別処理にしています。共有ページの画像は作品ロゴや集合画像になりやすいため既定ではスキップし、明らかなロゴ、タイトル画像、SVGも除外します。`pageimages` で見つからない単独ページは、日本語版Wikipediaの `pageprops` からWikidata項目をたどり、P18画像を取得します。取得結果は `data/image_fetch_report.yaml` に記録します。
 
 ## 再生成手順
 

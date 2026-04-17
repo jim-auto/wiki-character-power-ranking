@@ -363,7 +363,10 @@ function characterCard(character, index) {
         <div class="dimension-label"><span>推定IQ</span><span>${escapeHtml(character.iq_score ?? 0)}</span></div>
         <div class="bar" aria-hidden="true"><div class="bar-fill iq" style="width: ${iqWidth}%"></div></div>
       </div>
-      <ul class="evidence-list">${evidence}</ul>
+      <details class="evidence-details">
+        <summary>根拠文を表示</summary>
+        <ul class="evidence-list">${evidence}</ul>
+      </details>
     </article>
   `;
 }
@@ -461,11 +464,17 @@ function renderBattle() {
     <div class="battle-evidence">
       <article class="character-card">
         <h3>${escapeHtml(a.name)}</h3>
-        <ul class="evidence-list">${battleEvidence(a)}</ul>
+        <details class="evidence-details">
+          <summary>比較根拠を表示</summary>
+          <ul class="evidence-list">${battleEvidence(a)}</ul>
+        </details>
       </article>
       <article class="character-card">
         <h3>${escapeHtml(b.name)}</h3>
-        <ul class="evidence-list">${battleEvidence(b)}</ul>
+        <details class="evidence-details">
+          <summary>比較根拠を表示</summary>
+          <ul class="evidence-list">${battleEvidence(b)}</ul>
+        </details>
       </article>
     </div>
   `;

@@ -68,6 +68,37 @@ def build_pageimages_url(host: str, titles: list[str], thumb_size: int) -> str:
     }, quote_via=quote)}"
 
 
+def build_pageprops_url(host: str, titles: list[str]) -> str:
+    return f"https://{host}/w/api.php?{urlencode({
+        'action': 'query',
+        'format': 'json',
+        'prop': 'pageprops',
+        'redirects': 1,
+        'titles': '|'.join(titles),
+    }, quote_via=quote)}"
+
+
+def build_wikidata_entities_url(qids: list[str]) -> str:
+    return f"https://www.wikidata.org/w/api.php?{urlencode({
+        'action': 'wbgetentities',
+        'format': 'json',
+        'ids': '|'.join(qids),
+        'props': 'claims',
+    }, quote_via=quote)}"
+
+
+def build_commons_imageinfo_url(filenames: list[str], thumb_size: int) -> str:
+    titles = [f"File:{filename}" for filename in filenames]
+    return f"https://commons.wikimedia.org/w/api.php?{urlencode({
+        'action': 'query',
+        'format': 'json',
+        'prop': 'imageinfo',
+        'iiprop': 'url',
+        'iiurlwidth': thumb_size,
+        'titles': '|'.join(titles),
+    }, quote_via=quote)}"
+
+
 def fetch_pageimages(
     url_title_pairs: list[tuple[str, str, str]],
     *,
@@ -106,11 +137,179 @@ def fetch_pageimages(
                         "image_url": str(thumbnail),
                         "pageimage": pageimage,
                         "wikipedia_title": page.get("title", title),
+                        "source": "ja.wikipedia.org pageimages",
                     }
 
             if sleep_seconds > 0:
                 time.sleep(sleep_seconds)
 
+    return result
+
+
+def fetch_wikidata_items(
+    url_title_pairs: list[tuple[str, str, str]],
+    *,
+    timeout: int,
+    user_agent: str,
+    batch_size: int,
+    sleep_seconds: float,
+) -> dict[str, dict[str, str]]:
+    result: dict[str, dict[str, str]] = {}
+    by_host: dict[str, list[tuple[str, str]]] = {}
+    for url, host, title in url_title_pairs:
+        by_host.setdefault(host, []).append((url, title))
+
+    for host, pairs in by_host.items():
+        for batch in chunked(pairs, batch_size):
+            titles = [title for _url, title in batch]
+            payload = request_json(
+                build_pageprops_url(host, titles),
+                timeout=timeout,
+                user_agent=user_agent,
+            )
+            aliases = build_title_aliases(payload)
+            pages = payload.get("query", {}).get("pages", {})
+            pages_by_title = {str(page.get("title")): page for page in pages.values()}
+
+            for url, title in batch:
+                resolved_title = resolve_title(title, aliases)
+                page = pages_by_title.get(resolved_title) or pages_by_title.get(title)
+                if not page:
+                    continue
+                qid = (page.get("pageprops") or {}).get("wikibase_item")
+                if qid:
+                    result[url] = {
+                        "qid": str(qid),
+                        "wikipedia_title": str(page.get("title", title)),
+                    }
+
+            if sleep_seconds > 0:
+                time.sleep(sleep_seconds)
+
+    return result
+
+
+def fetch_wikidata_p18_filenames(
+    qids: list[str],
+    *,
+    timeout: int,
+    user_agent: str,
+    batch_size: int,
+    sleep_seconds: float,
+) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for batch in chunked(qids, batch_size):
+        payload = request_json(
+            build_wikidata_entities_url(batch),
+            timeout=timeout,
+            user_agent=user_agent,
+        )
+        entities = payload.get("entities", {})
+        for qid in batch:
+            claims = (entities.get(qid) or {}).get("claims", {})
+            for claim in claims.get("P18", []) or []:
+                filename = (
+                    claim.get("mainsnak", {})
+                    .get("datavalue", {})
+                    .get("value")
+                )
+                if isinstance(filename, str) and not is_likely_non_character_image(filename):
+                    result[qid] = filename
+                    break
+
+        if sleep_seconds > 0:
+            time.sleep(sleep_seconds)
+
+    return result
+
+
+def fetch_commons_thumbnails(
+    filenames: list[str],
+    *,
+    timeout: int,
+    user_agent: str,
+    thumb_size: int,
+    batch_size: int,
+    sleep_seconds: float,
+) -> dict[str, dict[str, str]]:
+    result: dict[str, dict[str, str]] = {}
+    for batch in chunked(filenames, batch_size):
+        payload = request_json(
+            build_commons_imageinfo_url(batch, thumb_size),
+            timeout=timeout,
+            user_agent=user_agent,
+        )
+        pages = payload.get("query", {}).get("pages", {})
+        by_title = {str(page.get("title")): page for page in pages.values()}
+
+        for filename in batch:
+            page = by_title.get(f"File:{filename}")
+            if not page:
+                continue
+            imageinfo = (page.get("imageinfo") or [{}])[0]
+            image_url = imageinfo.get("thumburl") or imageinfo.get("url")
+            if image_url:
+                result[filename] = {
+                    "image_url": str(image_url),
+                    "pageimage": filename,
+                }
+
+        if sleep_seconds > 0:
+            time.sleep(sleep_seconds)
+
+    return result
+
+
+def fetch_wikidata_images(
+    url_title_pairs: list[tuple[str, str, str]],
+    *,
+    timeout: int,
+    user_agent: str,
+    thumb_size: int,
+    batch_size: int,
+    sleep_seconds: float,
+) -> dict[str, dict[str, Any]]:
+    wikidata_items = fetch_wikidata_items(
+        url_title_pairs,
+        timeout=timeout,
+        user_agent=user_agent,
+        batch_size=batch_size,
+        sleep_seconds=sleep_seconds,
+    )
+    qids = sorted({item["qid"] for item in wikidata_items.values()})
+    filenames_by_qid = fetch_wikidata_p18_filenames(
+        qids,
+        timeout=timeout,
+        user_agent=user_agent,
+        batch_size=batch_size,
+        sleep_seconds=sleep_seconds,
+    )
+    filenames = sorted(set(filenames_by_qid.values()))
+    commons_images = fetch_commons_thumbnails(
+        filenames,
+        timeout=timeout,
+        user_agent=user_agent,
+        thumb_size=thumb_size,
+        batch_size=batch_size,
+        sleep_seconds=sleep_seconds,
+    )
+
+    result: dict[str, dict[str, Any]] = {}
+    for url, item in wikidata_items.items():
+        qid = item["qid"]
+        filename = filenames_by_qid.get(qid)
+        if not filename:
+            continue
+        image = commons_images.get(filename)
+        if not image:
+            continue
+        result[url] = {
+            "image_url": image["image_url"],
+            "pageimage": filename,
+            "wikidata_item": qid,
+            "wikipedia_title": item["wikipedia_title"],
+            "source": "wikidata P18 via ja.wikipedia.org pageprops",
+        }
     return result
 
 
@@ -121,6 +320,8 @@ def is_likely_non_character_image(pageimage: str) -> bool:
         "wordmark",
         "logotype",
         "title",
+        "emblem",
+        "symbol",
     ]
     if normalized.endswith(".svg"):
         return True
@@ -141,6 +342,7 @@ def update_characters(
     batch_size: int,
     sleep_seconds: float,
     include_shared: bool,
+    wikidata_fallback: bool,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     characters = data["characters"]
     base_counts = Counter(base_wikipedia_url(str(character.get("wikipedia_url") or "")) for character in characters)
@@ -167,6 +369,21 @@ def update_characters(
         batch_size=batch_size,
         sleep_seconds=sleep_seconds,
     )
+    pageimage_count = len(images)
+
+    wikidata_count = 0
+    if wikidata_fallback:
+        fallback_candidates = [candidate for candidate in candidates if candidate[0] not in images]
+        wikidata_images = fetch_wikidata_images(
+            fallback_candidates,
+            timeout=timeout,
+            user_agent=user_agent,
+            thumb_size=thumb_size,
+            batch_size=batch_size,
+            sleep_seconds=sleep_seconds,
+        )
+        wikidata_count = len(wikidata_images)
+        images.update(wikidata_images)
 
     found_items: list[dict[str, Any]] = []
     missing_items: list[dict[str, Any]] = []
@@ -178,7 +395,7 @@ def update_characters(
                 missing_items.append({"name": character.get("name"), "url": url})
             continue
         character["image_url"] = image["image_url"]
-        character["image_source"] = "ja.wikipedia.org pageimages"
+        character["image_source"] = image["source"]
         character["image_alt"] = str(character.get("name") or "")
         if image.get("pageimage"):
             character["image_pageimage"] = image["pageimage"]
@@ -189,14 +406,20 @@ def update_characters(
                 "image_url": image["image_url"],
                 "pageimage": image.get("pageimage"),
                 "wikipedia_title": image.get("wikipedia_title"),
+                "source": image.get("source"),
+                "wikidata_item": image.get("wikidata_item"),
             }
         )
 
+    source_counts = Counter(str(item.get("source") or "unknown") for item in found_items)
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_characters": len(characters),
         "candidate_pages": len(candidates),
         "images_found": len(found_items),
+        "pageimage_images_found": pageimage_count,
+        "wikidata_images_found": wikidata_count,
+        "source_counts": dict(source_counts),
         "missing_images": len(missing_items),
         "skipped_shared_pages": len(skipped_shared),
         "items": found_items,
@@ -217,6 +440,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--batch-size", type=int, default=40)
     parser.add_argument("--sleep", type=float, default=0.5)
     parser.add_argument("--include-shared", action="store_true")
+    parser.add_argument(
+        "--no-wikidata-fallback",
+        action="store_false",
+        dest="wikidata_fallback",
+        help="Disable Commons thumbnails from Wikidata P18 linked through Japanese Wikipedia pageprops.",
+    )
+    parser.set_defaults(wikidata_fallback=True)
     return parser
 
 
@@ -231,6 +461,7 @@ def main() -> None:
         batch_size=args.batch_size,
         sleep_seconds=args.sleep,
         include_shared=args.include_shared,
+        wikidata_fallback=args.wikidata_fallback,
     )
     save_yaml(args.output, updated_data)
     save_yaml(args.report, report)
