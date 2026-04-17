@@ -1,6 +1,6 @@
 # 方法論
 
-`wiki-character-power-index` は、日本語版Wikipediaの本文だけを根拠に、架空キャラクターの強さ、推定IQ、条件フラグを評価します。
+`wiki-character-power-index` は、日本語版Wikipediaの本文だけを根拠に、架空キャラクターの強さ、知性スコア、条件フラグを評価します。
 
 このプロジェクトは、原作データベース、ファンWiki、対戦考察サイト、作品解釈ツールではありません。Wikipedia日本語版に書かれている文章を、ルールベースでランキング化するためのパイプラインです。
 
@@ -18,7 +18,7 @@
 10. `src/condition_flags.py` でUI用の条件フラグを作る。
 11. `src/collection_tags.py` でジャンプ漫画、Marvel、DCなどのUI用コレクションタグを付ける。
 12. `src/fetch_wikipedia_images.py` で日本語版Wikipediaの表示用サムネイルを取得する。
-13. `src/ranking.py` で強さランキングまたは推定IQランキングを出力する。
+13. `src/ranking.py` で強さランキングまたは知性スコアランキングを出力する。
 14. `src/battle.py` で2キャラクターを根拠スコアだけで比較する。
 15. `src/export_site_data.py` でGitHub Pages用JSONを出力する。
 
@@ -64,7 +64,7 @@ condition_evidence: object
 
 `score_evidence` は、スコアを監査できるようにするための拡張フィールドです。ランキング表示では必須です。
 
-`iq_score` は実際のIQではありません。日本語版Wikipedia本文に知性、発明、科学、戦略、探偵能力などの表現がどれだけあるかを測る指標です。
+`iq_score` は内部名です。UIでは「知性スコア」と表示します。実際のIQではなく、日本語版Wikipedia本文に知性、発明、科学、戦略、探偵能力などの表現がどれだけあるかを測る指標です。
 
 `condition_flags` は、Wikipedia本文の語句一致だけで付与されます。現在は、超能力あり、改造あり、技術/装備、魔法/呪い、武器あり、人間以外、神格、宇宙人、ロボット/AI、格闘、軍人/兵士、リーダー、天才/探偵、変身、不死/再生を扱います。
 

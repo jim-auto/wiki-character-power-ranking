@@ -117,12 +117,12 @@ def render_evidence(character: dict[str, Any], max_evidence: int) -> list[str]:
 def render_iq_evidence(character: dict[str, Any], max_evidence: int) -> list[str]:
     evidence_items = character.get("iq_evidence") or []
     if not evidence_items:
-        return ["  - 推定IQ: 一致するWikipedia根拠なし"]
+        return ["  - 知性スコア: 一致するWikipedia根拠なし"]
 
     lines: list[str] = []
     for item in evidence_items[:max_evidence]:
         lines.append(
-            f"  - 推定IQ: {item.get('sentence', '')} "
+            f"  - 知性スコア: {item.get('sentence', '')} "
             f"[{item.get('rule', '')}, +{item.get('points', 0)}]"
         )
     return lines
@@ -133,7 +133,7 @@ def render_markdown(
     max_evidence: int,
     ranking_type: str,
 ) -> str:
-    title = "キャラクター推定IQランキング" if ranking_type == "iq" else "キャラクター強さランキング"
+    title = "キャラクター知性スコアランキング" if ranking_type == "iq" else "キャラクター強さランキング"
     lines = [f"# {title}", ""]
 
     for index, character in enumerate(characters, start=1):
@@ -146,13 +146,13 @@ def render_markdown(
         universe = character.get("universe", "")
 
         if ranking_type == "iq":
-            lines.append(f"## {index}. {name} - 推定IQ {iq_score}/10")
+            lines.append(f"## {index}. {name} - 知性スコア {iq_score}点")
         else:
             lines.append(f"## {index}. {name} - {total}点 / Tier {tier}")
         lines.append(f"- 出典: {url}")
         lines.append(f"- メディア: {media_type}")
         lines.append(f"- 作品/ユニバース: {universe}")
-        lines.append(f"- 推定IQ: {iq_score}")
+        lines.append(f"- 知性スコア: {iq_score}")
         lines.append(f"- スコア: {render_score_line(character)}")
         lines.append("- 根拠:")
         if ranking_type == "iq":
@@ -183,7 +183,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--ranking-type",
         choices=["power", "iq"],
         default="power",
-        help="強さスコアまたは推定IQスコアで並べ替えます。",
+        help="強さスコアまたは知性スコアで並べ替えます。",
     )
     parser.add_argument("--media-type", choices=["manga", "anime", "movie", "comic"])
     parser.add_argument("--universe")

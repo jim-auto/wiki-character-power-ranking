@@ -98,7 +98,7 @@ character:
   condition_evidence: object
 ```
 
-`iq_score` は実際のIQではありません。日本語版Wikipedia本文に「天才」「科学者」「戦略」「発明」「探偵」などの知性に関係する表現がどれだけ強く出ているかを示す、根拠文付きの0-10点指標です。
+`iq_score` は内部名です。UIでは「知性スコア」と表示します。実際のIQではなく、日本語版Wikipedia本文に「天才」「科学者」「戦略」「発明」「探偵」などの知性に関係する表現がどれだけ強く出ているかを示す、根拠文付きの0-10点指標です。
 
 `condition_flags` は、GitHub Pages UIで条件オン/オフ検索をするためのフラグです。超能力あり、改造あり、技術/装備、魔法/呪い、武器あり、人間以外、神格、宇宙人、ロボット/AI、格闘、軍人/兵士、リーダー、天才/探偵、変身、不死/再生を扱います。
 
@@ -167,7 +167,7 @@ python src/export_site_data.py
 3. 共有ページの場合はキャラクター名に近いセクションを切り出す
 4. 強さに関係する文を抽出する
 5. `abilities` / `feats` / `statements` に分類する
-6. 強さ、推定IQ、条件フラグをルールベースで付ける
+6. 強さ、知性スコア、条件フラグをルールベースで付ける
 7. ジャンプ漫画、Marvel、DCなどのコレクションタグを付ける
 8. 日本語版Wikipediaの表示用サムネイルを取得する
 9. GitHub Pages用の `docs/data/characters.json` を出力する
@@ -188,7 +188,7 @@ python src/fetch_wikipedia.py --source rest-html --missing-only --sleep 0.5 --sa
 python src/ranking.py --input data/characters.yaml
 ```
 
-推定IQランキング:
+知性スコアランキング:
 
 ```bash
 python src/ranking.py --ranking-type iq
@@ -232,7 +232,7 @@ python src/ranking.py --min-score 30 --max-score 45
 python src/ranking.py --score-key attack --min-score 6
 ```
 
-推定IQで絞り込み:
+知性スコアで絞り込み:
 
 ```bash
 python src/ranking.py --ranking-type iq --min-score 5

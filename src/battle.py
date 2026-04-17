@@ -22,7 +22,7 @@ SCORE_LABELS = {
 }
 MODE_LABELS = {
     "power": "強さ",
-    "iq": "推定IQ",
+    "iq": "知性スコア",
     "balanced": "総合",
 }
 
@@ -94,7 +94,7 @@ def dimension_table(a: dict[str, Any], b: dict[str, Any]) -> list[str]:
         lines.append(f"| {SCORE_LABELS[key]} | {a_value} | {b_value} | {edge} |")
 
     lines.append(
-        f"| 推定IQ | {int(a.get('iq_score', 0))} | {int(b.get('iq_score', 0))} | "
+        f"| 知性スコア | {int(a.get('iq_score', 0))} | {int(b.get('iq_score', 0))} | "
         f"{iq_edge(a, b)} |"
     )
     return lines

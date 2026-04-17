@@ -290,7 +290,7 @@ function evidenceForPower(character) {
 function evidenceForIq(character) {
   const items = character.iq_evidence ?? [];
   if (!items.length) {
-    return '<li class="evidence-item"><strong>推定IQ</strong><span class="evidence-rule">一致するWikipedia根拠なし</span></li>';
+    return '<li class="evidence-item"><strong>知性スコア</strong><span class="evidence-rule">一致するWikipedia根拠なし</span></li>';
   }
   return items
     .slice(0, 3)
@@ -330,7 +330,7 @@ function characterImage(character) {
 
 function characterCard(character, index) {
   const primaryScore = scoreFor(character);
-  const titleScore = state.view === "iq" ? `推定IQ ${primaryScore}/10` : `${primaryScore}/60`;
+  const titleScore = state.view === "iq" ? `知性スコア ${primaryScore}点` : `${primaryScore}/60`;
   const evidence = state.view === "iq" ? evidenceForIq(character) : evidenceForPower(character);
   const iqWidth = Math.max(0, Math.min(100, Number(character.iq_score ?? 0) * 10));
   const flags = character.condition_flags ?? {};
@@ -360,7 +360,7 @@ function characterCard(character, index) {
       </div>
       <div class="dimension-grid">${dimensionBars(character)}</div>
       <div class="dimension">
-        <div class="dimension-label"><span>推定IQ</span><span>${escapeHtml(character.iq_score ?? 0)}</span></div>
+        <div class="dimension-label"><span>知性スコア</span><span>${escapeHtml(character.iq_score ?? 0)}</span></div>
         <div class="bar" aria-hidden="true"><div class="bar-fill iq" style="width: ${iqWidth}%"></div></div>
       </div>
       <details class="evidence-details">
@@ -373,7 +373,7 @@ function characterCard(character, index) {
 
 function renderRanking() {
   const ranked = filteredCharacters();
-  elements.rankingTitle.textContent = state.view === "iq" ? "推定IQランキング" : "強さランキング";
+  elements.rankingTitle.textContent = state.view === "iq" ? "知性スコアランキング" : "強さランキング";
   elements.resultCount.textContent = String(ranked.length);
   elements.rankingList.innerHTML = ranked.length
     ? ranked.map(characterCard).join("")
@@ -415,7 +415,7 @@ function battleRows(a, b) {
         ? a.name
         : b.name;
   rows.push(
-    `<tr><td>推定IQ</td><td>${Number(a.iq_score ?? 0)}</td><td>${Number(b.iq_score ?? 0)}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
+    `<tr><td>知性スコア</td><td>${Number(a.iq_score ?? 0)}</td><td>${Number(b.iq_score ?? 0)}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
   );
   return rows.join("");
 }
