@@ -331,10 +331,17 @@ def derive_condition_evidence(character: dict[str, Any]) -> dict[str, list[str]]
     }
 
 
+def update_record(record: dict[str, Any]) -> None:
+    record["condition_flags"] = derive_condition_flags(record)
+    record["condition_evidence"] = derive_condition_evidence(record)
+
+
 def update_characters(data: dict[str, Any]) -> dict[str, Any]:
     for character in data["characters"]:
-        character["condition_flags"] = derive_condition_flags(character)
-        character["condition_evidence"] = derive_condition_evidence(character)
+        update_record(character)
+        for version in character.get("versions") or []:
+            if isinstance(version, dict):
+                update_record(version)
     return data
 
 

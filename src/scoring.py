@@ -287,6 +287,9 @@ def score_character(character: dict[str, Any]) -> dict[str, Any]:
 def update_characters(data: dict[str, Any]) -> dict[str, Any]:
     for character in data["characters"]:
         score_character(character)
+        for version in character.get("versions") or []:
+            if isinstance(version, dict):
+                score_character(version)
     return data
 
 

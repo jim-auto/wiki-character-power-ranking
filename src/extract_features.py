@@ -223,10 +223,17 @@ def extract_from_text(text: str) -> dict[str, list[str]]:
     return extracted
 
 
+def update_record(record: dict[str, Any]) -> None:
+    text = record.get("description_raw") or ""
+    record["extracted"] = extract_from_text(text)
+
+
 def update_characters(data: dict[str, Any]) -> dict[str, Any]:
     for character in data["characters"]:
-        text = character.get("description_raw") or ""
-        character["extracted"] = extract_from_text(text)
+        update_record(character)
+        for version in character.get("versions") or []:
+            if isinstance(version, dict):
+                update_record(version)
     return data
 
 

@@ -12,6 +12,7 @@ import yaml
 DEFAULT_SEED = Path("data/seed_characters.yaml")
 DEFAULT_DATA = Path("data/characters.yaml")
 VALID_MEDIA_TYPES = {"manga", "anime", "movie", "comic"}
+SEED_OPTIONAL_KEYS = ["versions"]
 DERIVED_KEYS = [
     "description_raw",
     "source_metadata",
@@ -73,6 +74,22 @@ def validate_seed(seed: dict[str, Any]) -> None:
         if media_type not in VALID_MEDIA_TYPES:
             raise ValueError(f"Invalid media_type at row {index}: {media_type}")
 
+        versions = character.get("versions") or []
+        if not isinstance(versions, list):
+            raise ValueError(f"Invalid versions at row {index}: expected list")
+        seen_version_labels: set[str] = set()
+        for version_index, version in enumerate(versions, start=1):
+            if not isinstance(version, dict):
+                raise ValueError(f"Invalid version at row {index}.{version_index}: expected mapping")
+            label = str(version.get("label") or "").strip()
+            if not label:
+                raise ValueError(f"Version at row {index}.{version_index} is missing label")
+            if label in seen_version_labels:
+                raise ValueError(f"Duplicate version label at row {index}: {label}")
+            seen_version_labels.add(label)
+            if not str(version.get("description_raw") or "").strip():
+                raise ValueError(f"Version at row {index}.{version_index} is missing description_raw")
+
         name = str(character["name"])
         url = str(character["wikipedia_url"])
         if name in seen_names:
@@ -122,6 +139,11 @@ def sync_seed(seed: dict[str, Any], existing: dict[str, Any] | None = None) -> d
         for key, value in seed_character.items():
             if key.startswith("source_"):
                 character[key] = value
+        for key in SEED_OPTIONAL_KEYS:
+            if key in seed_character:
+                character[key] = seed_character[key]
+            else:
+                character.pop(key, None)
         character.setdefault("description_raw", "")
         characters.append(character)
 

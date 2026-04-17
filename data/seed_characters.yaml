@@ -69,6 +69,14 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Naruto_Uzumaki
   source_wikidata_id: Q931
   source_wikidata_label_ja: うずまきナルト
+  versions:
+  - label: 中忍試験時点
+    aliases:
+    - 中忍試験
+    - 第一部
+    source_wikipedia_url: https://ja.wikipedia.org/wiki/%E3%81%86%E3%81%9A%E3%81%BE%E3%81%8D%E3%83%8A%E3%83%AB%E3%83%88
+    description_raw: >-
+      火の国・木ノ葉隠れの里出身の忍者。生後間もなく尾獣の一体・九尾の妖狐を宿した人柱力。当初は忍者学校の卒業試験に何回も落ちるなど、勉強の出来が悪く、特別な忍術の才能にも恵まれているわけではないが、厳しい修行の末「影分身の術」をはじめとする高度な術を習得し、窮地の際にも最後まで諦めず状況を打開するなど、並外れた根性の持ち主である。失敗が多いが「伝説の三忍」の一人である自来也直伝の「口寄せの術」で大蝦蟇ガマブン太を口寄せする。数ヶ月の期間を経て伝授された「螺旋丸」も使用頻度が非常に高い十八番の技になっている。上忍以上の実力を有してはいるものの、中忍試験に合格していないため、忍としてのランクは下忍のままになっている。
 - name: うちはサスケ
   wikipedia_url: https://ja.wikipedia.org/wiki/%E3%81%86%E3%81%A1%E3%81%AF%E3%82%B5%E3%82%B9%E3%82%B1
   media_type: manga
@@ -76,6 +84,14 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Sasuke_Uchiha
   source_wikidata_id: Q1740
   source_wikidata_label_ja: うちはサスケ
+  versions:
+  - label: 中忍試験時点
+    aliases:
+    - 中忍試験
+    - 第一部
+    source_wikipedia_url: https://ja.wikipedia.org/wiki/%E3%81%86%E3%81%A1%E3%81%AF%E3%82%B5%E3%82%B9%E3%82%B1
+    description_raw: >-
+      主人公・うずまきナルトの親友にして、宿敵ともいえるほどのライバル。三大瞳術の一つであり、一族特有の瞳術である写輪眼を受け継ぐ木ノ葉で最も強い伝説の「うちは一族」の末裔。クールで忍の才にも長けており天才ルーキーと言われていた。うちは一族の天才の例に漏れずサスケもまた写輪眼の継承者であり、それに目を付けた大蛇丸から、中忍試験の最中に「天の呪印」を刻まれてしまう。以降、チャクラを大量消費しようとすると、一時的にパワーアップする代わりに全身を呪印に侵食されてしまうというハンディを背負うことになる。性質変化は「火」と「雷」。忍者学校時代に父フガクから「火遁・豪火球の術」を教わり、中忍試験本戦前には、カカシから「千鳥」を伝授される。その中忍試験で大蛇丸と対峙した時、恐怖から足が竦んだり、巻物を差し出しての命乞いなどをしようとした自分をナルトに叱咤された事から始まり、中憑依体と化した我愛羅との戦いでは序盤こそ渡り合う事ができたものの途中から呪印の力に倒れてしまった。
 - name: 春野サクラ
   wikipedia_url: https://ja.wikipedia.org/wiki/%E6%98%A5%E9%87%8E%E3%82%B5%E3%82%AF%E3%83%A9
   media_type: manga
@@ -83,6 +99,14 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Sakura_Haruno
   source_wikidata_id: Q203240
   source_wikidata_label_ja: 春野サクラ
+  versions:
+  - label: 中忍試験時点
+    aliases:
+    - 中忍試験
+    - 第一部
+    source_wikipedia_url: https://ja.wikipedia.org/wiki/%E6%98%A5%E9%87%8E%E3%82%B5%E3%82%AF%E3%83%A9
+    description_raw: >-
+      下忍になってからはサスケ、うずまきナルトとともにカカシが上官を務める第七班所属となる。同期で唯一、特殊な能力や家柄を継がない極普通の家柄の出であるが、かなりの努力家で優等生である。チャクラコントロールに優れている他、同年代の忍たちに比べて知識・知能面でずば抜けており、中忍選抜試験の筆記問題では、情報収集能力を試すためカンニング前提でその年代の子供が解けないような高度な問題を満載したテストを全問自力で解いたほどである。中忍試験・第三の試験予選でいのと対戦し、結果はダブルノックダウンで引き分けに終わった。
 - name: はたけカカシ
   wikipedia_url: https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%9F%E3%81%91%E3%82%AB%E3%82%AB%E3%82%B7
   media_type: manga
@@ -90,6 +114,14 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Kakashi_Hatake
   source_wikidata_id: Q1767
   source_wikidata_label_ja: はたけカカシ
+  versions:
+  - label: 中忍試験時点
+    aliases:
+    - 中忍試験
+    - 第一部
+    source_wikipedia_url: https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%9F%E3%81%91%E3%82%AB%E3%82%AB%E3%82%B7
+    description_raw: >-
+      「木ノ葉の白い牙」の異名で他国から恐れられた天才忍者・はたけサクモの子。5歳で下忍、6歳で中忍、12歳で上忍になった「木ノ葉隠れ」きっての天才忍者。血継限界である写輪眼を持ち、この洞察眼によって1000種類以上の技を写し取り自分の技にしてきたため、他国では「写輪眼のカカシ」又は「コピー忍者のカカシ」という異名をもつ。その後、下忍となって間もない第七班を中忍試験に推薦、中忍試験の前後においてはナルトが自来也との修行で螺旋丸を体得する一方、同じ写輪眼を持つサスケに自身の必殺技【千鳥】を教え、「木ノ葉崩し」においてはサクラ達にサスケの追跡を命ずる傍ら、上忍としてガイらと共に敵を殲滅する。
 - name: うちはイタチ
   wikipedia_url: https://ja.wikipedia.org/wiki/%E3%81%86%E3%81%A1%E3%81%AF%E3%82%A4%E3%82%BF%E3%83%81
   media_type: manga
@@ -118,6 +150,14 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Gaara
   source_wikidata_id: Q221196
   source_wikidata_label_ja: 我愛羅
+  versions:
+  - label: 中忍試験時点
+    aliases:
+    - 中忍試験
+    - 第一部
+    source_wikipedia_url: https://ja.wikipedia.org/wiki/NARUTO_-%E3%83%8A%E3%83%AB%E3%83%88-%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+    description_raw: >-
+      砂隠れの里の忍。四代目風影・羅砂の次男で、カンクロウとテマリの弟。出生時に里の兵器として一尾・守鶴を憑依させられた人柱力。背中には砂の入った瓢箪を常に背負っており、この中の砂や周囲の砂を自在に操る力を持つ。また眠ることで一尾・守鶴の意志を覚醒させ、尾獣化することができる。かつては守鶴の力を制御しきれず里の人間から恐れられ、父の羅砂からも疎んじられて孤独な幼少期を送っていた。以来目に付くもの全てを手当たり次第に破壊・殺戮する残忍な性質となっていった。
 - name: モンキー・D・ルフィ
   wikipedia_url: https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%B3%E3%82%AD%E3%83%BC%E3%83%BBD%E3%83%BB%E3%83%AB%E3%83%95%E3%82%A3
   media_type: manga
@@ -1515,6 +1555,14 @@ characters:
   source_wikipedia_url_original: https://en.wikipedia.org/wiki/Neji_Hyuga
   source_resolution: universe_fallback
   source_name_original: Neji Hyuga
+  versions:
+  - label: 中忍試験時点
+    aliases:
+    - 中忍試験
+    - 第一部
+    source_wikipedia_url: https://ja.wikipedia.org/wiki/NARUTO_-%E3%83%8A%E3%83%AB%E3%83%88-%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+    description_raw: >-
+      日向一族の分家の出身であり、額には分家の者だけが刻まれる呪印が施されている。日向一族の血継限界「白眼」を受け継いでおり、その力を利用した体術である「柔拳」を駆使した接近戦を得意とする。忍としての才も抜きん出ており、本来なら宗家にのみ伝わる「八卦掌回天」「柔拳法・八卦六十四掌」を、その才能によって独学で会得した。第一部の中忍試験では第三試験の予選ではヒナタと対戦し、ナルトへの憧れから決して諦めようとしないヒナタの意思の強さに驚愕するが、彼女からネジ自身が運命に苦しんでいることを告げられると激昂してヒナタを殺害しようとするも、試験官や他の上忍達に制止され勝利が決まった。第三試験の本戦ではナルトと対戦し、「落ちこぼれ」と見下していたナルトを圧倒的な実力差で追い詰めるが、危機に陥ったナルトが発動した九尾の力によって精神に生じた隙を突かれて敗北した。
 - name: 奈良シカマル
   wikipedia_url: https://ja.wikipedia.org/wiki/%E5%A5%88%E8%89%AF%E3%82%B7%E3%82%AB%E3%83%9E%E3%83%AB
   media_type: manga

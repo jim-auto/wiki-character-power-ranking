@@ -87,7 +87,7 @@
             </label>
             <label>
               <span>A時点</span>
-              <input id="battle-a-stage" type="search" placeholder="例: 中忍試験時点">
+              <input id="battle-a-stage" type="search" list="battle-a-stage-options" placeholder="例: 中忍試験時点">
             </label>
             <label>
               <span>B</span>
@@ -95,7 +95,7 @@
             </label>
             <label>
               <span>B時点</span>
-              <input id="battle-b-stage" type="search" placeholder="例: 中忍試験時点">
+              <input id="battle-b-stage" type="search" list="battle-b-stage-options" placeholder="例: 中忍試験時点">
             </label>
             <label>
               <span>モード</span>
@@ -106,6 +106,8 @@
               </select>
             </label>
             <datalist id="battle-character-options"></datalist>
+            <datalist id="battle-a-stage-options"></datalist>
+            <datalist id="battle-b-stage-options"></datalist>
           </div>
           <div id="battle-result" class="battle-result" aria-live="polite"></div>
         </section>

@@ -462,6 +462,18 @@ input {
   background: var(--surface);
 }
 
+.stage-notes {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.stage-note {
+  margin: 0;
+}
+
 .comparison-table {
   width: 100%;
   border-collapse: collapse;

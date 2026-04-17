@@ -36,7 +36,7 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 
 def find_character(characters: list[dict[str, Any]], query: str) -> dict[str, Any]:
-    normalized = query.casefold()
+    normalized = query.strip().casefold()
 
     for character in characters:
         if str(character.get("name", "")).casefold() == normalized:
@@ -53,6 +53,48 @@ def find_character(characters: list[dict[str, Any]], query: str) -> dict[str, An
         names = ", ".join(str(character.get("name", "")) for character in matches)
         raise ValueError(f"キャラクター指定が曖昧です: '{query}'。一致: {names}")
     raise ValueError(f"キャラクターが見つかりません: {query}")
+
+
+def stage_candidates(version: dict[str, Any]) -> list[str]:
+    values = [str(version.get("label") or "")]
+    aliases = version.get("aliases") or []
+    if isinstance(aliases, list):
+        values.extend(str(alias) for alias in aliases)
+    return [value.strip() for value in values if value and value.strip()]
+
+
+def find_version(character: dict[str, Any], stage: str) -> dict[str, Any]:
+    normalized = stage.strip().casefold()
+    if not normalized:
+        return dict(character)
+
+    versions = [version for version in character.get("versions") or [] if isinstance(version, dict)]
+    exact_matches = [
+        version
+        for version in versions
+        if any(candidate.casefold() == normalized for candidate in stage_candidates(version))
+    ]
+    prefix_matches = [
+        version
+        for version in versions
+        if any(candidate.casefold().startswith(normalized) for candidate in stage_candidates(version))
+    ]
+    contains_matches = [
+        version
+        for version in versions
+        if any(normalized in candidate.casefold() for candidate in stage_candidates(version))
+    ]
+
+    for matches in (exact_matches, prefix_matches, contains_matches):
+        if matches:
+            selected = dict(matches[0])
+            selected["name"] = character.get("name")
+            selected["_stage_label"] = selected.get("label") or stage
+            return selected
+
+    available = ", ".join(str(version.get("label")) for version in versions if version.get("label"))
+    suffix = f" 利用可能な時点: {available}" if available else " 利用可能な時点はありません。"
+    raise ValueError(f"{character.get('name')} に時点 '{stage}' は見つかりません。{suffix}")
 
 
 def mode_score(character: dict[str, Any], mode: str) -> int:
@@ -77,7 +119,7 @@ def estimated_iq_text(character: dict[str, Any]) -> str:
 
 
 def battle_display_name(character: dict[str, Any], stage: str = "") -> str:
-    clean_stage = stage.strip()
+    clean_stage = stage.strip() or str(character.get("_stage_label") or "").strip()
     name = str(character.get("name"))
     return f"{name}（{clean_stage}）" if clean_stage else name
 
@@ -239,7 +281,9 @@ def main() -> None:
     data = load_yaml(args.input)
     a = find_character(data["characters"], args.a)
     b = find_character(data["characters"], args.b)
-    output = render_battle(a, b, args.mode, args.max_evidence, args.a_stage, args.b_stage)
+    a = find_version(a, args.a_stage)
+    b = find_version(b, args.b_stage)
+    output = render_battle(a, b, args.mode, args.max_evidence)
 
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

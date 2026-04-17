@@ -71,6 +71,8 @@ const elements = {
   battleAStage: document.querySelector("#battle-a-stage"),
   battleBStage: document.querySelector("#battle-b-stage"),
   battleOptions: document.querySelector("#battle-character-options"),
+  battleAStageOptions: document.querySelector("#battle-a-stage-options"),
+  battleBStageOptions: document.querySelector("#battle-b-stage-options"),
   battleMode: document.querySelector("#battle-mode"),
   battleResult: document.querySelector("#battle-result"),
 };
@@ -228,6 +230,7 @@ function populateFilters() {
     )
     .join("");
   elements.battleOptions.innerHTML = battleOptions;
+  updateBattleStageOptions();
 
   if (!state.battleA) {
     state.battleA = characters[0]?.name ?? "";
@@ -247,6 +250,24 @@ function populateFilters() {
     )
     .join("");
   syncControls();
+}
+
+function stageOptionsHtml(character) {
+  return characterVersions(character)
+    .map((version) => {
+      const aliases = stageCandidates(version)
+        .filter((candidate) => candidate !== version.label)
+        .join(" / ");
+      const label = aliases ? ` label="${escapeHtml(aliases)}"` : "";
+      return `<option value="${escapeHtml(version.label)}"${label}></option>`;
+    })
+    .join("");
+}
+
+function updateBattleStageOptions() {
+  if (!elements.battleAStageOptions || !elements.battleBStageOptions) return;
+  elements.battleAStageOptions.innerHTML = stageOptionsHtml(battleCharacter(state.battleA));
+  elements.battleBStageOptions.innerHTML = stageOptionsHtml(battleCharacter(state.battleB));
 }
 
 function renderTabs() {
@@ -451,6 +472,16 @@ function normalizedQuery(value) {
   return String(value ?? "").trim().toLocaleLowerCase("ja");
 }
 
+function characterVersions(character) {
+  return Array.isArray(character?.versions) ? character.versions : [];
+}
+
+function stageCandidates(version) {
+  return [version?.label, ...(Array.isArray(version?.aliases) ? version.aliases : [])]
+    .map((value) => String(value ?? "").trim())
+    .filter(Boolean);
+}
+
 function battleCharacter(query) {
   const normalized = normalizedQuery(query);
   if (!normalized) return characters[0];
@@ -463,13 +494,46 @@ function battleCharacter(query) {
   );
 }
 
-function battleDisplayName(character, stage) {
-  const cleanStage = String(stage ?? "").trim();
-  return cleanStage ? `${character.name}（${cleanStage}）` : character.name;
+function battleVersion(character, stage) {
+  const normalized = normalizedQuery(stage);
+  if (!character || !normalized) return null;
+  const versions = characterVersions(character);
+  const byExact = versions.find((version) =>
+    stageCandidates(version).some((candidate) => normalizedQuery(candidate) === normalized),
+  );
+  if (byExact) return byExact;
+  const byPrefix = versions.find((version) =>
+    stageCandidates(version).some((candidate) => normalizedQuery(candidate).startsWith(normalized)),
+  );
+  if (byPrefix) return byPrefix;
+  return (
+    versions.find((version) =>
+      stageCandidates(version).some((candidate) => normalizedQuery(candidate).includes(normalized)),
+    ) ?? null
+  );
 }
 
-function battleScore(character) {
-  return scoreFor(character, state.battleMode);
+function battleEntry(characterQuery, stageQuery) {
+  const character = battleCharacter(characterQuery);
+  const requestedStage = String(stageQuery ?? "").trim();
+  const version = battleVersion(character, requestedStage);
+  return {
+    character,
+    record: version ?? character,
+    requestedStage,
+    stageLabel: version?.label ?? requestedStage,
+    matchedVersion: Boolean(version),
+  };
+}
+
+function battleDisplayName(entry) {
+  const cleanStage = String(entry.stageLabel ?? "").trim();
+  const name = entry.character?.name ?? entry.record?.name ?? "";
+  return cleanStage ? `${name}（${cleanStage}）` : name;
+}
+
+function battleScore(entry) {
+  return scoreFor(entry.record, state.battleMode);
 }
 
 function battleVerdict(a, b) {
@@ -480,32 +544,33 @@ function battleVerdict(a, b) {
     return "現在の根拠スコアでは引き分けです。";
   }
   const winner = aScore > bScore ? a : b;
-  const winnerStage = aScore > bScore ? state.battleAStage : state.battleBStage;
   const label = diff >= 8 ? "優勢" : "やや優勢";
-  return `${battleDisplayName(winner, winnerStage)} が ${diff} 点差で${label}です。`;
+  return `${battleDisplayName(winner)} が ${diff} 点差で${label}です。`;
 }
 
 function battleRows(a, b) {
-  const aName = battleDisplayName(a, state.battleAStage);
-  const bName = battleDisplayName(b, state.battleBStage);
+  const aName = battleDisplayName(a);
+  const bName = battleDisplayName(b);
+  const aRecord = a.record;
+  const bRecord = b.record;
   const rows = scoreKeys.map((key) => {
-    const aValue = Number(a.scores?.[key] ?? 0);
-    const bValue = Number(b.scores?.[key] ?? 0);
+    const aValue = Number(aRecord.scores?.[key] ?? 0);
+    const bValue = Number(bRecord.scores?.[key] ?? 0);
     const edge = aValue === bValue ? "互角" : aValue > bValue ? aName : bName;
     return `<tr><td>${escapeHtml(scoreLabels[key] ?? key)}</td><td>${aValue}</td><td>${bValue}</td><td>${escapeHtml(edge)}</td></tr>`;
   });
 
   const iqEdge =
-    Number(a.iq_score ?? 0) === Number(b.iq_score ?? 0)
+    Number(aRecord.iq_score ?? 0) === Number(bRecord.iq_score ?? 0)
       ? "互角"
-      : Number(a.iq_score ?? 0) > Number(b.iq_score ?? 0)
+      : Number(aRecord.iq_score ?? 0) > Number(bRecord.iq_score ?? 0)
         ? aName
         : bName;
   rows.push(
-    `<tr><td>知性スコア</td><td>${Number(a.iq_score ?? 0)}</td><td>${Number(b.iq_score ?? 0)}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
+    `<tr><td>知性スコア</td><td>${Number(aRecord.iq_score ?? 0)}</td><td>${Number(bRecord.iq_score ?? 0)}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
   );
-  const aExplicitIq = explicitIqNumber(a);
-  const bExplicitIq = explicitIqNumber(b);
+  const aExplicitIq = explicitIqNumber(aRecord);
+  const bExplicitIq = explicitIqNumber(bRecord);
   const explicitEdge =
     aExplicitIq !== null && bExplicitIq !== null
       ? aExplicitIq === bExplicitIq
@@ -515,15 +580,16 @@ function battleRows(a, b) {
           : bName
       : "比較不可";
   rows.push(
-    `<tr><td>明示IQ</td><td>${escapeHtml(explicitIqText(a))}</td><td>${escapeHtml(explicitIqText(b))}</td><td>${escapeHtml(explicitEdge)}</td></tr>`,
+    `<tr><td>明示IQ</td><td>${escapeHtml(explicitIqText(aRecord))}</td><td>${escapeHtml(explicitIqText(bRecord))}</td><td>${escapeHtml(explicitEdge)}</td></tr>`,
   );
   rows.push(
-    `<tr><td>推定IQ</td><td>${escapeHtml(estimatedIqText(a))}</td><td>${escapeHtml(estimatedIqText(b))}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
+    `<tr><td>推定IQ</td><td>${escapeHtml(estimatedIqText(aRecord))}</td><td>${escapeHtml(estimatedIqText(bRecord))}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
   );
   return rows.join("");
 }
 
-function battleEvidence(character) {
+function battleEvidence(entry) {
+  const character = entry.record;
   const items =
     state.battleMode === "iq"
       ? [...(character.explicit_iq_evidence ?? []), ...(character.iq_evidence ?? [])]
@@ -551,12 +617,21 @@ function battleEvidence(character) {
     .join("");
 }
 
+function stageNotice(entry, label) {
+  if (!entry.requestedStage) return "";
+  if (entry.matchedVersion) {
+    return `<p class="stage-note">${escapeHtml(label)}: ${escapeHtml(entry.stageLabel)} の時点別データを使用中</p>`;
+  }
+  return `<p class="stage-note">${escapeHtml(label)}: 「${escapeHtml(entry.requestedStage)}」の時点別データがないため通常データで比較</p>`;
+}
+
 function renderBattle() {
   if (!characters.length) return;
-  const a = battleCharacter(state.battleA);
-  const b = battleCharacter(state.battleB);
-  const aName = battleDisplayName(a, state.battleAStage);
-  const bName = battleDisplayName(b, state.battleBStage);
+  const a = battleEntry(state.battleA, state.battleAStage);
+  const b = battleEntry(state.battleB, state.battleBStage);
+  const aName = battleDisplayName(a);
+  const bName = battleDisplayName(b);
+  const stageNotes = [stageNotice(a, "A"), stageNotice(b, "B")].join("");
 
   elements.battleResult.innerHTML = `
     <div class="verdict">
@@ -566,6 +641,7 @@ function renderBattle() {
         <span class="score-badge">B ${battleScore(b)}</span>
       </div>
     </div>
+    ${stageNotes ? `<div class="stage-notes">${stageNotes}</div>` : ""}
     <table class="comparison-table">
       <thead>
         <tr><th>項目</th><th>A</th><th>B</th><th>優勢</th></tr>
@@ -593,6 +669,7 @@ function renderBattle() {
 
 function render() {
   renderTabs();
+  updateBattleStageOptions();
   syncControls();
   if (state.view === "battle") {
     renderBattle();

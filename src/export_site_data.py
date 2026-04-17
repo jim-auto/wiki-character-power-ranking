@@ -31,6 +31,23 @@ EXPORT_FIELDS = [
     "image_url",
     "image_source",
     "image_alt",
+    "versions",
+]
+VERSION_EXPORT_FIELDS = [
+    "label",
+    "aliases",
+    "source_wikipedia_url",
+    "extracted",
+    "scores",
+    "score_evidence",
+    "total_score",
+    "tier",
+    "iq_score",
+    "iq_evidence",
+    "explicit_iq",
+    "explicit_iq_evidence",
+    "estimated_iq",
+    "condition_flags",
 ]
 
 
@@ -44,10 +61,17 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 def export_json(input_path: Path, output_path: Path) -> None:
     data = load_yaml(input_path)
-    records = [
-        {key: character.get(key) for key in EXPORT_FIELDS if key in character}
-        for character in data["characters"]
-    ]
+    records = []
+    for character in data["characters"]:
+        record = {key: character.get(key) for key in EXPORT_FIELDS if key in character and key != "versions"}
+        versions = [
+            {key: version.get(key) for key in VERSION_EXPORT_FIELDS if key in version}
+            for version in character.get("versions") or []
+            if isinstance(version, dict)
+        ]
+        if versions:
+            record["versions"] = versions
+        records.append(record)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps(records, ensure_ascii=False, indent=2),
