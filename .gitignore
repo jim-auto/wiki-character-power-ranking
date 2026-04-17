@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 ranking.md
 ranking.json
+.claude/
+data/characters.yaml
