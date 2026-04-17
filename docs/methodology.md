@@ -1,0 +1,93 @@
+# Methodology
+
+`wiki-character-power-index` evaluates fictional character strength using Wikipedia text only.
+
+The project is not a canon database, fan wiki, battle-board system, or original-work analysis tool. It is a text-grounded ranking pipeline.
+
+## Pipeline
+
+1. `src/fetch_wikipedia.py` fetches the Wikipedia page extract listed in `wikipedia_url`.
+2. `src/extract_features.py` splits `description_raw` into sentences and keeps strength-related sentences.
+3. Extracted sentences are classified into:
+   - `abilities`: powers, equipment, training, skills, named techniques.
+   - `feats`: explicit actions, battles, victories, saves, protection.
+   - `statements`: descriptive strength claims or scale statements.
+4. `src/scoring.py` applies deterministic text rules and records evidence.
+5. `src/ranking.py` filters and renders power or text-evidence IQ rankings.
+6. `src/battle.py` compares two characters using the already-computed evidence scores.
+
+## Data Contract
+
+Each character record follows this structure:
+
+```yaml
+name: string
+wikipedia_url: string
+media_type: manga | anime | movie | comic
+universe: string
+description_raw: text
+extracted:
+  abilities: list[string]
+  feats: list[string]
+  statements: list[string]
+scores:
+  attack: int
+  defense: int
+  speed: int
+  abilities: int
+  feats: int
+  scale: int
+score_evidence:
+  attack: list[object]
+  defense: list[object]
+  speed: list[object]
+  abilities: list[object]
+  feats: list[object]
+  scale: list[object]
+total_score: int
+tier: S | A | B | C
+iq_score: int
+iq_evidence: list[object]
+```
+
+`score_evidence` is an implementation extension that makes the score auditable. It is required for ranking output even though the minimal model can be represented without it.
+
+`iq_score` is also an implementation extension. It means "Wikipedia text contains intelligence-related evidence" and does not mean real IQ.
+
+## Wikipedia-Only Constraint
+
+Allowed:
+
+- Wikipedia article text fetched from the page in `wikipedia_url`.
+- Wikipedia page title and revision metadata returned by the MediaWiki API.
+- Deterministic string rules stored in this repository.
+
+Not allowed:
+
+- Original manga, anime, film, or comic knowledge.
+- Fan wiki information.
+- Personal interpretation of a character's power.
+- Inferred feats not written in the Wikipedia text.
+- Cross-page enrichment unless that page is explicitly added to the record design in a future schema version.
+
+## Initial Characters
+
+The sample data starts with:
+
+- 孫悟空
+- うずまきナルト
+- アイアンマン（MCU）
+- バットマン
+
+The sample text is intentionally compact so the repository remains readable. For production runs, refresh `description_raw` with `src/fetch_wikipedia.py`, then re-run extraction and scoring.
+
+## Future Extensions
+
+The current structure is intentionally modular so these additions can be made without changing the scoring contract:
+
+- API: expose ranking and filtering through a small HTTP service.
+- Web UI: add search, filters, score breakdowns, and evidence views.
+- Automatic updates: scheduled Wikipedia refresh with revision tracking.
+- Multi-page records: support separate source pages for character profile, equipment, and media-specific variants.
+- Rule audit tooling: report which rules most often affect rankings.
+- Battle mode variants: compare by power, IQ evidence, or balanced score while preserving sentence evidence.
