@@ -62,6 +62,7 @@ condition_evidence: object
 `iq_score` is also an implementation extension. It means "Wikipedia text contains intelligence-related evidence" and does not mean real IQ.
 
 `condition_flags` are deterministic UI filters. They indicate that Wikipedia-derived text matched terms for `superpower`, `modified`, `technology`, `magic`, or `weapon`.
+The current flag set also includes `non_human`, `god_or_deity`, `alien`, `robot_ai`, `martial_artist`, `military`, `leader`, `detective_genius`, `transformation`, and `immortal`.
 
 ## Wikipedia-Only Constraint
 

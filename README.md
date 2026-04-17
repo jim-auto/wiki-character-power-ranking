@@ -229,6 +229,25 @@ GitHub PagesのUIでは、さらに条件をオンオフできます。
 
 これらもWikipedia本文の語句マッチだけで付与されます。
 
+追加条件:
+
+- `non_human`
+- `god_or_deity`
+- `alien`
+- `robot_ai`
+- `martial_artist`
+- `military`
+- `leader`
+- `detective_genius`
+- `transformation`
+- `immortal`
+
+フィルタ状態はURLに保存されます。
+
+```text
+?view=power&media=comic&universe=Marvel&conditions=superpower,magic&min=20
+```
+
 ## Battle Mode
 
 2人のキャラクターを、Wikipedia根拠スコアだけで比較できます。

@@ -1,5 +1,23 @@
 const scoreKeys = ["attack", "defense", "speed", "abilities", "feats", "scale"];
-const conditionKeys = ["superpower", "modified", "technology", "magic", "weapon"];
+const conditionMeta = [
+  { key: "superpower", label: "Superpower" },
+  { key: "modified", label: "Modified" },
+  { key: "technology", label: "Technology" },
+  { key: "magic", label: "Magic" },
+  { key: "weapon", label: "Weapon" },
+  { key: "non_human", label: "Non-human" },
+  { key: "god_or_deity", label: "God/deity" },
+  { key: "alien", label: "Alien" },
+  { key: "robot_ai", label: "Robot/AI" },
+  { key: "martial_artist", label: "Martial artist" },
+  { key: "military", label: "Military" },
+  { key: "leader", label: "Leader" },
+  { key: "detective_genius", label: "Detective/genius" },
+  { key: "transformation", label: "Transformation" },
+  { key: "immortal", label: "Immortal" },
+];
+const conditionKeys = conditionMeta.map((item) => item.key);
+const conditionLabels = Object.fromEntries(conditionMeta.map((item) => [item.key, item.label]));
 
 const state = {
   view: "power",
@@ -29,7 +47,7 @@ const elements = {
   universeFilter: document.querySelector("#universe-filter"),
   minScore: document.querySelector("#min-score"),
   maxScore: document.querySelector("#max-score"),
-  conditionFilters: [...document.querySelectorAll(".condition-filter")],
+  conditionOptions: document.querySelector("#condition-options"),
   battleA: document.querySelector("#battle-a"),
   battleB: document.querySelector("#battle-b"),
   battleMode: document.querySelector("#battle-mode"),
@@ -43,6 +61,68 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function applyQueryState() {
+  const params = new URLSearchParams(window.location.search);
+  const view = params.get("view");
+  const media = params.get("media");
+  const battleMode = params.get("battleMode");
+
+  if (["power", "iq", "battle"].includes(view)) state.view = view;
+  if (["all", "manga", "anime", "movie", "comic"].includes(media)) state.media = media;
+  if (["power", "iq", "balanced"].includes(battleMode)) state.battleMode = battleMode;
+
+  state.search = params.get("q") ?? "";
+  state.universe = params.get("universe") ?? "all";
+  state.min = params.get("min") ?? "";
+  state.max = params.get("max") ?? "";
+  state.battleA = params.get("a") ?? "";
+  state.battleB = params.get("b") ?? "";
+
+  const conditions = (params.get("conditions") ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter((value) => conditionKeys.includes(value));
+  conditionKeys.forEach((key) => {
+    if (params.get(key) === "1") conditions.push(key);
+  });
+  state.conditions = new Set(conditions);
+}
+
+function updateUrl() {
+  const params = new URLSearchParams();
+  if (state.view !== "power") params.set("view", state.view);
+  if (state.search) params.set("q", state.search);
+  if (state.media !== "all") params.set("media", state.media);
+  if (state.universe !== "all") params.set("universe", state.universe);
+  if (state.min !== "") params.set("min", state.min);
+  if (state.max !== "") params.set("max", state.max);
+  if (state.conditions.size) params.set("conditions", [...state.conditions].join(","));
+  if (state.view === "battle") {
+    if (state.battleA) params.set("a", state.battleA);
+    if (state.battleB) params.set("b", state.battleB);
+    if (state.battleMode !== "power") params.set("battleMode", state.battleMode);
+  }
+
+  const nextUrl = params.toString()
+    ? `${window.location.pathname}?${params.toString()}`
+    : window.location.pathname;
+  window.history.replaceState(null, "", nextUrl);
+}
+
+function syncControls() {
+  elements.searchFilter.value = state.search;
+  elements.mediaFilter.value = state.media;
+  elements.universeFilter.value = state.universe;
+  elements.minScore.value = state.min;
+  elements.maxScore.value = state.max;
+  elements.battleA.value = state.battleA;
+  elements.battleB.value = state.battleB;
+  elements.battleMode.value = state.battleMode;
+  elements.conditionOptions.querySelectorAll(".condition-filter").forEach((checkbox) => {
+    checkbox.checked = state.conditions.has(checkbox.value);
+  });
 }
 
 function scoreFor(character, view = state.view) {
@@ -103,6 +183,7 @@ function populateFilters() {
     '<option value="all">All</option>',
     ...universes.map((universe) => `<option value="${escapeHtml(universe)}">${escapeHtml(universe)}</option>`),
   ].join("");
+  if (state.universe !== "all" && !universes.includes(state.universe)) state.universe = "all";
 
   const options = characters
     .map((character) => `<option value="${escapeHtml(character.name)}">${escapeHtml(character.name)}</option>`)
@@ -110,10 +191,24 @@ function populateFilters() {
   elements.battleA.innerHTML = options;
   elements.battleB.innerHTML = options;
 
-  state.battleA = characters[0]?.name ?? "";
-  state.battleB = characters[1]?.name ?? characters[0]?.name ?? "";
-  elements.battleA.value = state.battleA;
-  elements.battleB.value = state.battleB;
+  if (!characters.some((character) => character.name === state.battleA)) {
+    state.battleA = characters[0]?.name ?? "";
+  }
+  if (!characters.some((character) => character.name === state.battleB)) {
+    state.battleB = characters[1]?.name ?? characters[0]?.name ?? "";
+  }
+
+  elements.conditionOptions.innerHTML = conditionMeta
+    .map(
+      (item) => `
+        <label>
+          <input type="checkbox" value="${escapeHtml(item.key)}" class="condition-filter">
+          ${escapeHtml(item.label)}
+        </label>
+      `,
+    )
+    .join("");
+  syncControls();
 }
 
 function renderTabs() {
@@ -193,7 +288,7 @@ function characterCard(character, index) {
   const flags = character.condition_flags ?? {};
   const flagChips = conditionKeys
     .filter((key) => flags[key])
-    .map((key) => `<span class="flag-chip">${escapeHtml(key)}</span>`)
+    .map((key) => `<span class="flag-chip">${escapeHtml(conditionLabels[key] ?? key)}</span>`)
     .join("");
 
   return `
@@ -329,11 +424,13 @@ function renderBattle() {
 
 function render() {
   renderTabs();
+  syncControls();
   if (state.view === "battle") {
     renderBattle();
   } else {
     renderRanking();
   }
+  updateUrl();
 }
 
 function bindEvents() {
@@ -364,15 +461,14 @@ function bindEvents() {
     state.max = event.target.value;
     render();
   });
-  elements.conditionFilters.forEach((checkbox) => {
-    checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-        state.conditions.add(event.target.value);
-      } else {
-        state.conditions.delete(event.target.value);
-      }
-      render();
-    });
+  elements.conditionOptions.addEventListener("change", (event) => {
+    if (!event.target.classList.contains("condition-filter")) return;
+    if (event.target.checked) {
+      state.conditions.add(event.target.value);
+    } else {
+      state.conditions.delete(event.target.value);
+    }
+    render();
   });
   elements.battleA.addEventListener("change", (event) => {
     state.battleA = event.target.value;
@@ -395,6 +491,7 @@ async function boot() {
       throw new Error(`Failed to load data: ${response.status}`);
     }
     characters = await response.json();
+    applyQueryState();
     populateFilters();
     bindEvents();
     render();

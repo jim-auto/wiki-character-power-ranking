@@ -132,9 +132,6 @@ h3 {
 
 .condition-controls {
   grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
   margin: 0;
   padding: 10px;
   border: 1px solid var(--line);
@@ -148,7 +145,13 @@ h3 {
   font-weight: 800;
 }
 
-.condition-controls label {
+.condition-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.condition-options label {
   display: inline-flex;
   grid-auto-flow: column;
   align-items: center;
@@ -156,7 +159,7 @@ h3 {
   min-height: 28px;
 }
 
-.condition-controls input {
+.condition-options input {
   width: 16px;
   min-height: 16px;
 }
