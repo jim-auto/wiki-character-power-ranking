@@ -1,801 +1,2001 @@
 characters:
-  - name: 孫悟空
-    wikipedia_url: https://en.wikipedia.org/wiki/Goku
-    media_type: manga
-    universe: Dragon Ball
-  - name: ベジータ
-    wikipedia_url: https://en.wikipedia.org/wiki/Vegeta
-    media_type: manga
-    universe: Dragon Ball
-  - name: ピッコロ
-    wikipedia_url: https://en.wikipedia.org/wiki/Piccolo_(Dragon_Ball)
-    media_type: manga
-    universe: Dragon Ball
-  - name: 孫悟飯
-    wikipedia_url: https://en.wikipedia.org/wiki/Gohan
-    media_type: manga
-    universe: Dragon Ball
-  - name: フリーザ
-    wikipedia_url: https://en.wikipedia.org/wiki/Frieza
-    media_type: manga
-    universe: Dragon Ball
-  - name: セル
-    wikipedia_url: https://en.wikipedia.org/wiki/Cell_(Dragon_Ball)
-    media_type: manga
-    universe: Dragon Ball
-  - name: 魔人ブウ
-    wikipedia_url: https://en.wikipedia.org/wiki/Majin_Buu
-    media_type: manga
-    universe: Dragon Ball
-  - name: トランクス
-    wikipedia_url: https://en.wikipedia.org/wiki/Trunks_(Dragon_Ball)
-    media_type: manga
-    universe: Dragon Ball
-  - name: クリリン
-    wikipedia_url: https://en.wikipedia.org/wiki/Krillin
-    media_type: manga
-    universe: Dragon Ball
-  - name: うずまきナルト
-    wikipedia_url: https://en.wikipedia.org/wiki/Naruto_Uzumaki
-    media_type: manga
-    universe: Naruto
-  - name: うちはサスケ
-    wikipedia_url: https://en.wikipedia.org/wiki/Sasuke_Uchiha
-    media_type: manga
-    universe: Naruto
-  - name: 春野サクラ
-    wikipedia_url: https://en.wikipedia.org/wiki/Sakura_Haruno
-    media_type: manga
-    universe: Naruto
-  - name: はたけカカシ
-    wikipedia_url: https://en.wikipedia.org/wiki/Kakashi_Hatake
-    media_type: manga
-    universe: Naruto
-  - name: うちはイタチ
-    wikipedia_url: https://en.wikipedia.org/wiki/Itachi_Uchiha
-    media_type: manga
-    universe: Naruto
-  - name: うちはマダラ
-    wikipedia_url: https://en.wikipedia.org/wiki/Madara_Uchiha
-    media_type: manga
-    universe: Naruto
-  - name: 自来也
-    wikipedia_url: https://en.wikipedia.org/wiki/Jiraiya_(Naruto)
-    media_type: manga
-    universe: Naruto
-  - name: 我愛羅
-    wikipedia_url: https://en.wikipedia.org/wiki/Gaara
-    media_type: manga
-    universe: Naruto
-  - name: モンキー・D・ルフィ
-    wikipedia_url: https://en.wikipedia.org/wiki/Monkey_D._Luffy
-    media_type: manga
-    universe: One Piece
-  - name: ロロノア・ゾロ
-    wikipedia_url: https://en.wikipedia.org/wiki/Roronoa_Zoro
-    media_type: manga
-    universe: One Piece
-  - name: ナミ
-    wikipedia_url: https://en.wikipedia.org/wiki/Nami_(One_Piece)
-    media_type: manga
-    universe: One Piece
-  - name: サンジ
-    wikipedia_url: https://en.wikipedia.org/wiki/Sanji_(One_Piece)
-    media_type: manga
-    universe: One Piece
-  - name: ニコ・ロビン
-    wikipedia_url: https://en.wikipedia.org/wiki/Nico_Robin
-    media_type: manga
-    universe: One Piece
-  - name: トニートニー・チョッパー
-    wikipedia_url: https://en.wikipedia.org/wiki/Tony_Tony_Chopper
-    media_type: manga
-    universe: One Piece
-  - name: トラファルガー・ロー
-    wikipedia_url: https://en.wikipedia.org/wiki/Trafalgar_D._Water_Law
-    media_type: manga
-    universe: One Piece
-  - name: シャンクス
-    wikipedia_url: https://en.wikipedia.org/wiki/Shanks_(One_Piece)
-    media_type: manga
-    universe: One Piece
-  - name: 黒崎一護
-    wikipedia_url: https://en.wikipedia.org/wiki/Ichigo_Kurosaki
-    media_type: manga
-    universe: Bleach
-  - name: 朽木ルキア
-    wikipedia_url: https://en.wikipedia.org/wiki/Rukia_Kuchiki
-    media_type: manga
-    universe: Bleach
-  - name: 井上織姫
-    wikipedia_url: https://en.wikipedia.org/wiki/Orihime_Inoue
-    media_type: manga
-    universe: Bleach
-  - name: 石田雨竜
-    wikipedia_url: https://en.wikipedia.org/wiki/Ury%C5%AB_Ishida
-    media_type: manga
-    universe: Bleach
-  - name: 阿散井恋次
-    wikipedia_url: https://en.wikipedia.org/wiki/Renji_Abarai
-    media_type: manga
-    universe: Bleach
-  - name: 藍染惣右介
-    wikipedia_url: https://en.wikipedia.org/wiki/S%C5%8Dsuke_Aizen
-    media_type: manga
-    universe: Bleach
-  - name: エレン・イェーガー
-    wikipedia_url: https://en.wikipedia.org/wiki/Eren_Yeager
-    media_type: anime
-    universe: Attack on Titan
-  - name: ミカサ・アッカーマン
-    wikipedia_url: https://en.wikipedia.org/wiki/Mikasa_Ackerman
-    media_type: anime
-    universe: Attack on Titan
-  - name: アルミン・アルレルト
-    wikipedia_url: https://en.wikipedia.org/wiki/Armin_Arlert
-    media_type: anime
-    universe: Attack on Titan
-  - name: リヴァイ
-    wikipedia_url: https://en.wikipedia.org/wiki/Levi_Ackerman
-    media_type: anime
-    universe: Attack on Titan
-  - name: ライナー・ブラウン
-    wikipedia_url: https://en.wikipedia.org/wiki/Reiner_Braun
-    media_type: anime
-    universe: Attack on Titan
-  - name: 竈門炭治郎
-    wikipedia_url: https://en.wikipedia.org/wiki/Tanjiro_Kamado
-    media_type: anime
-    universe: Demon Slayer
-  - name: 竈門禰豆子
-    wikipedia_url: https://en.wikipedia.org/wiki/Nezuko_Kamado
-    media_type: anime
-    universe: Demon Slayer
-  - name: 我妻善逸
-    wikipedia_url: https://en.wikipedia.org/wiki/Zenitsu_Agatsuma
-    media_type: anime
-    universe: Demon Slayer
-  - name: 嘴平伊之助
-    wikipedia_url: https://en.wikipedia.org/wiki/Inosuke_Hashibira
-    media_type: anime
-    universe: Demon Slayer
-  - name: 冨岡義勇
-    wikipedia_url: https://en.wikipedia.org/wiki/Giyu_Tomioka
-    media_type: anime
-    universe: Demon Slayer
-  - name: 煉獄杏寿郎
-    wikipedia_url: https://en.wikipedia.org/wiki/Kyojuro_Rengoku
-    media_type: anime
-    universe: Demon Slayer
-  - name: サイタマ
-    wikipedia_url: https://en.wikipedia.org/wiki/Saitama_(One-Punch_Man)
-    media_type: manga
-    universe: One-Punch Man
-  - name: セーラームーン
-    wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Moon_(character)
-    media_type: anime
-    universe: Sailor Moon
-  - name: ピカチュウ
-    wikipedia_url: https://en.wikipedia.org/wiki/Pikachu
-    media_type: anime
-    universe: Pokemon
-  - name: サトシ
-    wikipedia_url: https://en.wikipedia.org/wiki/Ash_Ketchum
-    media_type: anime
-    universe: Pokemon
-  - name: エドワード・エルリック
-    wikipedia_url: https://en.wikipedia.org/wiki/Edward_Elric
-    media_type: manga
-    universe: Fullmetal Alchemist
-  - name: アルフォンス・エルリック
-    wikipedia_url: https://en.wikipedia.org/wiki/Alphonse_Elric
-    media_type: manga
-    universe: Fullmetal Alchemist
-  - name: 夜神月
-    wikipedia_url: https://en.wikipedia.org/wiki/Light_Yagami
-    media_type: manga
-    universe: Death Note
-  - name: L
-    wikipedia_url: https://en.wikipedia.org/wiki/L_(Death_Note)
-    media_type: manga
-    universe: Death Note
-  - name: アイアンマン（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Iron_Man%27s_armor_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: キャプテン・アメリカ（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Steve_Rogers_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ソー（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Thor_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ドクター・ストレンジ（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Strange_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: サノス（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Thanos_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ワンダ・マキシモフ（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Wanda_Maximoff_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ブラックパンサー（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/T%27Challa_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: キャプテン・マーベル（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Carol_Danvers_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ロキ（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Loki_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ヴィジョン（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Vision_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ブラック・ウィドウ（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Natasha_Romanoff_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ハルク（MCU）
-    wikipedia_url: https://en.wikipedia.org/wiki/Bruce_Banner_(Marvel_Cinematic_Universe)
-    media_type: movie
-    universe: MCU
-  - name: ダース・ベイダー
-    wikipedia_url: https://en.wikipedia.org/wiki/Darth_Vader
-    media_type: movie
-    universe: Star Wars
-  - name: ヨーダ
-    wikipedia_url: https://en.wikipedia.org/wiki/Yoda
-    media_type: movie
-    universe: Star Wars
-  - name: ルーク・スカイウォーカー
-    wikipedia_url: https://en.wikipedia.org/wiki/Luke_Skywalker
-    media_type: movie
-    universe: Star Wars
-  - name: レイア・オーガナ
-    wikipedia_url: https://en.wikipedia.org/wiki/Leia_Organa
-    media_type: movie
-    universe: Star Wars
-  - name: オビ＝ワン・ケノービ
-    wikipedia_url: https://en.wikipedia.org/wiki/Obi-Wan_Kenobi
-    media_type: movie
-    universe: Star Wars
-  - name: パルパティーン
-    wikipedia_url: https://en.wikipedia.org/wiki/Palpatine
-    media_type: movie
-    universe: Star Wars
-  - name: レイ
-    wikipedia_url: https://en.wikipedia.org/wiki/Rey_(Star_Wars)
-    media_type: movie
-    universe: Star Wars
-  - name: ハリー・ポッター
-    wikipedia_url: https://en.wikipedia.org/wiki/Harry_Potter_(character)
-    media_type: movie
-    universe: Harry Potter
-  - name: ハーマイオニー・グレンジャー
-    wikipedia_url: https://en.wikipedia.org/wiki/Hermione_Granger
-    media_type: movie
-    universe: Harry Potter
-  - name: ヴォルデモート
-    wikipedia_url: https://en.wikipedia.org/wiki/Lord_Voldemort
-    media_type: movie
-    universe: Harry Potter
-  - name: アルバス・ダンブルドア
-    wikipedia_url: https://en.wikipedia.org/wiki/Albus_Dumbledore
-    media_type: movie
-    universe: Harry Potter
-  - name: ネオ
-    wikipedia_url: https://en.wikipedia.org/wiki/Neo_(The_Matrix)
-    media_type: movie
-    universe: The Matrix
-  - name: ターミネーター
-    wikipedia_url: https://en.wikipedia.org/wiki/Terminator_(character)
-    media_type: movie
-    universe: Terminator
-  - name: バットマン
-    wikipedia_url: https://en.wikipedia.org/wiki/Batman
-    media_type: comic
-    universe: DC
-  - name: スーパーマン
-    wikipedia_url: https://en.wikipedia.org/wiki/Superman
-    media_type: comic
-    universe: DC
-  - name: ワンダーウーマン
-    wikipedia_url: https://en.wikipedia.org/wiki/Wonder_Woman
-    media_type: comic
-    universe: DC
-  - name: レックス・ルーサー
-    wikipedia_url: https://en.wikipedia.org/wiki/Lex_Luthor
-    media_type: comic
-    universe: DC
-  - name: ジョーカー
-    wikipedia_url: https://en.wikipedia.org/wiki/Joker_(character)
-    media_type: comic
-    universe: DC
-  - name: ハーレイ・クイン
-    wikipedia_url: https://en.wikipedia.org/wiki/Harley_Quinn
-    media_type: comic
-    universe: DC
-  - name: フラッシュ
-    wikipedia_url: https://en.wikipedia.org/wiki/Flash_(Barry_Allen)
-    media_type: comic
-    universe: DC
-  - name: アクアマン
-    wikipedia_url: https://en.wikipedia.org/wiki/Aquaman
-    media_type: comic
-    universe: DC
-  - name: グリーンランタン
-    wikipedia_url: https://en.wikipedia.org/wiki/Hal_Jordan
-    media_type: comic
-    universe: DC
-  - name: マーシャン・マンハンター
-    wikipedia_url: https://en.wikipedia.org/wiki/Martian_Manhunter
-    media_type: comic
-    universe: DC
-  - name: ダークサイド
-    wikipedia_url: https://en.wikipedia.org/wiki/Darkseid
-    media_type: comic
-    universe: DC
-  - name: シャザム
-    wikipedia_url: https://en.wikipedia.org/wiki/Shazam_(DC_Comics)
-    media_type: comic
-    universe: DC
-  - name: スーパーガール
-    wikipedia_url: https://en.wikipedia.org/wiki/Supergirl_(Kara_Zor-El)
-    media_type: comic
-    universe: DC
-  - name: スパイダーマン
-    wikipedia_url: https://en.wikipedia.org/wiki/Spider-Man
-    media_type: comic
-    universe: Marvel
-  - name: ハルク
-    wikipedia_url: https://en.wikipedia.org/wiki/Hulk
-    media_type: comic
-    universe: Marvel
-  - name: ソー
-    wikipedia_url: https://en.wikipedia.org/wiki/Thor_(Marvel_Comics)
-    media_type: comic
-    universe: Marvel
-  - name: アイアンマン
-    wikipedia_url: https://en.wikipedia.org/wiki/Iron_Man
-    media_type: comic
-    universe: Marvel
-  - name: キャプテン・アメリカ
-    wikipedia_url: https://en.wikipedia.org/wiki/Captain_America
-    media_type: comic
-    universe: Marvel
-  - name: ウルヴァリン
-    wikipedia_url: https://en.wikipedia.org/wiki/Wolverine_(character)
-    media_type: comic
-    universe: Marvel
-  - name: ドクター・ストレンジ
-    wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Strange
-    media_type: comic
-    universe: Marvel
-  - name: ブラックパンサー
-    wikipedia_url: https://en.wikipedia.org/wiki/Black_Panther_(character)
-    media_type: comic
-    universe: Marvel
-  - name: キャプテン・マーベル
-    wikipedia_url: https://en.wikipedia.org/wiki/Carol_Danvers
-    media_type: comic
-    universe: Marvel
-  - name: スカーレット・ウィッチ
-    wikipedia_url: https://en.wikipedia.org/wiki/Scarlet_Witch
-    media_type: comic
-    universe: Marvel
-  - name: マグニートー
-    wikipedia_url: https://en.wikipedia.org/wiki/Magneto_(Marvel_Comics)
-    media_type: comic
-    universe: Marvel
-  - name: デッドプール
-    wikipedia_url: https://en.wikipedia.org/wiki/Deadpool
-    media_type: comic
-    universe: Marvel
-  - name: 緑谷出久
-    wikipedia_url: https://en.wikipedia.org/wiki/Izuku_Midoriya
-    media_type: manga
-    universe: My Hero Academia
-  - name: 爆豪勝己
-    wikipedia_url: https://en.wikipedia.org/wiki/Katsuki_Bakugo
-    media_type: manga
-    universe: My Hero Academia
-  - name: 麗日お茶子
-    wikipedia_url: https://en.wikipedia.org/wiki/Ochaco_Uraraka
-    media_type: manga
-    universe: My Hero Academia
-  - name: 轟焦凍
-    wikipedia_url: https://en.wikipedia.org/wiki/Shoto_Todoroki
-    media_type: manga
-    universe: My Hero Academia
-  - name: オールマイト
-    wikipedia_url: https://en.wikipedia.org/wiki/All_Might
-    media_type: manga
-    universe: My Hero Academia
-  - name: 死柄木弔
-    wikipedia_url: https://en.wikipedia.org/wiki/Tomura_Shigaraki
-    media_type: manga
-    universe: My Hero Academia
-  - name: 虎杖悠仁
-    wikipedia_url: https://en.wikipedia.org/wiki/Yuji_Itadori
-    media_type: manga
-    universe: Jujutsu Kaisen
-  - name: 伏黒恵
-    wikipedia_url: https://en.wikipedia.org/wiki/Megumi_Fushiguro
-    media_type: manga
-    universe: Jujutsu Kaisen
-  - name: 釘崎野薔薇
-    wikipedia_url: https://en.wikipedia.org/wiki/Nobara_Kugisaki
-    media_type: manga
-    universe: Jujutsu Kaisen
-  - name: 五条悟
-    wikipedia_url: https://en.wikipedia.org/wiki/Satoru_Gojo
-    media_type: manga
-    universe: Jujutsu Kaisen
-  - name: 両面宿儺
-    wikipedia_url: https://en.wikipedia.org/wiki/Ryomen_Sukuna
-    media_type: manga
-    universe: Jujutsu Kaisen
-  - name: ゴン＝フリークス
-    wikipedia_url: https://en.wikipedia.org/wiki/Gon_Freecss
-    media_type: manga
-    universe: Hunter x Hunter
-  - name: キルア＝ゾルディック
-    wikipedia_url: https://en.wikipedia.org/wiki/Killua_Zoldyck
-    media_type: manga
-    universe: Hunter x Hunter
-  - name: クラピカ
-    wikipedia_url: https://en.wikipedia.org/wiki/Kurapika
-    media_type: manga
-    universe: Hunter x Hunter
-  - name: ケンシロウ
-    wikipedia_url: https://en.wikipedia.org/wiki/Kenshiro
-    media_type: manga
-    universe: Fist of the North Star
-  - name: メルエム
-    wikipedia_url: https://en.wikipedia.org/wiki/Meruem
-    media_type: manga
-    universe: Hunter x Hunter
-  - name: 浦飯幽助
-    wikipedia_url: https://en.wikipedia.org/wiki/Yusuke_Urameshi
-    media_type: manga
-    universe: YuYu Hakusho
-  - name: 飛影
-    wikipedia_url: https://en.wikipedia.org/wiki/Hiei_(YuYu_Hakusho)
-    media_type: manga
-    universe: YuYu Hakusho
-  - name: 蔵馬
-    wikipedia_url: https://en.wikipedia.org/wiki/Kurama_(YuYu_Hakusho)
-    media_type: manga
-    universe: YuYu Hakusho
-  - name: 桑原和真
-    wikipedia_url: https://en.wikipedia.org/wiki/Kazuma_Kuwabara
-    media_type: manga
-    universe: YuYu Hakusho
-  - name: 空条承太郎
-    wikipedia_url: https://en.wikipedia.org/wiki/Jotaro_Kujo
-    media_type: manga
-    universe: JoJo's Bizarre Adventure
-  - name: ディオ・ブランドー
-    wikipedia_url: https://en.wikipedia.org/wiki/Dio_Brando
-    media_type: manga
-    universe: JoJo's Bizarre Adventure
-  - name: ジョルノ・ジョバァーナ
-    wikipedia_url: https://en.wikipedia.org/wiki/Giorno_Giovanna
-    media_type: manga
-    universe: JoJo's Bizarre Adventure
-  - name: ジョセフ・ジョースター
-    wikipedia_url: https://en.wikipedia.org/wiki/Joseph_Joestar
-    media_type: manga
-    universe: JoJo's Bizarre Adventure
-  - name: デンジ
-    wikipedia_url: https://en.wikipedia.org/wiki/Denji_(Chainsaw_Man)
-    media_type: manga
-    universe: Chainsaw Man
-  - name: マキマ
-    wikipedia_url: https://en.wikipedia.org/wiki/Makima
-    media_type: manga
-    universe: Chainsaw Man
-  - name: パワー
-    wikipedia_url: https://en.wikipedia.org/wiki/Power_(Chainsaw_Man)
-    media_type: manga
-    universe: Chainsaw Man
-  - name: 早川アキ
-    wikipedia_url: https://en.wikipedia.org/wiki/Aki_Hayakawa
-    media_type: manga
-    universe: Chainsaw Man
-  - name: 碇シンジ
-    wikipedia_url: https://en.wikipedia.org/wiki/Shinji_Ikari
-    media_type: anime
-    universe: Neon Genesis Evangelion
-  - name: 綾波レイ
-    wikipedia_url: https://en.wikipedia.org/wiki/Rei_Ayanami
-    media_type: anime
-    universe: Neon Genesis Evangelion
-  - name: 惣流・アスカ・ラングレー
-    wikipedia_url: https://en.wikipedia.org/wiki/Asuka_Langley_Soryu
-    media_type: anime
-    universe: Neon Genesis Evangelion
-  - name: スパイク・スピーゲル
-    wikipedia_url: https://en.wikipedia.org/wiki/Spike_Spiegel
-    media_type: anime
-    universe: Cowboy Bebop
-  - name: ガッツ
-    wikipedia_url: https://en.wikipedia.org/wiki/Guts_(Berserk)
-    media_type: manga
-    universe: Berserk
-  - name: グリフィス
-    wikipedia_url: https://en.wikipedia.org/wiki/Griffith_(Berserk)
-    media_type: manga
-    universe: Berserk
-  - name: 金木研
-    wikipedia_url: https://en.wikipedia.org/wiki/Ken_Kaneki
-    media_type: manga
-    universe: Tokyo Ghoul
-  - name: 犬夜叉
-    wikipedia_url: https://en.wikipedia.org/wiki/Inuyasha_(character)
-    media_type: manga
-    universe: Inuyasha
-  - name: 木之本桜
-    wikipedia_url: https://en.wikipedia.org/wiki/Sakura_Kinomoto
-    media_type: anime
-    universe: Cardcaptor Sakura
-  - name: ドラえもん
-    wikipedia_url: https://en.wikipedia.org/wiki/Doraemon_(character)
-    media_type: manga
-    universe: Doraemon
-  - name: 野比のび太
-    wikipedia_url: https://en.wikipedia.org/wiki/Nobita_Nobi
-    media_type: manga
-    universe: Doraemon
-  - name: 影山茂夫
-    wikipedia_url: https://en.wikipedia.org/wiki/Shigeo_Kageyama
-    media_type: manga
-    universe: Mob Psycho 100
-  - name: インディアナ・ジョーンズ
-    wikipedia_url: https://en.wikipedia.org/wiki/Indiana_Jones
-    media_type: movie
-    universe: Indiana Jones
-  - name: ジェームズ・ボンド
-    wikipedia_url: https://en.wikipedia.org/wiki/James_Bond
-    media_type: movie
-    universe: James Bond
-  - name: ジェイソン・ボーン
-    wikipedia_url: https://en.wikipedia.org/wiki/Jason_Bourne
-    media_type: movie
-    universe: Bourne
-  - name: ジョン・ウィック
-    wikipedia_url: https://en.wikipedia.org/wiki/John_Wick_(character)
-    media_type: movie
-    universe: John Wick
-  - name: イーサン・ハント
-    wikipedia_url: https://en.wikipedia.org/wiki/Ethan_Hunt
-    media_type: movie
-    universe: "Mission: Impossible"
-  - name: ロッキー・バルボア
-    wikipedia_url: https://en.wikipedia.org/wiki/Rocky_Balboa
-    media_type: movie
-    universe: Rocky
-  - name: ジョン・ランボー
-    wikipedia_url: https://en.wikipedia.org/wiki/John_Rambo
-    media_type: movie
-    universe: Rambo
-  - name: エレン・リプリー
-    wikipedia_url: https://en.wikipedia.org/wiki/Ellen_Ripley
-    media_type: movie
-    universe: Alien
-  - name: プレデター
-    wikipedia_url: https://en.wikipedia.org/wiki/Predator_(fictional_species)
-    media_type: movie
-    universe: Predator
-  - name: ゼノモーフ
-    wikipedia_url: https://en.wikipedia.org/wiki/Alien_(creature_in_Alien_franchise)
-    media_type: movie
-    universe: Alien
-  - name: ゴジラ
-    wikipedia_url: https://en.wikipedia.org/wiki/Godzilla
-    media_type: movie
-    universe: Godzilla
-  - name: キングコング
-    wikipedia_url: https://en.wikipedia.org/wiki/King_Kong
-    media_type: movie
-    universe: King Kong
-  - name: ジャック・スパロウ
-    wikipedia_url: https://en.wikipedia.org/wiki/Jack_Sparrow
-    media_type: movie
-    universe: Pirates of the Caribbean
-  - name: アラゴルン
-    wikipedia_url: https://en.wikipedia.org/wiki/Aragorn
-    media_type: movie
-    universe: The Lord of the Rings
-  - name: ガンダルフ
-    wikipedia_url: https://en.wikipedia.org/wiki/Gandalf
-    media_type: movie
-    universe: The Lord of the Rings
-  - name: フロド・バギンズ
-    wikipedia_url: https://en.wikipedia.org/wiki/Frodo_Baggins
-    media_type: movie
-    universe: The Lord of the Rings
-  - name: レゴラス
-    wikipedia_url: https://en.wikipedia.org/wiki/Legolas
-    media_type: movie
-    universe: The Lord of the Rings
-  - name: ハン・ソロ
-    wikipedia_url: https://en.wikipedia.org/wiki/Han_Solo
-    media_type: movie
-    universe: Star Wars
-  - name: チューバッカ
-    wikipedia_url: https://en.wikipedia.org/wiki/Chewbacca
-    media_type: movie
-    universe: Star Wars
-  - name: ボバ・フェット
-    wikipedia_url: https://en.wikipedia.org/wiki/Boba_Fett
-    media_type: movie
-    universe: Star Wars
-  - name: ダース・モール
-    wikipedia_url: https://en.wikipedia.org/wiki/Darth_Maul
-    media_type: movie
-    universe: Star Wars
-  - name: カイロ・レン
-    wikipedia_url: https://en.wikipedia.org/wiki/Kylo_Ren
-    media_type: movie
-    universe: Star Wars
-  - name: メイス・ウィンドゥ
-    wikipedia_url: https://en.wikipedia.org/wiki/Mace_Windu
-    media_type: movie
-    universe: Star Wars
-  - name: エージェント・スミス
-    wikipedia_url: https://en.wikipedia.org/wiki/Agent_Smith
-    media_type: movie
-    universe: The Matrix
-  - name: トリニティ
-    wikipedia_url: https://en.wikipedia.org/wiki/Trinity_(The_Matrix)
-    media_type: movie
-    universe: The Matrix
-  - name: モーフィアス
-    wikipedia_url: https://en.wikipedia.org/wiki/Morpheus_(The_Matrix)
-    media_type: movie
-    universe: The Matrix
-  - name: サラ・コナー
-    wikipedia_url: https://en.wikipedia.org/wiki/Sarah_Connor_(Terminator)
-    media_type: movie
-    universe: Terminator
-  - name: T-1000
-    wikipedia_url: https://en.wikipedia.org/wiki/T-1000
-    media_type: movie
-    universe: Terminator
-  - name: ザ・ブライド
-    wikipedia_url: https://en.wikipedia.org/wiki/The_Bride_(Kill_Bill)
-    media_type: movie
-    universe: Kill Bill
-  - name: カットニス・エヴァディーン
-    wikipedia_url: https://en.wikipedia.org/wiki/Katniss_Everdeen
-    media_type: movie
-    universe: The Hunger Games
-  - name: サイクロップス
-    wikipedia_url: https://en.wikipedia.org/wiki/Cyclops_(Marvel_Comics)
-    media_type: comic
-    universe: Marvel
-  - name: ジーン・グレイ
-    wikipedia_url: https://en.wikipedia.org/wiki/Jean_Grey
-    media_type: comic
-    universe: Marvel
-  - name: ストーム
-    wikipedia_url: https://en.wikipedia.org/wiki/Storm_(Marvel_Comics)
-    media_type: comic
-    universe: Marvel
-  - name: プロフェッサーX
-    wikipedia_url: https://en.wikipedia.org/wiki/Professor_X
-    media_type: comic
-    universe: Marvel
-  - name: ミスティーク
-    wikipedia_url: https://en.wikipedia.org/wiki/Mystique_(character)
-    media_type: comic
-    universe: Marvel
-  - name: ドクター・ドゥーム
-    wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Doom
-    media_type: comic
-    universe: Marvel
-  - name: シルバーサーファー
-    wikipedia_url: https://en.wikipedia.org/wiki/Silver_Surfer
-    media_type: comic
-    universe: Marvel
-  - name: ギャラクタス
-    wikipedia_url: https://en.wikipedia.org/wiki/Galactus
-    media_type: comic
-    universe: Marvel
-  - name: サノス
-    wikipedia_url: https://en.wikipedia.org/wiki/Thanos
-    media_type: comic
-    universe: Marvel
-  - name: ロキ
-    wikipedia_url: https://en.wikipedia.org/wiki/Loki_(Marvel_Comics)
-    media_type: comic
-    universe: Marvel
-  - name: ブラック・ウィドウ
-    wikipedia_url: https://en.wikipedia.org/wiki/Black_Widow_(Natasha_Romanoff)
-    media_type: comic
-    universe: Marvel
-  - name: ホークアイ
-    wikipedia_url: https://en.wikipedia.org/wiki/Hawkeye_(Clint_Barton)
-    media_type: comic
-    universe: Marvel
-  - name: デアデビル
-    wikipedia_url: https://en.wikipedia.org/wiki/Daredevil_(Marvel_Comics_character)
-    media_type: comic
-    universe: Marvel
-  - name: パニッシャー
-    wikipedia_url: https://en.wikipedia.org/wiki/Punisher
-    media_type: comic
-    universe: Marvel
-  - name: ゴーストライダー
-    wikipedia_url: https://en.wikipedia.org/wiki/Ghost_Rider_(Johnny_Blaze)
-    media_type: comic
-    universe: Marvel
-  - name: ブレイド
-    wikipedia_url: https://en.wikipedia.org/wiki/Blade_(character)
-    media_type: comic
-    universe: Marvel
-  - name: ヴェノム
-    wikipedia_url: https://en.wikipedia.org/wiki/Venom_(character)
-    media_type: comic
-    universe: Marvel
-  - name: グリーンゴブリン
-    wikipedia_url: https://en.wikipedia.org/wiki/Green_Goblin
-    media_type: comic
-    universe: Marvel
-  - name: ドクター・オクトパス
-    wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Octopus
-    media_type: comic
-    universe: Marvel
-  - name: マイルズ・モラレス
-    wikipedia_url: https://en.wikipedia.org/wiki/Miles_Morales
-    media_type: comic
-    universe: Marvel
-  - name: シーハルク
-    wikipedia_url: https://en.wikipedia.org/wiki/She-Hulk
-    media_type: comic
-    universe: Marvel
-  - name: ムーンナイト
-    wikipedia_url: https://en.wikipedia.org/wiki/Moon_Knight
-    media_type: comic
-    universe: Marvel
-  - name: キャットウーマン
-    wikipedia_url: https://en.wikipedia.org/wiki/Catwoman
-    media_type: comic
-    universe: DC
-  - name: ディック・グレイソン
-    wikipedia_url: https://en.wikipedia.org/wiki/Dick_Grayson
-    media_type: comic
-    universe: DC
-  - name: ナイトウィング
-    wikipedia_url: https://en.wikipedia.org/wiki/Nightwing
-    media_type: comic
-    universe: DC
-  - name: バットガール
-    wikipedia_url: https://en.wikipedia.org/wiki/Batgirl
-    media_type: comic
-    universe: DC
-  - name: グリーンアロー
-    wikipedia_url: https://en.wikipedia.org/wiki/Green_Arrow
-    media_type: comic
-    universe: DC
-  - name: ブラックキャナリー
-    wikipedia_url: https://en.wikipedia.org/wiki/Black_Canary
-    media_type: comic
-    universe: DC
-  - name: サイボーグ
-    wikipedia_url: https://en.wikipedia.org/wiki/Cyborg_(DC_Comics)
-    media_type: comic
-    universe: DC
-  - name: レイヴン
-    wikipedia_url: https://en.wikipedia.org/wiki/Raven_(DC_Comics)
-    media_type: comic
-    universe: DC
+- name: 孫悟空
+  wikipedia_url: https://en.wikipedia.org/wiki/Goku
+  media_type: manga
+  universe: Dragon Ball
+- name: ベジータ
+  wikipedia_url: https://en.wikipedia.org/wiki/Vegeta
+  media_type: manga
+  universe: Dragon Ball
+- name: ピッコロ
+  wikipedia_url: https://en.wikipedia.org/wiki/Piccolo_(Dragon_Ball)
+  media_type: manga
+  universe: Dragon Ball
+- name: 孫悟飯
+  wikipedia_url: https://en.wikipedia.org/wiki/Gohan
+  media_type: manga
+  universe: Dragon Ball
+- name: フリーザ
+  wikipedia_url: https://en.wikipedia.org/wiki/Frieza
+  media_type: manga
+  universe: Dragon Ball
+- name: セル
+  wikipedia_url: https://en.wikipedia.org/wiki/Cell_(Dragon_Ball)
+  media_type: manga
+  universe: Dragon Ball
+- name: 魔人ブウ
+  wikipedia_url: https://en.wikipedia.org/wiki/Majin_Buu
+  media_type: manga
+  universe: Dragon Ball
+- name: トランクス
+  wikipedia_url: https://en.wikipedia.org/wiki/Trunks_(Dragon_Ball)
+  media_type: manga
+  universe: Dragon Ball
+- name: クリリン
+  wikipedia_url: https://en.wikipedia.org/wiki/Krillin
+  media_type: manga
+  universe: Dragon Ball
+- name: うずまきナルト
+  wikipedia_url: https://en.wikipedia.org/wiki/Naruto_Uzumaki
+  media_type: manga
+  universe: Naruto
+- name: うちはサスケ
+  wikipedia_url: https://en.wikipedia.org/wiki/Sasuke_Uchiha
+  media_type: manga
+  universe: Naruto
+- name: 春野サクラ
+  wikipedia_url: https://en.wikipedia.org/wiki/Sakura_Haruno
+  media_type: manga
+  universe: Naruto
+- name: はたけカカシ
+  wikipedia_url: https://en.wikipedia.org/wiki/Kakashi_Hatake
+  media_type: manga
+  universe: Naruto
+- name: うちはイタチ
+  wikipedia_url: https://en.wikipedia.org/wiki/Itachi_Uchiha
+  media_type: manga
+  universe: Naruto
+- name: うちはマダラ
+  wikipedia_url: https://en.wikipedia.org/wiki/Madara_Uchiha
+  media_type: manga
+  universe: Naruto
+- name: 自来也
+  wikipedia_url: https://en.wikipedia.org/wiki/Jiraiya_(Naruto)
+  media_type: manga
+  universe: Naruto
+- name: 我愛羅
+  wikipedia_url: https://en.wikipedia.org/wiki/Gaara
+  media_type: manga
+  universe: Naruto
+- name: モンキー・D・ルフィ
+  wikipedia_url: https://en.wikipedia.org/wiki/Monkey_D._Luffy
+  media_type: manga
+  universe: One Piece
+- name: ロロノア・ゾロ
+  wikipedia_url: https://en.wikipedia.org/wiki/Roronoa_Zoro
+  media_type: manga
+  universe: One Piece
+- name: ナミ
+  wikipedia_url: https://en.wikipedia.org/wiki/Nami_(One_Piece)
+  media_type: manga
+  universe: One Piece
+- name: サンジ
+  wikipedia_url: https://en.wikipedia.org/wiki/Sanji_(One_Piece)
+  media_type: manga
+  universe: One Piece
+- name: ニコ・ロビン
+  wikipedia_url: https://en.wikipedia.org/wiki/Nico_Robin
+  media_type: manga
+  universe: One Piece
+- name: トニートニー・チョッパー
+  wikipedia_url: https://en.wikipedia.org/wiki/Tony_Tony_Chopper
+  media_type: manga
+  universe: One Piece
+- name: トラファルガー・ロー
+  wikipedia_url: https://en.wikipedia.org/wiki/Trafalgar_D._Water_Law
+  media_type: manga
+  universe: One Piece
+- name: シャンクス
+  wikipedia_url: https://en.wikipedia.org/wiki/Shanks_(One_Piece)
+  media_type: manga
+  universe: One Piece
+- name: 黒崎一護
+  wikipedia_url: https://en.wikipedia.org/wiki/Ichigo_Kurosaki
+  media_type: manga
+  universe: Bleach
+- name: 朽木ルキア
+  wikipedia_url: https://en.wikipedia.org/wiki/Rukia_Kuchiki
+  media_type: manga
+  universe: Bleach
+- name: 井上織姫
+  wikipedia_url: https://en.wikipedia.org/wiki/Orihime_Inoue
+  media_type: manga
+  universe: Bleach
+- name: 石田雨竜
+  wikipedia_url: https://en.wikipedia.org/wiki/Ury%C5%AB_Ishida
+  media_type: manga
+  universe: Bleach
+- name: 阿散井恋次
+  wikipedia_url: https://en.wikipedia.org/wiki/Renji_Abarai
+  media_type: manga
+  universe: Bleach
+- name: 藍染惣右介
+  wikipedia_url: https://en.wikipedia.org/wiki/S%C5%8Dsuke_Aizen
+  media_type: manga
+  universe: Bleach
+- name: エレン・イェーガー
+  wikipedia_url: https://en.wikipedia.org/wiki/Eren_Yeager
+  media_type: anime
+  universe: Attack on Titan
+- name: ミカサ・アッカーマン
+  wikipedia_url: https://en.wikipedia.org/wiki/Mikasa_Ackerman
+  media_type: anime
+  universe: Attack on Titan
+- name: アルミン・アルレルト
+  wikipedia_url: https://en.wikipedia.org/wiki/Armin_Arlert
+  media_type: anime
+  universe: Attack on Titan
+- name: リヴァイ
+  wikipedia_url: https://en.wikipedia.org/wiki/Levi_Ackerman
+  media_type: anime
+  universe: Attack on Titan
+- name: ライナー・ブラウン
+  wikipedia_url: https://en.wikipedia.org/wiki/Reiner_Braun
+  media_type: anime
+  universe: Attack on Titan
+- name: 竈門炭治郎
+  wikipedia_url: https://en.wikipedia.org/wiki/Tanjiro_Kamado
+  media_type: anime
+  universe: Demon Slayer
+- name: 竈門禰豆子
+  wikipedia_url: https://en.wikipedia.org/wiki/Nezuko_Kamado
+  media_type: anime
+  universe: Demon Slayer
+- name: 我妻善逸
+  wikipedia_url: https://en.wikipedia.org/wiki/Zenitsu_Agatsuma
+  media_type: anime
+  universe: Demon Slayer
+- name: 嘴平伊之助
+  wikipedia_url: https://en.wikipedia.org/wiki/Inosuke_Hashibira
+  media_type: anime
+  universe: Demon Slayer
+- name: 冨岡義勇
+  wikipedia_url: https://en.wikipedia.org/wiki/Giyu_Tomioka
+  media_type: anime
+  universe: Demon Slayer
+- name: 煉獄杏寿郎
+  wikipedia_url: https://en.wikipedia.org/wiki/Kyojuro_Rengoku
+  media_type: anime
+  universe: Demon Slayer
+- name: サイタマ
+  wikipedia_url: https://en.wikipedia.org/wiki/Saitama_(One-Punch_Man)
+  media_type: manga
+  universe: One-Punch Man
+- name: セーラームーン
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Moon_(character)
+  media_type: anime
+  universe: Sailor Moon
+- name: ピカチュウ
+  wikipedia_url: https://en.wikipedia.org/wiki/Pikachu
+  media_type: anime
+  universe: Pokemon
+- name: サトシ
+  wikipedia_url: https://en.wikipedia.org/wiki/Ash_Ketchum
+  media_type: anime
+  universe: Pokemon
+- name: エドワード・エルリック
+  wikipedia_url: https://en.wikipedia.org/wiki/Edward_Elric
+  media_type: manga
+  universe: Fullmetal Alchemist
+- name: アルフォンス・エルリック
+  wikipedia_url: https://en.wikipedia.org/wiki/Alphonse_Elric
+  media_type: manga
+  universe: Fullmetal Alchemist
+- name: 夜神月
+  wikipedia_url: https://en.wikipedia.org/wiki/Light_Yagami
+  media_type: manga
+  universe: Death Note
+- name: L
+  wikipedia_url: https://en.wikipedia.org/wiki/L_(Death_Note)
+  media_type: manga
+  universe: Death Note
+- name: アイアンマン（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Iron_Man%27s_armor_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: キャプテン・アメリカ（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Steve_Rogers_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ソー（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Thor_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ドクター・ストレンジ（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Strange_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: サノス（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Thanos_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ワンダ・マキシモフ（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Wanda_Maximoff_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ブラックパンサー（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/T%27Challa_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: キャプテン・マーベル（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Carol_Danvers_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ロキ（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Loki_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ヴィジョン（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Vision_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ブラック・ウィドウ（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Natasha_Romanoff_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ハルク（MCU）
+  wikipedia_url: https://en.wikipedia.org/wiki/Bruce_Banner_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: ダース・ベイダー
+  wikipedia_url: https://en.wikipedia.org/wiki/Darth_Vader
+  media_type: movie
+  universe: Star Wars
+- name: ヨーダ
+  wikipedia_url: https://en.wikipedia.org/wiki/Yoda
+  media_type: movie
+  universe: Star Wars
+- name: ルーク・スカイウォーカー
+  wikipedia_url: https://en.wikipedia.org/wiki/Luke_Skywalker
+  media_type: movie
+  universe: Star Wars
+- name: レイア・オーガナ
+  wikipedia_url: https://en.wikipedia.org/wiki/Leia_Organa
+  media_type: movie
+  universe: Star Wars
+- name: オビ＝ワン・ケノービ
+  wikipedia_url: https://en.wikipedia.org/wiki/Obi-Wan_Kenobi
+  media_type: movie
+  universe: Star Wars
+- name: パルパティーン
+  wikipedia_url: https://en.wikipedia.org/wiki/Palpatine
+  media_type: movie
+  universe: Star Wars
+- name: レイ
+  wikipedia_url: https://en.wikipedia.org/wiki/Rey_(Star_Wars)
+  media_type: movie
+  universe: Star Wars
+- name: ハリー・ポッター
+  wikipedia_url: https://en.wikipedia.org/wiki/Harry_Potter_(character)
+  media_type: movie
+  universe: Harry Potter
+- name: ハーマイオニー・グレンジャー
+  wikipedia_url: https://en.wikipedia.org/wiki/Hermione_Granger
+  media_type: movie
+  universe: Harry Potter
+- name: ヴォルデモート
+  wikipedia_url: https://en.wikipedia.org/wiki/Lord_Voldemort
+  media_type: movie
+  universe: Harry Potter
+- name: アルバス・ダンブルドア
+  wikipedia_url: https://en.wikipedia.org/wiki/Albus_Dumbledore
+  media_type: movie
+  universe: Harry Potter
+- name: ネオ
+  wikipedia_url: https://en.wikipedia.org/wiki/Neo_(The_Matrix)
+  media_type: movie
+  universe: The Matrix
+- name: ターミネーター
+  wikipedia_url: https://en.wikipedia.org/wiki/Terminator_(character)
+  media_type: movie
+  universe: Terminator
+- name: バットマン
+  wikipedia_url: https://en.wikipedia.org/wiki/Batman
+  media_type: comic
+  universe: DC
+- name: スーパーマン
+  wikipedia_url: https://en.wikipedia.org/wiki/Superman
+  media_type: comic
+  universe: DC
+- name: ワンダーウーマン
+  wikipedia_url: https://en.wikipedia.org/wiki/Wonder_Woman
+  media_type: comic
+  universe: DC
+- name: レックス・ルーサー
+  wikipedia_url: https://en.wikipedia.org/wiki/Lex_Luthor
+  media_type: comic
+  universe: DC
+- name: ジョーカー
+  wikipedia_url: https://en.wikipedia.org/wiki/Joker_(character)
+  media_type: comic
+  universe: DC
+- name: ハーレイ・クイン
+  wikipedia_url: https://en.wikipedia.org/wiki/Harley_Quinn
+  media_type: comic
+  universe: DC
+- name: フラッシュ
+  wikipedia_url: https://en.wikipedia.org/wiki/Flash_(Barry_Allen)
+  media_type: comic
+  universe: DC
+- name: アクアマン
+  wikipedia_url: https://en.wikipedia.org/wiki/Aquaman
+  media_type: comic
+  universe: DC
+- name: グリーンランタン
+  wikipedia_url: https://en.wikipedia.org/wiki/Hal_Jordan
+  media_type: comic
+  universe: DC
+- name: マーシャン・マンハンター
+  wikipedia_url: https://en.wikipedia.org/wiki/Martian_Manhunter
+  media_type: comic
+  universe: DC
+- name: ダークサイド
+  wikipedia_url: https://en.wikipedia.org/wiki/Darkseid
+  media_type: comic
+  universe: DC
+- name: シャザム
+  wikipedia_url: https://en.wikipedia.org/wiki/Shazam_(DC_Comics)
+  media_type: comic
+  universe: DC
+- name: スーパーガール
+  wikipedia_url: https://en.wikipedia.org/wiki/Supergirl_(Kara_Zor-El)
+  media_type: comic
+  universe: DC
+- name: スパイダーマン
+  wikipedia_url: https://en.wikipedia.org/wiki/Spider-Man
+  media_type: comic
+  universe: Marvel
+- name: ハルク
+  wikipedia_url: https://en.wikipedia.org/wiki/Hulk
+  media_type: comic
+  universe: Marvel
+- name: ソー
+  wikipedia_url: https://en.wikipedia.org/wiki/Thor_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: アイアンマン
+  wikipedia_url: https://en.wikipedia.org/wiki/Iron_Man
+  media_type: comic
+  universe: Marvel
+- name: キャプテン・アメリカ
+  wikipedia_url: https://en.wikipedia.org/wiki/Captain_America
+  media_type: comic
+  universe: Marvel
+- name: ウルヴァリン
+  wikipedia_url: https://en.wikipedia.org/wiki/Wolverine_(character)
+  media_type: comic
+  universe: Marvel
+- name: ドクター・ストレンジ
+  wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Strange
+  media_type: comic
+  universe: Marvel
+- name: ブラックパンサー
+  wikipedia_url: https://en.wikipedia.org/wiki/Black_Panther_(character)
+  media_type: comic
+  universe: Marvel
+- name: キャプテン・マーベル
+  wikipedia_url: https://en.wikipedia.org/wiki/Carol_Danvers
+  media_type: comic
+  universe: Marvel
+- name: スカーレット・ウィッチ
+  wikipedia_url: https://en.wikipedia.org/wiki/Scarlet_Witch
+  media_type: comic
+  universe: Marvel
+- name: マグニートー
+  wikipedia_url: https://en.wikipedia.org/wiki/Magneto_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: デッドプール
+  wikipedia_url: https://en.wikipedia.org/wiki/Deadpool
+  media_type: comic
+  universe: Marvel
+- name: 緑谷出久
+  wikipedia_url: https://en.wikipedia.org/wiki/Izuku_Midoriya
+  media_type: manga
+  universe: My Hero Academia
+- name: 爆豪勝己
+  wikipedia_url: https://en.wikipedia.org/wiki/Katsuki_Bakugo
+  media_type: manga
+  universe: My Hero Academia
+- name: 麗日お茶子
+  wikipedia_url: https://en.wikipedia.org/wiki/Ochaco_Uraraka
+  media_type: manga
+  universe: My Hero Academia
+- name: 轟焦凍
+  wikipedia_url: https://en.wikipedia.org/wiki/Shoto_Todoroki
+  media_type: manga
+  universe: My Hero Academia
+- name: オールマイト
+  wikipedia_url: https://en.wikipedia.org/wiki/All_Might
+  media_type: manga
+  universe: My Hero Academia
+- name: 死柄木弔
+  wikipedia_url: https://en.wikipedia.org/wiki/Tomura_Shigaraki
+  media_type: manga
+  universe: My Hero Academia
+- name: 虎杖悠仁
+  wikipedia_url: https://en.wikipedia.org/wiki/Yuji_Itadori
+  media_type: manga
+  universe: Jujutsu Kaisen
+- name: 伏黒恵
+  wikipedia_url: https://en.wikipedia.org/wiki/Megumi_Fushiguro
+  media_type: manga
+  universe: Jujutsu Kaisen
+- name: 釘崎野薔薇
+  wikipedia_url: https://en.wikipedia.org/wiki/Nobara_Kugisaki
+  media_type: manga
+  universe: Jujutsu Kaisen
+- name: 五条悟
+  wikipedia_url: https://en.wikipedia.org/wiki/Satoru_Gojo
+  media_type: manga
+  universe: Jujutsu Kaisen
+- name: 両面宿儺
+  wikipedia_url: https://en.wikipedia.org/wiki/Ryomen_Sukuna
+  media_type: manga
+  universe: Jujutsu Kaisen
+- name: ゴン＝フリークス
+  wikipedia_url: https://en.wikipedia.org/wiki/Gon_Freecss
+  media_type: manga
+  universe: Hunter x Hunter
+- name: キルア＝ゾルディック
+  wikipedia_url: https://en.wikipedia.org/wiki/Killua_Zoldyck
+  media_type: manga
+  universe: Hunter x Hunter
+- name: クラピカ
+  wikipedia_url: https://en.wikipedia.org/wiki/Kurapika
+  media_type: manga
+  universe: Hunter x Hunter
+- name: ケンシロウ
+  wikipedia_url: https://en.wikipedia.org/wiki/Kenshiro
+  media_type: manga
+  universe: Fist of the North Star
+- name: メルエム
+  wikipedia_url: https://en.wikipedia.org/wiki/Meruem
+  media_type: manga
+  universe: Hunter x Hunter
+- name: 浦飯幽助
+  wikipedia_url: https://en.wikipedia.org/wiki/Yusuke_Urameshi
+  media_type: manga
+  universe: YuYu Hakusho
+- name: 飛影
+  wikipedia_url: https://en.wikipedia.org/wiki/Hiei_(YuYu_Hakusho)
+  media_type: manga
+  universe: YuYu Hakusho
+- name: 蔵馬
+  wikipedia_url: https://en.wikipedia.org/wiki/Kurama_(YuYu_Hakusho)
+  media_type: manga
+  universe: YuYu Hakusho
+- name: 桑原和真
+  wikipedia_url: https://en.wikipedia.org/wiki/Kazuma_Kuwabara
+  media_type: manga
+  universe: YuYu Hakusho
+- name: 空条承太郎
+  wikipedia_url: https://en.wikipedia.org/wiki/Jotaro_Kujo
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: ディオ・ブランドー
+  wikipedia_url: https://en.wikipedia.org/wiki/Dio_Brando
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: ジョルノ・ジョバァーナ
+  wikipedia_url: https://en.wikipedia.org/wiki/Giorno_Giovanna
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: ジョセフ・ジョースター
+  wikipedia_url: https://en.wikipedia.org/wiki/Joseph_Joestar
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: デンジ
+  wikipedia_url: https://en.wikipedia.org/wiki/Denji_(Chainsaw_Man)
+  media_type: manga
+  universe: Chainsaw Man
+- name: マキマ
+  wikipedia_url: https://en.wikipedia.org/wiki/Makima
+  media_type: manga
+  universe: Chainsaw Man
+- name: パワー
+  wikipedia_url: https://en.wikipedia.org/wiki/Power_(Chainsaw_Man)
+  media_type: manga
+  universe: Chainsaw Man
+- name: 早川アキ
+  wikipedia_url: https://en.wikipedia.org/wiki/Aki_Hayakawa
+  media_type: manga
+  universe: Chainsaw Man
+- name: 碇シンジ
+  wikipedia_url: https://en.wikipedia.org/wiki/Shinji_Ikari
+  media_type: anime
+  universe: Neon Genesis Evangelion
+- name: 綾波レイ
+  wikipedia_url: https://en.wikipedia.org/wiki/Rei_Ayanami
+  media_type: anime
+  universe: Neon Genesis Evangelion
+- name: 惣流・アスカ・ラングレー
+  wikipedia_url: https://en.wikipedia.org/wiki/Asuka_Langley_Soryu
+  media_type: anime
+  universe: Neon Genesis Evangelion
+- name: スパイク・スピーゲル
+  wikipedia_url: https://en.wikipedia.org/wiki/Spike_Spiegel
+  media_type: anime
+  universe: Cowboy Bebop
+- name: ガッツ
+  wikipedia_url: https://en.wikipedia.org/wiki/Guts_(Berserk)
+  media_type: manga
+  universe: Berserk
+- name: グリフィス
+  wikipedia_url: https://en.wikipedia.org/wiki/Griffith_(Berserk)
+  media_type: manga
+  universe: Berserk
+- name: 金木研
+  wikipedia_url: https://en.wikipedia.org/wiki/Ken_Kaneki
+  media_type: manga
+  universe: Tokyo Ghoul
+- name: 犬夜叉
+  wikipedia_url: https://en.wikipedia.org/wiki/Inuyasha_(character)
+  media_type: manga
+  universe: Inuyasha
+- name: 木之本桜
+  wikipedia_url: https://en.wikipedia.org/wiki/Sakura_Kinomoto
+  media_type: anime
+  universe: Cardcaptor Sakura
+- name: ドラえもん
+  wikipedia_url: https://en.wikipedia.org/wiki/Doraemon_(character)
+  media_type: manga
+  universe: Doraemon
+- name: 野比のび太
+  wikipedia_url: https://en.wikipedia.org/wiki/Nobita_Nobi
+  media_type: manga
+  universe: Doraemon
+- name: 影山茂夫
+  wikipedia_url: https://en.wikipedia.org/wiki/Shigeo_Kageyama
+  media_type: manga
+  universe: Mob Psycho 100
+- name: インディアナ・ジョーンズ
+  wikipedia_url: https://en.wikipedia.org/wiki/Indiana_Jones
+  media_type: movie
+  universe: Indiana Jones
+- name: ジェームズ・ボンド
+  wikipedia_url: https://en.wikipedia.org/wiki/James_Bond
+  media_type: movie
+  universe: James Bond
+- name: ジェイソン・ボーン
+  wikipedia_url: https://en.wikipedia.org/wiki/Jason_Bourne
+  media_type: movie
+  universe: Bourne
+- name: ジョン・ウィック
+  wikipedia_url: https://en.wikipedia.org/wiki/John_Wick_(character)
+  media_type: movie
+  universe: John Wick
+- name: イーサン・ハント
+  wikipedia_url: https://en.wikipedia.org/wiki/Ethan_Hunt
+  media_type: movie
+  universe: 'Mission: Impossible'
+- name: ロッキー・バルボア
+  wikipedia_url: https://en.wikipedia.org/wiki/Rocky_Balboa
+  media_type: movie
+  universe: Rocky
+- name: ジョン・ランボー
+  wikipedia_url: https://en.wikipedia.org/wiki/John_Rambo
+  media_type: movie
+  universe: Rambo
+- name: エレン・リプリー
+  wikipedia_url: https://en.wikipedia.org/wiki/Ellen_Ripley
+  media_type: movie
+  universe: Alien
+- name: プレデター
+  wikipedia_url: https://en.wikipedia.org/wiki/Predator_(fictional_species)
+  media_type: movie
+  universe: Predator
+- name: ゼノモーフ
+  wikipedia_url: https://en.wikipedia.org/wiki/Alien_(creature_in_Alien_franchise)
+  media_type: movie
+  universe: Alien
+- name: ゴジラ
+  wikipedia_url: https://en.wikipedia.org/wiki/Godzilla
+  media_type: movie
+  universe: Godzilla
+- name: キングコング
+  wikipedia_url: https://en.wikipedia.org/wiki/King_Kong
+  media_type: movie
+  universe: King Kong
+- name: ジャック・スパロウ
+  wikipedia_url: https://en.wikipedia.org/wiki/Jack_Sparrow
+  media_type: movie
+  universe: Pirates of the Caribbean
+- name: アラゴルン
+  wikipedia_url: https://en.wikipedia.org/wiki/Aragorn
+  media_type: movie
+  universe: The Lord of the Rings
+- name: ガンダルフ
+  wikipedia_url: https://en.wikipedia.org/wiki/Gandalf
+  media_type: movie
+  universe: The Lord of the Rings
+- name: フロド・バギンズ
+  wikipedia_url: https://en.wikipedia.org/wiki/Frodo_Baggins
+  media_type: movie
+  universe: The Lord of the Rings
+- name: レゴラス
+  wikipedia_url: https://en.wikipedia.org/wiki/Legolas
+  media_type: movie
+  universe: The Lord of the Rings
+- name: ハン・ソロ
+  wikipedia_url: https://en.wikipedia.org/wiki/Han_Solo
+  media_type: movie
+  universe: Star Wars
+- name: チューバッカ
+  wikipedia_url: https://en.wikipedia.org/wiki/Chewbacca
+  media_type: movie
+  universe: Star Wars
+- name: ボバ・フェット
+  wikipedia_url: https://en.wikipedia.org/wiki/Boba_Fett
+  media_type: movie
+  universe: Star Wars
+- name: ダース・モール
+  wikipedia_url: https://en.wikipedia.org/wiki/Darth_Maul
+  media_type: movie
+  universe: Star Wars
+- name: カイロ・レン
+  wikipedia_url: https://en.wikipedia.org/wiki/Kylo_Ren
+  media_type: movie
+  universe: Star Wars
+- name: メイス・ウィンドゥ
+  wikipedia_url: https://en.wikipedia.org/wiki/Mace_Windu
+  media_type: movie
+  universe: Star Wars
+- name: エージェント・スミス
+  wikipedia_url: https://en.wikipedia.org/wiki/Agent_Smith
+  media_type: movie
+  universe: The Matrix
+- name: トリニティ
+  wikipedia_url: https://en.wikipedia.org/wiki/Trinity_(The_Matrix)
+  media_type: movie
+  universe: The Matrix
+- name: モーフィアス
+  wikipedia_url: https://en.wikipedia.org/wiki/Morpheus_(The_Matrix)
+  media_type: movie
+  universe: The Matrix
+- name: サラ・コナー
+  wikipedia_url: https://en.wikipedia.org/wiki/Sarah_Connor_(Terminator)
+  media_type: movie
+  universe: Terminator
+- name: T-1000
+  wikipedia_url: https://en.wikipedia.org/wiki/T-1000
+  media_type: movie
+  universe: Terminator
+- name: ザ・ブライド
+  wikipedia_url: https://en.wikipedia.org/wiki/The_Bride_(Kill_Bill)
+  media_type: movie
+  universe: Kill Bill
+- name: カットニス・エヴァディーン
+  wikipedia_url: https://en.wikipedia.org/wiki/Katniss_Everdeen
+  media_type: movie
+  universe: The Hunger Games
+- name: サイクロップス
+  wikipedia_url: https://en.wikipedia.org/wiki/Cyclops_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: ジーン・グレイ
+  wikipedia_url: https://en.wikipedia.org/wiki/Jean_Grey
+  media_type: comic
+  universe: Marvel
+- name: ストーム
+  wikipedia_url: https://en.wikipedia.org/wiki/Storm_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: プロフェッサーX
+  wikipedia_url: https://en.wikipedia.org/wiki/Professor_X
+  media_type: comic
+  universe: Marvel
+- name: ミスティーク
+  wikipedia_url: https://en.wikipedia.org/wiki/Mystique_(character)
+  media_type: comic
+  universe: Marvel
+- name: ドクター・ドゥーム
+  wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Doom
+  media_type: comic
+  universe: Marvel
+- name: シルバーサーファー
+  wikipedia_url: https://en.wikipedia.org/wiki/Silver_Surfer
+  media_type: comic
+  universe: Marvel
+- name: ギャラクタス
+  wikipedia_url: https://en.wikipedia.org/wiki/Galactus
+  media_type: comic
+  universe: Marvel
+- name: サノス
+  wikipedia_url: https://en.wikipedia.org/wiki/Thanos
+  media_type: comic
+  universe: Marvel
+- name: ロキ
+  wikipedia_url: https://en.wikipedia.org/wiki/Loki_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: ブラック・ウィドウ
+  wikipedia_url: https://en.wikipedia.org/wiki/Black_Widow_(Natasha_Romanoff)
+  media_type: comic
+  universe: Marvel
+- name: ホークアイ
+  wikipedia_url: https://en.wikipedia.org/wiki/Hawkeye_(Clint_Barton)
+  media_type: comic
+  universe: Marvel
+- name: デアデビル
+  wikipedia_url: https://en.wikipedia.org/wiki/Daredevil_(Marvel_Comics_character)
+  media_type: comic
+  universe: Marvel
+- name: パニッシャー
+  wikipedia_url: https://en.wikipedia.org/wiki/Punisher
+  media_type: comic
+  universe: Marvel
+- name: ゴーストライダー
+  wikipedia_url: https://en.wikipedia.org/wiki/Ghost_Rider_(Johnny_Blaze)
+  media_type: comic
+  universe: Marvel
+- name: ブレイド
+  wikipedia_url: https://en.wikipedia.org/wiki/Blade_(character)
+  media_type: comic
+  universe: Marvel
+- name: ヴェノム
+  wikipedia_url: https://en.wikipedia.org/wiki/Venom_(character)
+  media_type: comic
+  universe: Marvel
+- name: グリーンゴブリン
+  wikipedia_url: https://en.wikipedia.org/wiki/Green_Goblin
+  media_type: comic
+  universe: Marvel
+- name: ドクター・オクトパス
+  wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Octopus
+  media_type: comic
+  universe: Marvel
+- name: マイルズ・モラレス
+  wikipedia_url: https://en.wikipedia.org/wiki/Miles_Morales
+  media_type: comic
+  universe: Marvel
+- name: シーハルク
+  wikipedia_url: https://en.wikipedia.org/wiki/She-Hulk
+  media_type: comic
+  universe: Marvel
+- name: ムーンナイト
+  wikipedia_url: https://en.wikipedia.org/wiki/Moon_Knight
+  media_type: comic
+  universe: Marvel
+- name: キャットウーマン
+  wikipedia_url: https://en.wikipedia.org/wiki/Catwoman
+  media_type: comic
+  universe: DC
+- name: ディック・グレイソン
+  wikipedia_url: https://en.wikipedia.org/wiki/Dick_Grayson
+  media_type: comic
+  universe: DC
+- name: ナイトウィング
+  wikipedia_url: https://en.wikipedia.org/wiki/Nightwing
+  media_type: comic
+  universe: DC
+- name: バットガール
+  wikipedia_url: https://en.wikipedia.org/wiki/Batgirl
+  media_type: comic
+  universe: DC
+- name: グリーンアロー
+  wikipedia_url: https://en.wikipedia.org/wiki/Green_Arrow
+  media_type: comic
+  universe: DC
+- name: ブラックキャナリー
+  wikipedia_url: https://en.wikipedia.org/wiki/Black_Canary
+  media_type: comic
+  universe: DC
+- name: サイボーグ
+  wikipedia_url: https://en.wikipedia.org/wiki/Cyborg_(DC_Comics)
+  media_type: comic
+  universe: DC
+- name: レイヴン
+  wikipedia_url: https://en.wikipedia.org/wiki/Raven_(DC_Comics)
+  media_type: comic
+  universe: DC
+- name: Android 18
+  wikipedia_url: https://en.wikipedia.org/wiki/Android_18
+  media_type: manga
+  universe: Dragon Ball
+- name: Android 17
+  wikipedia_url: https://en.wikipedia.org/wiki/Android_17
+  media_type: manga
+  universe: Dragon Ball
+- name: Yamcha
+  wikipedia_url: https://en.wikipedia.org/wiki/Yamcha
+  media_type: manga
+  universe: Dragon Ball
+- name: Master Roshi
+  wikipedia_url: https://en.wikipedia.org/wiki/Master_Roshi
+  media_type: manga
+  universe: Dragon Ball
+- name: Bulma
+  wikipedia_url: https://en.wikipedia.org/wiki/Bulma
+  media_type: manga
+  universe: Dragon Ball
+- name: Broly
+  wikipedia_url: https://en.wikipedia.org/wiki/Broly
+  media_type: manga
+  universe: Dragon Ball
+- name: Beerus
+  wikipedia_url: https://en.wikipedia.org/wiki/Beerus
+  media_type: manga
+  universe: Dragon Ball
+- name: Goku Black
+  wikipedia_url: https://en.wikipedia.org/wiki/Goku_Black
+  media_type: manga
+  universe: Dragon Ball
+- name: Rock Lee
+  wikipedia_url: https://en.wikipedia.org/wiki/Rock_Lee
+  media_type: manga
+  universe: Naruto
+- name: Hinata Hyuga
+  wikipedia_url: https://en.wikipedia.org/wiki/Hinata_Hyuga
+  media_type: manga
+  universe: Naruto
+- name: Shikamaru Nara
+  wikipedia_url: https://en.wikipedia.org/wiki/Shikamaru_Nara
+  media_type: manga
+  universe: Naruto
+- name: Tsunade
+  wikipedia_url: https://en.wikipedia.org/wiki/Tsunade_(Naruto)
+  media_type: manga
+  universe: Naruto
+- name: Orochimaru
+  wikipedia_url: https://en.wikipedia.org/wiki/Orochimaru_(Naruto)
+  media_type: manga
+  universe: Naruto
+- name: Minato Namikaze
+  wikipedia_url: https://en.wikipedia.org/wiki/Minato_Namikaze
+  media_type: manga
+  universe: Naruto
+- name: Pain
+  wikipedia_url: https://en.wikipedia.org/wiki/Pain_(Naruto)
+  media_type: manga
+  universe: Naruto
+- name: Boruto Uzumaki
+  wikipedia_url: https://en.wikipedia.org/wiki/Boruto_Uzumaki
+  media_type: manga
+  universe: Naruto
+- name: Obito Uchiha
+  wikipedia_url: https://en.wikipedia.org/wiki/Obito_Uchiha
+  media_type: manga
+  universe: Naruto
+- name: Usopp
+  wikipedia_url: https://en.wikipedia.org/wiki/Usopp
+  media_type: manga
+  universe: One Piece
+- name: Franky
+  wikipedia_url: https://en.wikipedia.org/wiki/Franky_(One_Piece)
+  media_type: manga
+  universe: One Piece
+- name: Brook
+  wikipedia_url: https://en.wikipedia.org/wiki/Brook_(One_Piece)
+  media_type: manga
+  universe: One Piece
+- name: Jinbe
+  wikipedia_url: https://en.wikipedia.org/wiki/Jinbe
+  media_type: manga
+  universe: One Piece
+- name: Portgas D. Ace
+  wikipedia_url: https://en.wikipedia.org/wiki/Portgas_D._Ace
+  media_type: manga
+  universe: One Piece
+- name: Sabo
+  wikipedia_url: https://en.wikipedia.org/wiki/Sabo_(One_Piece)
+  media_type: manga
+  universe: One Piece
+- name: Boa Hancock
+  wikipedia_url: https://en.wikipedia.org/wiki/Boa_Hancock
+  media_type: manga
+  universe: One Piece
+- name: Donquixote Doflamingo
+  wikipedia_url: https://en.wikipedia.org/wiki/Donquixote_Doflamingo
+  media_type: manga
+  universe: One Piece
+- name: Kaido
+  wikipedia_url: https://en.wikipedia.org/wiki/Kaido
+  media_type: manga
+  universe: One Piece
+- name: Buggy
+  wikipedia_url: https://en.wikipedia.org/wiki/Buggy_(One_Piece)
+  media_type: manga
+  universe: One Piece
+- name: Crocodile
+  wikipedia_url: https://en.wikipedia.org/wiki/Crocodile_(One_Piece)
+  media_type: manga
+  universe: One Piece
+- name: Dracule Mihawk
+  wikipedia_url: https://en.wikipedia.org/wiki/Dracule_Mihawk
+  media_type: manga
+  universe: One Piece
+- name: Whitebeard
+  wikipedia_url: https://en.wikipedia.org/wiki/Edward_Newgate
+  media_type: manga
+  universe: One Piece
+- name: Toshiro Hitsugaya
+  wikipedia_url: https://en.wikipedia.org/wiki/T%C5%8Dshir%C5%8D_Hitsugaya
+  media_type: manga
+  universe: Bleach
+- name: Byakuya Kuchiki
+  wikipedia_url: https://en.wikipedia.org/wiki/Byakuya_Kuchiki
+  media_type: manga
+  universe: Bleach
+- name: Kenpachi Zaraki
+  wikipedia_url: https://en.wikipedia.org/wiki/Kenpachi_Zaraki
+  media_type: manga
+  universe: Bleach
+- name: Yoruichi Shihouin
+  wikipedia_url: https://en.wikipedia.org/wiki/Yoruichi_Shih%C5%8Din
+  media_type: manga
+  universe: Bleach
+- name: Kisuke Urahara
+  wikipedia_url: https://en.wikipedia.org/wiki/Kisuke_Urahara
+  media_type: manga
+  universe: Bleach
+- name: Grimmjow Jaegerjaquez
+  wikipedia_url: https://en.wikipedia.org/wiki/Grimmjow_Jaegerjaquez
+  media_type: manga
+  universe: Bleach
+- name: Shinobu Kocho
+  wikipedia_url: https://en.wikipedia.org/wiki/Shinobu_Kocho
+  media_type: anime
+  universe: Demon Slayer
+- name: Mitsuri Kanroji
+  wikipedia_url: https://en.wikipedia.org/wiki/Mitsuri_Kanroji
+  media_type: anime
+  universe: Demon Slayer
+- name: Muichiro Tokito
+  wikipedia_url: https://en.wikipedia.org/wiki/Muichiro_Tokito
+  media_type: anime
+  universe: Demon Slayer
+- name: Tengen Uzui
+  wikipedia_url: https://en.wikipedia.org/wiki/Tengen_Uzui
+  media_type: anime
+  universe: Demon Slayer
+- name: Gyomei Himejima
+  wikipedia_url: https://en.wikipedia.org/wiki/Gyomei_Himejima
+  media_type: anime
+  universe: Demon Slayer
+- name: Sanemi Shinazugawa
+  wikipedia_url: https://en.wikipedia.org/wiki/Sanemi_Shinazugawa
+  media_type: anime
+  universe: Demon Slayer
+- name: Muzan Kibutsuji
+  wikipedia_url: https://en.wikipedia.org/wiki/Muzan_Kibutsuji
+  media_type: anime
+  universe: Demon Slayer
+- name: Akaza
+  wikipedia_url: https://en.wikipedia.org/wiki/Akaza_(Demon_Slayer)
+  media_type: anime
+  universe: Demon Slayer
+- name: Natsu Dragneel
+  wikipedia_url: https://en.wikipedia.org/wiki/Natsu_Dragneel
+  media_type: manga
+  universe: Fairy Tail
+- name: Erwin Smith
+  wikipedia_url: https://en.wikipedia.org/wiki/Erwin_Smith_(Attack_on_Titan)
+  media_type: anime
+  universe: Attack on Titan
+- name: Lucy Heartfilia
+  wikipedia_url: https://en.wikipedia.org/wiki/Lucy_Heartfilia
+  media_type: manga
+  universe: Fairy Tail
+- name: Annie Leonhart
+  wikipedia_url: https://en.wikipedia.org/wiki/Annie_Leonhart
+  media_type: anime
+  universe: Attack on Titan
+- name: Zeke Yeager
+  wikipedia_url: https://en.wikipedia.org/wiki/Zeke_Yeager
+  media_type: anime
+  universe: Attack on Titan
+- name: Historia Reiss
+  wikipedia_url: https://en.wikipedia.org/wiki/Historia_Reiss
+  media_type: anime
+  universe: Attack on Titan
+- name: Maki Zenin
+  wikipedia_url: https://en.wikipedia.org/wiki/Maki_Zenin
+  media_type: manga
+  universe: Jujutsu Kaisen
+- name: Sailor Galaxia
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Galaxia
+  media_type: anime
+  universe: Sailor Moon
+- name: Yuta Okkotsu
+  wikipedia_url: https://en.wikipedia.org/wiki/Yuta_Okkotsu
+  media_type: manga
+  universe: Jujutsu Kaisen
+- name: Askeladd
+  wikipedia_url: https://en.wikipedia.org/wiki/Askeladd
+  media_type: manga
+  universe: Vinland Saga
+- name: Suguru Geto
+  wikipedia_url: https://en.wikipedia.org/wiki/Suguru_Geto
+  media_type: manga
+  universe: Jujutsu Kaisen
+- name: Thorfinn
+  wikipedia_url: https://en.wikipedia.org/wiki/Thorfinn_(Vinland_Saga)
+  media_type: manga
+  universe: Vinland Saga
+- name: Endeavor
+  wikipedia_url: https://en.wikipedia.org/wiki/Endeavor_(My_Hero_Academia)
+  media_type: manga
+  universe: My Hero Academia
+- name: Hawks
+  wikipedia_url: https://en.wikipedia.org/wiki/Hawks_(My_Hero_Academia)
+  media_type: manga
+  universe: My Hero Academia
+- name: Dabi
+  wikipedia_url: https://en.wikipedia.org/wiki/Dabi_(My_Hero_Academia)
+  media_type: manga
+  universe: My Hero Academia
+- name: Himiko Toga
+  wikipedia_url: https://en.wikipedia.org/wiki/Himiko_Toga
+  media_type: manga
+  universe: My Hero Academia
+- name: Eijiro Kirishima
+  wikipedia_url: https://en.wikipedia.org/wiki/Eijiro_Kirishima
+  media_type: manga
+  universe: My Hero Academia
+- name: Tsuyu Asui
+  wikipedia_url: https://en.wikipedia.org/wiki/Tsuyu_Asui
+  media_type: manga
+  universe: My Hero Academia
+- name: Char Aznable
+  wikipedia_url: https://en.wikipedia.org/wiki/Char_Aznable
+  media_type: anime
+  universe: Gundam
+- name: Shota Aizawa
+  wikipedia_url: https://en.wikipedia.org/wiki/Shota_Aizawa
+  media_type: manga
+  universe: My Hero Academia
+- name: Jonathan Joestar
+  wikipedia_url: https://en.wikipedia.org/wiki/Jonathan_Joestar
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: Josuke Higashikata
+  wikipedia_url: https://en.wikipedia.org/wiki/Josuke_Higashikata
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: Jolyne Cujoh
+  wikipedia_url: https://en.wikipedia.org/wiki/Jolyne_Cujoh
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: Enrico Pucci
+  wikipedia_url: https://en.wikipedia.org/wiki/Enrico_Pucci
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: Yoshikage Kira
+  wikipedia_url: https://en.wikipedia.org/wiki/Yoshikage_Kira
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: Bruno Bucciarati
+  wikipedia_url: https://en.wikipedia.org/wiki/Bruno_Bucciarati
+  media_type: manga
+  universe: JoJo's Bizarre Adventure
+- name: Leorio Paradinight
+  wikipedia_url: https://en.wikipedia.org/wiki/Leorio_Paradinight
+  media_type: manga
+  universe: Hunter x Hunter
+- name: Chrollo Lucilfer
+  wikipedia_url: https://en.wikipedia.org/wiki/Chrollo_Lucilfer
+  media_type: manga
+  universe: Hunter x Hunter
+- name: Isaac Netero
+  wikipedia_url: https://en.wikipedia.org/wiki/Isaac_Netero
+  media_type: manga
+  universe: Hunter x Hunter
+- name: Yugi Mutou
+  wikipedia_url: https://en.wikipedia.org/wiki/Yugi_Mutou
+  media_type: anime
+  universe: Yu-Gi-Oh!
+- name: Seto Kaiba
+  wikipedia_url: https://en.wikipedia.org/wiki/Seto_Kaiba
+  media_type: anime
+  universe: Yu-Gi-Oh!
+- name: Joey Wheeler
+  wikipedia_url: https://en.wikipedia.org/wiki/Joey_Wheeler
+  media_type: anime
+  universe: Yu-Gi-Oh!
+- name: Sailor Mercury
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Mercury
+  media_type: anime
+  universe: Sailor Moon
+- name: Sailor Mars
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Mars
+  media_type: anime
+  universe: Sailor Moon
+- name: Sailor Jupiter
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Jupiter
+  media_type: anime
+  universe: Sailor Moon
+- name: Sailor Venus
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Venus
+  media_type: anime
+  universe: Sailor Moon
+- name: Tuxedo Mask
+  wikipedia_url: https://en.wikipedia.org/wiki/Tuxedo_Mask
+  media_type: anime
+  universe: Sailor Moon
+- name: Sailor Chibi Moon
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Chibi_Moon
+  media_type: anime
+  universe: Sailor Moon
+- name: Sailor Uranus
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Uranus
+  media_type: anime
+  universe: Sailor Moon
+- name: Sailor Neptune
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Neptune
+  media_type: anime
+  universe: Sailor Moon
+- name: Sailor Pluto
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Pluto
+  media_type: anime
+  universe: Sailor Moon
+- name: Sailor Saturn
+  wikipedia_url: https://en.wikipedia.org/wiki/Sailor_Saturn
+  media_type: anime
+  universe: Sailor Moon
+- name: Misty
+  wikipedia_url: https://en.wikipedia.org/wiki/Misty_(Pok%C3%A9mon)
+  media_type: anime
+  universe: Pokemon
+- name: Brock
+  wikipedia_url: https://en.wikipedia.org/wiki/Brock_(Pok%C3%A9mon)
+  media_type: anime
+  universe: Pokemon
+- name: Jessie
+  wikipedia_url: https://en.wikipedia.org/wiki/Jessie_(Pok%C3%A9mon)
+  media_type: anime
+  universe: Pokemon
+- name: James
+  wikipedia_url: https://en.wikipedia.org/wiki/James_(Pok%C3%A9mon)
+  media_type: anime
+  universe: Pokemon
+- name: Mewtwo
+  wikipedia_url: https://en.wikipedia.org/wiki/Mewtwo
+  media_type: anime
+  universe: Pokemon
+- name: Meowth
+  wikipedia_url: https://en.wikipedia.org/wiki/Meowth
+  media_type: anime
+  universe: Pokemon
+- name: Misato Katsuragi
+  wikipedia_url: https://en.wikipedia.org/wiki/Misato_Katsuragi
+  media_type: anime
+  universe: Neon Genesis Evangelion
+- name: Kaworu Nagisa
+  wikipedia_url: https://en.wikipedia.org/wiki/Kaworu_Nagisa
+  media_type: anime
+  universe: Neon Genesis Evangelion
+- name: Gendo Ikari
+  wikipedia_url: https://en.wikipedia.org/wiki/Gendo_Ikari
+  media_type: anime
+  universe: Neon Genesis Evangelion
+- name: Roy Mustang
+  wikipedia_url: https://en.wikipedia.org/wiki/Roy_Mustang
+  media_type: manga
+  universe: Fullmetal Alchemist
+- name: Winry Rockbell
+  wikipedia_url: https://en.wikipedia.org/wiki/Winry_Rockbell
+  media_type: manga
+  universe: Fullmetal Alchemist
+- name: Riza Hawkeye
+  wikipedia_url: https://en.wikipedia.org/wiki/Riza_Hawkeye
+  media_type: manga
+  universe: Fullmetal Alchemist
+- name: Scar
+  wikipedia_url: https://en.wikipedia.org/wiki/Scar_(Fullmetal_Alchemist)
+  media_type: manga
+  universe: Fullmetal Alchemist
+- name: Misa Amane
+  wikipedia_url: https://en.wikipedia.org/wiki/Misa_Amane
+  media_type: manga
+  universe: Death Note
+- name: Ryuk
+  wikipedia_url: https://en.wikipedia.org/wiki/Ryuk_(Death_Note)
+  media_type: manga
+  universe: Death Note
+- name: Near
+  wikipedia_url: https://en.wikipedia.org/wiki/Near_(Death_Note)
+  media_type: manga
+  universe: Death Note
+- name: Mello
+  wikipedia_url: https://en.wikipedia.org/wiki/Mello_(Death_Note)
+  media_type: manga
+  universe: Death Note
+- name: Alucard
+  wikipedia_url: https://en.wikipedia.org/wiki/Alucard_(Hellsing)
+  media_type: manga
+  universe: Hellsing
+- name: Vash the Stampede
+  wikipedia_url: https://en.wikipedia.org/wiki/Vash_the_Stampede
+  media_type: anime
+  universe: Trigun
+- name: Lelouch Lamperouge
+  wikipedia_url: https://en.wikipedia.org/wiki/Lelouch_Lamperouge
+  media_type: anime
+  universe: Code Geass
+- name: Kallen Stadtfeld
+  wikipedia_url: https://en.wikipedia.org/wiki/Kallen_Stadtfeld
+  media_type: anime
+  universe: Code Geass
+- name: C.C.
+  wikipedia_url: https://en.wikipedia.org/wiki/C.C._(Code_Geass)
+  media_type: anime
+  universe: Code Geass
+- name: Kenshin Himura
+  wikipedia_url: https://en.wikipedia.org/wiki/Himura_Kenshin
+  media_type: manga
+  universe: Rurouni Kenshin
+- name: Makoto Shishio
+  wikipedia_url: https://en.wikipedia.org/wiki/Shishio_Makoto
+  media_type: manga
+  universe: Rurouni Kenshin
+- name: Raoh
+  wikipedia_url: https://en.wikipedia.org/wiki/Raoh
+  media_type: manga
+  universe: Fist of the North Star
+- name: Astro Boy
+  wikipedia_url: https://en.wikipedia.org/wiki/Astro_Boy_(character)
+  media_type: manga
+  universe: Astro Boy
+- name: Motoko Kusanagi
+  wikipedia_url: https://en.wikipedia.org/wiki/Motoko_Kusanagi
+  media_type: anime
+  universe: Ghost in the Shell
+- name: Alita
+  wikipedia_url: https://en.wikipedia.org/wiki/Alita_(Battle_Angel_Alita)
+  media_type: manga
+  universe: Battle Angel Alita
+- name: Kagome Higurashi
+  wikipedia_url: https://en.wikipedia.org/wiki/Kagome_Higurashi
+  media_type: manga
+  universe: Inuyasha
+- name: Sesshomaru
+  wikipedia_url: https://en.wikipedia.org/wiki/Sesshomaru
+  media_type: manga
+  universe: Inuyasha
+- name: Lum
+  wikipedia_url: https://en.wikipedia.org/wiki/Lum_(Urusei_Yatsura)
+  media_type: manga
+  universe: Urusei Yatsura
+- name: Ranma Saotome
+  wikipedia_url: https://en.wikipedia.org/wiki/Ranma_Saotome
+  media_type: manga
+  universe: Ranma 1/2
+- name: Akane Tendo
+  wikipedia_url: https://en.wikipedia.org/wiki/Akane_Tendo
+  media_type: manga
+  universe: Ranma 1/2
+- name: Peter Parker (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Peter_Parker_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Clint Barton (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Clint_Barton_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Sam Wilson (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Sam_Wilson_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Bucky Barnes (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Bucky_Barnes_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Scott Lang (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Scott_Lang_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Hope van Dyne (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Hope_van_Dyne_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Peter Quill (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Peter_Quill_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Gamora (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Gamora_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Drax (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Drax_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Groot (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Groot_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Nick Fury (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Nick_Fury_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Nebula (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Nebula_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Mantis (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Mantis_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Wong (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Wong_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Shuri (MCU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Shuri_(Marvel_Cinematic_Universe)
+  media_type: movie
+  universe: MCU
+- name: Ahsoka Tano
+  wikipedia_url: https://en.wikipedia.org/wiki/Ahsoka_Tano
+  media_type: movie
+  universe: Star Wars
+- name: Anakin Skywalker
+  wikipedia_url: https://en.wikipedia.org/wiki/Anakin_Skywalker
+  media_type: movie
+  universe: Star Wars
+- name: Padme Amidala
+  wikipedia_url: https://en.wikipedia.org/wiki/Padm%C3%A9_Amidala
+  media_type: movie
+  universe: Star Wars
+- name: Lando Calrissian
+  wikipedia_url: https://en.wikipedia.org/wiki/Lando_Calrissian
+  media_type: movie
+  universe: Star Wars
+- name: Qui-Gon Jinn
+  wikipedia_url: https://en.wikipedia.org/wiki/Qui-Gon_Jinn
+  media_type: movie
+  universe: Star Wars
+- name: Count Dooku
+  wikipedia_url: https://en.wikipedia.org/wiki/Count_Dooku
+  media_type: movie
+  universe: Star Wars
+- name: General Grievous
+  wikipedia_url: https://en.wikipedia.org/wiki/General_Grievous
+  media_type: movie
+  universe: Star Wars
+- name: Jango Fett
+  wikipedia_url: https://en.wikipedia.org/wiki/Jango_Fett
+  media_type: movie
+  universe: Star Wars
+- name: Poe Dameron
+  wikipedia_url: https://en.wikipedia.org/wiki/Poe_Dameron
+  media_type: movie
+  universe: Star Wars
+- name: Finn
+  wikipedia_url: https://en.wikipedia.org/wiki/Finn_(Star_Wars)
+  media_type: movie
+  universe: Star Wars
+- name: Din Djarin
+  wikipedia_url: https://en.wikipedia.org/wiki/Din_Djarin
+  media_type: movie
+  universe: Star Wars
+- name: Grogu
+  wikipedia_url: https://en.wikipedia.org/wiki/Grogu
+  media_type: movie
+  universe: Star Wars
+- name: Cassian Andor
+  wikipedia_url: https://en.wikipedia.org/wiki/Cassian_Andor
+  media_type: movie
+  universe: Star Wars
+- name: Ron Weasley
+  wikipedia_url: https://en.wikipedia.org/wiki/Ron_Weasley
+  media_type: movie
+  universe: Harry Potter
+- name: Severus Snape
+  wikipedia_url: https://en.wikipedia.org/wiki/Severus_Snape
+  media_type: movie
+  universe: Harry Potter
+- name: Rubeus Hagrid
+  wikipedia_url: https://en.wikipedia.org/wiki/Rubeus_Hagrid
+  media_type: movie
+  universe: Harry Potter
+- name: Draco Malfoy
+  wikipedia_url: https://en.wikipedia.org/wiki/Draco_Malfoy
+  media_type: movie
+  universe: Harry Potter
+- name: Sirius Black
+  wikipedia_url: https://en.wikipedia.org/wiki/Sirius_Black
+  media_type: movie
+  universe: Harry Potter
+- name: Bellatrix Lestrange
+  wikipedia_url: https://en.wikipedia.org/wiki/Bellatrix_Lestrange
+  media_type: movie
+  universe: Harry Potter
+- name: Alastor Moody
+  wikipedia_url: https://en.wikipedia.org/wiki/Alastor_Moody
+  media_type: movie
+  universe: Harry Potter
+- name: Minerva McGonagall
+  wikipedia_url: https://en.wikipedia.org/wiki/Minerva_McGonagall
+  media_type: movie
+  universe: Harry Potter
+- name: Ginny Weasley
+  wikipedia_url: https://en.wikipedia.org/wiki/Ginny_Weasley
+  media_type: movie
+  universe: Harry Potter
+- name: Joker (The Dark Knight)
+  wikipedia_url: https://en.wikipedia.org/wiki/Joker_(The_Dark_Knight)
+  media_type: movie
+  universe: Dark Knight Trilogy
+- name: Harley Quinn (DCEU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Harley_Quinn_(DC_Extended_Universe)
+  media_type: movie
+  universe: DCEU
+- name: Clark Kent (DCEU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Clark_Kent_(DC_Extended_Universe)
+  media_type: movie
+  universe: DCEU
+- name: Bruce Wayne (DCEU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Bruce_Wayne_(DC_Extended_Universe)
+  media_type: movie
+  universe: DCEU
+- name: Diana Prince (DCEU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Diana_Prince_(DC_Extended_Universe)
+  media_type: movie
+  universe: DCEU
+- name: Arthur Curry (DCEU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Arthur_Curry_(DC_Extended_Universe)
+  media_type: movie
+  universe: DCEU
+- name: Barry Allen (DCEU)
+  wikipedia_url: https://en.wikipedia.org/wiki/Barry_Allen_(DC_Extended_Universe)
+  media_type: movie
+  universe: DCEU
+- name: Gollum
+  wikipedia_url: https://en.wikipedia.org/wiki/Gollum
+  media_type: movie
+  universe: The Lord of the Rings
+- name: Sauron
+  wikipedia_url: https://en.wikipedia.org/wiki/Sauron
+  media_type: movie
+  universe: The Lord of the Rings
+- name: Galadriel
+  wikipedia_url: https://en.wikipedia.org/wiki/Galadriel
+  media_type: movie
+  universe: The Lord of the Rings
+- name: Boromir
+  wikipedia_url: https://en.wikipedia.org/wiki/Boromir
+  media_type: movie
+  universe: The Lord of the Rings
+- name: Gimli
+  wikipedia_url: https://en.wikipedia.org/wiki/Gimli_(Middle-earth)
+  media_type: movie
+  universe: The Lord of the Rings
+- name: Samwise Gamgee
+  wikipedia_url: https://en.wikipedia.org/wiki/Samwise_Gamgee
+  media_type: movie
+  universe: The Lord of the Rings
+- name: Arwen
+  wikipedia_url: https://en.wikipedia.org/wiki/Arwen
+  media_type: movie
+  universe: The Lord of the Rings
+- name: Max Rockatansky
+  wikipedia_url: https://en.wikipedia.org/wiki/Max_Rockatansky
+  media_type: movie
+  universe: Mad Max
+- name: Furiosa
+  wikipedia_url: https://en.wikipedia.org/wiki/Imperator_Furiosa
+  media_type: movie
+  universe: Mad Max
+- name: Marty McFly
+  wikipedia_url: https://en.wikipedia.org/wiki/Marty_McFly
+  media_type: movie
+  universe: Back to the Future
+- name: Doc Brown
+  wikipedia_url: https://en.wikipedia.org/wiki/Emmett_Brown
+  media_type: movie
+  universe: Back to the Future
+- name: Rick Deckard
+  wikipedia_url: https://en.wikipedia.org/wiki/Rick_Deckard
+  media_type: movie
+  universe: Blade Runner
+- name: Jake Sully
+  wikipedia_url: https://en.wikipedia.org/wiki/Jake_Sully
+  media_type: movie
+  universe: Avatar
+- name: Neytiri
+  wikipedia_url: https://en.wikipedia.org/wiki/Neytiri
+  media_type: movie
+  universe: Avatar
+- name: Elsa
+  wikipedia_url: https://en.wikipedia.org/wiki/Elsa_(Frozen)
+  media_type: movie
+  universe: Frozen
+- name: Anna
+  wikipedia_url: https://en.wikipedia.org/wiki/Anna_(Frozen)
+  media_type: movie
+  universe: Frozen
+- name: Mulan
+  wikipedia_url: https://en.wikipedia.org/wiki/Mulan_(Disney_character)
+  media_type: movie
+  universe: Disney
+- name: Moana
+  wikipedia_url: https://en.wikipedia.org/wiki/Moana_(character)
+  media_type: movie
+  universe: Disney
+- name: Simba
+  wikipedia_url: https://en.wikipedia.org/wiki/Simba
+  media_type: movie
+  universe: Disney
+- name: Woody
+  wikipedia_url: https://en.wikipedia.org/wiki/Woody_(Toy_Story)
+  media_type: movie
+  universe: Toy Story
+- name: Buzz Lightyear
+  wikipedia_url: https://en.wikipedia.org/wiki/Buzz_Lightyear
+  media_type: movie
+  universe: Toy Story
+- name: Freddy Krueger
+  wikipedia_url: https://en.wikipedia.org/wiki/Freddy_Krueger
+  media_type: movie
+  universe: A Nightmare on Elm Street
+- name: Jason Voorhees
+  wikipedia_url: https://en.wikipedia.org/wiki/Jason_Voorhees
+  media_type: movie
+  universe: Friday the 13th
+- name: Michael Myers
+  wikipedia_url: https://en.wikipedia.org/wiki/Michael_Myers_(Halloween)
+  media_type: movie
+  universe: Halloween
+- name: Leatherface
+  wikipedia_url: https://en.wikipedia.org/wiki/Leatherface
+  media_type: movie
+  universe: The Texas Chainsaw Massacre
+- name: Pinhead
+  wikipedia_url: https://en.wikipedia.org/wiki/Pinhead_(Hellraiser)
+  media_type: movie
+  universe: Hellraiser
+- name: Chucky
+  wikipedia_url: https://en.wikipedia.org/wiki/Chucky_(character)
+  media_type: movie
+  universe: Child's Play
+- name: Ghostface
+  wikipedia_url: https://en.wikipedia.org/wiki/Ghostface_(identity)
+  media_type: movie
+  universe: Scream
+- name: Lara Croft
+  wikipedia_url: https://en.wikipedia.org/wiki/Lara_Croft
+  media_type: movie
+  universe: Tomb Raider
+- name: RoboCop
+  wikipedia_url: https://en.wikipedia.org/wiki/RoboCop_(character)
+  media_type: movie
+  universe: RoboCop
+- name: Judge Dredd
+  wikipedia_url: https://en.wikipedia.org/wiki/Judge_Dredd
+  media_type: movie
+  universe: Judge Dredd
+- name: Travis Bickle
+  wikipedia_url: https://en.wikipedia.org/wiki/Travis_Bickle
+  media_type: movie
+  universe: Taxi Driver
+- name: Tony Montana
+  wikipedia_url: https://en.wikipedia.org/wiki/Tony_Montana
+  media_type: movie
+  universe: Scarface
+- name: Vito Corleone
+  wikipedia_url: https://en.wikipedia.org/wiki/Vito_Corleone
+  media_type: movie
+  universe: The Godfather
+- name: Michael Corleone
+  wikipedia_url: https://en.wikipedia.org/wiki/Michael_Corleone
+  media_type: movie
+  universe: The Godfather
+- name: Forrest Gump
+  wikipedia_url: https://en.wikipedia.org/wiki/Forrest_Gump_(character)
+  media_type: movie
+  universe: Forrest Gump
+- name: Tyler Durden
+  wikipedia_url: https://en.wikipedia.org/wiki/Tyler_Durden
+  media_type: movie
+  universe: Fight Club
+- name: Hannibal Lecter
+  wikipedia_url: https://en.wikipedia.org/wiki/Hannibal_Lecter
+  media_type: movie
+  universe: Hannibal Lecter
+- name: The Dude
+  wikipedia_url: https://en.wikipedia.org/wiki/The_Dude
+  media_type: movie
+  universe: The Big Lebowski
+- name: Willy Wonka
+  wikipedia_url: https://en.wikipedia.org/wiki/Willy_Wonka
+  media_type: movie
+  universe: Charlie and the Chocolate Factory
+- name: Mary Poppins
+  wikipedia_url: https://en.wikipedia.org/wiki/Mary_Poppins_(character)
+  media_type: movie
+  universe: Mary Poppins
+- name: Jack Torrance
+  wikipedia_url: https://en.wikipedia.org/wiki/Jack_Torrance
+  media_type: movie
+  universe: The Shining
+- name: Norman Bates
+  wikipedia_url: https://en.wikipedia.org/wiki/Norman_Bates
+  media_type: movie
+  universe: Psycho
+- name: Maximus
+  wikipedia_url: https://en.wikipedia.org/wiki/Maximus_Decimus_Meridius
+  media_type: movie
+  universe: Gladiator
+- name: John McClane
+  wikipedia_url: https://en.wikipedia.org/wiki/John_McClane
+  media_type: movie
+  universe: Die Hard
+- name: Mister Fantastic
+  wikipedia_url: https://en.wikipedia.org/wiki/Mister_Fantastic
+  media_type: comic
+  universe: Marvel
+- name: Invisible Woman
+  wikipedia_url: https://en.wikipedia.org/wiki/Invisible_Woman
+  media_type: comic
+  universe: Marvel
+- name: Human Torch
+  wikipedia_url: https://en.wikipedia.org/wiki/Human_Torch
+  media_type: comic
+  universe: Marvel
+- name: Thing
+  wikipedia_url: https://en.wikipedia.org/wiki/Thing_(comics)
+  media_type: comic
+  universe: Marvel
+- name: Beast
+  wikipedia_url: https://en.wikipedia.org/wiki/Beast_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Iceman
+  wikipedia_url: https://en.wikipedia.org/wiki/Iceman_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Rogue
+  wikipedia_url: https://en.wikipedia.org/wiki/Rogue_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Gambit
+  wikipedia_url: https://en.wikipedia.org/wiki/Gambit_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Colossus
+  wikipedia_url: https://en.wikipedia.org/wiki/Colossus_(character)
+  media_type: comic
+  universe: Marvel
+- name: Nightcrawler
+  wikipedia_url: https://en.wikipedia.org/wiki/Nightcrawler_(character)
+  media_type: comic
+  universe: Marvel
+- name: Kitty Pryde
+  wikipedia_url: https://en.wikipedia.org/wiki/Kitty_Pryde
+  media_type: comic
+  universe: Marvel
+- name: Emma Frost
+  wikipedia_url: https://en.wikipedia.org/wiki/Emma_Frost
+  media_type: comic
+  universe: Marvel
+- name: Psylocke
+  wikipedia_url: https://en.wikipedia.org/wiki/Psylocke
+  media_type: comic
+  universe: Marvel
+- name: Cable
+  wikipedia_url: https://en.wikipedia.org/wiki/Cable_(character)
+  media_type: comic
+  universe: Marvel
+- name: Bishop
+  wikipedia_url: https://en.wikipedia.org/wiki/Bishop_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Apocalypse
+  wikipedia_url: https://en.wikipedia.org/wiki/Apocalypse_(character)
+  media_type: comic
+  universe: Marvel
+- name: Juggernaut
+  wikipedia_url: https://en.wikipedia.org/wiki/Juggernaut_(character)
+  media_type: comic
+  universe: Marvel
+- name: Sabretooth
+  wikipedia_url: https://en.wikipedia.org/wiki/Sabretooth_(character)
+  media_type: comic
+  universe: Marvel
+- name: Kingpin
+  wikipedia_url: https://en.wikipedia.org/wiki/Kingpin_(character)
+  media_type: comic
+  universe: Marvel
+- name: Kraven the Hunter
+  wikipedia_url: https://en.wikipedia.org/wiki/Kraven_the_Hunter
+  media_type: comic
+  universe: Marvel
+- name: Sandman
+  wikipedia_url: https://en.wikipedia.org/wiki/Sandman_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Electro
+  wikipedia_url: https://en.wikipedia.org/wiki/Electro_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Mysterio
+  wikipedia_url: https://en.wikipedia.org/wiki/Mysterio
+  media_type: comic
+  universe: Marvel
+- name: Carnage
+  wikipedia_url: https://en.wikipedia.org/wiki/Carnage_(character)
+  media_type: comic
+  universe: Marvel
+- name: Black Cat
+  wikipedia_url: https://en.wikipedia.org/wiki/Black_Cat_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Ant-Man
+  wikipedia_url: https://en.wikipedia.org/wiki/Ant-Man
+  media_type: comic
+  universe: Marvel
+- name: Wasp
+  wikipedia_url: https://en.wikipedia.org/wiki/Wasp_(character)
+  media_type: comic
+  universe: Marvel
+- name: Vision
+  wikipedia_url: https://en.wikipedia.org/wiki/Vision_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Quicksilver
+  wikipedia_url: https://en.wikipedia.org/wiki/Quicksilver_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Namor
+  wikipedia_url: https://en.wikipedia.org/wiki/Namor
+  media_type: comic
+  universe: Marvel
+- name: Hercules
+  wikipedia_url: https://en.wikipedia.org/wiki/Hercules_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Nova
+  wikipedia_url: https://en.wikipedia.org/wiki/Nova_(Richard_Rider)
+  media_type: comic
+  universe: Marvel
+- name: Sentry
+  wikipedia_url: https://en.wikipedia.org/wiki/Sentry_(Robert_Reynolds)
+  media_type: comic
+  universe: Marvel
+- name: Ms. Marvel
+  wikipedia_url: https://en.wikipedia.org/wiki/Kamala_Khan
+  media_type: comic
+  universe: Marvel
+- name: America Chavez
+  wikipedia_url: https://en.wikipedia.org/wiki/America_Chavez
+  media_type: comic
+  universe: Marvel
+- name: Shang-Chi
+  wikipedia_url: https://en.wikipedia.org/wiki/Shang-Chi
+  media_type: comic
+  universe: Marvel
+- name: Iron Fist
+  wikipedia_url: https://en.wikipedia.org/wiki/Iron_Fist_(character)
+  media_type: comic
+  universe: Marvel
+- name: Luke Cage
+  wikipedia_url: https://en.wikipedia.org/wiki/Luke_Cage
+  media_type: comic
+  universe: Marvel
+- name: Jessica Jones
+  wikipedia_url: https://en.wikipedia.org/wiki/Jessica_Jones
+  media_type: comic
+  universe: Marvel
+- name: Elektra
+  wikipedia_url: https://en.wikipedia.org/wiki/Elektra_(character)
+  media_type: comic
+  universe: Marvel
+- name: Bullseye
+  wikipedia_url: https://en.wikipedia.org/wiki/Bullseye_(character)
+  media_type: comic
+  universe: Marvel
+- name: Moon Girl
+  wikipedia_url: https://en.wikipedia.org/wiki/Moon_Girl_(Marvel_Comics)
+  media_type: comic
+  universe: Marvel
+- name: Squirrel Girl
+  wikipedia_url: https://en.wikipedia.org/wiki/Squirrel_Girl
+  media_type: comic
+  universe: Marvel
+- name: Wally West
+  wikipedia_url: https://en.wikipedia.org/wiki/Wally_West
+  media_type: comic
+  universe: DC
+- name: Barbara Gordon
+  wikipedia_url: https://en.wikipedia.org/wiki/Barbara_Gordon
+  media_type: comic
+  universe: DC
+- name: Kang the Conqueror
+  wikipedia_url: https://en.wikipedia.org/wiki/Kang_the_Conqueror
+  media_type: comic
+  universe: Marvel
+- name: Robin
+  wikipedia_url: https://en.wikipedia.org/wiki/Robin_(character)
+  media_type: comic
+  universe: DC
+- name: Tim Drake
+  wikipedia_url: https://en.wikipedia.org/wiki/Tim_Drake
+  media_type: comic
+  universe: DC
+- name: Jason Todd
+  wikipedia_url: https://en.wikipedia.org/wiki/Jason_Todd
+  media_type: comic
+  universe: DC
+- name: Damian Wayne
+  wikipedia_url: https://en.wikipedia.org/wiki/Damian_Wayne
+  media_type: comic
+  universe: DC
+- name: Alan Scott
+  wikipedia_url: https://en.wikipedia.org/wiki/Alan_Scott
+  media_type: comic
+  universe: DC
+- name: Two-Face
+  wikipedia_url: https://en.wikipedia.org/wiki/Two-Face
+  media_type: comic
+  universe: DC
+- name: Riddler
+  wikipedia_url: https://en.wikipedia.org/wiki/Riddler
+  media_type: comic
+  universe: DC
+- name: Penguin
+  wikipedia_url: https://en.wikipedia.org/wiki/Penguin_(character)
+  media_type: comic
+  universe: DC
+- name: Ra's al Ghul
+  wikipedia_url: https://en.wikipedia.org/wiki/Ra%27s_al_Ghul
+  media_type: comic
+  universe: DC
+- name: Bane
+  wikipedia_url: https://en.wikipedia.org/wiki/Bane_(DC_Comics)
+  media_type: comic
+  universe: DC
+- name: Poison Ivy
+  wikipedia_url: https://en.wikipedia.org/wiki/Poison_Ivy_(character)
+  media_type: comic
+  universe: DC
+- name: Scarecrow
+  wikipedia_url: https://en.wikipedia.org/wiki/Scarecrow_(DC_Comics)
+  media_type: comic
+  universe: DC
+- name: Mr. Freeze
+  wikipedia_url: https://en.wikipedia.org/wiki/Mr._Freeze
+  media_type: comic
+  universe: DC
+- name: Killer Croc
+  wikipedia_url: https://en.wikipedia.org/wiki/Killer_Croc
+  media_type: comic
+  universe: DC
+- name: Clayface
+  wikipedia_url: https://en.wikipedia.org/wiki/Clayface
+  media_type: comic
+  universe: DC
+- name: Deathstroke
+  wikipedia_url: https://en.wikipedia.org/wiki/Deathstroke
+  media_type: comic
+  universe: DC
+- name: Starfire
+  wikipedia_url: https://en.wikipedia.org/wiki/Starfire_(Teen_Titans)
+  media_type: comic
+  universe: DC
+- name: Beast Boy
+  wikipedia_url: https://en.wikipedia.org/wiki/Beast_Boy
+  media_type: comic
+  universe: DC
+- name: Donna Troy
+  wikipedia_url: https://en.wikipedia.org/wiki/Donna_Troy
+  media_type: comic
+  universe: DC
+- name: Zatanna
+  wikipedia_url: https://en.wikipedia.org/wiki/Zatanna
+  media_type: comic
+  universe: DC
+- name: John Constantine
+  wikipedia_url: https://en.wikipedia.org/wiki/John_Constantine
+  media_type: comic
+  universe: DC
+- name: Swamp Thing
+  wikipedia_url: https://en.wikipedia.org/wiki/Swamp_Thing
+  media_type: comic
+  universe: DC
+- name: Doctor Fate
+  wikipedia_url: https://en.wikipedia.org/wiki/Doctor_Fate
+  media_type: comic
+  universe: DC
+- name: Blue Beetle
+  wikipedia_url: https://en.wikipedia.org/wiki/Blue_Beetle_(Jaime_Reyes)
+  media_type: comic
+  universe: DC
+- name: Booster Gold
+  wikipedia_url: https://en.wikipedia.org/wiki/Booster_Gold
+  media_type: comic
+  universe: DC
+- name: Atom
+  wikipedia_url: https://en.wikipedia.org/wiki/Atom_(Ray_Palmer)
+  media_type: comic
+  universe: DC
+- name: Hawkman
+  wikipedia_url: https://en.wikipedia.org/wiki/Hawkman
+  media_type: comic
+  universe: DC
+- name: Hawkgirl
+  wikipedia_url: https://en.wikipedia.org/wiki/Hawkgirl
+  media_type: comic
+  universe: DC
+- name: Black Adam
+  wikipedia_url: https://en.wikipedia.org/wiki/Black_Adam
+  media_type: comic
+  universe: DC
+- name: Sinestro
+  wikipedia_url: https://en.wikipedia.org/wiki/Sinestro
+  media_type: comic
+  universe: DC
+- name: Brainiac
+  wikipedia_url: https://en.wikipedia.org/wiki/Brainiac_(character)
+  media_type: comic
+  universe: DC
+- name: General Zod
+  wikipedia_url: https://en.wikipedia.org/wiki/General_Zod
+  media_type: comic
+  universe: DC
+- name: Doomsday
+  wikipedia_url: https://en.wikipedia.org/wiki/Doomsday_(DC_Comics)
+  media_type: comic
+  universe: DC
+- name: Lobo
+  wikipedia_url: https://en.wikipedia.org/wiki/Lobo_(DC_Comics)
+  media_type: comic
+  universe: DC
+- name: Etrigan
+  wikipedia_url: https://en.wikipedia.org/wiki/Etrigan_the_Demon
+  media_type: comic
+  universe: DC
+- name: The Spectre
+  wikipedia_url: https://en.wikipedia.org/wiki/Spectre_(DC_Comics_character)
+  media_type: comic
+  universe: DC
+- name: Huntress
+  wikipedia_url: https://en.wikipedia.org/wiki/Huntress_(Helena_Bertinelli)
+  media_type: comic
+  universe: DC
+- name: Batwoman
+  wikipedia_url: https://en.wikipedia.org/wiki/Batwoman
+  media_type: comic
+  universe: DC
+- name: Cassandra Cain
+  wikipedia_url: https://en.wikipedia.org/wiki/Cassandra_Cain
+  media_type: comic
+  universe: DC
+- name: Stephanie Brown
+  wikipedia_url: https://en.wikipedia.org/wiki/Stephanie_Brown_(character)
+  media_type: comic
+  universe: DC
+- name: Superboy
+  wikipedia_url: https://en.wikipedia.org/wiki/Superboy_(Kon-El)
+  media_type: comic
+  universe: DC
+- name: Power Girl
+  wikipedia_url: https://en.wikipedia.org/wiki/Power_Girl
+  media_type: comic
+  universe: DC
+- name: Mister Miracle
+  wikipedia_url: https://en.wikipedia.org/wiki/Mister_Miracle
+  media_type: comic
+  universe: DC
+- name: Big Barda
+  wikipedia_url: https://en.wikipedia.org/wiki/Big_Barda
+  media_type: comic
+  universe: DC
+- name: Vandal Savage
+  wikipedia_url: https://en.wikipedia.org/wiki/Vandal_Savage
+  media_type: comic
+  universe: DC
+- name: Rorschach
+  wikipedia_url: https://en.wikipedia.org/wiki/Rorschach_(character)
+  media_type: comic
+  universe: DC

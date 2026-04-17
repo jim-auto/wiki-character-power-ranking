@@ -1,4 +1,5 @@
 const scoreKeys = ["attack", "defense", "speed", "abilities", "feats", "scale"];
+const conditionKeys = ["superpower", "modified", "technology", "magic", "weapon"];
 
 const state = {
   view: "power",
@@ -7,6 +8,7 @@ const state = {
   universe: "all",
   min: "",
   max: "",
+  conditions: new Set(),
   battleA: "",
   battleB: "",
   battleMode: "power",
@@ -27,6 +29,7 @@ const elements = {
   universeFilter: document.querySelector("#universe-filter"),
   minScore: document.querySelector("#min-score"),
   maxScore: document.querySelector("#max-score"),
+  conditionFilters: [...document.querySelectorAll(".condition-filter")],
   battleA: document.querySelector("#battle-a"),
   battleB: document.querySelector("#battle-b"),
   battleMode: document.querySelector("#battle-mode"),
@@ -80,6 +83,11 @@ function filteredCharacters() {
     })
     .filter((character) => state.media === "all" || character.media_type === state.media)
     .filter((character) => state.universe === "all" || character.universe === state.universe)
+    .filter((character) => {
+      if (!state.conditions.size) return true;
+      const flags = character.condition_flags ?? {};
+      return [...state.conditions].every((key) => Boolean(flags[key]));
+    })
     .filter((character) => {
       const score = currentScoreForFilter(character);
       if (min !== null && score < min) return false;
@@ -182,6 +190,11 @@ function characterCard(character, index) {
   const titleScore = state.view === "iq" ? `${primaryScore}/10 IQ` : `${primaryScore}/60`;
   const evidence = state.view === "iq" ? evidenceForIq(character) : evidenceForPower(character);
   const iqWidth = Math.max(0, Math.min(100, Number(character.iq_score ?? 0) * 10));
+  const flags = character.condition_flags ?? {};
+  const flagChips = conditionKeys
+    .filter((key) => flags[key])
+    .map((key) => `<span class="flag-chip">${escapeHtml(key)}</span>`)
+    .join("");
 
   return `
     <article class="character-card">
@@ -194,6 +207,7 @@ function characterCard(character, index) {
             <span>${escapeHtml(character.universe)}</span>
             <a href="${escapeHtml(character.wikipedia_url)}">Wikipedia</a>
           </div>
+          <div class="flag-line">${flagChips}</div>
         </div>
         <div class="score-stack">
           <span class="score-badge">${escapeHtml(titleScore)}</span>
@@ -349,6 +363,16 @@ function bindEvents() {
   elements.maxScore.addEventListener("input", (event) => {
     state.max = event.target.value;
     render();
+  });
+  elements.conditionFilters.forEach((checkbox) => {
+    checkbox.addEventListener("change", (event) => {
+      if (event.target.checked) {
+        state.conditions.add(event.target.value);
+      } else {
+        state.conditions.delete(event.target.value);
+      }
+      render();
+    });
   });
   elements.battleA.addEventListener("change", (event) => {
     state.battleA = event.target.value;

@@ -16,9 +16,10 @@ The project is not a canon database, fan wiki, battle-board system, or original-
    - `feats`: explicit actions, battles, victories, saves, protection.
    - `statements`: descriptive strength claims or scale statements.
 6. `src/scoring.py` applies deterministic text rules and records evidence.
-7. `src/ranking.py` filters and renders power or text-evidence IQ rankings.
-8. `src/battle.py` compares two characters using the already-computed evidence scores.
-9. `src/export_site_data.py` exports `docs/data/characters.json` for GitHub Pages.
+7. `src/condition_flags.py` derives UI filter flags from Wikipedia-derived wording.
+8. `src/ranking.py` filters and renders power or text-evidence IQ rankings.
+9. `src/battle.py` compares two characters using the already-computed evidence scores.
+10. `src/export_site_data.py` exports `docs/data/characters.json` for GitHub Pages.
 
 ## Data Contract
 
@@ -52,11 +53,15 @@ total_score: int
 tier: S | A | B | C
 iq_score: int
 iq_evidence: list[object]
+condition_flags: object
+condition_evidence: object
 ```
 
 `score_evidence` is an implementation extension that makes the score auditable. It is required for ranking output even though the minimal model can be represented without it.
 
 `iq_score` is also an implementation extension. It means "Wikipedia text contains intelligence-related evidence" and does not mean real IQ.
+
+`condition_flags` are deterministic UI filters. They indicate that Wikipedia-derived text matched terms for `superpower`, `modified`, `technology`, `magic`, or `weapon`.
 
 ## Wikipedia-Only Constraint
 
@@ -76,11 +81,11 @@ Not allowed:
 
 ## Initial Milestone
 
-The sample data now starts from a 200-character seed list. The current public milestone is:
+The sample data now starts from a 500-character seed list. The current public milestone is:
 
-- 90 manga/anime characters
-- 55 movie characters
-- 55 Marvel/DC comic characters
+- 209 manga/anime characters
+- 144 movie characters
+- 147 Marvel/DC comic characters
 
 The fetched text uses Wikipedia lead extracts by default for readability. For production runs, refresh `description_raw` with `src/fetch_wikipedia.py --intro-only`, then re-run extraction and scoring. If the Action API rate-limits a large refresh, use `src/fetch_wikipedia.py --source rest-summary --missing-only`.
 

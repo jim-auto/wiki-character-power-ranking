@@ -28,6 +28,7 @@ Wikipediaの記述だけでキャラクターの強さを評価する。
   ranking.py
   battle.py
   sync_seed_characters.py
+  condition_flags.py
   export_site_data.py
 
 /docs/
@@ -77,10 +78,13 @@ character:
   tier: S | A | B | C
   iq_score: int
   iq_evidence: list[object]
+  condition_flags: object
+  condition_evidence: object
 ```
 
 `score_evidence` は各スコアの根拠を表示するための拡張フィールドです。
 `iq_score` は実IQではなく、Wikipedia本文に含まれる知性・戦術・科学・探偵能力などの表現を0-10点化した根拠付き指標です。
+`condition_flags` は、条件フィルタ用にWikipedia本文の語句マッチから付与されるフラグです。
 
 ## Setup
 
@@ -215,6 +219,16 @@ python src/ranking.py --score-key attack --min-score 6
 python src/ranking.py --ranking-type iq --min-score 5
 ```
 
+GitHub PagesのUIでは、さらに条件をオンオフできます。
+
+- `superpower`: 超能力、超人的能力、特殊能力などの記述あり。
+- `modified`: 改造、人工、強化、サイボーグなどの記述あり。
+- `technology`: 技術、装甲、機械、デバイスなどの記述あり。
+- `magic`: 魔法、呪い、魔術、神秘的能力などの記述あり。
+- `weapon`: 武器、剣、銃、兵器などの記述あり。
+
+これらもWikipedia本文の語句マッチだけで付与されます。
+
 ## Battle Mode
 
 2人のキャラクターを、Wikipedia根拠スコアだけで比較できます。
@@ -259,6 +273,7 @@ python src/fetch_wikipedia.py --intro-only
 # python src/fetch_wikipedia.py --source rest-summary --missing-only
 python src/extract_features.py
 python src/scoring.py
+python src/condition_flags.py
 python src/export_site_data.py
 ```
 
@@ -308,7 +323,7 @@ python src/export_site_data.py
 
 ## Sample Data
 
-`data/characters.yaml` には200人分のサンプルキャラクターが入っています。候補の正本は `data/seed_characters.yaml` です。
+`data/characters.yaml` には500人分のサンプルキャラクターが入っています。候補の正本は `data/seed_characters.yaml` です。
 
 - 孫悟空
 - うずまきナルト
