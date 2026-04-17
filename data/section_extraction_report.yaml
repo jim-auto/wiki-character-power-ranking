@@ -1,11 +1,11 @@
-generated_at: '2026-04-17T10:44:23.987790+00:00'
+generated_at: '2026-04-17T12:05:51.644545+00:00'
 dry_run: false
-total_characters: 500
-target_characters: 180
+total_characters: 501
+target_characters: 181
 target_pages: 55
 processed_pages: 55
 pages_fetched: 55
-updated: 59
+updated: 60
 unchanged_no_match: 121
 failed_pages: []
 items:
@@ -895,6 +895,19 @@ items:
 - name: ゴクウブラック
   url: https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
   status: unchanged_no_match
+- name: 日向ネジ
+  url: https://ja.wikipedia.org/wiki/NARUTO_-%E3%83%8A%E3%83%AB%E3%83%88-%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+  status: updated
+  matched_alias: 日向ネジ
+  alias_source: name
+  match_kind: heading
+  match_score: 115
+  chars: 1314
+  excerpt: '日向ネジ （ひゅうが ネジ）
+
+    声 - 遠近孝一 、 根本圭子 （幼少）
+
+    黒い長髪の少年で一人称は「オレ」。日向一族の分家の出身であり、額には分家の者だけが刻まれる呪印が施されている。日向一族の血継限界「白眼」を受け継いでおり、その力を利用した体術である「柔拳」を駆使した接近戦を得意とする。忍としての才も抜きん出ており、本来なら宗家にのみ伝わる「八卦掌回天」「'
 - name: 綱手
   url: https://ja.wikipedia.org/wiki/NARUTO_-%E3%83%8A%E3%83%AB%E3%83%88-%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
   status: updated

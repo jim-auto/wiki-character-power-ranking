@@ -58,6 +58,9 @@ total_score: int
 tier: S | A | B | C
 iq_score: int
 iq_evidence: list[object]
+explicit_iq: int | null
+explicit_iq_evidence: list[object]
+estimated_iq: object
 condition_flags: object
 condition_evidence: object
 ```
@@ -65,6 +68,8 @@ condition_evidence: object
 `score_evidence` は、スコアを監査できるようにするための拡張フィールドです。ランキング表示では必須です。
 
 `iq_score` は内部名です。UIでは「知性スコア」と表示します。実際のIQではなく、日本語版Wikipedia本文に知性、発明、科学、戦略、探偵能力などの表現がどれだけあるかを測る指標です。
+
+`explicit_iq` は本文にIQ数値が明示された場合だけ保存します。数値がない場合は `null` です。`estimated_iq` は `iq_score` から機械的に作るレンジ目安で、心理測定としてのIQではありません。
 
 `condition_flags` は、Wikipedia本文の語句一致だけで付与されます。現在は、超能力あり、改造あり、技術/装備、魔法/呪い、武器あり、人間以外、神格、宇宙人、ロボット/AI、格闘、軍人/兵士、リーダー、天才/探偵、変身、不死/再生を扱います。
 
@@ -88,14 +93,14 @@ condition_evidence: object
 - Wikipedia本文に書かれていない実績の推測
 - 将来スキーマで明示的に追加されていない別ページからの補強
 
-## 500キャラクターの目標
+## 501キャラクターのサンプル
 
-現在のサンプルデータは500キャラクターです。
+現在のサンプルデータは501キャラクターです。
 
-- 漫画/アニメ: 209件
+- 漫画/アニメ: 210件
 - 映画: 144件
 - Marvel / DCコミック: 147件
-- ジャンプ漫画タグ: 142件
+- ジャンプ漫画タグ: 143件
 - Marvelタグ: 105件
 - DCタグ: 76件
 - 表示用サムネイル取得済み: 166件
@@ -134,3 +139,4 @@ python src/export_site_data.py
 - 複数ページ対応: キャラクター、装備、映画版などのソースを分けて扱う。
 - ルール監査: どのルールがランキングに影響しているかを集計する。
 - バトル条件: 超能力あり/なし、改造あり/なし、武器あり/なしなどの条件別比較を追加する。
+- キャラクター時点: 中忍試験時点、最終章、映画版などを `character_versions` として分け、時点別スコアを持てるようにする。

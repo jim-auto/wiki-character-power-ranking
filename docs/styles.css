@@ -379,6 +379,31 @@ input {
   background: var(--gold);
 }
 
+.intelligence-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.intelligence-summary div {
+  display: grid;
+  gap: 3px;
+  min-width: 120px;
+}
+
+.intelligence-summary span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.intelligence-summary strong {
+  color: var(--text);
+  font-size: 0.96rem;
+}
+
 .evidence-list {
   display: grid;
   gap: 8px;
@@ -418,7 +443,7 @@ input {
 }
 
 .battle-controls {
-  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(130px, 1fr));
 }
 
 .battle-result {

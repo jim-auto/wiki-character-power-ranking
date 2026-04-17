@@ -22,8 +22,16 @@ DERIVED_KEYS = [
     "tier",
     "iq_score",
     "iq_evidence",
+    "explicit_iq",
+    "explicit_iq_evidence",
+    "estimated_iq",
     "condition_flags",
     "condition_evidence",
+    "collection_tags",
+    "image_url",
+    "image_source",
+    "image_alt",
+    "image_pageimage",
 ]
 
 

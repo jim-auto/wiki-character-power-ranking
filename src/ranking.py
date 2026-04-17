@@ -95,6 +95,21 @@ def render_score_line(character: dict[str, Any]) -> str:
     return ", ".join(parts)
 
 
+def explicit_iq_text(character: dict[str, Any]) -> str:
+    value = character.get("explicit_iq")
+    return str(value) if isinstance(value, int) else "記述なし"
+
+
+def estimated_iq_text(character: dict[str, Any]) -> str:
+    estimated = character.get("estimated_iq") or {}
+    label = str(estimated.get("label") or "推定不可")
+    estimated_range = estimated.get("range")
+    confidence = str(estimated.get("confidence") or "low")
+    confidence_labels = {"low": "低", "medium": "中", "high": "高"}
+    suffix = f"（{estimated_range}）" if estimated_range else ""
+    return f"{label}{suffix} / 信頼度{confidence_labels.get(confidence, confidence)}"
+
+
 def render_evidence(character: dict[str, Any], max_evidence: int) -> list[str]:
     score_evidence = character.get("score_evidence") or {}
     lines: list[str] = []
@@ -115,17 +130,21 @@ def render_evidence(character: dict[str, Any], max_evidence: int) -> list[str]:
 
 
 def render_iq_evidence(character: dict[str, Any], max_evidence: int) -> list[str]:
+    explicit_items = character.get("explicit_iq_evidence") or []
     evidence_items = character.get("iq_evidence") or []
-    if not evidence_items:
-        return ["  - 知性スコア: 一致するWikipedia根拠なし"]
 
     lines: list[str] = []
+    for item in explicit_items[:max_evidence]:
+        lines.append(
+            f"  - 明示IQ {item.get('value')}: {item.get('sentence', '')} "
+            f"[{item.get('rule', '')}]"
+        )
     for item in evidence_items[:max_evidence]:
         lines.append(
             f"  - 知性スコア: {item.get('sentence', '')} "
             f"[{item.get('rule', '')}, +{item.get('points', 0)}]"
         )
-    return lines
+    return lines or ["  - 知性スコア: 一致するWikipedia根拠なし"]
 
 
 def render_markdown(
@@ -152,6 +171,8 @@ def render_markdown(
         lines.append(f"- 出典: {url}")
         lines.append(f"- メディア: {media_type}")
         lines.append(f"- 作品/ユニバース: {universe}")
+        lines.append(f"- 明示IQ: {explicit_iq_text(character)}")
+        lines.append(f"- 推定IQ: {estimated_iq_text(character)}")
         lines.append(f"- 知性スコア: {iq_score}")
         lines.append(f"- スコア: {render_score_line(character)}")
         lines.append("- 根拠:")

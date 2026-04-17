@@ -83,11 +83,19 @@
           <div class="battle-controls">
             <label>
               <span>A</span>
-              <select id="battle-a"></select>
+              <input id="battle-a" type="search" list="battle-character-options" placeholder="名前で検索">
+            </label>
+            <label>
+              <span>A時点</span>
+              <input id="battle-a-stage" type="search" placeholder="例: 中忍試験時点">
             </label>
             <label>
               <span>B</span>
-              <select id="battle-b"></select>
+              <input id="battle-b" type="search" list="battle-character-options" placeholder="名前で検索">
+            </label>
+            <label>
+              <span>B時点</span>
+              <input id="battle-b-stage" type="search" placeholder="例: 中忍試験時点">
             </label>
             <label>
               <span>モード</span>
@@ -97,6 +105,7 @@
                 <option value="balanced">総合</option>
               </select>
             </label>
+            <datalist id="battle-character-options"></datalist>
           </div>
           <div id="battle-result" class="battle-result" aria-live="polite"></div>
         </section>

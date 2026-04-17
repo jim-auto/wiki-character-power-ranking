@@ -94,11 +94,15 @@ character:
   tier: S | A | B | C
   iq_score: int
   iq_evidence: list[object]
+  explicit_iq: int | null
+  explicit_iq_evidence: list[object]
+  estimated_iq: object
   condition_flags: object
   condition_evidence: object
 ```
 
 `iq_score` は内部名です。UIでは「知性スコア」と表示します。実際のIQではなく、日本語版Wikipedia本文に「天才」「科学者」「戦略」「発明」「探偵」などの知性に関係する表現がどれだけ強く出ているかを示す、根拠文付きの0-10点指標です。
+`explicit_iq` は本文に `IQ 200` や `知能指数 180` のような数値が明示されている場合だけ入ります。`estimated_iq` は知性スコアから決定的に作るレンジ目安で、実測IQではありません。
 
 `condition_flags` は、GitHub Pages UIで条件オン/オフ検索をするためのフラグです。超能力あり、改造あり、技術/装備、魔法/呪い、武器あり、人間以外、神格、宇宙人、ロボット/AI、格闘、軍人/兵士、リーダー、天才/探偵、変身、不死/再生を扱います。
 
@@ -264,9 +268,11 @@ python src/battle.py --a "孫悟空" --b "バットマン"
 python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --mode power
 python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --mode iq
 python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --mode balanced
+python src/battle.py --a "日向ネジ" --b "うちはサスケ" --a-stage "中忍試験時点" --b-stage "中忍試験時点"
 ```
 
 `battle.py` は完全な架空戦闘シミュレーションではありません。性格、弱点、相性、戦場、原作展開は推測せず、本文に出た根拠文とスコア差だけを表示します。
+GitHub Pages UIではA/Bのキャラクター名を検索入力から選べます。`A時点` / `B時点` には「中忍試験時点」などの段階ラベルを入れられます。現時点では時点ラベルは比較表示用で、時点別スコアは将来の `character_versions` データで扱います。
 
 ## 出力例
 
@@ -304,8 +310,8 @@ https://jim-auto.github.io/wiki-character-power-ranking/
 
 ## 初期データ
 
-現在のサンプルデータは500キャラクターです。全レコードの `wikipedia_url` は日本語版Wikipediaを指します。
-GitHub Pages用JSONには、ジャンプ漫画142件、Marvel 105件、DC 76件のコレクションタグが含まれます。日本語版Wikipediaの単独ページと、そのページに紐づくWikidata P18から取得できた表示用サムネイルは166件です。
+現在のサンプルデータは501キャラクターです。全レコードの `wikipedia_url` は日本語版Wikipediaを指します。
+GitHub Pages用JSONには、ジャンプ漫画143件、Marvel 105件、DC 76件のコレクションタグが含まれます。日本語版Wikipediaの単独ページと、そのページに紐づくWikidata P18から取得できた表示用サムネイルは166件です。
 
 代表例:
 

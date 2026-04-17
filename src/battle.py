@@ -63,7 +63,38 @@ def mode_score(character: dict[str, Any], mode: str) -> int:
     return int(character.get("total_score", 0))
 
 
-def verdict(a: dict[str, Any], b: dict[str, Any], mode: str) -> str:
+def explicit_iq_text(character: dict[str, Any]) -> str:
+    value = character.get("explicit_iq")
+    return str(value) if isinstance(value, int) else "記述なし"
+
+
+def estimated_iq_text(character: dict[str, Any]) -> str:
+    estimated = character.get("estimated_iq") or {}
+    label = str(estimated.get("label") or "推定不可")
+    estimated_range = estimated.get("range")
+    suffix = f"（{estimated_range}）" if estimated_range else ""
+    return f"{label}{suffix}"
+
+
+def battle_display_name(character: dict[str, Any], stage: str = "") -> str:
+    clean_stage = stage.strip()
+    name = str(character.get("name"))
+    return f"{name}（{clean_stage}）" if clean_stage else name
+
+
+def explicit_iq_edge(a: dict[str, Any], b: dict[str, Any], a_stage: str = "", b_stage: str = "") -> str:
+    a_value = a.get("explicit_iq")
+    b_value = b.get("explicit_iq")
+    if not isinstance(a_value, int) or not isinstance(b_value, int):
+        return "比較不可"
+    if a_value > b_value:
+        return battle_display_name(a, a_stage)
+    if b_value > a_value:
+        return battle_display_name(b, b_stage)
+    return "互角"
+
+
+def verdict(a: dict[str, Any], b: dict[str, Any], mode: str, a_stage: str = "", b_stage: str = "") -> str:
     a_score = mode_score(a, mode)
     b_score = mode_score(b, mode)
     diff = a_score - b_score
@@ -72,54 +103,66 @@ def verdict(a: dict[str, Any], b: dict[str, Any], mode: str) -> str:
         return "現在のWikipedia根拠スコアでは引き分けです。"
 
     winner = a if diff > 0 else b
+    winner_stage = a_stage if diff > 0 else b_stage
     margin = abs(diff)
     strength = "優勢" if margin >= 8 else "やや優勢"
-    return f"{winner.get('name')} が {MODE_LABELS.get(mode, mode)} モードで {margin} 点差の{strength}です。"
+    return f"{battle_display_name(winner, winner_stage)} が {MODE_LABELS.get(mode, mode)} モードで {margin} 点差の{strength}です。"
 
 
-def dimension_table(a: dict[str, Any], b: dict[str, Any]) -> list[str]:
+def dimension_table(a: dict[str, Any], b: dict[str, Any], a_stage: str = "", b_stage: str = "") -> list[str]:
     a_scores = a.get("scores") or {}
     b_scores = b.get("scores") or {}
+    a_name = battle_display_name(a, a_stage)
+    b_name = battle_display_name(b, b_stage)
     lines = ["| 項目 | A | B | 優勢 |", "| --- | ---: | ---: | --- |"]
 
     for key in SCORE_KEYS:
         a_value = int(a_scores.get(key, 0))
         b_value = int(b_scores.get(key, 0))
         if a_value > b_value:
-            edge = str(a.get("name"))
+            edge = a_name
         elif b_value > a_value:
-            edge = str(b.get("name"))
+            edge = b_name
         else:
             edge = "互角"
         lines.append(f"| {SCORE_LABELS[key]} | {a_value} | {b_value} | {edge} |")
 
     lines.append(
         f"| 知性スコア | {int(a.get('iq_score', 0))} | {int(b.get('iq_score', 0))} | "
-        f"{iq_edge(a, b)} |"
+        f"{iq_edge(a, b, a_stage, b_stage)} |"
+    )
+    lines.append(
+        f"| 明示IQ | {explicit_iq_text(a)} | {explicit_iq_text(b)} | {explicit_iq_edge(a, b, a_stage, b_stage)} |"
+    )
+    lines.append(
+        f"| 推定IQ | {estimated_iq_text(a)} | {estimated_iq_text(b)} | {iq_edge(a, b, a_stage, b_stage)} |"
     )
     return lines
 
 
-def iq_edge(a: dict[str, Any], b: dict[str, Any]) -> str:
+def iq_edge(a: dict[str, Any], b: dict[str, Any], a_stage: str = "", b_stage: str = "") -> str:
     a_value = int(a.get("iq_score", 0))
     b_value = int(b.get("iq_score", 0))
     if a_value > b_value:
-        return str(a.get("name"))
+        return battle_display_name(a, a_stage)
     if b_value > a_value:
-        return str(b.get("name"))
+        return battle_display_name(b, b_stage)
     return "互角"
 
 
 def top_evidence(character: dict[str, Any], mode: str, limit: int) -> list[str]:
     if mode == "iq":
-        evidence = character.get("iq_evidence") or []
+        evidence = list(character.get("iq_evidence") or [])
+        explicit_evidence = character.get("explicit_iq_evidence") or []
     elif mode == "balanced":
         evidence = list(character.get("iq_evidence") or [])
+        explicit_evidence = character.get("explicit_iq_evidence") or []
         score_evidence = character.get("score_evidence") or {}
         for key in SCORE_KEYS:
             evidence.extend(score_evidence.get(key) or [])
     else:
         evidence = []
+        explicit_evidence = []
         score_evidence = character.get("score_evidence") or {}
         for key in SCORE_KEYS:
             evidence.extend(score_evidence.get(key) or [])
@@ -128,35 +171,49 @@ def top_evidence(character: dict[str, Any], mode: str, limit: int) -> list[str]:
         evidence,
         key=lambda item: (-int(item.get("points", 0)), str(item.get("sentence", ""))),
     )
-    if not evidence:
+    explicit_lines = [
+        f"- 明示IQ {item.get('value')}: {item.get('sentence', '')} [{item.get('rule', '')}]"
+        for item in explicit_evidence[:limit]
+    ]
+    if not evidence and not explicit_lines:
         return ["- 一致するWikipedia根拠なし"]
 
-    return [
+    score_lines = [
         f"- {item.get('sentence', '')} [{item.get('rule', '')}, +{item.get('points', 0)}]"
         for item in evidence[:limit]
     ]
+    return explicit_lines + score_lines
 
 
-def render_battle(a: dict[str, Any], b: dict[str, Any], mode: str, max_evidence: int) -> str:
+def render_battle(
+    a: dict[str, Any],
+    b: dict[str, Any],
+    mode: str,
+    max_evidence: int,
+    a_stage: str = "",
+    b_stage: str = "",
+) -> str:
+    a_name = battle_display_name(a, a_stage)
+    b_name = battle_display_name(b, b_stage)
     lines = [
-        f"# バトル比較: {a.get('name')} vs {b.get('name')}",
+        f"# バトル比較: {a_name} vs {b_name}",
         "",
         "これは完全な架空戦闘シミュレーションではありません。日本語版Wikipedia由来の根拠文とスコアだけで比較します。",
         "",
         f"- モード: {MODE_LABELS.get(mode, mode)}",
         f"- Aスコア: {mode_score(a, mode)}",
         f"- Bスコア: {mode_score(b, mode)}",
-        f"- 判定: {verdict(a, b, mode)}",
+        f"- 判定: {verdict(a, b, mode, a_stage, b_stage)}",
         "",
         "## スコア比較",
         "",
-        *dimension_table(a, b),
+        *dimension_table(a, b, a_stage, b_stage),
         "",
-        f"## 根拠: {a.get('name')}",
+        f"## 根拠: {a_name}",
         "",
         *top_evidence(a, mode, max_evidence),
         "",
-        f"## 根拠: {b.get('name')}",
+        f"## 根拠: {b_name}",
         "",
         *top_evidence(b, mode, max_evidence),
         "",
@@ -169,6 +226,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--a", required=True, help="1人目のキャラクター名、または一意に絞れる部分文字列。")
     parser.add_argument("--b", required=True, help="2人目のキャラクター名、または一意に絞れる部分文字列。")
+    parser.add_argument("--a-stage", default="", help="1人目の時点ラベル。例: 中忍試験時点")
+    parser.add_argument("--b-stage", default="", help="2人目の時点ラベル。例: 中忍試験時点")
     parser.add_argument("--mode", choices=["power", "iq", "balanced"], default="power")
     parser.add_argument("--max-evidence", type=int, default=3)
     parser.add_argument("--output", type=Path)
@@ -180,7 +239,7 @@ def main() -> None:
     data = load_yaml(args.input)
     a = find_character(data["characters"], args.a)
     b = find_character(data["characters"], args.b)
-    output = render_battle(a, b, args.mode, args.max_evidence)
+    output = render_battle(a, b, args.mode, args.max_evidence, args.a_stage, args.b_stage)
 
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

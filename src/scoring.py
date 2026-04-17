@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
@@ -14,6 +15,10 @@ import yaml
 DEFAULT_INPUT = Path("data/characters.yaml")
 SCORE_KEYS = ["attack", "defense", "speed", "abilities", "feats", "scale"]
 IQ_SCORE_KEY = "iq"
+EXPLICIT_IQ_PATTERNS = [
+    (re.compile(r"\bIQ\s*(?:は|が|:|：|=|約|およそ)?\s*(\d{2,3})\b", re.IGNORECASE), "explicit IQ expression"),
+    (re.compile(r"知能指数\s*(?:は|が|:|：|=|約|およそ)?\s*(\d{2,3})", re.IGNORECASE), "explicit intelligence quotient expression"),
+]
 
 
 @dataclass(frozen=True)
@@ -178,6 +183,72 @@ def score_dimension(
     return score, evidence
 
 
+def extract_explicit_iq(sentences: Iterable[str]) -> tuple[int | None, list[dict[str, Any]]]:
+    evidence: list[dict[str, Any]] = []
+    seen_hits: set[tuple[str, int, str]] = set()
+
+    for sentence in sentences:
+        normalized_sentence = unicodedata.normalize("NFKC", sentence)
+        for regex, label in EXPLICIT_IQ_PATTERNS:
+            for match in regex.finditer(normalized_sentence):
+                value = int(match.group(1))
+                if value < 40 or value > 300:
+                    continue
+                hit_key = (sentence, value, label)
+                if hit_key in seen_hits:
+                    continue
+                seen_hits.add(hit_key)
+                evidence.append(
+                    {
+                        "sentence": sentence,
+                        "rule": label,
+                        "value": value,
+                    }
+                )
+
+    evidence.sort(key=lambda item: (-int(item["value"]), item["sentence"]))
+    explicit_iq = int(evidence[0]["value"]) if evidence else None
+    return explicit_iq, evidence
+
+
+def estimate_iq(iq_score: int, iq_evidence: list[dict[str, Any]]) -> dict[str, Any]:
+    if iq_score <= 0:
+        band = "unknown"
+        label = "推定不可"
+        estimated_range = None
+    elif iq_score <= 2:
+        band = "above_average"
+        label = "平均以上の可能性"
+        estimated_range = "100-119目安"
+    elif iq_score <= 4:
+        band = "high"
+        label = "高知性"
+        estimated_range = "120-129目安"
+    elif iq_score <= 7:
+        band = "genius"
+        label = "天才級"
+        estimated_range = "130-159目安"
+    else:
+        band = "supergenius"
+        label = "超天才級"
+        estimated_range = "160以上目安"
+
+    if iq_score <= 0 or not iq_evidence:
+        confidence = "low"
+    elif iq_score >= 8 and len(iq_evidence) >= 2:
+        confidence = "high"
+    else:
+        confidence = "medium"
+
+    return {
+        "band": band,
+        "label": label,
+        "range": estimated_range,
+        "confidence": confidence,
+        "score": iq_score,
+    }
+
+
 def calculate_tier(total_score: int) -> str:
     if total_score >= 42:
         return "S"
@@ -199,11 +270,15 @@ def score_character(character: dict[str, Any]) -> dict[str, Any]:
         score_evidence[dimension] = evidence
 
     iq_score, iq_evidence = score_dimension(sentences, IQ_SCORE_KEY)
+    explicit_iq, explicit_iq_evidence = extract_explicit_iq(sentences)
     total_score = sum(scores.values())
     character["scores"] = scores
     character["score_evidence"] = score_evidence
     character["iq_score"] = iq_score
     character["iq_evidence"] = iq_evidence
+    character["explicit_iq"] = explicit_iq
+    character["explicit_iq_evidence"] = explicit_iq_evidence
+    character["estimated_iq"] = estimate_iq(iq_score, iq_evidence)
     character["total_score"] = total_score
     character["tier"] = calculate_tier(total_score)
     return character

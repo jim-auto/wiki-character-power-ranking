@@ -44,6 +44,8 @@ const state = {
   conditions: new Set(),
   battleA: "",
   battleB: "",
+  battleAStage: "",
+  battleBStage: "",
   battleMode: "power",
 };
 
@@ -66,6 +68,9 @@ const elements = {
   conditionOptions: document.querySelector("#condition-options"),
   battleA: document.querySelector("#battle-a"),
   battleB: document.querySelector("#battle-b"),
+  battleAStage: document.querySelector("#battle-a-stage"),
+  battleBStage: document.querySelector("#battle-b-stage"),
+  battleOptions: document.querySelector("#battle-character-options"),
   battleMode: document.querySelector("#battle-mode"),
   battleResult: document.querySelector("#battle-result"),
 };
@@ -97,6 +102,8 @@ function applyQueryState() {
   state.max = params.get("max") ?? "";
   state.battleA = params.get("a") ?? "";
   state.battleB = params.get("b") ?? "";
+  state.battleAStage = params.get("aStage") ?? "";
+  state.battleBStage = params.get("bStage") ?? "";
 
   const conditions = (params.get("conditions") ?? "")
     .split(",")
@@ -121,6 +128,8 @@ function updateUrl() {
   if (state.view === "battle") {
     if (state.battleA) params.set("a", state.battleA);
     if (state.battleB) params.set("b", state.battleB);
+    if (state.battleAStage) params.set("aStage", state.battleAStage);
+    if (state.battleBStage) params.set("bStage", state.battleBStage);
     if (state.battleMode !== "power") params.set("battleMode", state.battleMode);
   }
 
@@ -139,6 +148,8 @@ function syncControls() {
   elements.maxScore.value = state.max;
   elements.battleA.value = state.battleA;
   elements.battleB.value = state.battleB;
+  elements.battleAStage.value = state.battleAStage;
+  elements.battleBStage.value = state.battleBStage;
   elements.battleMode.value = state.battleMode;
   elements.conditionOptions.querySelectorAll(".condition-filter").forEach((checkbox) => {
     checkbox.checked = state.conditions.has(checkbox.value);
@@ -210,16 +221,18 @@ function populateFilters() {
   ].join("");
   if (state.universe !== "all" && !universes.includes(state.universe)) state.universe = "all";
 
-  const options = characters
-    .map((character) => `<option value="${escapeHtml(character.name)}">${escapeHtml(character.name)}</option>`)
+  const battleOptions = characters
+    .map(
+      (character) =>
+        `<option value="${escapeHtml(character.name)}" label="${escapeHtml(`${character.universe} / ${mediaLabels[character.media_type] ?? character.media_type}`)}"></option>`,
+    )
     .join("");
-  elements.battleA.innerHTML = options;
-  elements.battleB.innerHTML = options;
+  elements.battleOptions.innerHTML = battleOptions;
 
-  if (!characters.some((character) => character.name === state.battleA)) {
+  if (!state.battleA) {
     state.battleA = characters[0]?.name ?? "";
   }
-  if (!characters.some((character) => character.name === state.battleB)) {
+  if (!state.battleB) {
     state.battleB = characters[1]?.name ?? characters[0]?.name ?? "";
   }
 
@@ -288,11 +301,23 @@ function evidenceForPower(character) {
 }
 
 function evidenceForIq(character) {
+  const explicitItems = character.explicit_iq_evidence ?? [];
   const items = character.iq_evidence ?? [];
-  if (!items.length) {
+  if (!explicitItems.length && !items.length) {
     return '<li class="evidence-item"><strong>知性スコア</strong><span class="evidence-rule">一致するWikipedia根拠なし</span></li>';
   }
-  return items
+  const explicitEvidence = explicitItems
+    .slice(0, 2)
+    .map(
+      (item) => `
+        <li class="evidence-item">
+          <strong>明示IQ ${escapeHtml(item.value)}</strong>: ${escapeHtml(item.sentence)}
+          <span class="evidence-rule">${escapeHtml(item.rule)}</span>
+        </li>
+      `,
+    )
+    .join("");
+  const scoreEvidence = items
     .slice(0, 3)
     .map(
       (item) => `
@@ -303,10 +328,51 @@ function evidenceForIq(character) {
       `,
     )
     .join("");
+  return explicitEvidence + scoreEvidence;
 }
 
 function characterInitials(name) {
   return Array.from(String(name ?? "").trim()).slice(0, 2).join("") || "?";
+}
+
+function explicitIqText(character) {
+  const value = character.explicit_iq;
+  return value !== null && value !== undefined && Number.isFinite(Number(value)) ? String(value) : "記述なし";
+}
+
+function explicitIqNumber(character) {
+  const value = character.explicit_iq;
+  return value !== null && value !== undefined && Number.isFinite(Number(value)) ? Number(value) : null;
+}
+
+function estimatedIqText(character) {
+  const estimated = character.estimated_iq ?? {};
+  const label = estimated.label || "推定不可";
+  return estimated.range ? `${label}（${estimated.range}）` : label;
+}
+
+function confidenceText(character) {
+  const confidence = character.estimated_iq?.confidence || "low";
+  return { low: "低", medium: "中", high: "高" }[confidence] || confidence;
+}
+
+function intelligenceSummary(character) {
+  return `
+    <div class="intelligence-summary">
+      <div>
+        <span>明示IQ</span>
+        <strong>${escapeHtml(explicitIqText(character))}</strong>
+      </div>
+      <div>
+        <span>推定IQ</span>
+        <strong>${escapeHtml(estimatedIqText(character))}</strong>
+      </div>
+      <div>
+        <span>信頼度</span>
+        <strong>${escapeHtml(confidenceText(character))}</strong>
+      </div>
+    </div>
+  `;
 }
 
 function characterImage(character) {
@@ -363,6 +429,7 @@ function characterCard(character, index) {
         <div class="dimension-label"><span>知性スコア</span><span>${escapeHtml(character.iq_score ?? 0)}</span></div>
         <div class="bar" aria-hidden="true"><div class="bar-fill iq" style="width: ${iqWidth}%"></div></div>
       </div>
+      ${intelligenceSummary(character)}
       <details class="evidence-details">
         <summary>根拠文を表示</summary>
         <ul class="evidence-list">${evidence}</ul>
@@ -380,8 +447,25 @@ function renderRanking() {
     : '<div class="empty-state">該当するキャラクターがありません。</div>';
 }
 
-function battleCharacter(name) {
-  return characters.find((character) => character.name === name) ?? characters[0];
+function normalizedQuery(value) {
+  return String(value ?? "").trim().toLocaleLowerCase("ja");
+}
+
+function battleCharacter(query) {
+  const normalized = normalizedQuery(query);
+  if (!normalized) return characters[0];
+  return (
+    characters.find((character) => normalizedQuery(character.name) === normalized) ??
+    characters.find((character) => normalizedQuery(character.name).startsWith(normalized)) ??
+    characters.find((character) => normalizedQuery(character.name).includes(normalized)) ??
+    characters.find((character) => normalizedQuery(character.universe).includes(normalized)) ??
+    characters[0]
+  );
+}
+
+function battleDisplayName(character, stage) {
+  const cleanStage = String(stage ?? "").trim();
+  return cleanStage ? `${character.name}（${cleanStage}）` : character.name;
 }
 
 function battleScore(character) {
@@ -396,15 +480,18 @@ function battleVerdict(a, b) {
     return "現在の根拠スコアでは引き分けです。";
   }
   const winner = aScore > bScore ? a : b;
+  const winnerStage = aScore > bScore ? state.battleAStage : state.battleBStage;
   const label = diff >= 8 ? "優勢" : "やや優勢";
-  return `${winner.name} が ${diff} 点差で${label}です。`;
+  return `${battleDisplayName(winner, winnerStage)} が ${diff} 点差で${label}です。`;
 }
 
 function battleRows(a, b) {
+  const aName = battleDisplayName(a, state.battleAStage);
+  const bName = battleDisplayName(b, state.battleBStage);
   const rows = scoreKeys.map((key) => {
     const aValue = Number(a.scores?.[key] ?? 0);
     const bValue = Number(b.scores?.[key] ?? 0);
-    const edge = aValue === bValue ? "互角" : aValue > bValue ? a.name : b.name;
+    const edge = aValue === bValue ? "互角" : aValue > bValue ? aName : bName;
     return `<tr><td>${escapeHtml(scoreLabels[key] ?? key)}</td><td>${aValue}</td><td>${bValue}</td><td>${escapeHtml(edge)}</td></tr>`;
   });
 
@@ -412,10 +499,26 @@ function battleRows(a, b) {
     Number(a.iq_score ?? 0) === Number(b.iq_score ?? 0)
       ? "互角"
       : Number(a.iq_score ?? 0) > Number(b.iq_score ?? 0)
-        ? a.name
-        : b.name;
+        ? aName
+        : bName;
   rows.push(
     `<tr><td>知性スコア</td><td>${Number(a.iq_score ?? 0)}</td><td>${Number(b.iq_score ?? 0)}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
+  );
+  const aExplicitIq = explicitIqNumber(a);
+  const bExplicitIq = explicitIqNumber(b);
+  const explicitEdge =
+    aExplicitIq !== null && bExplicitIq !== null
+      ? aExplicitIq === bExplicitIq
+        ? "互角"
+        : aExplicitIq > bExplicitIq
+          ? aName
+          : bName
+      : "比較不可";
+  rows.push(
+    `<tr><td>明示IQ</td><td>${escapeHtml(explicitIqText(a))}</td><td>${escapeHtml(explicitIqText(b))}</td><td>${escapeHtml(explicitEdge)}</td></tr>`,
+  );
+  rows.push(
+    `<tr><td>推定IQ</td><td>${escapeHtml(estimatedIqText(a))}</td><td>${escapeHtml(estimatedIqText(b))}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
   );
   return rows.join("");
 }
@@ -423,10 +526,16 @@ function battleRows(a, b) {
 function battleEvidence(character) {
   const items =
     state.battleMode === "iq"
-      ? character.iq_evidence ?? []
+      ? [...(character.explicit_iq_evidence ?? []), ...(character.iq_evidence ?? [])]
+      : state.battleMode === "balanced"
+        ? [
+            ...(character.explicit_iq_evidence ?? []),
+            ...(character.iq_evidence ?? []),
+            ...scoreKeys.flatMap((key) => character.score_evidence?.[key] ?? []),
+          ]
       : scoreKeys.flatMap((key) => character.score_evidence?.[key] ?? []);
 
-  const sorted = [...items].sort((a, b) => Number(b.points ?? 0) - Number(a.points ?? 0)).slice(0, 4);
+  const sorted = [...items].sort((a, b) => Number(b.points ?? b.value ?? 0) - Number(a.points ?? a.value ?? 0)).slice(0, 4);
   if (!sorted.length) {
     return '<li class="evidence-item">一致するWikipedia根拠なし</li>';
   }
@@ -435,7 +544,7 @@ function battleEvidence(character) {
       (item) => `
         <li class="evidence-item">
           ${escapeHtml(item.sentence)}
-          <span class="evidence-rule">${escapeHtml(item.rule)} / +${escapeHtml(item.points)}</span>
+          <span class="evidence-rule">${escapeHtml(item.rule)}${item.value ? ` / IQ ${escapeHtml(item.value)}` : ` / +${escapeHtml(item.points)}`}</span>
         </li>
       `,
     )
@@ -446,6 +555,8 @@ function renderBattle() {
   if (!characters.length) return;
   const a = battleCharacter(state.battleA);
   const b = battleCharacter(state.battleB);
+  const aName = battleDisplayName(a, state.battleAStage);
+  const bName = battleDisplayName(b, state.battleBStage);
 
   elements.battleResult.innerHTML = `
     <div class="verdict">
@@ -463,14 +574,14 @@ function renderBattle() {
     </table>
     <div class="battle-evidence">
       <article class="character-card">
-        <h3>${escapeHtml(a.name)}</h3>
+        <h3>${escapeHtml(aName)}</h3>
         <details class="evidence-details">
           <summary>比較根拠を表示</summary>
           <ul class="evidence-list">${battleEvidence(a)}</ul>
         </details>
       </article>
       <article class="character-card">
-        <h3>${escapeHtml(b.name)}</h3>
+        <h3>${escapeHtml(bName)}</h3>
         <details class="evidence-details">
           <summary>比較根拠を表示</summary>
           <ul class="evidence-list">${battleEvidence(b)}</ul>
@@ -532,12 +643,20 @@ function bindEvents() {
     }
     render();
   });
-  elements.battleA.addEventListener("change", (event) => {
+  elements.battleA.addEventListener("input", (event) => {
     state.battleA = event.target.value;
     render();
   });
-  elements.battleB.addEventListener("change", (event) => {
+  elements.battleB.addEventListener("input", (event) => {
     state.battleB = event.target.value;
+    render();
+  });
+  elements.battleAStage.addEventListener("input", (event) => {
+    state.battleAStage = event.target.value;
+    render();
+  });
+  elements.battleBStage.addEventListener("input", (event) => {
+    state.battleBStage = event.target.value;
     render();
   });
   elements.battleMode.addEventListener("change", (event) => {
