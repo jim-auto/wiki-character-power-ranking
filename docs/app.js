@@ -1,20 +1,34 @@
 const scoreKeys = ["attack", "defense", "speed", "abilities", "feats", "scale"];
+const scoreLabels = {
+  attack: "攻撃",
+  defense: "防御",
+  speed: "速度",
+  abilities: "能力",
+  feats: "実績",
+  scale: "影響範囲",
+};
+const mediaLabels = {
+  manga: "漫画",
+  anime: "アニメ",
+  movie: "映画",
+  comic: "コミック",
+};
 const conditionMeta = [
-  { key: "superpower", label: "Superpower" },
-  { key: "modified", label: "Modified" },
-  { key: "technology", label: "Technology" },
-  { key: "magic", label: "Magic" },
-  { key: "weapon", label: "Weapon" },
-  { key: "non_human", label: "Non-human" },
-  { key: "god_or_deity", label: "God/deity" },
-  { key: "alien", label: "Alien" },
-  { key: "robot_ai", label: "Robot/AI" },
-  { key: "martial_artist", label: "Martial artist" },
-  { key: "military", label: "Military" },
-  { key: "leader", label: "Leader" },
-  { key: "detective_genius", label: "Detective/genius" },
-  { key: "transformation", label: "Transformation" },
-  { key: "immortal", label: "Immortal" },
+  { key: "superpower", label: "超能力あり" },
+  { key: "modified", label: "改造あり" },
+  { key: "technology", label: "技術/装備" },
+  { key: "magic", label: "魔法/呪い" },
+  { key: "weapon", label: "武器あり" },
+  { key: "non_human", label: "人間以外" },
+  { key: "god_or_deity", label: "神格" },
+  { key: "alien", label: "宇宙人" },
+  { key: "robot_ai", label: "ロボット/AI" },
+  { key: "martial_artist", label: "格闘" },
+  { key: "military", label: "軍人/兵士" },
+  { key: "leader", label: "リーダー" },
+  { key: "detective_genius", label: "天才/探偵" },
+  { key: "transformation", label: "変身" },
+  { key: "immortal", label: "不死/再生" },
 ];
 const conditionKeys = conditionMeta.map((item) => item.key);
 const conditionLabels = Object.fromEntries(conditionMeta.map((item) => [item.key, item.label]));
@@ -180,7 +194,7 @@ function filteredCharacters() {
 function populateFilters() {
   const universes = [...new Set(characters.map((character) => character.universe).filter(Boolean))].sort();
   elements.universeFilter.innerHTML = [
-    '<option value="all">All</option>',
+    '<option value="all">すべて</option>',
     ...universes.map((universe) => `<option value="${escapeHtml(universe)}">${escapeHtml(universe)}</option>`),
   ].join("");
   if (state.universe !== "all" && !universes.includes(state.universe)) state.universe = "all";
@@ -231,7 +245,7 @@ function dimensionBars(character) {
       return `
         <div class="dimension">
           <div class="dimension-label">
-            <span>${escapeHtml(key)}</span>
+            <span>${escapeHtml(scoreLabels[key] ?? key)}</span>
             <span>${value}</span>
           </div>
           <div class="bar" aria-hidden="true">
@@ -249,12 +263,12 @@ function evidenceForPower(character) {
     .map((key) => {
       const items = evidence[key] ?? [];
       if (!items.length) {
-        return `<li class="evidence-item"><strong>${escapeHtml(key)}</strong><span class="evidence-rule">no matched Wikipedia evidence</span></li>`;
+        return `<li class="evidence-item"><strong>${escapeHtml(scoreLabels[key] ?? key)}</strong><span class="evidence-rule">一致するWikipedia根拠なし</span></li>`;
       }
       const top = items[0];
       return `
         <li class="evidence-item">
-          <strong>${escapeHtml(key)}</strong>: ${escapeHtml(top.sentence)}
+          <strong>${escapeHtml(scoreLabels[key] ?? key)}</strong>: ${escapeHtml(top.sentence)}
           <span class="evidence-rule">${escapeHtml(top.rule)} / +${escapeHtml(top.points)}</span>
         </li>
       `;
@@ -265,7 +279,7 @@ function evidenceForPower(character) {
 function evidenceForIq(character) {
   const items = character.iq_evidence ?? [];
   if (!items.length) {
-    return '<li class="evidence-item"><strong>iq</strong><span class="evidence-rule">no matched Wikipedia evidence</span></li>';
+    return '<li class="evidence-item"><strong>推定IQ</strong><span class="evidence-rule">一致するWikipedia根拠なし</span></li>';
   }
   return items
     .slice(0, 3)
@@ -282,7 +296,7 @@ function evidenceForIq(character) {
 
 function characterCard(character, index) {
   const primaryScore = scoreFor(character);
-  const titleScore = state.view === "iq" ? `${primaryScore}/10 IQ` : `${primaryScore}/60`;
+  const titleScore = state.view === "iq" ? `推定IQ ${primaryScore}/10` : `${primaryScore}/60`;
   const evidence = state.view === "iq" ? evidenceForIq(character) : evidenceForPower(character);
   const iqWidth = Math.max(0, Math.min(100, Number(character.iq_score ?? 0) * 10));
   const flags = character.condition_flags ?? {};
@@ -298,9 +312,9 @@ function characterCard(character, index) {
         <div>
           <h3>${escapeHtml(character.name)}</h3>
           <div class="meta-line">
-            <span>${escapeHtml(character.media_type)}</span>
+            <span>${escapeHtml(mediaLabels[character.media_type] ?? character.media_type)}</span>
             <span>${escapeHtml(character.universe)}</span>
-            <a href="${escapeHtml(character.wikipedia_url)}">Wikipedia</a>
+            <a href="${escapeHtml(character.wikipedia_url)}">出典</a>
           </div>
           <div class="flag-line">${flagChips}</div>
         </div>
@@ -311,7 +325,7 @@ function characterCard(character, index) {
       </div>
       <div class="dimension-grid">${dimensionBars(character)}</div>
       <div class="dimension">
-        <div class="dimension-label"><span>IQ</span><span>${escapeHtml(character.iq_score ?? 0)}</span></div>
+        <div class="dimension-label"><span>推定IQ</span><span>${escapeHtml(character.iq_score ?? 0)}</span></div>
         <div class="bar" aria-hidden="true"><div class="bar-fill iq" style="width: ${iqWidth}%"></div></div>
       </div>
       <ul class="evidence-list">${evidence}</ul>
@@ -321,11 +335,11 @@ function characterCard(character, index) {
 
 function renderRanking() {
   const ranked = filteredCharacters();
-  elements.rankingTitle.textContent = state.view === "iq" ? "IQ Ranking" : "Power Ranking";
+  elements.rankingTitle.textContent = state.view === "iq" ? "推定IQランキング" : "強さランキング";
   elements.resultCount.textContent = String(ranked.length);
   elements.rankingList.innerHTML = ranked.length
     ? ranked.map(characterCard).join("")
-    : '<div class="empty-state">No matching records.</div>';
+    : '<div class="empty-state">該当するキャラクターがありません。</div>';
 }
 
 function battleCharacter(name) {
@@ -341,29 +355,29 @@ function battleVerdict(a, b) {
   const bScore = battleScore(b);
   const diff = Math.abs(aScore - bScore);
   if (aScore === bScore) {
-    return "Draw by current evidence scores.";
+    return "現在の根拠スコアでは引き分けです。";
   }
   const winner = aScore > bScore ? a : b;
-  const label = diff >= 8 ? "favored" : "slight edge";
-  return `${winner.name} is ${label} by ${diff} point(s).`;
+  const label = diff >= 8 ? "優勢" : "やや優勢";
+  return `${winner.name} が ${diff} 点差で${label}です。`;
 }
 
 function battleRows(a, b) {
   const rows = scoreKeys.map((key) => {
     const aValue = Number(a.scores?.[key] ?? 0);
     const bValue = Number(b.scores?.[key] ?? 0);
-    const edge = aValue === bValue ? "even" : aValue > bValue ? a.name : b.name;
-    return `<tr><td>${escapeHtml(key)}</td><td>${aValue}</td><td>${bValue}</td><td>${escapeHtml(edge)}</td></tr>`;
+    const edge = aValue === bValue ? "互角" : aValue > bValue ? a.name : b.name;
+    return `<tr><td>${escapeHtml(scoreLabels[key] ?? key)}</td><td>${aValue}</td><td>${bValue}</td><td>${escapeHtml(edge)}</td></tr>`;
   });
 
   const iqEdge =
     Number(a.iq_score ?? 0) === Number(b.iq_score ?? 0)
-      ? "even"
+      ? "互角"
       : Number(a.iq_score ?? 0) > Number(b.iq_score ?? 0)
         ? a.name
         : b.name;
   rows.push(
-    `<tr><td>iq_score</td><td>${Number(a.iq_score ?? 0)}</td><td>${Number(b.iq_score ?? 0)}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
+    `<tr><td>推定IQ</td><td>${Number(a.iq_score ?? 0)}</td><td>${Number(b.iq_score ?? 0)}</td><td>${escapeHtml(iqEdge)}</td></tr>`,
   );
   return rows.join("");
 }
@@ -376,7 +390,7 @@ function battleEvidence(character) {
 
   const sorted = [...items].sort((a, b) => Number(b.points ?? 0) - Number(a.points ?? 0)).slice(0, 4);
   if (!sorted.length) {
-    return '<li class="evidence-item">no matched Wikipedia evidence</li>';
+    return '<li class="evidence-item">一致するWikipedia根拠なし</li>';
   }
   return sorted
     .map(
@@ -405,7 +419,7 @@ function renderBattle() {
     </div>
     <table class="comparison-table">
       <thead>
-        <tr><th>Dimension</th><th>A</th><th>B</th><th>Edge</th></tr>
+        <tr><th>項目</th><th>A</th><th>B</th><th>優勢</th></tr>
       </thead>
       <tbody>${battleRows(a, b)}</tbody>
     </table>
@@ -488,7 +502,7 @@ async function boot() {
   try {
     const response = await fetch("./data/characters.json");
     if (!response.ok) {
-      throw new Error(`Failed to load data: ${response.status}`);
+      throw new Error(`データの読み込みに失敗しました: ${response.status}`);
     }
     characters = await response.json();
     applyQueryState();

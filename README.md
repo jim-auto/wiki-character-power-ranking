@@ -1,25 +1,28 @@
 # wiki-character-power-index
 
-Wikipediaの記述だけでキャラクターの強さを評価する。
+Wikipedia日本語版の記述だけでキャラクターの強さを評価する。
 
-`wiki-character-power-index` は、漫画、アニメ、映画、Marvel / DCコミックのキャラクターを、Wikipediaに書かれている文章だけを根拠に抽出、スコアリング、ランキング化するための小さなPythonプロジェクトです。
+`wiki-character-power-index` は、漫画、アニメ、映画、Marvel / DCコミックのキャラクターを、日本語版Wikipediaに書かれている文章だけを根拠に抽出、採点、ランキング化する小さなPythonプロジェクトです。
 
-## Core Constraints
+公開UI: https://jim-auto.github.io/wiki-character-power-ranking/
 
-- 外部知識なし。
-- 原作知識なし。
-- ファン解釈なし。
-- テキスト根拠のみ。
-- すべてのスコアは根拠文とルールを表示できること。
+## 制約
 
-このプロジェクトは「本当に誰が強いか」を決めるものではありません。Wikipedia上の文章表現から、再現可能なルールでスコアを付けるためのシステムです。
+- 外部知識なし
+- 原作知識なし
+- ファン解釈なし
+- 日本語版Wikipedia本文とメタデータのみを使用
+- すべてのスコアに根拠文と一致したルールを残す
 
-## Repository Structure
+このプロジェクトは「本当に誰が強いか」を決めるものではありません。Wikipedia日本語版の文章に、強さ、能力、実績、知性、影響範囲がどのように書かれているかを、再現可能なルールで数値化するものです。
+
+## リポジトリ構成
 
 ```text
 /data/
   characters.yaml
   seed_characters.yaml
+  ja_wikipedia_resolution_report.yaml
 
 /src/
   fetch_wikipedia.py
@@ -28,6 +31,7 @@ Wikipediaの記述だけでキャラクターの強さを評価する。
   ranking.py
   battle.py
   sync_seed_characters.py
+  resolve_ja_wikipedia.py
   condition_flags.py
   export_site_data.py
 
@@ -43,7 +47,7 @@ README.md
 requirements.txt
 ```
 
-## Data Model
+## データモデル
 
 ```yaml
 character:
@@ -82,11 +86,11 @@ character:
   condition_evidence: object
 ```
 
-`score_evidence` は各スコアの根拠を表示するための拡張フィールドです。
-`iq_score` は実IQではなく、Wikipedia本文に含まれる知性・戦術・科学・探偵能力などの表現を0-10点化した根拠付き指標です。
-`condition_flags` は、条件フィルタ用にWikipedia本文の語句マッチから付与されるフラグです。
+`iq_score` は実際のIQではありません。日本語版Wikipedia本文に「天才」「科学者」「戦略」「発明」「探偵」などの知性に関係する表現がどれだけ強く出ているかを示す、根拠文付きの0-10点指標です。
 
-## Setup
+`condition_flags` は、GitHub Pages UIで条件オン/オフ検索をするためのフラグです。超能力あり、改造あり、技術/装備、魔法/呪い、武器あり、人間以外、神格、宇宙人、ロボット/AI、格闘、軍人/兵士、リーダー、天才/探偵、変身、不死/再生を扱います。
+
+## セットアップ
 
 ```bash
 python -m venv .venv
@@ -102,83 +106,52 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-## Usage
+## 日本語版Wikipediaへの解決
 
-### 1. Wikipediaページを取得する
+seedリストのURLを日本語版Wikipediaへ寄せます。Wikidataの日本語版サイトリンクを優先し、必要に応じて日本語版Wikipedia検索にフォールバックします。
 
 ```bash
-python src/fetch_wikipedia.py --input data/characters.yaml --output data/characters.yaml
+python src/resolve_ja_wikipedia.py \
+  --input data/seed_characters.yaml \
+  --output data/seed_characters.yaml \
+  --report data/ja_wikipedia_resolution_report.yaml \
+  --search-fallback
 ```
 
-リード文だけ取得する場合:
+単独のキャラクターページが日本語版Wikipediaにない場合は、登場人物一覧や作品ページがソースになることがあります。その場合も `ja.wikipedia.org` の本文だけを使います。
+
+## データ再生成
 
 ```bash
-python src/fetch_wikipedia.py --intro-only
-```
-
-大量取得でMediaWiki Action APIが一時的に429を返す場合は、公式REST summaryエンドポイントを使います。
-
-```bash
-python src/fetch_wikipedia.py --source rest-summary --missing-only
-```
-
-### 2. 強さ関連の文章を抽出する
-
-```bash
-python src/extract_features.py --input data/characters.yaml --output data/characters.yaml
-```
-
-抽出カテゴリ:
-
-- `abilities`: 能力、技、装備、訓練、知性。
-- `feats`: 戦績、勝利、保護、救出、戦闘。
-- `statements`: 強さやスケールに関係する評価、描写。
-
-### 3. テキスト根拠でスコアリングする
-
-```bash
-python src/scoring.py --input data/characters.yaml --output data/characters.yaml
-```
-
-スコア項目:
-
-- `attack`
-- `defense`
-- `speed`
-- `abilities`
-- `feats`
-- `scale`
-
-各項目は0-10点です。`total_score` は6項目の合計で、最大60点です。
-
-### 4. ランキングを出力する
-
-```bash
-python src/ranking.py --input data/characters.yaml
-```
-
-Markdownファイルに保存:
-
-```bash
-python src/ranking.py --output ranking.md
-```
-
-JSONで出力:
-
-```bash
-python src/ranking.py --format json --output ranking.json
-```
-
-GitHub Pages用のJSONを更新:
-
-```bash
+python src/sync_seed_characters.py --reset-derived
+python src/fetch_wikipedia.py --source rest-summary --missing-only --sleep 0
+python src/extract_features.py
+python src/scoring.py
+python src/condition_flags.py
 python src/export_site_data.py
 ```
 
-seedリストから `characters.yaml` を同期:
+処理内容:
+
+1. seedリストを `data/characters.yaml` に同期する
+2. 日本語版Wikipediaから本文を取得する
+3. 強さに関係する文を抽出する
+4. `abilities` / `feats` / `statements` に分類する
+5. 強さ、推定IQ、条件フラグをルールベースで付ける
+6. GitHub Pages用の `docs/data/characters.json` を出力する
+
+より長い本文を試す場合は、REST HTML本文をプレーンテキスト化するモードも使えます。Wikipedia側の429制限を受けた場合は、`Retry-After` に従って待機するか、`rest-summary` に戻します。
 
 ```bash
-python src/sync_seed_characters.py
+python src/fetch_wikipedia.py --source rest-html --missing-only --sleep 0.5 --save-every 100
+```
+
+## ランキング出力
+
+強さランキング:
+
+```bash
+python src/ranking.py --input data/characters.yaml
 ```
 
 推定IQランキング:
@@ -187,7 +160,19 @@ python src/sync_seed_characters.py
 python src/ranking.py --ranking-type iq
 ```
 
-## Filters
+Markdown保存:
+
+```bash
+python src/ranking.py --output ranking.md
+```
+
+JSON保存:
+
+```bash
+python src/ranking.py --format json --output ranking.json
+```
+
+## フィルタ
 
 メディア種別:
 
@@ -195,7 +180,7 @@ python src/ranking.py --ranking-type iq
 python src/ranking.py --media-type manga
 ```
 
-ユニバース:
+作品/ユニバース:
 
 ```bash
 python src/ranking.py --universe MCU
@@ -207,64 +192,58 @@ python src/ranking.py --universe MCU
 python src/ranking.py --min-score 30 --max-score 45
 ```
 
-特定スコアだけで範囲指定:
+特定スコアだけで絞り込み:
 
 ```bash
 python src/ranking.py --score-key attack --min-score 6
 ```
 
-推定IQスコアで範囲指定:
+推定IQで絞り込み:
 
 ```bash
 python src/ranking.py --ranking-type iq --min-score 5
 ```
 
-GitHub PagesのUIでは、さらに条件をオンオフできます。
-
-- `superpower`: 超能力、超人的能力、特殊能力などの記述あり。
-- `modified`: 改造、人工、強化、サイボーグなどの記述あり。
-- `technology`: 技術、装甲、機械、デバイスなどの記述あり。
-- `magic`: 魔法、呪い、魔術、神秘的能力などの記述あり。
-- `weapon`: 武器、剣、銃、兵器などの記述あり。
-
-これらもWikipedia本文の語句マッチだけで付与されます。
-
-追加条件:
-
-- `non_human`
-- `god_or_deity`
-- `alien`
-- `robot_ai`
-- `martial_artist`
-- `military`
-- `leader`
-- `detective_genius`
-- `transformation`
-- `immortal`
-
-フィルタ状態はURLに保存されます。
+GitHub Pages UIでは、条件フィルタをオン/オフできます。URLにも状態が残ります。
 
 ```text
 ?view=power&media=comic&universe=Marvel&conditions=superpower,magic&min=20
 ```
 
-## Battle Mode
+## バトル比較
 
-2人のキャラクターを、Wikipedia根拠スコアだけで比較できます。
+2人のキャラクターを、すでに計算済みのWikipedia根拠スコアで比較します。
 
 ```bash
 python src/battle.py --a "孫悟空" --b "バットマン"
 ```
 
-モード:
+比較モード:
 
 ```bash
-python src/battle.py --a "アイアンマン" --b "バットマン" --mode power
-python src/battle.py --a "アイアンマン" --b "バットマン" --mode iq
-python src/battle.py --a "アイアンマン" --b "バットマン" --mode balanced
+python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --mode power
+python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --mode iq
+python src/battle.py --a "アイアンマン（MCU）" --b "バットマン" --mode balanced
 ```
 
-`battle.py` は完全な架空戦闘シミュレーションではありません。相性、弱点、戦場、原作設定は推測せず、データ内のWikipedia根拠文とスコア差だけを表示します。
+`battle.py` は完全な架空戦闘シミュレーションではありません。性格、弱点、相性、戦場、原作展開は推測せず、本文に出た根拠文とスコア差だけを表示します。
+
+## 出力例
+
+```text
+# Character Power Ranking
+
+## 1. 五条悟 - 12点 / Tier C
+- source: https://ja.wikipedia.org/wiki/五条悟
+- media_type: manga
+- universe: Jujutsu Kaisen
+- scores: attack=5, defense=0, speed=0, abilities=4, feats=0, scale=3
+- evidence:
+  - attack: （日本語版Wikipedia本文から一致した文） [strong expression / +5]
+  - abilities: （日本語版Wikipedia本文から一致した文） [technique expression / +4]
+```
+
+実際の出力では、各スコアに対して根拠文、一致したルール、加点値が表示されます。
 
 ## GitHub Pages
 
@@ -277,72 +256,17 @@ Branch: main
 Folder: /docs
 ```
 
-このリポジトリ名のまま公開する場合、URLは次の形式です。
+公開URL:
 
 ```text
 https://jim-auto.github.io/wiki-character-power-ranking/
 ```
 
-キャラクター追加後は、次の順で再生成します。
+## 初期データ
 
-```bash
-python src/sync_seed_characters.py
-python src/fetch_wikipedia.py --intro-only
-# 429が出る場合:
-# python src/fetch_wikipedia.py --source rest-summary --missing-only
-python src/extract_features.py
-python src/scoring.py
-python src/condition_flags.py
-python src/export_site_data.py
-```
+現在のサンプルデータは500キャラクターです。全レコードの `wikipedia_url` は日本語版Wikipediaを指します。
 
-## Output Example
-
-```text
-# Character Power Ranking
-
-## 1. 孫悟空 - 40 pts / Tier A
-- source: https://en.wikipedia.org/wiki/Goku
-- media_type: manga
-- universe: Dragon Ball
-- scores: attack=9, defense=3, speed=5, abilities=10, feats=6, scale=7
-- evidence:
-  - attack: Goku is Earth's mightiest warrior... [strong expression: mightiest, +5]
-  - defense: Goku is Earth's mightiest warrior... [protection expression, +3]
-  - speed: ...teleportation. [teleportation expression, +5]
-```
-
-実際の出力では、各スコアに対して根拠文、マッチしたルール、加点値が表示されます。
-
-## Scoring
-
-スコアリングは `src/scoring.py` のルール表だけで決まります。
-
-例:
-
-- 弱い表現: `trained`, `martial arts`, `熟練` は低加点。
-- 強い表現: `mightiest`, `superhuman`, `invincible`, `最強`, `無敵` は高加点。
-- `defeat`, `protect`, `battle` などの明示的行動は `feats` に加点。
-- `city`, `nation`, `planet`, `universe` などの影響範囲は `scale` に加点。
-
-詳しくは [docs/scoring_rules.md](docs/scoring_rules.md) を参照してください。
-
-## Text-Evidence IQ Ranking
-
-強さとは別に、`iq_score` で推定IQランキングを出せます。
-
-対象表現の例:
-
-- `genius`, `intellect`, `detective`
-- `scientist`, `inventor`, `engineer`
-- `strategy`, `tactical`
-- `天才`, `知性`, `科学`, `技術`, `戦略`, `戦術`, `探偵`
-
-これは「実際のIQ」ではありません。Wikipediaに知性関連の表現がどれだけ強く書かれているかを測るランキングです。
-
-## Sample Data
-
-`data/characters.yaml` には500人分のサンプルキャラクターが入っています。候補の正本は `data/seed_characters.yaml` です。
+代表例:
 
 - 孫悟空
 - うずまきナルト
@@ -362,28 +286,24 @@ python src/export_site_data.py
 - ワンダーウーマン
 - スパイダーマン
 - ハルク
-- ソー
 - レックス・ルーサー
 
-上記は初期候補の一部です。各キャラクターには、Wikipedia URL、メディア種別、ユニバース、根拠文、スコア、tierが含まれます。
+## スコアリング
 
-## Methodology
+スコアリングは `src/scoring.py` の正規表現ルールだけで決まります。
 
-詳細な処理方針は [docs/methodology.md](docs/methodology.md) にあります。
+- 弱い表現: `熟練`, `訓練`, `格闘`, `剣術` などは低加点
+- 強い表現: `最強`, `超人的`, `無敵`, `破壊`, `壊滅` などは高加点
+- 戦績表現: `倒す`, `勝利`, `救う`, `守る`, `戦う` などは `feats` に加点
+- 影響範囲: `都市`, `国家`, `世界`, `地球`, `宇宙`, `次元` などは `scale` に加点
 
-処理フロー:
+詳しくは [docs/scoring_rules.md](docs/scoring_rules.md) を参照してください。
 
-1. Wikipediaページを取得する。
-2. 強さに関係する文章を抽出する。
-3. `abilities` / `feats` / `statements` に分類する。
-4. 文章表現だけでスコアリングする。
-5. フィルタ付きランキングとして出力する。
+## 将来拡張
 
-## Future Extensions
-
-- API化。
-- Web UIによる検索、フィルタ、ランキング表示。
-- Wikipedia revision IDを使った自動更新。
-- 複数Wikipediaページを持つキャラクター記録。
-- ルール変更によるランキング差分レポート。
-- バトルモードのUI化と比較条件の追加。
+- API化
+- Web UIの検索、フィルタ、比較機能の拡張
+- Wikipedia revision IDを使った自動更新
+- 複数ページを根拠に持つキャラクター設計
+- ルール変更によるランキング差分レポート
+- バトルモードの条件指定追加

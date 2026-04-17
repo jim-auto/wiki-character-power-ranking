@@ -1,29 +1,26 @@
-# Methodology
+# 方法論
 
-`wiki-character-power-index` evaluates fictional character strength using Wikipedia text only.
+`wiki-character-power-index` は、日本語版Wikipediaの本文だけを根拠に、架空キャラクターの強さ、推定IQ、条件フラグを評価します。
 
-The project is not a canon database, fan wiki, battle-board system, or original-work analysis tool. It is a text-grounded ranking pipeline.
+このプロジェクトは、原作データベース、ファンWiki、対戦考察サイト、作品解釈ツールではありません。Wikipedia日本語版に書かれている文章を、ルールベースでランキング化するためのパイプラインです。
 
-## Pipeline
+## 処理フロー
 
-1. `data/seed_characters.yaml` stores the canonical character candidate list.
-2. `src/sync_seed_characters.py` synchronizes the seed list into `data/characters.yaml`.
-3. `src/fetch_wikipedia.py` fetches the Wikipedia page extract listed in `wikipedia_url`.
-   It can use either MediaWiki Action API extracts or the official REST summary endpoint.
-4. `src/extract_features.py` splits `description_raw` into sentences and keeps strength-related sentences.
-5. Extracted sentences are classified into:
-   - `abilities`: powers, equipment, training, skills, named techniques.
-   - `feats`: explicit actions, battles, victories, saves, protection.
-   - `statements`: descriptive strength claims or scale statements.
-6. `src/scoring.py` applies deterministic text rules and records evidence.
-7. `src/condition_flags.py` derives UI filter flags from Wikipedia-derived wording.
-8. `src/ranking.py` filters and renders power or text-evidence IQ rankings.
-9. `src/battle.py` compares two characters using the already-computed evidence scores.
-10. `src/export_site_data.py` exports `docs/data/characters.json` for GitHub Pages.
+1. `data/seed_characters.yaml` にキャラクター候補を管理する。
+2. `src/resolve_ja_wikipedia.py` でURLを日本語版Wikipediaへ解決する。
+3. `src/sync_seed_characters.py` でseedリストを `data/characters.yaml` に同期する。
+4. `src/fetch_wikipedia.py` で `wikipedia_url` の日本語版Wikipedia本文を取得する。
+5. `src/extract_features.py` で本文を文に分割し、強さに関係する文だけを抽出する。
+6. 抽出文を `abilities`、`feats`、`statements` に分類する。
+7. `src/scoring.py` で決定的なテキストルールを適用し、根拠文を保存する。
+8. `src/condition_flags.py` でUI用の条件フラグを作る。
+9. `src/ranking.py` で強さランキングまたは推定IQランキングを出力する。
+10. `src/battle.py` で2キャラクターを根拠スコアだけで比較する。
+11. `src/export_site_data.py` でGitHub Pages用JSONを出力する。
 
-## Data Contract
+## データ契約
 
-Each character record follows this structure:
+各キャラクターは次の構造を持ちます。
 
 ```yaml
 name: string
@@ -57,46 +54,57 @@ condition_flags: object
 condition_evidence: object
 ```
 
-`score_evidence` is an implementation extension that makes the score auditable. It is required for ranking output even though the minimal model can be represented without it.
+`score_evidence` は、スコアを監査できるようにするための拡張フィールドです。ランキング表示では必須です。
 
-`iq_score` is also an implementation extension. It means "Wikipedia text contains intelligence-related evidence" and does not mean real IQ.
+`iq_score` は実際のIQではありません。日本語版Wikipedia本文に知性、発明、科学、戦略、探偵能力などの表現がどれだけあるかを測る指標です。
 
-`condition_flags` are deterministic UI filters. They indicate that Wikipedia-derived text matched terms for `superpower`, `modified`, `technology`, `magic`, or `weapon`.
-The current flag set also includes `non_human`, `god_or_deity`, `alien`, `robot_ai`, `martial_artist`, `military`, `leader`, `detective_genius`, `transformation`, and `immortal`.
+`condition_flags` は、Wikipedia本文の語句一致だけで付与されます。現在は、超能力あり、改造あり、技術/装備、魔法/呪い、武器あり、人間以外、神格、宇宙人、ロボット/AI、格闘、軍人/兵士、リーダー、天才/探偵、変身、不死/再生を扱います。
 
-## Wikipedia-Only Constraint
+## 日本語版Wikipediaのみの制約
 
-Allowed:
+許可するもの:
 
-- Wikipedia article text fetched from the page in `wikipedia_url`.
-- Wikipedia page title and revision metadata returned by the MediaWiki API or REST summary endpoint.
-- Deterministic string rules stored in this repository.
+- `wikipedia_url` に指定された日本語版Wikipedia本文
+- MediaWiki APIまたはREST Summaryが返すページタイトル、pageid、revision ID
+- このリポジトリ内にある決定的な文字列ルール
 
-Not allowed:
+許可しないもの:
 
-- Original manga, anime, film, or comic knowledge.
-- Fan wiki information.
-- Personal interpretation of a character's power.
-- Inferred feats not written in the Wikipedia text.
-- Cross-page enrichment unless that page is explicitly added to the record design in a future schema version.
+- 原作漫画、アニメ、映画、コミックの知識
+- ファンWikiや外部DB
+- 個人的な強さ解釈
+- Wikipedia本文に書かれていない実績の推測
+- 将来スキーマで明示的に追加されていない別ページからの補強
 
-## Initial Milestone
+## 500キャラクターの目標
 
-The sample data now starts from a 500-character seed list. The current public milestone is:
+現在のサンプルデータは500キャラクターです。
 
-- 209 manga/anime characters
-- 144 movie characters
-- 147 Marvel/DC comic characters
+- 漫画/アニメ: 209件
+- 映画: 144件
+- Marvel / DCコミック: 147件
 
-The fetched text uses Wikipedia lead extracts by default for readability. For production runs, refresh `description_raw` with `src/fetch_wikipedia.py --intro-only`, then re-run extraction and scoring. If the Action API rate-limits a large refresh, use `src/fetch_wikipedia.py --source rest-summary --missing-only`.
+日本語版Wikipediaに単独キャラクターページがない場合、登場人物一覧や作品ページをソースにします。そのため、同じ日本語ページを複数キャラクターが共有する場合があります。どのURLへ解決されたかは `data/ja_wikipedia_resolution_report.yaml` で確認できます。
 
-## Future Extensions
+## 再生成手順
 
-The current structure is intentionally modular so these additions can be made without changing the scoring contract:
+```bash
+python src/resolve_ja_wikipedia.py --input data/seed_characters.yaml --output data/seed_characters.yaml --report data/ja_wikipedia_resolution_report.yaml --search-fallback
+python src/sync_seed_characters.py --reset-derived
+python src/fetch_wikipedia.py --source rest-summary --missing-only --sleep 0
+python src/extract_features.py
+python src/scoring.py
+python src/condition_flags.py
+python src/export_site_data.py
+```
 
-- API: expose ranking and filtering through a small HTTP service.
-- Web UI: add search, filters, score breakdowns, and evidence views.
-- Automatic updates: scheduled Wikipedia refresh with revision tracking.
-- Multi-page records: support separate source pages for character profile, equipment, and media-specific variants.
-- Rule audit tooling: report which rules most often affect rankings.
-- Battle mode variants: compare by power, IQ evidence, or balanced score while preserving sentence evidence.
+公開サンプルは、安定取得のため `rest-summary` を使用しています。`rest-html` を指定すると日本語版WikipediaのHTML本文をプレーンテキスト化して使えますが、短時間に大量取得するとWikipedia側の429制限を受けるため、`--sleep` と `--save-every` の指定を推奨します。
+
+## 将来拡張
+
+- API: ランキング、検索、比較をHTTP APIで返す。
+- Web UI: 条件検索、スコア内訳、根拠文表示を強化する。
+- 自動更新: Wikipedia revision IDを保存し、更新差分だけ再取得する。
+- 複数ページ対応: キャラクター、装備、映画版などのソースを分けて扱う。
+- ルール監査: どのルールがランキングに影響しているかを集計する。
+- バトル条件: 超能力あり/なし、改造あり/なし、武器あり/なしなどの条件別比較を追加する。

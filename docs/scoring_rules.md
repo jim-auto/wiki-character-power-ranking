@@ -1,102 +1,100 @@
-# Scoring Rules
+# スコアリングルール
 
-This project scores characters only from text found in each record's `description_raw` and `extracted` fields. Those fields must come from Wikipedia.
+このプロジェクトは、各レコードの `description_raw` と `extracted` に入っている日本語版Wikipedia本文だけを使って採点します。
 
-No score may be raised because of outside knowledge, original work familiarity, fan interpretation, power-scaling debates, or unstated assumptions.
+外部知識、原作知識、ファン解釈、パワースケーリング議論、本文にない推測でスコアを上げることは禁止です。
 
-## Score Dimensions
+## スコア項目
 
-Each dimension is scored from 0 to 10. Most scores are the capped sum of deterministic text-rule matches. `scale` uses the highest explicit scope found, so repeated mentions of the same scope do not inflate it. Every match stores the sentence, matched rule, and point value in `score_evidence`.
+各項目は0-10点です。多くの項目は、正規表現ルールに一致した加点の合計を10点で打ち切ります。`scale` は、本文中に明示された最大の影響範囲だけを採用します。すべての一致は、根拠文、一致ルール、加点値として `score_evidence` に保存されます。
 
-| Dimension | Meaning |
+| 項目 | 意味 |
 | --- | --- |
-| `attack` | Offensive force, attacks, weapons, destructive language, combat language. |
-| `defense` | Durability, armor, shielding, survivability, containment, protection. |
-| `speed` | Speed wording, flight, teleportation, fast movement. |
-| `abilities` | Named powers, techniques, superhuman traits, special equipment, training, intellect. |
-| `feats` | Explicit accomplishments such as defeating, saving, protecting, or fighting opponents. |
-| `scale` | Textual scope of influence, such as city, nation, planet, world, universe. |
+| `attack` | 攻撃力、攻撃手段、武器、破壊表現、戦闘表現 |
+| `defense` | 耐久、防具、防御、保護、生存、盾やバリア |
+| `speed` | 速さ、飛行、瞬間移動、高速移動 |
+| `abilities` | 能力、技、超人的特徴、特殊装備、訓練、知性 |
+| `feats` | 倒す、勝利、救う、守る、戦うなどの明示的な実績 |
+| `scale` | 都市、国家、世界、地球、宇宙、次元などの影響範囲 |
 
-`total_score` is the sum of the six dimensions, so it ranges from 0 to 60.
+`total_score` は6項目の合計で、0-60点です。
 
-## Text-Evidence IQ Score
+## 推定IQスコア
 
-`iq_score` is a separate 0-10 index for ranking intelligence-related wording. It is not a real IQ estimate and must not be read as a psychological measurement.
+`iq_score` は0-10点の知性表現インデックスです。心理測定としてのIQではありません。
 
-It is based only on expressions such as:
-
-| Text type | Example expressions | Typical points |
+| 表現タイプ | 例 | 典型加点 |
 | --- | --- | --- |
-| Genius wording | `genius`, `天才` | 5 |
-| Invention/science | `inventor`, `engineer`, `scientist`, `発明`, `科学者` | 4 |
-| Strategy/tactics | `strategy`, `tactical`, `戦略`, `戦術` | 4 |
-| Detective ability | `detective`, `探偵` | 3 |
-| Intellect wording | `intellect`, `intellectual`, `知性`, `知能` | 3 |
-| Science/technology | `science and technology`, `technology`, `nanotechnology`, `科学`, `技術` | 3 |
+| 天才表現 | `天才`, ` genius ` | 5 |
+| 発明/科学 | `発明`, `科学者`, `技術者`, `inventor`, `scientist`, `engineer` | 4 |
+| 戦略/戦術 | `戦略`, `戦術`, `作戦`, `strategy`, `tactical` | 4 |
+| 探偵能力 | `探偵`, `推理`, `detective` | 3 |
+| 知性表現 | `知性`, `知能`, `頭脳`, `intellect` | 3 |
+| 科学/技術 | `科学`, `技術`, `ナノテクノロジー`, `technology` | 3 |
 
-## Tier Thresholds
+## Tier
 
-| Tier | Total score |
+| Tier | total_score |
 | --- | --- |
 | S | 42-60 |
 | A | 30-41 |
 | B | 18-29 |
 | C | 0-17 |
 
-## Expression Strength
+## 表現の強さ
 
-Weak expressions add low points:
+弱い表現は低加点です。
 
-| Text type | Example expressions | Typical points |
+| 表現タイプ | 例 | 典型加点 |
 | --- | --- | --- |
-| Skill/training | `trained`, `martial arts`, `fighting skills`, `熟練`, `訓練` | 2-3 |
-| Generic action | `fight`, `battle`, `protect`, `戦う`, `守る` | 2-3 |
-| Role label | `ninja`, `忍者` | 2 |
+| 技能/訓練 | `熟練`, `訓練`, `修行`, `格闘`, `剣術`, `武術` | 2-3 |
+| 一般的行動 | `戦う`, `守る`, `救う`, `fight`, `protect` | 2-3 |
+| 役割ラベル | `忍者`, `戦士`, `兵士`, `ninja`, `warrior` | 2 |
 
-Strong expressions add higher points:
+強い表現は高加点です。
 
-| Text type | Example expressions | Typical points |
+| 表現タイプ | 例 | 典型加点 |
 | --- | --- | --- |
-| Superhuman trait | `superhuman`, `超人的` | 5 |
-| Top-strength statement | `mightiest`, `strongest`, `最強` | 5 |
-| Destruction | `destroy`, `annihilate`, `破壊` | 5 |
-| Invulnerability | `invincible`, `invulnerable`, `無敵` | 7 |
-| Universe scale | `universe`, `cosmic`, `dimension`, `宇宙`, `次元` | 9 |
+| 超人的特徴 | `超人`, `超人的`, `超能力`, `superhuman` | 5 |
+| 最上級の強さ | `最強`, `最高`, `無敵`, `strongest`, `mightiest` | 5-7 |
+| 破壊 | `破壊`, `壊滅`, `destroy`, `annihilate` | 5 |
+| 防御不能/不死 | `無敵`, `不死`, `再生`, `invincible`, `immortal` | 5-7 |
+| 宇宙規模 | `宇宙`, `次元`, `銀河`, `cosmic`, `dimension` | 9 |
 
-## Scale Rules
+## 影響範囲
 
-Scale is deliberately conservative. The text must explicitly mention the scope.
+`scale` は保守的に採点します。本文に範囲が明示されている必要があります。
 
-| Scope expression | Points |
+| 範囲表現 | 点 |
 | --- | --- |
-| `city`, `都市` | 2 |
-| `village`, `村` | 3 |
-| `nation`, `country`, `国家`, `国` | 5 |
-| `world`, `世界` | 6 |
-| `planet`, `Earth`, `惑星`, `地球` | 7 |
-| `universe`, `cosmic`, `dimension`, `宇宙`, `次元` | 9 |
+| `都市`, `街`, `city` | 2 |
+| `村`, `village` | 3 |
+| `国家`, `国`, `nation`, `country` | 5 |
+| `世界`, `world` | 6 |
+| `惑星`, `地球`, `planet`, `Earth` | 7 |
+| `宇宙`, `次元`, `銀河`, `universe`, `cosmic`, `dimension` | 9 |
 
-## Reproducibility
+## 再現性
 
-The scorer is intentionally rule-based:
+採点は完全にルールベースです。
 
-1. It reads only extracted Wikipedia sentences.
-2. It applies regular-expression rules in `src/scoring.py`.
-3. It sums matched rule points per dimension, except `scale`.
-4. It scores `scale` by the highest explicit scope found.
-5. It caps each dimension at 10.
-6. It stores all matched evidence.
+1. 日本語版Wikipedia由来の抽出文だけを読む。
+2. `src/scoring.py` の正規表現ルールを適用する。
+3. `scale` 以外は一致した加点を合計する。
+4. `scale` は最大の明示範囲を採用する。
+5. 各項目を10点で打ち切る。
+6. すべての一致を根拠として保存する。
 
-Changing scores requires changing the text or changing the rule table. There is no hidden model judgment.
+スコアを変えるには、Wikipedia本文が変わるか、ルール表を変更する必要があります。隠れた主観判断はありません。
 
-## Battle Mode
+## バトル比較
 
-`src/battle.py` compares two characters by already-computed evidence scores.
+`src/battle.py` は、すでに計算済みの根拠スコアで2キャラクターを比較します。
 
-Modes:
+モード:
 
-- `power`: compare `total_score`.
-- `iq`: compare `iq_score`.
-- `balanced`: compare `total_score + iq_score`.
+- `power`: `total_score` で比較
+- `iq`: `iq_score` で比較
+- `balanced`: `total_score + iq_score` で比較
 
-Battle mode is not a complete fictional fight simulation. It does not infer matchups, weaknesses, tactics, setting, or canon outcomes unless those facts are present in the Wikipedia-derived text and score rules.
+バトル比較は完全な架空戦闘シミュレーションではありません。相性、弱点、戦場、性格、原作展開は、Wikipedia本文とルールでスコア化されていない限り推測しません。

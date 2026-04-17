@@ -24,7 +24,8 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 def save_yaml(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
+    temp_path = path.with_suffix(f"{path.suffix}.tmp")
+    with temp_path.open("w", encoding="utf-8") as handle:
         yaml.safe_dump(
             data,
             handle,
@@ -32,11 +33,11 @@ def save_yaml(path: Path, data: dict[str, Any]) -> None:
             sort_keys=False,
             width=1000,
         )
+    temp_path.replace(path)
 
 
 def validate_seed(seed: dict[str, Any]) -> None:
     seen_names: set[str] = set()
-    seen_urls: set[str] = set()
 
     for index, character in enumerate(seed["characters"], start=1):
         missing = [
@@ -55,24 +56,21 @@ def validate_seed(seed: dict[str, Any]) -> None:
         url = str(character["wikipedia_url"])
         if name in seen_names:
             raise ValueError(f"Duplicate seed name: {name}")
-        if url in seen_urls:
-            raise ValueError(f"Duplicate seed URL: {url}")
         seen_names.add(name)
-        seen_urls.add(url)
 
 
 def sync_seed(seed: dict[str, Any], existing: dict[str, Any] | None = None) -> dict[str, Any]:
     validate_seed(seed)
-    existing_by_url = {
-        str(character.get("wikipedia_url")): character
+    existing_by_name = {
+        str(character.get("name")): character
         for character in (existing or {}).get("characters", [])
-        if character.get("wikipedia_url")
+        if character.get("name")
     }
 
     characters: list[dict[str, Any]] = []
     for seed_character in seed["characters"]:
         url = str(seed_character["wikipedia_url"])
-        character = dict(existing_by_url.get(url, {}))
+        character = dict(existing_by_name.get(str(seed_character["name"]), {}))
         character.update(
             {
                 "name": seed_character["name"],
@@ -87,11 +85,37 @@ def sync_seed(seed: dict[str, Any], existing: dict[str, Any] | None = None) -> d
     return {"characters": characters}
 
 
+def clear_derived_fields(data: dict[str, Any]) -> dict[str, Any]:
+    derived_keys = [
+        "description_raw",
+        "source_metadata",
+        "extracted",
+        "scores",
+        "score_evidence",
+        "total_score",
+        "tier",
+        "iq_score",
+        "iq_evidence",
+        "condition_flags",
+        "condition_evidence",
+    ]
+    for character in data["characters"]:
+        for key in derived_keys:
+            character.pop(key, None)
+        character["description_raw"] = ""
+    return data
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Sync seed characters into the main data file.")
     parser.add_argument("--seed", type=Path, default=DEFAULT_SEED)
     parser.add_argument("--input", type=Path, default=DEFAULT_DATA)
     parser.add_argument("--output", type=Path, default=DEFAULT_DATA)
+    parser.add_argument(
+        "--reset-derived",
+        action="store_true",
+        help="Clear fetched text, scores, evidence, and generated flags after syncing.",
+    )
     return parser
 
 
@@ -99,7 +123,10 @@ def main() -> None:
     args = build_parser().parse_args()
     seed = load_yaml(args.seed)
     existing = load_yaml(args.input) if args.input.exists() else None
-    save_yaml(args.output, sync_seed(seed, existing))
+    synced = sync_seed(seed, existing)
+    if args.reset_derived:
+        synced = clear_derived_fields(synced)
+    save_yaml(args.output, synced)
 
 
 if __name__ == "__main__":

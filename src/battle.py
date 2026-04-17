@@ -12,6 +12,19 @@ import yaml
 
 DEFAULT_INPUT = Path("data/characters.yaml")
 SCORE_KEYS = ["attack", "defense", "speed", "abilities", "feats", "scale"]
+SCORE_LABELS = {
+    "attack": "攻撃",
+    "defense": "防御",
+    "speed": "速度",
+    "abilities": "能力",
+    "feats": "実績",
+    "scale": "影響範囲",
+}
+MODE_LABELS = {
+    "power": "強さ",
+    "iq": "推定IQ",
+    "balanced": "総合",
+}
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -38,8 +51,8 @@ def find_character(characters: list[dict[str, Any]], query: str) -> dict[str, An
         return matches[0]
     if matches:
         names = ", ".join(str(character.get("name", "")) for character in matches)
-        raise ValueError(f"Ambiguous character query '{query}'. Matches: {names}")
-    raise ValueError(f"Character not found: {query}")
+        raise ValueError(f"キャラクター指定が曖昧です: '{query}'。一致: {names}")
+    raise ValueError(f"キャラクターが見つかりません: {query}")
 
 
 def mode_score(character: dict[str, Any], mode: str) -> int:
@@ -56,18 +69,18 @@ def verdict(a: dict[str, Any], b: dict[str, Any], mode: str) -> str:
     diff = a_score - b_score
 
     if diff == 0:
-        return "Draw by current Wikipedia-grounded scores."
+        return "現在のWikipedia根拠スコアでは引き分けです。"
 
     winner = a if diff > 0 else b
     margin = abs(diff)
-    strength = "favored" if margin >= 8 else "slight edge"
-    return f"{winner.get('name')} is {strength} in {mode} mode by {margin} point(s)."
+    strength = "優勢" if margin >= 8 else "やや優勢"
+    return f"{winner.get('name')} が {MODE_LABELS.get(mode, mode)} モードで {margin} 点差の{strength}です。"
 
 
 def dimension_table(a: dict[str, Any], b: dict[str, Any]) -> list[str]:
     a_scores = a.get("scores") or {}
     b_scores = b.get("scores") or {}
-    lines = ["| Dimension | A | B | Edge |", "| --- | ---: | ---: | --- |"]
+    lines = ["| 項目 | A | B | 優勢 |", "| --- | ---: | ---: | --- |"]
 
     for key in SCORE_KEYS:
         a_value = int(a_scores.get(key, 0))
@@ -77,11 +90,11 @@ def dimension_table(a: dict[str, Any], b: dict[str, Any]) -> list[str]:
         elif b_value > a_value:
             edge = str(b.get("name"))
         else:
-            edge = "even"
-        lines.append(f"| {key} | {a_value} | {b_value} | {edge} |")
+            edge = "互角"
+        lines.append(f"| {SCORE_LABELS[key]} | {a_value} | {b_value} | {edge} |")
 
     lines.append(
-        f"| iq_score | {int(a.get('iq_score', 0))} | {int(b.get('iq_score', 0))} | "
+        f"| 推定IQ | {int(a.get('iq_score', 0))} | {int(b.get('iq_score', 0))} | "
         f"{iq_edge(a, b)} |"
     )
     return lines
@@ -94,7 +107,7 @@ def iq_edge(a: dict[str, Any], b: dict[str, Any]) -> str:
         return str(a.get("name"))
     if b_value > a_value:
         return str(b.get("name"))
-    return "even"
+    return "互角"
 
 
 def top_evidence(character: dict[str, Any], mode: str, limit: int) -> list[str]:
@@ -116,7 +129,7 @@ def top_evidence(character: dict[str, Any], mode: str, limit: int) -> list[str]:
         key=lambda item: (-int(item.get("points", 0)), str(item.get("sentence", ""))),
     )
     if not evidence:
-        return ["- no matched Wikipedia evidence"]
+        return ["- 一致するWikipedia根拠なし"]
 
     return [
         f"- {item.get('sentence', '')} [{item.get('rule', '')}, +{item.get('points', 0)}]"
@@ -126,24 +139,24 @@ def top_evidence(character: dict[str, Any], mode: str, limit: int) -> list[str]:
 
 def render_battle(a: dict[str, Any], b: dict[str, Any], mode: str, max_evidence: int) -> str:
     lines = [
-        f"# Battle Mode: {a.get('name')} vs {b.get('name')}",
+        f"# バトル比較: {a.get('name')} vs {b.get('name')}",
         "",
-        "This is not a full fictional combat simulation. It compares only the scores and evidence text present in Wikipedia-derived records.",
+        "これは完全な架空戦闘シミュレーションではありません。日本語版Wikipedia由来の根拠文とスコアだけで比較します。",
         "",
-        f"- mode: {mode}",
-        f"- A score: {mode_score(a, mode)}",
-        f"- B score: {mode_score(b, mode)}",
-        f"- verdict: {verdict(a, b, mode)}",
+        f"- モード: {MODE_LABELS.get(mode, mode)}",
+        f"- Aスコア: {mode_score(a, mode)}",
+        f"- Bスコア: {mode_score(b, mode)}",
+        f"- 判定: {verdict(a, b, mode)}",
         "",
-        "## Score Comparison",
+        "## スコア比較",
         "",
         *dimension_table(a, b),
         "",
-        f"## Evidence: {a.get('name')}",
+        f"## 根拠: {a.get('name')}",
         "",
         *top_evidence(a, mode, max_evidence),
         "",
-        f"## Evidence: {b.get('name')}",
+        f"## 根拠: {b.get('name')}",
         "",
         *top_evidence(b, mode, max_evidence),
         "",
@@ -152,10 +165,10 @@ def render_battle(a: dict[str, Any], b: dict[str, Any], mode: str, max_evidence:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Compare two characters by evidence scores.")
+    parser = argparse.ArgumentParser(description="2キャラクターを根拠スコアで比較します。")
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
-    parser.add_argument("--a", required=True, help="First character name or unique substring.")
-    parser.add_argument("--b", required=True, help="Second character name or unique substring.")
+    parser.add_argument("--a", required=True, help="1人目のキャラクター名、または一意に絞れる部分文字列。")
+    parser.add_argument("--b", required=True, help="2人目のキャラクター名、または一意に絞れる部分文字列。")
     parser.add_argument("--mode", choices=["power", "iq", "balanced"], default="power")
     parser.add_argument("--max-evidence", type=int, default=3)
     parser.add_argument("--output", type=Path)

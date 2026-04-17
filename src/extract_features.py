@@ -48,10 +48,13 @@ ABILITY_PATTERNS = [
     r"\bflight\b",
     r"能力",
     r"技",
+    r"術",
     r"忍術",
+    r"魔法",
     r"武器",
     r"兵器",
     r"超人的",
+    r"超能力",
     r"天才",
     r"知能",
     r"知性",
@@ -64,6 +67,7 @@ ABILITY_PATTERNS = [
     r"探偵",
     r"熟練",
     r"変身",
+    r"変化",
     r"飛行",
     r"瞬間移動",
 ]
@@ -82,6 +86,8 @@ FEAT_PATTERNS = [
     r"戦績",
     r"戦う",
     r"戦い",
+    r"戦闘",
+    r"撃破",
     r"守る",
     r"救",
 ]
@@ -100,6 +106,7 @@ STATEMENT_PATTERNS = [
     r"圧倒",
     r"無敵",
     r"神のよう",
+    r"最も強",
 ]
 
 RELEVANCE_PATTERNS = ABILITY_PATTERNS + FEAT_PATTERNS + STATEMENT_PATTERNS + [
@@ -120,11 +127,18 @@ RELEVANCE_PATTERNS = ABILITY_PATTERNS + FEAT_PATTERNS + STATEMENT_PATTERNS + [
     r"速度",
     r"都市",
     r"国家",
+    r"国",
     r"惑星",
     r"地球",
     r"宇宙",
     r"世界",
     r"村",
+]
+
+EXCLUDED_SENTENCE_PATTERNS = [
+    r"曖昧さ回避",
+    r"を参照",
+    r"#.+参照",
 ]
 
 
@@ -138,7 +152,8 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 def save_yaml(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
+    temp_path = path.with_suffix(f"{path.suffix}.tmp")
+    with temp_path.open("w", encoding="utf-8") as handle:
         yaml.safe_dump(
             data,
             handle,
@@ -146,6 +161,7 @@ def save_yaml(path: Path, data: dict[str, Any]) -> None:
             sort_keys=False,
             width=1000,
         )
+    temp_path.replace(path)
 
 
 def compile_patterns(patterns: Iterable[str]) -> list[re.Pattern[str]]:
@@ -156,6 +172,7 @@ ABILITY_REGEXES = compile_patterns(ABILITY_PATTERNS)
 FEAT_REGEXES = compile_patterns(FEAT_PATTERNS)
 STATEMENT_REGEXES = compile_patterns(STATEMENT_PATTERNS)
 RELEVANCE_REGEXES = compile_patterns(RELEVANCE_PATTERNS)
+EXCLUDED_SENTENCE_REGEXES = compile_patterns(EXCLUDED_SENTENCE_PATTERNS)
 
 
 def split_sentences(text: str) -> list[str]:
@@ -184,6 +201,8 @@ def extract_from_text(text: str) -> dict[str, list[str]]:
     }
 
     for sentence in split_sentences(text):
+        if matches_any(sentence, EXCLUDED_SENTENCE_REGEXES):
+            continue
         if not matches_any(sentence, RELEVANCE_REGEXES):
             continue
 

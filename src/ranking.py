@@ -14,6 +14,14 @@ import yaml
 DEFAULT_INPUT = Path("data/characters.yaml")
 SCORE_KEYS = ["attack", "defense", "speed", "abilities", "feats", "scale"]
 RANKING_SCORE_KEYS = ["total_score", "iq_score", *SCORE_KEYS]
+SCORE_LABELS = {
+    "attack": "攻撃",
+    "defense": "防御",
+    "speed": "速度",
+    "abilities": "能力",
+    "feats": "実績",
+    "scale": "影響範囲",
+}
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -83,7 +91,7 @@ def sorted_ranking(characters: list[dict[str, Any]], ranking_type: str) -> list[
 
 def render_score_line(character: dict[str, Any]) -> str:
     scores = character.get("scores") or {}
-    parts = [f"{key}={int(scores.get(key, 0))}" for key in SCORE_KEYS]
+    parts = [f"{SCORE_LABELS[key]}={int(scores.get(key, 0))}" for key in SCORE_KEYS]
     return ", ".join(parts)
 
 
@@ -94,14 +102,14 @@ def render_evidence(character: dict[str, Any], max_evidence: int) -> list[str]:
     for key in SCORE_KEYS:
         evidence_items = score_evidence.get(key) or []
         if not evidence_items:
-            lines.append(f"  - {key}: no matched Wikipedia evidence")
+            lines.append(f"  - {SCORE_LABELS[key]}: 一致するWikipedia根拠なし")
             continue
         shown = evidence_items[:max_evidence]
         compact = " / ".join(
             f"{item.get('sentence', '')} [{item.get('rule', '')}, +{item.get('points', 0)}]"
             for item in shown
         )
-        lines.append(f"  - {key}: {compact}")
+        lines.append(f"  - {SCORE_LABELS[key]}: {compact}")
 
     return lines
 
@@ -109,12 +117,12 @@ def render_evidence(character: dict[str, Any], max_evidence: int) -> list[str]:
 def render_iq_evidence(character: dict[str, Any], max_evidence: int) -> list[str]:
     evidence_items = character.get("iq_evidence") or []
     if not evidence_items:
-        return ["  - iq: no matched Wikipedia evidence"]
+        return ["  - 推定IQ: 一致するWikipedia根拠なし"]
 
     lines: list[str] = []
     for item in evidence_items[:max_evidence]:
         lines.append(
-            f"  - iq: {item.get('sentence', '')} "
+            f"  - 推定IQ: {item.get('sentence', '')} "
             f"[{item.get('rule', '')}, +{item.get('points', 0)}]"
         )
     return lines
@@ -125,7 +133,7 @@ def render_markdown(
     max_evidence: int,
     ranking_type: str,
 ) -> str:
-    title = "Character IQ Ranking" if ranking_type == "iq" else "Character Power Ranking"
+    title = "キャラクター推定IQランキング" if ranking_type == "iq" else "キャラクター強さランキング"
     lines = [f"# {title}", ""]
 
     for index, character in enumerate(characters, start=1):
@@ -138,15 +146,15 @@ def render_markdown(
         universe = character.get("universe", "")
 
         if ranking_type == "iq":
-            lines.append(f"## {index}. {name} - IQ evidence score {iq_score}/10")
+            lines.append(f"## {index}. {name} - 推定IQ {iq_score}/10")
         else:
-            lines.append(f"## {index}. {name} - {total} pts / Tier {tier}")
-        lines.append(f"- source: {url}")
-        lines.append(f"- media_type: {media_type}")
-        lines.append(f"- universe: {universe}")
-        lines.append(f"- iq_score: {iq_score}")
-        lines.append(f"- scores: {render_score_line(character)}")
-        lines.append("- evidence:")
+            lines.append(f"## {index}. {name} - {total}点 / Tier {tier}")
+        lines.append(f"- 出典: {url}")
+        lines.append(f"- メディア: {media_type}")
+        lines.append(f"- 作品/ユニバース: {universe}")
+        lines.append(f"- 推定IQ: {iq_score}")
+        lines.append(f"- スコア: {render_score_line(character)}")
+        lines.append("- 根拠:")
         if ranking_type == "iq":
             lines.extend(render_iq_evidence(character, max_evidence))
         else:
@@ -167,7 +175,7 @@ def serializable_character(character: dict[str, Any], max_evidence: int) -> dict
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Render a filtered power ranking.")
+    parser = argparse.ArgumentParser(description="根拠付きランキングを出力します。")
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--format", choices=["markdown", "json"], default="markdown")
@@ -175,7 +183,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--ranking-type",
         choices=["power", "iq"],
         default="power",
-        help="Use total power score or the text-evidence IQ score for sorting.",
+        help="強さスコアまたは推定IQスコアで並べ替えます。",
     )
     parser.add_argument("--media-type", choices=["manga", "anime", "movie", "comic"])
     parser.add_argument("--universe")
@@ -183,11 +191,12 @@ def build_parser() -> argparse.ArgumentParser:
         "--score-key",
         choices=RANKING_SCORE_KEYS,
         default=None,
-        help="Score used by --min-score and --max-score.",
+        help="--min-score と --max-score で使うスコア項目です。",
     )
     parser.add_argument("--min-score", type=int)
     parser.add_argument("--max-score", type=int)
     parser.add_argument("--max-evidence", type=int, default=2)
+    parser.add_argument("--limit", type=int, help="先頭N件だけを出力します。")
     return parser
 
 
@@ -204,6 +213,8 @@ def main() -> None:
         max_score=args.max_score,
     )
     ranked = sorted_ranking(filtered, args.ranking_type)
+    if args.limit is not None:
+        ranked = ranked[: args.limit]
 
     if args.format == "json":
         output = json.dumps(

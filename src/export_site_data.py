@@ -12,6 +12,19 @@ import yaml
 
 DEFAULT_INPUT = Path("data/characters.yaml")
 DEFAULT_OUTPUT = Path("docs/data/characters.json")
+EXPORT_FIELDS = [
+    "name",
+    "wikipedia_url",
+    "media_type",
+    "universe",
+    "scores",
+    "score_evidence",
+    "total_score",
+    "tier",
+    "iq_score",
+    "iq_evidence",
+    "condition_flags",
+]
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -24,9 +37,13 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 def export_json(input_path: Path, output_path: Path) -> None:
     data = load_yaml(input_path)
+    records = [
+        {key: character.get(key) for key in EXPORT_FIELDS if key in character}
+        for character in data["characters"]
+    ]
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        json.dumps(data["characters"], ensure_ascii=False, indent=2),
+        json.dumps(records, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 

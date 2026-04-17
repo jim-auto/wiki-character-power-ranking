@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>wiki-character-power-index</title>
+    <title>キャラクター強さ指数</title>
     <link rel="stylesheet" href="./styles.css">
     <script defer src="./app.js"></script>
   </head>
@@ -11,57 +11,57 @@
     <main class="app-shell">
       <header class="topbar">
         <div>
-          <p class="eyebrow">Wikipedia-only evidence</p>
-          <h1>Character Power Index</h1>
+          <p class="eyebrow">日本語版Wikipediaのみを根拠に評価</p>
+          <h1>キャラクター強さ指数</h1>
         </div>
         <a class="source-link" href="https://github.com/jim-auto/wiki-character-power-ranking">GitHub</a>
       </header>
 
       <section class="workspace">
-        <div class="mode-tabs" role="tablist" aria-label="Ranking mode">
-          <button class="tab-button is-active" type="button" data-view="power">Power</button>
-          <button class="tab-button" type="button" data-view="iq">IQ</button>
-          <button class="tab-button" type="button" data-view="battle">Battle</button>
+        <div class="mode-tabs" role="tablist" aria-label="ランキングモード">
+          <button class="tab-button is-active" type="button" data-view="power">強さ</button>
+          <button class="tab-button" type="button" data-view="iq">推定IQ</button>
+          <button class="tab-button" type="button" data-view="battle">バトル</button>
         </div>
 
-        <section class="controls" aria-label="Filters">
+        <section class="controls" aria-label="フィルタ">
           <label class="search-field">
-            <span>Search</span>
-            <input id="search-filter" type="search" placeholder="Name, universe, media">
+            <span>検索</span>
+            <input id="search-filter" type="search" placeholder="名前・作品・メディア">
           </label>
           <label>
-            <span>Media</span>
+            <span>メディア</span>
             <select id="media-filter">
-              <option value="all">All</option>
-              <option value="manga">Manga</option>
-              <option value="anime">Anime</option>
-              <option value="movie">Movie</option>
-              <option value="comic">Comic</option>
+              <option value="all">すべて</option>
+              <option value="manga">漫画</option>
+              <option value="anime">アニメ</option>
+              <option value="movie">映画</option>
+              <option value="comic">コミック</option>
             </select>
           </label>
           <label>
-            <span>Universe</span>
+            <span>作品/ユニバース</span>
             <select id="universe-filter">
-              <option value="all">All</option>
+              <option value="all">すべて</option>
             </select>
           </label>
           <label>
-            <span>Min</span>
+            <span>最小</span>
             <input id="min-score" type="number" min="0" max="60" inputmode="numeric">
           </label>
           <label>
-            <span>Max</span>
+            <span>最大</span>
             <input id="max-score" type="number" min="0" max="60" inputmode="numeric">
           </label>
-          <fieldset class="condition-controls" aria-label="Condition filters">
-            <legend>Conditions</legend>
+          <fieldset class="condition-controls" aria-label="条件フィルタ">
+            <legend>条件</legend>
             <div id="condition-options" class="condition-options"></div>
           </fieldset>
         </section>
 
         <section id="ranking-view" class="view-panel">
           <div class="section-heading">
-            <h2 id="ranking-title">Power Ranking</h2>
+            <h2 id="ranking-title">強さランキング</h2>
             <span id="result-count" class="count-badge">0</span>
           </div>
           <div id="ranking-list" class="ranking-list" aria-live="polite"></div>
@@ -69,7 +69,7 @@
 
         <section id="battle-view" class="view-panel is-hidden">
           <div class="section-heading">
-            <h2>Battle Mode</h2>
+            <h2>バトル比較</h2>
           </div>
           <div class="battle-controls">
             <label>
@@ -81,11 +81,11 @@
               <select id="battle-b"></select>
             </label>
             <label>
-              <span>Mode</span>
+              <span>モード</span>
               <select id="battle-mode">
-                <option value="power">Power</option>
-                <option value="iq">IQ</option>
-                <option value="balanced">Balanced</option>
+                <option value="power">強さ</option>
+                <option value="iq">推定IQ</option>
+                <option value="balanced">総合</option>
               </select>
             </label>
           </div>
