@@ -6,15 +6,18 @@ The project is not a canon database, fan wiki, battle-board system, or original-
 
 ## Pipeline
 
-1. `src/fetch_wikipedia.py` fetches the Wikipedia page extract listed in `wikipedia_url`.
-2. `src/extract_features.py` splits `description_raw` into sentences and keeps strength-related sentences.
-3. Extracted sentences are classified into:
+1. `data/seed_characters.yaml` stores the canonical character candidate list.
+2. `src/sync_seed_characters.py` synchronizes the seed list into `data/characters.yaml`.
+3. `src/fetch_wikipedia.py` fetches the Wikipedia page extract listed in `wikipedia_url`.
+4. `src/extract_features.py` splits `description_raw` into sentences and keeps strength-related sentences.
+5. Extracted sentences are classified into:
    - `abilities`: powers, equipment, training, skills, named techniques.
    - `feats`: explicit actions, battles, victories, saves, protection.
    - `statements`: descriptive strength claims or scale statements.
-4. `src/scoring.py` applies deterministic text rules and records evidence.
-5. `src/ranking.py` filters and renders power or text-evidence IQ rankings.
-6. `src/battle.py` compares two characters using the already-computed evidence scores.
+6. `src/scoring.py` applies deterministic text rules and records evidence.
+7. `src/ranking.py` filters and renders power or text-evidence IQ rankings.
+8. `src/battle.py` compares two characters using the already-computed evidence scores.
+9. `src/export_site_data.py` exports `docs/data/characters.json` for GitHub Pages.
 
 ## Data Contract
 
@@ -70,16 +73,15 @@ Not allowed:
 - Inferred feats not written in the Wikipedia text.
 - Cross-page enrichment unless that page is explicitly added to the record design in a future schema version.
 
-## Initial Characters
+## Initial Milestone
 
-The sample data starts with:
+The sample data starts from a 100-character seed list. The first public milestone is:
 
-- 孫悟空
-- うずまきナルト
-- アイアンマン（MCU）
-- バットマン
+- 50 manga/anime characters
+- 25 movie characters
+- 25 Marvel/DC comic characters
 
-The sample text is intentionally compact so the repository remains readable. For production runs, refresh `description_raw` with `src/fetch_wikipedia.py`, then re-run extraction and scoring.
+The fetched text uses Wikipedia lead extracts by default for readability. For production runs, refresh `description_raw` with `src/fetch_wikipedia.py --intro-only`, then re-run extraction and scoring.
 
 ## Future Extensions
 

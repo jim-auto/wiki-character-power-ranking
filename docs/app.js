@@ -2,6 +2,7 @@ const scoreKeys = ["attack", "defense", "speed", "abilities", "feats", "scale"];
 
 const state = {
   view: "power",
+  search: "",
   media: "all",
   universe: "all",
   min: "",
@@ -21,6 +22,7 @@ const elements = {
   rankingTitle: document.querySelector("#ranking-title"),
   resultCount: document.querySelector("#result-count"),
   rankingList: document.querySelector("#ranking-list"),
+  searchFilter: document.querySelector("#search-filter"),
   mediaFilter: document.querySelector("#media-filter"),
   universeFilter: document.querySelector("#universe-filter"),
   minScore: document.querySelector("#min-score"),
@@ -61,8 +63,21 @@ function currentScoreForFilter(character) {
 function filteredCharacters() {
   const min = state.min === "" ? null : Number(state.min);
   const max = state.max === "" ? null : Number(state.max);
+  const query = state.search.trim().toLowerCase();
 
   return characters
+    .filter((character) => {
+      if (!query) return true;
+      const haystack = [
+        character.name,
+        character.universe,
+        character.media_type,
+        character.wikipedia_url,
+      ]
+        .join(" ")
+        .toLowerCase();
+      return haystack.includes(query);
+    })
     .filter((character) => state.media === "all" || character.media_type === state.media)
     .filter((character) => state.universe === "all" || character.universe === state.universe)
     .filter((character) => {
@@ -315,6 +330,10 @@ function bindEvents() {
     });
   });
 
+  elements.searchFilter.addEventListener("input", (event) => {
+    state.search = event.target.value;
+    render();
+  });
   elements.mediaFilter.addEventListener("change", (event) => {
     state.media = event.target.value;
     render();

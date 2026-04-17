@@ -19,6 +19,7 @@ Wikipediaの記述だけでキャラクターの強さを評価する。
 ```text
 /data/
   characters.yaml
+  seed_characters.yaml
 
 /src/
   fetch_wikipedia.py
@@ -26,6 +27,8 @@ Wikipediaの記述だけでキャラクターの強さを評価する。
   scoring.py
   ranking.py
   battle.py
+  sync_seed_characters.py
+  export_site_data.py
 
 /docs/
   index.html
@@ -162,6 +165,12 @@ GitHub Pages用のJSONを更新:
 python src/export_site_data.py
 ```
 
+seedリストから `characters.yaml` を同期:
+
+```bash
+python src/sync_seed_characters.py
+```
+
 推定IQランキング:
 
 ```bash
@@ -235,9 +244,11 @@ Folder: /docs
 https://jim-auto.github.io/wiki-character-power-ranking/
 ```
 
-データ更新後は、次の順で再生成します。
+キャラクター追加後は、次の順で再生成します。
 
 ```bash
+python src/sync_seed_characters.py
+python src/fetch_wikipedia.py --intro-only
 python src/extract_features.py
 python src/scoring.py
 python src/export_site_data.py
@@ -289,7 +300,7 @@ python src/export_site_data.py
 
 ## Sample Data
 
-`data/characters.yaml` には20人分のサンプルキャラクターが入っています。
+`data/characters.yaml` には100人分のサンプルキャラクターが入っています。候補の正本は `data/seed_characters.yaml` です。
 
 - 孫悟空
 - うずまきナルト
@@ -312,7 +323,7 @@ python src/export_site_data.py
 - ソー
 - レックス・ルーサー
 
-各キャラクターには、Wikipedia URL、メディア種別、ユニバース、根拠文、スコア、tierが含まれます。
+上記は初期候補の一部です。各キャラクターには、Wikipedia URL、メディア種別、ユニバース、根拠文、スコア、tierが含まれます。
 
 ## Methodology
 
