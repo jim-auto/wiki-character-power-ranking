@@ -12,6 +12,19 @@ import yaml
 DEFAULT_SEED = Path("data/seed_characters.yaml")
 DEFAULT_DATA = Path("data/characters.yaml")
 VALID_MEDIA_TYPES = {"manga", "anime", "movie", "comic"}
+DERIVED_KEYS = [
+    "description_raw",
+    "source_metadata",
+    "extracted",
+    "scores",
+    "score_evidence",
+    "total_score",
+    "tier",
+    "iq_score",
+    "iq_evidence",
+    "condition_flags",
+    "condition_evidence",
+]
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -66,11 +79,30 @@ def sync_seed(seed: dict[str, Any], existing: dict[str, Any] | None = None) -> d
         for character in (existing or {}).get("characters", [])
         if character.get("name")
     }
+    urls: dict[str, list[dict[str, Any]]] = {}
+    for character in (existing or {}).get("characters", []):
+        if character.get("wikipedia_url"):
+            urls.setdefault(str(character["wikipedia_url"]), []).append(character)
+    existing_by_unique_url = {
+        url: characters[0] for url, characters in urls.items() if len(characters) == 1
+    }
 
     characters: list[dict[str, Any]] = []
     for seed_character in seed["characters"]:
         url = str(seed_character["wikipedia_url"])
-        character = dict(existing_by_name.get(str(seed_character["name"]), {}))
+        lookup_names = [
+            str(seed_character["name"]),
+            str(seed_character.get("source_name_original") or ""),
+        ]
+        existing_character = next(
+            (existing_by_name[name] for name in lookup_names if name and name in existing_by_name),
+            existing_by_unique_url.get(url, {}),
+        )
+        old_url = str(existing_character.get("wikipedia_url") or "")
+        character = dict(existing_character)
+        if old_url and old_url != url:
+            for key in DERIVED_KEYS:
+                character.pop(key, None)
         character.update(
             {
                 "name": seed_character["name"],
@@ -79,6 +111,9 @@ def sync_seed(seed: dict[str, Any], existing: dict[str, Any] | None = None) -> d
                 "universe": seed_character["universe"],
             }
         )
+        for key, value in seed_character.items():
+            if key.startswith("source_"):
+                character[key] = value
         character.setdefault("description_raw", "")
         characters.append(character)
 
@@ -86,21 +121,8 @@ def sync_seed(seed: dict[str, Any], existing: dict[str, Any] | None = None) -> d
 
 
 def clear_derived_fields(data: dict[str, Any]) -> dict[str, Any]:
-    derived_keys = [
-        "description_raw",
-        "source_metadata",
-        "extracted",
-        "scores",
-        "score_evidence",
-        "total_score",
-        "tier",
-        "iq_score",
-        "iq_evidence",
-        "condition_flags",
-        "condition_evidence",
-    ]
     for character in data["characters"]:
-        for key in derived_keys:
+        for key in DERIVED_KEYS:
             character.pop(key, None)
         character["description_raw"] = ""
     return data

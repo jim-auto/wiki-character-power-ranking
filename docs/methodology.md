@@ -8,15 +8,16 @@
 
 1. `data/seed_characters.yaml` にキャラクター候補を管理する。
 2. `src/resolve_ja_wikipedia.py` でURLを日本語版Wikipediaへ解決する。
-3. `src/sync_seed_characters.py` でseedリストを `data/characters.yaml` に同期する。
-4. `src/fetch_wikipedia.py` で `wikipedia_url` の日本語版Wikipedia本文を取得する。
-5. `src/extract_features.py` で本文を文に分割し、強さに関係する文だけを抽出する。
-6. 抽出文を `abilities`、`feats`、`statements` に分類する。
-7. `src/scoring.py` で決定的なテキストルールを適用し、根拠文を保存する。
-8. `src/condition_flags.py` でUI用の条件フラグを作る。
-9. `src/ranking.py` で強さランキングまたは推定IQランキングを出力する。
-10. `src/battle.py` で2キャラクターを根拠スコアだけで比較する。
-11. `src/export_site_data.py` でGitHub Pages用JSONを出力する。
+3. `src/repair_japanese_sources.py` で日本語表示名と安全な作品/一覧ページフォールバックを整える。
+4. `src/sync_seed_characters.py` でseedリストを `data/characters.yaml` に同期する。
+5. `src/fetch_wikipedia.py` で `wikipedia_url` の日本語版Wikipedia本文を取得する。
+6. `src/extract_features.py` で本文を文に分割し、強さに関係する文だけを抽出する。
+7. 抽出文を `abilities`、`feats`、`statements` に分類する。
+8. `src/scoring.py` で決定的なテキストルールを適用し、根拠文を保存する。
+9. `src/condition_flags.py` でUI用の条件フラグを作る。
+10. `src/ranking.py` で強さランキングまたは推定IQランキングを出力する。
+11. `src/battle.py` で2キャラクターを根拠スコアだけで比較する。
+12. `src/export_site_data.py` でGitHub Pages用JSONを出力する。
 
 ## データ契約
 
@@ -86,10 +87,13 @@ condition_evidence: object
 
 日本語版Wikipediaに単独キャラクターページがない場合、登場人物一覧や作品ページをソースにします。そのため、同じ日本語ページを複数キャラクターが共有する場合があります。どのURLへ解決されたかは `data/ja_wikipedia_resolution_report.yaml` で確認できます。
 
+日本語名の正規化と、無関係な検索結果から作品/一覧ページへ置き換えた件数は `data/source_repair_report.yaml` に記録します。
+
 ## 再生成手順
 
 ```bash
 python src/resolve_ja_wikipedia.py --input data/seed_characters.yaml --output data/seed_characters.yaml --report data/ja_wikipedia_resolution_report.yaml --search-fallback
+python src/repair_japanese_sources.py
 python src/sync_seed_characters.py --reset-derived
 python src/fetch_wikipedia.py --source rest-summary --missing-only --sleep 0
 python src/extract_features.py

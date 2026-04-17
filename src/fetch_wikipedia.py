@@ -461,6 +461,18 @@ def update_characters(
                         retries=retries,
                         retry_sleep=retry_sleep,
                     )
+                except HTTPError as exc:
+                    if exc.code == 429:
+                        raise
+                    page_cache[url] = fetch_extract(
+                        url,
+                        intro_only=True,
+                        timeout=timeout,
+                        user_agent=user_agent,
+                        retries=retries,
+                        retry_sleep=retry_sleep,
+                    )
+                    page_cache[url]["source"] = "action-api-fallback"
                 except Exception:
                     page_cache[url] = fetch_extract(
                         url,
