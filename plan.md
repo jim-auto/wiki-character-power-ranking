@@ -2,7 +2,7 @@
 
 このドキュメントは、`wiki-character-power-ranking` リポジトリの現状、直近のセッションで行った変更、未解決事項、次に着手すべきタスクをまとめたものです。Codex などの後任エージェントがコンテキストをゼロから把握できるように書いています。
 
-最終更新: 2026-04-18
+最終更新: 2026-04-18(後半セッション)
 
 公開UI: https://jim-auto.github.io/wiki-character-power-ranking/
 GitHubリポジトリ: https://github.com/jim-auto/wiki-character-power-ranking
@@ -118,8 +118,10 @@ python src/export_site_data.py
 | `description_raw` < 500字(短いが空ではないキャラ別説明) | 19 |
 | `description_raw` ≤50字(明らかな抽出不足) | 0 |
 | 画像あり(表示用) | 501 |
-| 画像あり(Wikipedia/Wikidata/Commons由来) | 232 |
-| 画像あり(Fandom由来) | 269 |
+| 画像あり(Wikipedia/Wikidata/Commons由来、cosplay除外後) | 154 |
+| 画像あり(Fandom由来) | 347 |
+| **Tier S / A / B / C** | **104 / 130 / 126 / 141** |
+| **59点タイ(旧飽和状態)** | **解消、最高53点(カイドウ/ジョゼフ、次いでビルス)** |
 | **明示IQあり(`explicit_iq != null`)** | **15** |
 | ジャンプ漫画タグ | 143 |
 | Marvelタグ | 105 |
@@ -135,9 +137,38 @@ python src/export_site_data.py
 
 ---
 
-## 5. 直近セッション(2026-04-18)での変更
+## 5. 直近セッション(2026-04-18 後半)での変更
 
-コミット済みの変更は以下。最後に今回の未コミット作業を追記している。
+1. **Reject cosplay and convention photos as character images** (62ecb58)
+   - Wikipedia/Wikidata P18 は架空キャラに cosplay 写真や convention 写真(NYCC/SDCC/Dragon Con/MCM 等)を割り当てていることが多く、81件が公開UIでコスプレ写真になっていた
+   - `src/fetch_wikipedia_images.py` と `src/fetch_fandom_images.py` の `is_likely_non_character_image` を拡張:
+     - `blocked_terms`(実体のままの一致): logo/wordmark/logotype/title/emblem/symbol
+     - `blocked_flat_terms`(スペース・アンダースコア・ハイフンを除去した平坦化後の一致): cosplay/cosplayer/fanart/nycc/sdcc/comiccon/dragoncon/wondercon/wintercon/fanimecon/animenorth/animeexpo/mcmcomic/mcmlondon/wizardworld/galaxycon/luccacomics/fanexpo/katsucon
+     - 正規表現: `\bmcm[\s_\-]*(?:20\d{2}|london|birmingham|manchester|expo)` で MCM年式を弾く
+   - `score_commons_filename` の cosplay ボーナスを反転(+20 → -100)
+   - `search_queries_for_metadata` の `cosplay` キーワード追加を削除
+   - `data/characters.yaml` の該当81件を purge → `fetch_fandom_images.py` で再取得
+   - `data/fandom_wikis.yaml` に `Ginny Weasley → Ginevra Weasley`、`Katsuki Bakugo → Katsuki Bakugou / Bakugo Katsuki` のエイリアスを追加
+   - 注: `costume` はブロックしない(`Katsuki_Bakugo_Winter_Costume_2_(Anime).png` のような公式キャラ絵のファイル名にも含まれるため)
+
+2. **Fix ranking saturation: top+variety scoring and listing noise filter** (3664ac1)
+   - 問題: 59点タイ 55人、S tier 237人(全体47%)、のび太が悟空とタイ
+   - 原因1: `score_dimension` の `min(10, sum(points))` で、1つの rule が複数文でヒットすると簡単に満点に達する
+   - 原因2: listing sentence(song title のカタログ、episode 番号の連続、第N話「...」の列挙)で無敵・防御などが false-positive match
+   - 原因3: 防御率・勝率などの「X率」に「防御」が含まれて shield rule がヒット
+   - 修正:
+     - `score_dimension`: `scale` 以外で `score = min(10, max_rule_points + (distinct_rule_count - 1))` に変更。breadth は寄与するが、1 rule の繰り返しで満点にはならない
+     - `is_listing_sentence()`: 第N話「...」が2件以上、または「『 が4件以上含まれる文を scoring 対象から除外
+     - `shield expression` の `防御` に `(?!率)` negative lookahead を追加
+   - 結果: S:237/A:109/B:68/C:87 → S:104/A:130/B:126/C:141。のび太 #25(59pt) → #110(41pt)。ドラえもん #37 → #100。Top3: カイドウ/ジョゼフ/ビルス(全て 53pt)
+   - `scale` は max のままで未変更(シリーズ跨ぎで天井を揃える意図)
+   - IQ dimension にも同じ top+variety が適用される
+
+---
+
+## 5a. 古いセッション(2026-04-18 前半)での変更
+
+コミット済みの変更は以下。
 
 1. **Drop Openverse cosplay images from site icons** (f19b590)
    - 55件のOpenverse由来画像(コスプレ写真中心)を `characters.yaml` から除去
@@ -199,7 +230,24 @@ python src/export_site_data.py
 
 現状15件は目視で妥当に見えるが、seed追加後にレビュー必要。`src/scoring.py:186 extract_explicit_iq` の近傍を拡張する。
 
-### 6.4 想像戦闘シーンがテンプレ臭い(優先度: 低、将来LLM)
+### 6.4 スコアリングの主語ずれ(優先度: 中)
+
+2026-04-18 後半の修正で listing sentence を除外し、防御率の false-positive は防いだが、依然として「本文全体で regex ヒットすれば加点」という構造は残っている。のび太のように記事自体が長く、道具説明や余談を多く含むキャラは、本人ではない記述で加点されうる。
+
+根本解決には sentence 単位の主語推定が必要(例: 直前に出現したキャラ名・代名詞を継承する)。現状の正規表現パイプラインだけで実装するのは困難。LLM 利用または形態素解析+係り受けが視野に入る。
+
+本項目はプロジェクト方針「Wikipedia がどう書いているかを数値化する」と一貫しているため、完全解消は目指さず、目立つ false-positive を listing 除外・negative lookahead で潰していく運用。
+
+### 6.5 スコア分布の偏り(優先度: 低、要議論)
+
+2026-04-18 後半の修正で 59点タイ55人は解消したが、ワンピース系キャラが依然として Top に偏っている(ja.wikipedia の記述量が多いため)。これは project 方針と整合的だが「悟空が #44」のような直感に反する順位は残る。
+
+将来調整する場合の選択肢:
+- 各次元上限を 10 → 7 等に下げ、scale と IQ に比重を寄せる
+- シリーズ単位での article length 正規化(長い記事ペナルティ)
+- seed の `wikipedia_url` を作品ごとに適切な node(Super 版の悟空等)に張り替える
+
+### 6.6 想像戦闘シーンがテンプレ臭い(優先度: 低、将来LLM)
 
 `battleImaginaryScene()` は決定論的な文型組み立てで、同じペアだと常に同じ文になる。ユーザーは「将来的にはLLMを使うけど今は無し」と明言。
 
@@ -229,7 +277,7 @@ LLM導入時の設計:
 
 ### 7.4 想像シーンのLLM化(優先度: 未着手、将来)
 
-上記 6.4 参照。
+上記 6.6 参照。
 
 ### 7.5 Fandom Wiki 補助ソース化(優先度: 低、要設計)
 
