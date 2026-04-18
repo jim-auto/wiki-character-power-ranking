@@ -68,7 +68,8 @@ def json_text(value: Any) -> str:
 
 def load_yaml(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
-        data = yaml.safe_load(handle) or {}
+        loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+        data = yaml.load(handle, Loader=loader) or {}
     if "characters" not in data or not isinstance(data["characters"], list):
         raise ValueError(f"{path} must contain a top-level 'characters' list")
     return data

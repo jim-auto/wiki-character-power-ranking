@@ -22,7 +22,7 @@ GitHubリポジトリ: https://github.com/jim-auto/wiki-character-power-ranking
 - ファン解釈なし
 - 日本語版Wikipedia本文とメタデータのみ
 - すべてのスコアに根拠文と一致ルールを残す
-- 画像は日本語版Wikipedia/Wikidata由来のみ。コスプレ等の本人ではない画像は使わない
+- 画像は採点に使わない。表示用はWikipedia/Wikidataを優先し、不足分だけFandomを出典表示付きで補完する。Openverse由来のコスプレ写真は使わない
 
 **例外:** バトル画面の「想像戦闘シーン」は、Wikipedia根拠文 + スコア差を元にしたテンプレ生成の創作テキスト(2026-04-18追加)。「想像・参考」バッジと注釈で原作描写ではないことを明示している。採点には一切影響しない。
 
@@ -35,6 +35,8 @@ data/
   seed_characters.yaml              # 入力のマスター(git管理)
   characters.yaml                   # 派生: 本文+スコア(96MB, gitignore)
   image_fetch_report.yaml           # 画像取得ログ
+  fandom_image_report.yaml          # Fandom画像補完ログ
+  fandom_wikis.yaml                 # universe -> Fandom wiki対応表
   openverse_image_report.yaml       # Openverse取得ログ(現在は不採用)
   ja_wikipedia_resolution_report.yaml
   source_repair_report.yaml
@@ -51,6 +53,7 @@ src/
   condition_flags.py                # 本文由来の条件フラグ(超能力/武器/etc.)
   collection_tags.py                # ジャンプ漫画/Marvel/DCタグ付け
   fetch_wikipedia_images.py         # pageimages → Wikidata P18 → Commons
+  fetch_fandom_images.py            # Fandom画像補完(採点には不使用)
   fetch_openverse_images.py         # 【非推奨】コスプレ写真を拾うためUIパイプラインからは外した
   export_site_data.py               # docs/data/characters.json + character-details/*.json 生成
   ranking.py                        # CLIランキング出力
@@ -92,6 +95,7 @@ python src/collection_tags.py
 
 # 画像
 python src/fetch_wikipedia_images.py --sleep 0.5 --report data/image_fetch_report.yaml
+python src/fetch_fandom_images.py --sleep 0.2 --report data/fandom_image_report.yaml
 
 # 公開JSON
 python src/export_site_data.py
@@ -99,6 +103,7 @@ python src/export_site_data.py
 
 **注意:**
 - `rest-html` の全件取得は501件 × 0.5秒 ≈ 4分。途中で `PermissionError` (Windowsのファイルロック)が出ることがある。その場合は短い `description_raw` だけクリアして `--missing-only` で再開するのが安全。
+- `fetch_fandom_images.py` は画像が空のキャラクターだけをFandomで補完する。採点・根拠抽出には使わない。
 - `fetch_openverse_images.py` は既定パイプラインから外した(コスプレ写真に振れるため)。レガシーとしてコードは残っている。
 
 ---
@@ -112,7 +117,9 @@ python src/export_site_data.py
 | `description_raw` ≥500字 | 482 |
 | `description_raw` < 500字(短いが空ではないキャラ別説明) | 19 |
 | `description_raw` ≤50字(明らかな抽出不足) | 0 |
-| 画像あり(Wikipedia/Wikidata由来のみ) | 232 |
+| 画像あり(表示用) | 501 |
+| 画像あり(Wikipedia/Wikidata/Commons由来) | 232 |
+| 画像あり(Fandom由来) | 269 |
 | **明示IQあり(`explicit_iq != null`)** | **15** |
 | ジャンプ漫画タグ | 143 |
 | Marvelタグ | 105 |
@@ -166,6 +173,7 @@ python src/export_site_data.py
    - パイプラインを `fetch_wikipedia.py --missing-only` → `extract_character_sections.py` → `extract_features.py` → `scoring.py` → `condition_flags.py` → `collection_tags.py` → `export_site_data.py` の順で再実行済み
    - `git filter-repo` で `data/characters.yaml` を履歴から除去し、`main` を force push 済み
    - `docs/data/characters.json` を軽量一覧に変更し、フル根拠は `docs/data/character-details/*.json` にキャラ別分割
+   - `src/fetch_fandom_images.py` と `data/fandom_wikis.yaml` を追加し、Fandom画像で未取得269件を補完。公開JSON上は501件すべて画像あり
 
 ---
 
@@ -225,10 +233,11 @@ LLM導入時の設計:
 
 ### 7.5 Fandom Wiki 補助ソース化(優先度: 低、要設計)
 
-ユーザーから「Fandom wiki を参考にしてもいいかも」と相談あり。ただし現在の公式スコアは「日本語版Wikipedia本文だけ」を不変条件にしているため、混ぜるなら別レイヤーにする。
+ユーザーから「Fandom wiki を参考にしてもいいかも」と相談あり。表示用画像の補完は2026-04-18に実装済み。ただし現在の公式スコアは「日本語版Wikipedia本文だけ」を不変条件にしているため、本文や実績を混ぜるなら別レイヤーにする。
 
 推奨案:
 - 既存の `total_score` / `iq_score` は日本語版Wikipedia限定のまま維持
+- 画像は `image_source: fandom:<host>` として出典表示し、採点には使わない
 - Fandom由来は `supplemental_sources` や `fandom_evidence` として別保存
 - UIでは「補助情報」「非公式参考」などのバッジを付け、採点本体とは分離
 - 将来、Fandom込みの別モードを作る場合も、Wikipedia-onlyモードを残す

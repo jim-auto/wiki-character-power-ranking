@@ -1,0 +1,95 @@
+generated_at: '2026-04-18T04:35:45.404653+00:00'
+source: Fandom configured MediaWiki APIs
+dry_run: false
+total_characters: 501
+characters_without_images_before: 9
+candidates_checked: 9
+images_found: 9
+characters_without_images_after: 0
+overwrite_existing: false
+configured_universes: 93
+min_score: 36
+source_counts:
+  bleach.fandom.com: 1
+  mob-psycho-100.fandom.com: 1
+  killbill.fandom.com: 1
+  deathnote.fandom.com: 1
+  codegeass.fandom.com: 2
+  battleangel.fandom.com: 1
+  villains.fandom.com: 1
+  thebiglebowski.fandom.com: 1
+items:
+- name: 藍染惣右介
+  universe: Bleach
+  host: bleach.fandom.com
+  title: Sousuke Aizen
+  page_url: https://bleach.fandom.com/wiki/Sousuke_Aizen
+  image_url: https://static.wikia.nocookie.net/bleach/images/6/68/682Aizen_profile.png/revision/latest?cb=20260319222423&path-prefix=en
+  pageimage: 682Aizen_profile.png
+  score: 88
+- name: 影山茂夫
+  universe: Mob Psycho 100
+  host: mob-psycho-100.fandom.com
+  title: Shigeo Kageyama
+  page_url: https://mob-psycho-100.fandom.com/wiki/Shigeo_Kageyama
+  image_url: https://static.wikia.nocookie.net/mob-psycho-100/images/b/b7/Mob_Fullbody.png/revision/latest/scale-to-width-down/135?cb=20220513153327
+  pageimage: Mob_Fullbody.png
+  score: 88
+- name: ザ・ブライド
+  universe: Kill Bill
+  host: killbill.fandom.com
+  title: Beatrix Kiddo
+  page_url: https://killbill.fandom.com/wiki/Beatrix_Kiddo
+  image_url: https://static.wikia.nocookie.net/killbill/images/3/39/The_Bride.jpg/revision/latest?cb=20130124180255
+  pageimage: The_Bride.jpg
+  score: 88
+- name: ニア
+  universe: Death Note
+  host: deathnote.fandom.com
+  title: Near
+  page_url: https://deathnote.fandom.com/wiki/Near
+  image_url: https://static.wikia.nocookie.net/deathnote/images/a/a9/Manga_character_icon_Near.jpg/revision/latest/scale-to-width-down/418?cb=20250701061212
+  pageimage: Manga_character_icon_Near.jpg
+  score: 88
+- name: ルルーシュ・ランペルージ
+  universe: Code Geass
+  host: codegeass.fandom.com
+  title: Lelouch vi Britannia
+  page_url: https://codegeass.fandom.com/wiki/Lelouch_vi_Britannia
+  image_url: https://static.wikia.nocookie.net/codegeass/images/6/6a/LelouchviBritannia.jpg/revision/latest/scale-to-width-down/500?cb=20120107132514
+  pageimage: LelouchviBritannia.jpg
+  score: 88
+- name: カレン・シュタットフェルト
+  universe: Code Geass
+  host: codegeass.fandom.com
+  title: Kallen Kōzuki
+  page_url: https://codegeass.fandom.com/wiki/Kallen_K%C5%8Dzuki
+  image_url: https://static.wikia.nocookie.net/codegeass/images/7/75/1619487-kallen.jpg/revision/latest?cb=20111226053129
+  pageimage: 1619487-kallen.jpg
+  score: 96
+- name: ガリィ
+  universe: Battle Angel Alita
+  host: battleangel.fandom.com
+  title: Alita
+  page_url: https://battleangel.fandom.com/wiki/Alita
+  image_url: https://static.wikia.nocookie.net/battleangel/images/d/dd/Last_Order_New_Ed._vol._1_cover_textless.jpg/revision/latest?cb=20111121232856
+  pageimage: Last_Order_New_Ed._vol._1_cover_textless.jpg
+  score: 88
+- name: トニー・モンタナ
+  universe: Scarface
+  host: villains.fandom.com
+  title: Tony Montana
+  page_url: https://villains.fandom.com/wiki/Tony_Montana
+  image_url: https://static.wikia.nocookie.net/villains/images/1/14/%C4%B0mg_0085.img.webp/revision/latest/scale-to-width-down/433?cb=20240710031736
+  pageimage: İmg_0085.img.webp
+  score: 88
+- name: デュード
+  universe: The Big Lebowski
+  host: thebiglebowski.fandom.com
+  title: The Dude
+  page_url: https://thebiglebowski.fandom.com/wiki/The_Dude
+  image_url: https://static.wikia.nocookie.net/thebiglebowski/images/7/7e/The_Dude.jpeg/revision/latest?cb=20111216183045
+  pageimage: The_Dude.jpeg
+  score: 88
+missing_items: []
+skipped_no_wiki: []
