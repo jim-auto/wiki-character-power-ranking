@@ -40,6 +40,15 @@ DEFAULT_TARGET_RESOLUTIONS = {
 
 BODY_TAGS = {"p", "li", "dd"}
 HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6", "dt"}
+HEADING_RANKS = {
+    "h1": 1,
+    "h2": 2,
+    "h3": 3,
+    "h4": 4,
+    "h5": 5,
+    "h6": 6,
+    "dt": 7,
+}
 SKIP_TAGS = {
     "figure",
     "footer",
@@ -95,6 +104,12 @@ BODY_CHARACTER_CONTEXT_TERMS = [
     "本作の主人公",
     "物語の主人公",
     "キャラクター",
+]
+REFERENCE_ONLY_TERMS = [
+    "詳しくは",
+    "詳細は",
+    "項を参照",
+    "を参照",
 ]
 
 
@@ -362,6 +377,42 @@ def score_match(line: TextLine, alias: Alias) -> int:
     return score
 
 
+def heading_rank(line: TextLine) -> int:
+    return HEADING_RANKS.get(line.tag, 99)
+
+
+def find_section_boundary(lines: list[TextLine], start: int) -> int:
+    if lines[start].kind != "heading":
+        return find_next_heading(lines, start)
+
+    start_rank = heading_rank(lines[start])
+    for candidate in range(start + 1, len(lines)):
+        if lines[candidate].kind == "heading" and heading_rank(lines[candidate]) <= start_rank:
+            return candidate
+    return len(lines)
+
+
+def section_preview_for_match(lines: list[TextLine], index: int) -> str:
+    end = find_section_boundary(lines, index)
+    return "\n".join(line.text for line in lines[index:end]).strip()
+
+
+def is_reference_only_section(text: str) -> bool:
+    if len(text) > 160:
+        return False
+    return any(term in text for term in REFERENCE_ONLY_TERMS)
+
+
+def contextual_match_score(lines: list[TextLine], match: Match) -> int:
+    section_text = section_preview_for_match(lines, match.line_index)
+    score = match.score + min(len(section_text) // 80, 35)
+    if is_reference_only_section(section_text):
+        score -= 55
+    if len(section_text) <= len(match.alias.value) + 8:
+        score -= 25
+    return score
+
+
 def find_best_match(lines: list[TextLine], aliases: list[Alias]) -> Match | None:
     best: Match | None = None
     for index, line in enumerate(lines):
@@ -376,6 +427,12 @@ def find_best_match(lines: list[TextLine], aliases: list[Alias]) -> Match | None
             if line.kind != "heading" and score < 35:
                 continue
             match = Match(line_index=index, alias=alias, score=score, kind=line.kind)
+            match = Match(
+                line_index=index,
+                alias=alias,
+                score=contextual_match_score(lines, match),
+                kind=line.kind,
+            )
             if best is None or match.score > best.score:
                 best = match
     return best
@@ -435,7 +492,7 @@ def extract_section(
         else:
             start = max(0, match.line_index - 1)
 
-    end = find_next_heading(lines, match.line_index)
+    end = find_section_boundary(lines, start)
     end = min(end, start + max_lines)
     section = compact_section(lines[start:end], max_chars=max_chars)
     if not section:

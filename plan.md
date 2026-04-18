@@ -52,7 +52,7 @@ src/
   collection_tags.py                # ジャンプ漫画/Marvel/DCタグ付け
   fetch_wikipedia_images.py         # pageimages → Wikidata P18 → Commons
   fetch_openverse_images.py         # 【非推奨】コスプレ写真を拾うためUIパイプラインからは外した
-  export_site_data.py               # docs/data/characters.json 生成
+  export_site_data.py               # docs/data/characters.json + character-details/*.json 生成
   ranking.py                        # CLIランキング出力
   battle.py                         # CLIバトル比較
 
@@ -60,7 +60,8 @@ docs/
   index.html                        # 静的UI(GitHub Pages公開元)
   app.js                            # フロントエンドロジック
   styles.css                        # CSS
-  data/characters.json              # 派生データ(約2.4MB, git管理)
+  data/characters.json              # 軽量一覧データ(約3.3MB, git管理)
+  data/character-details/*.json     # フル根拠データ(キャラ別分割, git管理)
   methodology.md
   scoring_rules.md
 
@@ -108,8 +109,9 @@ python src/export_site_data.py
 |------|------|
 | 総キャラクター | 501 |
 | 単独キャラページに解決済み | 多数(詳細は `data/ja_wikipedia_resolution_report.yaml`) |
-| `description_raw` ≥500字(rest-html取得済み) | 497 |
-| `description_raw` < 500字(取得失敗や短いリダイレクト) | 4 |
+| `description_raw` ≥500字 | 482 |
+| `description_raw` < 500字(短いが空ではないキャラ別説明) | 19 |
+| `description_raw` ≤50字(明らかな抽出不足) | 0 |
 | 画像あり(Wikipedia/Wikidata由来のみ) | 232 |
 | **明示IQあり(`explicit_iq != null`)** | **15** |
 | ジャンプ漫画タグ | 143 |
@@ -128,7 +130,7 @@ python src/export_site_data.py
 
 ## 5. 直近セッション(2026-04-18)での変更
 
-コミット順(`git log --oneline` で辿れる):
+コミット済みの変更は以下。最後に今回の未コミット作業を追記している。
 
 1. **Drop Openverse cosplay images from site icons** (f19b590)
    - 55件のOpenverse由来画像(コスプレ写真中心)を `characters.yaml` から除去
@@ -156,27 +158,32 @@ python src/export_site_data.py
    - 使用する情報: scale/speed/attack/defense/iq スコア差、condition_flags、先頭の根拠文
    - 「想像・参考」バッジ + 注釈で原作描写ではないことを明示
 
+6. **未コミットの今回作業**
+   - バトル画面のA/Bキャラ選択を `input + datalist` から `<select>` に変更し、501件すべてを確実に選択できるようにした
+   - `src/extract_character_sections.py` で見出し階層を考慮し、`h2` 配下の `dt` 本文を即終了しないよう修正
+   - 「詳しくは...参照」だけの短い候補より、本文量のある同名候補を優先するようにした
+   - `トニー・モンタナ` の seed URL を曖昧さ回避ページから `スカーフェイス_(映画)` に修正
+   - パイプラインを `fetch_wikipedia.py --missing-only` → `extract_character_sections.py` → `extract_features.py` → `scoring.py` → `condition_flags.py` → `collection_tags.py` → `export_site_data.py` の順で再実行済み
+   - `git filter-repo` で `data/characters.yaml` を履歴から除去し、`main` を force push 済み
+   - `docs/data/characters.json` を軽量一覧に変更し、フル根拠は `docs/data/character-details/*.json` にキャラ別分割
+
 ---
 
 ## 6. 既知の未解決事項 / 技術的負債
 
-### 6.1 Git履歴の肥大(優先度: 中)
+### 6.1 Git履歴の肥大(対応済み)
 
-`main` 履歴に96MBの `data/characters.yaml` blob が1コミット分(990585c付近)残っている。GitHubからは「50MB推奨を超える」警告が出ている。
+2026-04-18の今回作業で、`git filter-repo --path data/characters.yaml --invert-paths --force` を実行し、`main` を force push 済み。`git rev-list --objects --all` に `data/characters.yaml` は出ない。ローカルの `data/characters.yaml` はgitignore対象として残す。
 
-選択肢:
+あわせて、GitHub Pagesが読む `docs/data/characters.json` は約52MBから約3.3MBの軽量一覧に変更した。フル根拠データは `docs/data/character-details/*.json` に501ファイルへ分割し、最大ファイルは約1.2MB。
 
-- **(a) 放置**: 動作には影響しない。cloneは遅くなる
-- **(b) `git filter-repo` で履歴書き換え + force push**: クリーンになるが破壊的操作。collaborator がいないなら可
-- **(c) Git LFS**: 将来また大きなファイルが必要になる場合向け
+注意: Git LFSはGitHub Pagesで使えないため、`docs/` 配下の公開データには使わない。
 
-ユーザーは `対応！` と言った後、(b)までは未承認。確認を取ってから実施すること。
+### 6.2 短い description_raw の監視(優先度: 低)
 
-### 6.2 4件の短い description_raw(優先度: 低)
+2026-04-18の今回作業で、`description_raw` が50字以下の明らかな抽出不足は0件になった。`ライナー・ブラウン`、`アニ・レオンハート`、`レオリオ`、`アイザック＝ネテロ` は見出し階層修正で長い本文を拾えるようになり、`トニー・モンタナ` は正しい映画ページに修正済み。
 
-501件中4件は `rest-html` で短いリダイレクト/曖昧さ回避ページに当たったまま。該当キャラ名は `python -c "import yaml; d=yaml.safe_load(open('data/characters.yaml','r',encoding='utf-8')); [print(c['name'],c['wikipedia_url']) for c in d['characters'] if 0<len(c.get('description_raw') or '')<500]"` で確認できる。
-
-対応案: `seed_characters.yaml` で個別に正しいURLに差し替え、または `image_wikidata_id` を追加してスコアリングから除外する判断。
+現在も500字未満の説明は19件あるが、多くはキャラ別節そのものが短いケース。seed追加後や再取得後は、`python -c "import yaml; Loader=getattr(yaml,'CSafeLoader',yaml.SafeLoader); d=yaml.load(open('data/characters.yaml','r',encoding='utf-8'), Loader=Loader); [print(c['name'], len(c.get('description_raw') or ''), c['wikipedia_url']) for c in d['characters'] if 0<len(c.get('description_raw') or '')<=50]"` で明らかな抽出不足がないか確認する。
 
 ### 6.3 明示IQの精度(優先度: 中)
 
@@ -216,9 +223,15 @@ LLM導入時の設計:
 
 上記 6.4 参照。
 
-### 7.5 履歴書き換え(優先度: 中、要承認)
+### 7.5 Fandom Wiki 補助ソース化(優先度: 低、要設計)
 
-上記 6.1 参照。ユーザー承認後に実施。
+ユーザーから「Fandom wiki を参考にしてもいいかも」と相談あり。ただし現在の公式スコアは「日本語版Wikipedia本文だけ」を不変条件にしているため、混ぜるなら別レイヤーにする。
+
+推奨案:
+- 既存の `total_score` / `iq_score` は日本語版Wikipedia限定のまま維持
+- Fandom由来は `supplemental_sources` や `fandom_evidence` として別保存
+- UIでは「補助情報」「非公式参考」などのバッジを付け、採点本体とは分離
+- 将来、Fandom込みの別モードを作る場合も、Wikipedia-onlyモードを残す
 
 ---
 

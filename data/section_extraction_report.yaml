@@ -1,4 +1,4 @@
-generated_at: '2026-04-17T21:46:42.865040+00:00'
+generated_at: '2026-04-18T01:23:34.243774+00:00'
 dry_run: false
 total_characters: 501
 target_characters: 181
@@ -42,24 +42,28 @@ items:
   matched_alias: 石田雨竜
   alias_source: name
   match_kind: heading
-  match_score: 130
-  chars: 132
-  excerpt: '石田雨竜
+  match_score: 117
+  chars: 185
+  excerpt: '石田雨竜（いしだ うりゅう）
 
-    一護のクラスメートかつ仲間であり、現世における滅却師の最後の生き残り。
+    声 - 杉山紀彰 、 本田貴子 （少年期）
 
-    このときはハッシュヴァルトの手引きで「見えざる帝国」へと馳せ参じ、後にユーハバッハから後継者として指名されている。
+    演 - 吉沢亮
 
-    聖文字はユーハバッハと同じ“A”。
+    身長171cm→177cm。体重55kg→57kg。AB型。11月6日生まれ。
 
-    →詳細は「 石田雨竜 」を参照'
+    対虚退魔眷属「 滅却師 」（クインシー）の生き残り。一人称は「僕」。
+
+    一護のクラスメイトで、死神代行消失篇より生徒会長を務める。弓状の武器を用い、一護たちと一緒に戦う。
+
+    →詳細は「 石田雨竜'
 - name: 四楓院夜一
   url: https://ja.wikipedia.org/wiki/BLEACH%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9#Yoruichi
   status: updated
   matched_alias: 四楓院夜一
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 132
   chars: 1393
   excerpt: '四楓院 夜一 （しほういん よるいち）
 
@@ -76,7 +80,7 @@ items:
   matched_alias: 浦原喜助
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 117
   chars: 161
   excerpt: '浦原喜助（うらはら きすけ）
 
@@ -100,7 +104,7 @@ items:
   matched_alias: アルミン・アルレルト
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 128
   chars: 1100
   excerpt: 'アルミン・アルレルト (Armin Arlert )
 
@@ -118,17 +122,21 @@ items:
   alias_source: name
   match_kind: heading
   match_score: 130
-  chars: 38
-  excerpt: 'ライナー・ブラウン
+  chars: 1229
+  excerpt: 'ライナー・ブラウン (Reiner Braun)
 
-    詳しくは上位10名の項を参照。「 鎧の巨人 」の継承者。'
+    声 - 細谷佳正 、 榎木淳弥 （幼少期）
+
+    金髪で大柄な体格の少年。17歳→21歳。身長185cm、体重95kg。→身長188cm、体重83kg。8月1日生まれ 。ウォール・マリア南東に在った山村出身。第104期訓練兵団を次席で卒業。
+
+    優れた実力を持ち、104期生のリーダー的存在。気さくで面倒見が良く、責任感'
 - name: エルヴィン・スミス
   url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
   status: updated
   matched_alias: エルヴィン・スミス
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 125
   chars: 859
   excerpt: 'エルヴィン・スミス (Erwin Smith)
 
@@ -143,18 +151,22 @@ items:
   matched_alias: アニ・レオンハート
   alias_source: name
   match_kind: heading
-  match_score: 130
-  chars: 39
-  excerpt: 'アニ・レオンハート
+  match_score: 128
+  chars: 1067
+  excerpt: 'アニ・レオンハート (Annie Leonhart)
 
-    詳しくは上位10名の項を参照。「 女型の巨人 」の継承者。'
+    声 - 嶋村侑
+
+    常に冷静沈着で寡黙な金髪の少女。16歳→20歳。身長153cm、体重54kg（16歳時）。3月22日生まれ 。出身地は不明。第104期訓練兵団を4番で卒業。
+
+    口数や表情に乏しく、他者とのなれ合いを嫌う性格から周囲からはやや孤立している。憲兵団を希望しているが他の志願者のように特権獲得が目的'
 - name: ジーク・イェーガー
   url: https://ja.wikipedia.org/wiki/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
   status: updated
   matched_alias: ジーク・イェーガー
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 132
   chars: 1419
   excerpt: 'ジーク・イェーガー (Zeke Yeager)
 
@@ -172,7 +184,7 @@ items:
   matched_alias: 我妻善逸
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 125
   chars: 846
   excerpt: '我妻 善逸（あがつま ぜんいつ）
 
@@ -189,7 +201,7 @@ items:
   matched_alias: 嘴平伊之助
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 126
   chars: 897
   excerpt: '嘴平 伊之助（はしびら いのすけ）
 
@@ -206,7 +218,7 @@ items:
   matched_alias: 冨岡義勇
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 126
   chars: 911
   excerpt: '冨岡 義勇（とみおか ぎゆう）
 
@@ -224,7 +236,7 @@ items:
   matched_alias: 胡蝶しのぶ
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 124
   chars: 782
   excerpt: '胡蝶 しのぶ（こちょう しのぶ）
 
@@ -241,7 +253,7 @@ items:
   matched_alias: 甘露寺蜜璃
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 123
   chars: 703
   excerpt: '甘露寺 蜜璃（かんろじ みつり）
 
@@ -260,7 +272,7 @@ items:
   matched_alias: 時透無一郎
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 126
   chars: 957
   excerpt: '時透 無一郎（ときとう むいちろう）
 
@@ -275,7 +287,7 @@ items:
   matched_alias: 宇髄天元
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 124
   chars: 790
   excerpt: '宇髄 天元（うずい てんげん）
 
@@ -290,7 +302,7 @@ items:
   matched_alias: 悲鳴嶼行冥
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 124
   chars: 782
   excerpt: '悲鳴嶼 行冥（ひめじま ぎょうめい）
 
@@ -307,7 +319,7 @@ items:
   matched_alias: 不死川実弥
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 126
   chars: 890
   excerpt: '不死川 実弥（しなずがわ さねみ）
 
@@ -325,7 +337,7 @@ items:
   matched_alias: 猗窩座
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 126
   chars: 933
   excerpt: '猗窩座（あかざ）
 
@@ -342,7 +354,7 @@ items:
   matched_alias: サイタマ
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 144
   chars: 2323
   excerpt: 'サイタマ（ハゲマント）
 
@@ -438,7 +450,7 @@ items:
   matched_alias: ダース・ベイダー
   alias_source: name
   match_kind: body
-  match_score: 65
+  match_score: 69
   chars: 368
   excerpt: 'ダース・ベイダー （ Darth Vader ）は、 SF映画 『スター・ウォーズ』シリーズ に登場する架空の人物 。このシリーズにおける代表的な アンチヒーロー でもある。 日本語 名には 表記揺れ として「ダース・ ヴェイダー 」と「ダース・ ベーダー 」が見られる。
 
@@ -524,7 +536,7 @@ items:
   matched_alias: オールマイト
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 129
   chars: 1139
   excerpt: 'オールマイト / 八木 俊典（やぎ としのり）
 
@@ -539,7 +551,7 @@ items:
   matched_alias: 死柄木弔
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 123
   chars: 681
   excerpt: '死柄木 弔（しがらき とむら） / 志村 転弧（しむら てんこ）
 
@@ -554,7 +566,7 @@ items:
   matched_alias: エンデヴァー
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 123
   chars: 651
   excerpt: 'エンデヴァー / 轟 炎司（とどろき えんじ）
 
@@ -567,7 +579,7 @@ items:
   matched_alias: ホークス
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 119
   chars: 394
   excerpt: 'ホークス / 鷹見 啓悟（たかみ けいご）
 
@@ -582,7 +594,7 @@ items:
   matched_alias: 荼毘
   alias_source: name
   match_kind: heading
-  match_score: 85
+  match_score: 96
   chars: 945
   excerpt: '荼毘 （だび） / 轟 燈矢（とどろき とうや）
 
@@ -599,7 +611,7 @@ items:
   matched_alias: トガヒミコ
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 118
   chars: 292
   excerpt: 'トガヒミコ / 渡我 被身子（とが ひみこ）
 
@@ -614,7 +626,7 @@ items:
   matched_alias: 切島鋭児郎
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 121
   chars: 523
   excerpt: '切島 鋭児郎（きりしま えいじろう） / 烈怒頼雄斗 （ レッドライオット ）
 
@@ -631,7 +643,7 @@ items:
   matched_alias: 蛙吹梅雨
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 122
   chars: 620
   excerpt: '蛙吹 梅雨（あすい つゆ） / FROPPY （ フロッピー ）
 
@@ -651,7 +663,7 @@ items:
   matched_alias: 両面宿儺
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 144
   chars: 2360
   excerpt: '両面宿儺 （りょうめんすくな）
 
@@ -666,7 +678,7 @@ items:
   matched_alias: 乙骨憂太
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 136
   chars: 1687
   excerpt: '乙骨 憂太（おっこつ ゆうた）
 
@@ -686,9 +698,15 @@ items:
   matched_alias: レオリオ
   alias_source: name
   match_kind: heading
-  match_score: 130
-  chars: 4
-  excerpt: レオリオ
+  match_score: 150
+  chars: 1611
+  excerpt: 'レオリオ
+
+    レオリオ＝パラディナイト
+
+    声 - 郷田ほづみ / 藤原啓治 / 林延年 （パイロット版）
+
+    第287期ハンター試験合格者で、具体的なハンターはまだ名乗らず「ルーキー」とされる。 3月3日 生まれの19歳。血液型O型。ガイドブックでは身長193cm、体重85kg。長身、黒の 背広 。通常時は サングラス だが、よく壊れて紛失し、また勉強中は眼鏡を着用す'
 - name: クロロ＝ルシルフル
   url: https://ja.wikipedia.org/wiki/HUNTER%C3%97HUNTER%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
   status: unchanged_no_match
@@ -698,20 +716,22 @@ items:
   matched_alias: アイザック＝ネテロ
   alias_source: name
   match_kind: heading
-  match_score: 130
-  chars: 39
+  match_score: 144
+  chars: 1186
   excerpt: 'アイザック＝ネテロ
 
-    最終試験を担当した。
+    声 - 外波山文明 / 永井一郎 （第6話 - 114話） → 銀河万丈 （第122話 - 138話）
 
-    詳細は 「ハンター協会本部」 を参照'
+    ハンター協会および審査委員会の第12代会長。心源流 拳法 師範。強化系能力者。
+
+    ハンター協会の最高責任者。20年前くらいから約100歳と周囲に語っており、 ゼノ よりも二世代上という高齢。殺意を明確にするヒソカを煙に巻いたり、ハンター試'
 - name: デンジ
   url: https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%9E%E3%83%B3
   status: updated
   matched_alias: デンジ
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 141
   chars: 887
   excerpt: 'デンジ
 
@@ -726,7 +746,7 @@ items:
   matched_alias: 早川アキ
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 124
   chars: 777
   excerpt: '早川 アキ（はやかわ あき）
 
@@ -741,7 +761,7 @@ items:
   matched_alias: スパイク・スピーゲル
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 120
   chars: 470
   excerpt: 'スパイク・スピーゲル (Spike Spiegel)
 
@@ -758,7 +778,7 @@ items:
   matched_alias: グリフィス
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 131
   chars: 135
   excerpt: 'グリフィス
 
@@ -769,7 +789,7 @@ items:
   matched_alias: 金木研
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 122
   chars: 576
   excerpt: '金木 研（かねき けん）
 
@@ -782,7 +802,7 @@ items:
   matched_alias: 影山茂夫
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 132
   chars: 1383
   excerpt: '影山茂夫（かげやま しげお）
 
@@ -804,7 +824,7 @@ items:
   matched_alias: ベアトリクス・キドー
   alias_source: source_wikidata_label_ja
   match_kind: heading
-  match_score: 115
+  match_score: 117
   chars: 190
   excerpt: 'ベアトリクス・キドー / ザ・ブライド （ 英語版 ） / ブラック・マンバ
 
@@ -883,7 +903,7 @@ items:
   matched_alias: 人造人間17号
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 131
   chars: 159
   excerpt: '人造人間17号
 
@@ -901,7 +921,7 @@ items:
   matched_alias: 日向ネジ
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 131
   chars: 1314
   excerpt: '日向ネジ （ひゅうが ネジ）
 
@@ -914,7 +934,7 @@ items:
   matched_alias: 綱手
   alias_source: name
   match_kind: heading
-  match_score: 85
+  match_score: 108
   chars: 1918
   excerpt: '綱手 （つなで）
 
@@ -929,7 +949,7 @@ items:
   matched_alias: 波風ミナト
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 136
   chars: 1715
   excerpt: '波風ミナト （なみかぜ ミナト）
 
@@ -950,7 +970,7 @@ items:
   matched_alias: サボ
   alias_source: name
   match_kind: heading
-  match_score: 100
+  match_score: 133
   chars: 2342
   excerpt: 'サボ
 
@@ -968,7 +988,7 @@ items:
   matched_alias: アシェラッド
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 145
   chars: 1214
   excerpt: 'アシェラッド
 
@@ -983,7 +1003,7 @@ items:
   matched_alias: トルフィン
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 142
   chars: 995
   excerpt: 'トルフィン
 
@@ -1019,7 +1039,7 @@ items:
   matched_alias: アーカード
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 145
   chars: 1226
   excerpt: 'アーカード
 
@@ -1034,7 +1054,7 @@ items:
   matched_alias: ヴァッシュ・ザ・スタンピード
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 141
   chars: 887
   excerpt: 'ヴァッシュ・ザ・スタンピード
 
@@ -1047,8 +1067,8 @@ items:
   matched_alias: アトム
   alias_source: name
   match_kind: heading
-  match_score: 115
-  chars: 1515
+  match_score: 150
+  chars: 1918
   excerpt: 'アトム（トビオ）
 
     声 - 清水マリ （第1・2作、 手塚治虫が消えた!? 20世紀最後の怪事件 ）、 田上和枝 （清水マリの産休の代理で第1作97-106話のみ）、 津村まこと （第3作）、 上戸彩 （ハリウッド版）、 村川梨衣 （ろぼっとアトム）、 朴璐美 （GO!GO!）、 日笠陽子 （ PLUTO ）
@@ -1060,7 +1080,7 @@ items:
   matched_alias: ガリィ
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 146
   chars: 1321
   excerpt: 'ガリィ
 
@@ -1073,7 +1093,7 @@ items:
   matched_alias: 日暮かごめ
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 61
   chars: 103
   excerpt: '日暮かごめ（ひぐらし かごめ）
 
@@ -1086,7 +1106,7 @@ items:
   matched_alias: 殺生丸
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 61
   chars: 81
   excerpt: '殺生丸（せっしょうまる）
 
@@ -1101,7 +1121,7 @@ items:
   matched_alias: キャシアン・アンドー
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 124
   chars: 789
   excerpt: 'キャシアン・アンドー (Cassian Andor)
 
@@ -1112,7 +1132,7 @@ items:
   matched_alias: ジョーカー
   alias_source: source_wikidata_label_ja
   match_kind: heading
-  match_score: 130
+  match_score: 132
   chars: 164
   excerpt: 'ジョーカー
 
@@ -1140,7 +1160,7 @@ items:
   matched_alias: アーサー・カリー
   alias_source: name_without_parentheses
   match_kind: heading
-  match_score: 105
+  match_score: 106
   chars: 110
   excerpt: 'アーサー・カリー / アクアマン
 
@@ -1165,7 +1185,7 @@ items:
   matched_alias: ジェイク・サリー
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 122
   chars: 574
   excerpt: 'ジェイク・サリー （ 英語版 ）
 
@@ -1178,7 +1198,7 @@ items:
   matched_alias: ネイティリ
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 117
   chars: 232
   excerpt: 'ネイティリ （ 英語版 ）
 
@@ -1200,7 +1220,7 @@ items:
   url: https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC
   status: unchanged_no_match
 - name: トニー・モンタナ
-  url: https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9
+  url: https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9_(%E6%98%A0%E7%94%BB)
   status: unchanged_no_match
 - name: ナレーター
   url: https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%88%E3%83%BB%E3%82%AF%E3%83%A9%E3%83%96
@@ -1214,7 +1234,7 @@ items:
   matched_alias: ウィリー・ウォンカ
   alias_source: name
   match_kind: heading
-  match_score: 115
+  match_score: 116
   chars: 151
   excerpt: 'ウィリー・ウォンカ（Willy Wonka）
 
@@ -1225,7 +1245,7 @@ items:
   matched_alias: メリー・ポピンズ
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 134
   chars: 347
   excerpt: 'メリー・ポピンズ
 
@@ -1236,7 +1256,7 @@ items:
   matched_alias: ジャック・トランス
   alias_source: name
   match_kind: heading
-  match_score: 130
+  match_score: 146
   chars: 1322
   excerpt: 'ジャック・トランス
 

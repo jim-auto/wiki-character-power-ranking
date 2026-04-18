@@ -73,7 +73,6 @@ const elements = {
   battleB: document.querySelector("#battle-b"),
   battleAStage: document.querySelector("#battle-a-stage"),
   battleBStage: document.querySelector("#battle-b-stage"),
-  battleOptions: document.querySelector("#battle-character-options"),
   battleAStageOptions: document.querySelector("#battle-a-stage-options"),
   battleBStageOptions: document.querySelector("#battle-b-stage-options"),
   battleMode: document.querySelector("#battle-mode"),
@@ -236,20 +235,25 @@ function populateFilters() {
   if (state.universe !== "all" && !universes.includes(state.universe)) state.universe = "all";
 
   const battleOptions = characters
-    .map(
-      (character) =>
-        `<option value="${escapeHtml(character.name)}" label="${escapeHtml(`${character.universe} / ${mediaLabels[character.media_type] ?? character.media_type}`)}"></option>`,
-    )
+    .map((character) => {
+      const meta = [character.universe, mediaLabels[character.media_type] ?? character.media_type]
+        .filter(Boolean)
+        .join(" / ");
+      const label = meta ? `${character.name} (${meta})` : character.name;
+      return `<option value="${escapeHtml(character.name)}">${escapeHtml(label)}</option>`;
+    })
     .join("");
-  elements.battleOptions.innerHTML = battleOptions;
-  updateBattleStageOptions();
+  elements.battleA.innerHTML = battleOptions;
+  elements.battleB.innerHTML = battleOptions;
 
-  if (!state.battleA) {
+  const characterNames = new Set(characters.map((character) => character.name));
+  if (!state.battleA || !characterNames.has(state.battleA)) {
     state.battleA = characters[0]?.name ?? "";
   }
-  if (!state.battleB) {
+  if (!state.battleB || !characterNames.has(state.battleB)) {
     state.battleB = characters[1]?.name ?? characters[0]?.name ?? "";
   }
+  updateBattleStageOptions();
 
   const conditionOptionsHtml = renderConditionOptions();
   elements.conditionOptions.innerHTML = conditionOptionsHtml;
@@ -940,12 +944,14 @@ function bindEvents() {
       render();
     });
   });
-  elements.battleA.addEventListener("input", (event) => {
+  elements.battleA.addEventListener("change", (event) => {
     state.battleA = event.target.value;
+    state.battleAStage = "";
     render();
   });
-  elements.battleB.addEventListener("input", (event) => {
+  elements.battleB.addEventListener("change", (event) => {
     state.battleB = event.target.value;
+    state.battleBStage = "";
     render();
   });
   elements.battleAStage.addEventListener("input", (event) => {
