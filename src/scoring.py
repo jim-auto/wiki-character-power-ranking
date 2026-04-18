@@ -45,7 +45,7 @@ RULES: dict[str, list[Rule]] = {
         Rule(r"\binvincible\b|\binvulnerab(?:le|ility)\b|無敵", 7, "invulnerability expression"),
         Rule(r"\bdurability\b|\bdurable\b|耐久|頑丈", 4, "durability expression"),
         Rule(r"\barmor\b|\barmour\b|\bexoskeleton(?:s)?\b|装甲|鎧", 3, "armor expression"),
-        Rule(r"\bshield(?:s|ed|ing)?\b|シールド|盾|防御", 3, "shield expression"),
+        Rule(r"\bshield(?:s|ed|ing)?\b|シールド|盾|防御(?!率)", 3, "shield expression"),
         Rule(r"\bsealed within\b|\bcontain(?:s|ed|ing)?\b|封印", 3, "containment expression"),
         Rule(r"\bprotect(?:s|ed|ing)?\b|\bdefend(?:s|ed|ing)?\b|守る|守護|保護", 2, "protection expression"),
         Rule(r"\bindomitable will\b|不屈", 2, "resilience expression"),
@@ -150,6 +150,18 @@ def is_negated_hit(sentence: str, rule: Rule, dimension: str) -> bool:
     return False
 
 
+_LISTING_BRACKET_RE = re.compile(r"[「『]")
+_EPISODE_MARKER_RE = re.compile(r"第?\d+話[「『]")
+
+
+def is_listing_sentence(sentence: str) -> bool:
+    if _EPISODE_MARKER_RE.search(sentence) and len(_EPISODE_MARKER_RE.findall(sentence)) >= 2:
+        return True
+    if len(_LISTING_BRACKET_RE.findall(sentence)) >= 4:
+        return True
+    return False
+
+
 def score_dimension(
     sentences: Iterable[str],
     dimension: str,
@@ -158,6 +170,8 @@ def score_dimension(
     seen_hits: set[tuple[str, str]] = set()
 
     for sentence in sentences:
+        if is_listing_sentence(sentence):
+            continue
         for rule, regex in COMPILED_RULES[dimension]:
             if not regex.search(sentence):
                 continue
@@ -179,7 +193,15 @@ def score_dimension(
     if dimension == "scale":
         score = max((int(item["points"]) for item in evidence), default=0)
     else:
-        score = min(10, sum(int(item["points"]) for item in evidence))
+        distinct_rule_points = {
+            str(item["rule"]): int(item["points"]) for item in evidence
+        }
+        if distinct_rule_points:
+            top = max(distinct_rule_points.values())
+            variety_bonus = len(distinct_rule_points) - 1
+            score = min(10, top + variety_bonus)
+        else:
+            score = 0
     return score, evidence
 
 
