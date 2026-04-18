@@ -52,6 +52,27 @@ BLOCKED_IMAGE_TERMS = (
     "poster",
     "banner",
 )
+BLOCKED_IMAGE_FLAT_TERMS = (
+    "cosplay",
+    "cosplayer",
+    "fanart",
+    "nycc",
+    "sdcc",
+    "comiccon",
+    "dragoncon",
+    "wondercon",
+    "wintercon",
+    "fanimecon",
+    "animenorth",
+    "animeexpo",
+    "mcmcomic",
+    "mcmlondon",
+    "wizardworld",
+    "galaxycon",
+    "luccacomics",
+    "fanexpo",
+    "katsucon",
+)
 BLOCKED_PAGE_TERMS = (
     "/abilities",
     "/ability",
@@ -269,9 +290,12 @@ def page_title_score(page_title: str, candidates: list[str]) -> int:
 
 def is_likely_non_character_image(filename: str) -> bool:
     normalized = filename.casefold()
+    flat = re.sub(r"[\s_\-]+", "", normalized)
     if normalized.endswith(".svg"):
         return True
-    return any(term in normalized for term in BLOCKED_IMAGE_TERMS)
+    if any(term in normalized for term in BLOCKED_IMAGE_TERMS):
+        return True
+    return any(term in flat for term in BLOCKED_IMAGE_FLAT_TERMS)
 
 
 def page_image_from_record(page: dict[str, Any], *, host: str) -> dict[str, Any] | None:

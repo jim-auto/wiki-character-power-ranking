@@ -1,95 +1,114 @@
-generated_at: '2026-04-18T04:35:45.404653+00:00'
+generated_at: '2026-04-18T06:35:39.813323+00:00'
 source: Fandom configured MediaWiki APIs
 dry_run: false
 total_characters: 501
-characters_without_images_before: 9
-candidates_checked: 9
-images_found: 9
+characters_without_images_before: 12
+candidates_checked: 12
+images_found: 12
 characters_without_images_after: 0
 overwrite_existing: false
 configured_universes: 93
 min_score: 36
 source_counts:
-  bleach.fandom.com: 1
-  mob-psycho-100.fandom.com: 1
-  killbill.fandom.com: 1
-  deathnote.fandom.com: 1
-  codegeass.fandom.com: 2
-  battleangel.fandom.com: 1
-  villains.fandom.com: 1
-  thebiglebowski.fandom.com: 1
+  dc.fandom.com: 7
+  marvelcinematicuniverse.fandom.com: 1
+  marvel.fandom.com: 4
 items:
-- name: 藍染惣右介
-  universe: Bleach
-  host: bleach.fandom.com
-  title: Sousuke Aizen
-  page_url: https://bleach.fandom.com/wiki/Sousuke_Aizen
-  image_url: https://static.wikia.nocookie.net/bleach/images/6/68/682Aizen_profile.png/revision/latest?cb=20260319222423&path-prefix=en
-  pageimage: 682Aizen_profile.png
+- name: バットマン
+  universe: DC
+  host: dc.fandom.com
+  title: Batman
+  page_url: https://dc.fandom.com/wiki/Batman
+  image_url: https://static.wikia.nocookie.net/marvel_dc/images/7/76/Batman_Urban_Legends_Vol_1_5_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20210717062920
+  pageimage: Batman_Urban_Legends_Vol_1_5_Textless.jpg
   score: 88
-- name: 影山茂夫
-  universe: Mob Psycho 100
-  host: mob-psycho-100.fandom.com
-  title: Shigeo Kageyama
-  page_url: https://mob-psycho-100.fandom.com/wiki/Shigeo_Kageyama
-  image_url: https://static.wikia.nocookie.net/mob-psycho-100/images/b/b7/Mob_Fullbody.png/revision/latest/scale-to-width-down/135?cb=20220513153327
-  pageimage: Mob_Fullbody.png
+- name: グリーンランタン
+  universe: DC
+  host: dc.fandom.com
+  title: Hal Jordan
+  page_url: https://dc.fandom.com/wiki/Hal_Jordan
+  image_url: https://static.wikia.nocookie.net/marvel_dc/images/0/06/Green_Lantern_Vol_7_16_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20241017144307
+  pageimage: Green_Lantern_Vol_7_16_Textless.jpg
   score: 88
-- name: ザ・ブライド
-  universe: Kill Bill
-  host: killbill.fandom.com
-  title: Beatrix Kiddo
-  page_url: https://killbill.fandom.com/wiki/Beatrix_Kiddo
-  image_url: https://static.wikia.nocookie.net/killbill/images/3/39/The_Bride.jpg/revision/latest?cb=20130124180255
-  pageimage: The_Bride.jpg
+- name: マーシャン・マンハンター
+  universe: DC
+  host: dc.fandom.com
+  title: Martian Manhunter
+  page_url: https://dc.fandom.com/wiki/Martian_Manhunter
+  image_url: https://static.wikia.nocookie.net/marvel_dc/images/f/f4/Martian_Manhunter_Vol_5_12_Textless_Variant.jpg/revision/latest/scale-to-width-down/329?cb=20200206172818
+  pageimage: Martian_Manhunter_Vol_5_12_Textless_Variant.jpg
   score: 88
-- name: ニア
-  universe: Death Note
-  host: deathnote.fandom.com
-  title: Near
-  page_url: https://deathnote.fandom.com/wiki/Near
-  image_url: https://static.wikia.nocookie.net/deathnote/images/a/a9/Manga_character_icon_Near.jpg/revision/latest/scale-to-width-down/418?cb=20250701061212
-  pageimage: Manga_character_icon_Near.jpg
+- name: ニック・フューリー（MCU）
+  universe: MCU
+  host: marvelcinematicuniverse.fandom.com
+  title: Nick Fury
+  page_url: https://marvelcinematicuniverse.fandom.com/wiki/Nick_Fury
+  image_url: https://static.wikia.nocookie.net/marvelcinematicuniverse/images/e/e4/Nick_Fury_Profile.png/revision/latest/scale-to-width-down/393?cb=20240802141551
+  pageimage: Nick_Fury_Profile.png
   score: 88
-- name: ルルーシュ・ランペルージ
-  universe: Code Geass
-  host: codegeass.fandom.com
-  title: Lelouch vi Britannia
-  page_url: https://codegeass.fandom.com/wiki/Lelouch_vi_Britannia
-  image_url: https://static.wikia.nocookie.net/codegeass/images/6/6a/LelouchviBritannia.jpg/revision/latest/scale-to-width-down/500?cb=20120107132514
-  pageimage: LelouchviBritannia.jpg
+- name: ヒューマン・トーチ
+  universe: Marvel
+  host: marvel.fandom.com
+  title: Human Torch
+  page_url: https://marvel.fandom.com/wiki/Human_Torch
+  image_url: https://static.wikia.nocookie.net/marveldatabase/images/7/76/Captain_America_Vol_5_46_70th_Anniversary_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20210621060700
+  pageimage: Captain_America_Vol_5_46_70th_Anniversary_Variant_Textless.jpg
   score: 88
-- name: カレン・シュタットフェルト
-  universe: Code Geass
-  host: codegeass.fandom.com
-  title: Kallen Kōzuki
-  page_url: https://codegeass.fandom.com/wiki/Kallen_K%C5%8Dzuki
-  image_url: https://static.wikia.nocookie.net/codegeass/images/7/75/1619487-kallen.jpg/revision/latest?cb=20111226053129
-  pageimage: 1619487-kallen.jpg
+- name: ミステリオ
+  universe: Marvel
+  host: marvel.fandom.com
+  title: Mysterio
+  page_url: https://marvel.fandom.com/wiki/Mysterio
+  image_url: https://static.wikia.nocookie.net/marveldatabase/images/a/a5/Daniel_Berkhart_%28Earth-616%29_from_Spider-Man_Mysterio_Manifesto_Vol_1_2_003.jpg/revision/latest/scale-to-width-down/289?cb=20231031092644
+  pageimage: Daniel_Berkhart_(Earth-616)_from_Spider-Man_Mysterio_Manifesto_Vol_1_2_003.jpg
+  score: 88
+- name: ヘラクレス
+  universe: Marvel
+  host: marvel.fandom.com
+  title: Hercules
+  page_url: https://marvel.fandom.com/wiki/Hercules
+  image_url: https://static.wikia.nocookie.net/marveldatabase/images/3/3b/Hercules_Panhellenios_%28Earth-267%29_from_Avengers_Vol_1_267_001.jpg/revision/latest/scale-to-width-down/222?cb=20210709113641
+  pageimage: Hercules_Panhellenios_(Earth-267)_from_Avengers_Vol_1_267_001.jpg
+  score: 88
+- name: カーン
+  universe: Marvel
+  host: marvel.fandom.com
+  title: Kang the Conqueror
+  page_url: https://marvel.fandom.com/wiki/Kang_the_Conqueror
+  image_url: https://static.wikia.nocookie.net/marveldatabase/images/5/5b/Nathaniel_Richards_%28Rama-Tut%29_%28Earth-6311%29_from_Avengers_Vol_7_4_001.jpg/revision/latest/scale-to-width-down/360?cb=20170202083006
+  pageimage: Nathaniel_Richards_(Rama-Tut)_(Earth-6311)_from_Avengers_Vol_7_4_001.jpg
+  score: 88
+- name: クレイフェイス
+  universe: DC
+  host: dc.fandom.com
+  title: Clayface
+  page_url: https://dc.fandom.com/wiki/Clayface
+  image_url: https://static.wikia.nocookie.net/marvel_dc/images/9/9e/Batman_One_Bad_Day_Clayface_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/326?cb=20230224163751
+  pageimage: Batman_One_Bad_Day_Clayface_Vol_1_1_Textless.jpg
+  score: 88
+- name: ザターナ
+  universe: DC
+  host: dc.fandom.com
+  title: Zatanna
+  page_url: https://dc.fandom.com/wiki/Zatanna
+  image_url: https://static.wikia.nocookie.net/marvel_dc/images/e/e7/Superman_Vol_6_18_Textless_Variant.jpg/revision/latest/scale-to-width-down/329?cb=20240918150815
+  pageimage: Superman_Vol_6_18_Textless_Variant.jpg
+  score: 88
+- name: ブレイニアック
+  universe: DC
+  host: dc.fandom.com
+  title: Brainiac
+  page_url: https://dc.fandom.com/wiki/Brainiac
+  image_url: https://static.wikia.nocookie.net/marvel_dc/images/c/c0/Justice_League_Vol_4_18_Textless.jpg/revision/latest/scale-to-width-down/325?cb=20190225002124
+  pageimage: Justice_League_Vol_4_18_Textless.jpg
   score: 96
-- name: ガリィ
-  universe: Battle Angel Alita
-  host: battleangel.fandom.com
-  title: Alita
-  page_url: https://battleangel.fandom.com/wiki/Alita
-  image_url: https://static.wikia.nocookie.net/battleangel/images/d/dd/Last_Order_New_Ed._vol._1_cover_textless.jpg/revision/latest?cb=20111121232856
-  pageimage: Last_Order_New_Ed._vol._1_cover_textless.jpg
-  score: 88
-- name: トニー・モンタナ
-  universe: Scarface
-  host: villains.fandom.com
-  title: Tony Montana
-  page_url: https://villains.fandom.com/wiki/Tony_Montana
-  image_url: https://static.wikia.nocookie.net/villains/images/1/14/%C4%B0mg_0085.img.webp/revision/latest/scale-to-width-down/433?cb=20240710031736
-  pageimage: İmg_0085.img.webp
-  score: 88
-- name: デュード
-  universe: The Big Lebowski
-  host: thebiglebowski.fandom.com
-  title: The Dude
-  page_url: https://thebiglebowski.fandom.com/wiki/The_Dude
-  image_url: https://static.wikia.nocookie.net/thebiglebowski/images/7/7e/The_Dude.jpeg/revision/latest?cb=20111216183045
-  pageimage: The_Dude.jpeg
+- name: ゾッド将軍
+  universe: DC
+  host: dc.fandom.com
+  title: General Zod
+  page_url: https://dc.fandom.com/wiki/General_Zod
+  image_url: https://static.wikia.nocookie.net/marvel_dc/images/7/78/Kneel_Before_Zod_Vol_1_1_Textless_Barents_Variant.jpg/revision/latest/scale-to-width-down/322?cb=20240106153715
+  pageimage: Kneel_Before_Zod_Vol_1_1_Textless_Barents_Variant.jpg
   score: 88
 missing_items: []
 skipped_no_wiki: []

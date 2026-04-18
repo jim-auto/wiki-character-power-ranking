@@ -382,8 +382,8 @@ def score_commons_filename(filename: str, contexts: list[str]) -> int:
         return -100
 
     score = 0
-    if any(term in normalized for term in ("cosplay", "cosplayer", "costume")):
-        score += 20
+    if any(term in normalized for term in ("cosplay", "cosplayer")):
+        return -100
     if any(term in normalized for term in ("booth", "paper bag", "paper_bag", "t-shirt", "t_shirt")):
         score -= 12
 
@@ -415,8 +415,8 @@ def search_queries_for_metadata(metadata: dict[str, Any]) -> tuple[list[str], li
             base, remainder = text.split("(", 1)
             detail = remainder.split(")", 1)[0]
             if base.strip() and detail.strip():
-                queries.append(f'"{base.strip()}" "{detail.strip()}" cosplay')
-        queries.append(f'"{text}" cosplay')
+                queries.append(f'"{base.strip()}" "{detail.strip()}"')
+        queries.append(f'"{text}"')
 
     return list(dict.fromkeys(queries)), list(dict.fromkeys(contexts))
 
@@ -588,6 +588,7 @@ def fetch_source_wikidata_images(
 
 def is_likely_non_character_image(pageimage: str) -> bool:
     normalized = pageimage.casefold()
+    flat = re.sub(r"[\s_\-]+", "", normalized)
     blocked_terms = [
         "logo",
         "wordmark",
@@ -596,9 +597,37 @@ def is_likely_non_character_image(pageimage: str) -> bool:
         "emblem",
         "symbol",
     ]
+    blocked_flat_terms = [
+        "cosplay",
+        "cosplayer",
+        "fanart",
+        "nycc",
+        "sdcc",
+        "comiccon",
+        "dragoncon",
+        "wondercon",
+        "wintercon",
+        "fanimecon",
+        "animenorth",
+        "animeexpo",
+        "mcmcomic",
+        "mcmlondon",
+        "wizardworld",
+        "galaxycon",
+        "luccacomics",
+        "fanexpo",
+        "animeconji",
+        "katsucon",
+    ]
     if normalized.endswith(".svg"):
         return True
-    return any(term in normalized for term in blocked_terms)
+    if any(term in normalized for term in blocked_terms):
+        return True
+    if any(term in flat for term in blocked_flat_terms):
+        return True
+    if re.search(r"\bmcm[\s_\-]*(?:20\d{2}|london|birmingham|manchester|expo)", normalized):
+        return True
+    return False
 
 
 def clear_image_fields(character: dict[str, Any]) -> None:
