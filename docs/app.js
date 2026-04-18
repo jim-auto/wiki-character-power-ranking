@@ -699,6 +699,134 @@ function battleEvidence(entry) {
     .join("");
 }
 
+function dimensionDiff(a, b, key) {
+  return Number(a.record?.scores?.[key] ?? 0) - Number(b.record?.scores?.[key] ?? 0);
+}
+
+function sceneLeadSentence(entry, key) {
+  const items = entry.record?.score_evidence?.[key] ?? [];
+  return items[0]?.sentence ?? "";
+}
+
+function sceneFlagPhrases(entry) {
+  const flags = entryConditionFlags(entry);
+  const phrases = {
+    superpower: "超常の力",
+    magic: "魔法や呪いの類",
+    technology: "高度な装備",
+    weapon: "得物",
+    robot_ai: "機械の身体",
+    god_or_deity: "神格",
+    immortal: "再生する肉体",
+    transformation: "変身",
+    martial_artist: "鍛えた格闘術",
+  };
+  return Object.entries(phrases)
+    .filter(([key]) => flags[key])
+    .map(([, label]) => label);
+}
+
+function sceneOpeningLine(a, b) {
+  const scaleDiff = dimensionDiff(a, b, "scale");
+  const maxScale = Math.max(Number(a.record.scores?.scale ?? 0), Number(b.record.scores?.scale ?? 0));
+  if (maxScale >= 8) return "世界や宇宙の規模を巻き込む衝突の幕が上がる。";
+  if (maxScale >= 5) return "都市や国家を揺るがす規模の戦いが始まった。";
+  if (maxScale >= 3) return "街の一角を舞台に、二人が対峙する。";
+  if (scaleDiff === 0) return "一対一、静かに間合いが詰まる。";
+  return "限られた戦場で、二人の力がぶつかる。";
+}
+
+function sceneSpeedLine(a, b, aName, bName) {
+  const diff = dimensionDiff(a, b, "speed");
+  if (diff >= 3) return `先手は${aName}。速度で上回り、距離を一息に詰める。`;
+  if (diff <= -3) return `先手は${bName}。速度で上回り、距離を一息に詰める。`;
+  if (diff !== 0) {
+    const faster = diff > 0 ? aName : bName;
+    return `初手は拮抗するが、わずかに${faster}が先に仕掛ける。`;
+  }
+  return "速度は互角、両者ほぼ同時に動き出す。";
+}
+
+function sceneAttackLine(entry, name) {
+  const lead = sceneLeadSentence(entry, "attack");
+  const flags = sceneFlagPhrases(entry);
+  const flagLine = flags.length ? `${flags.slice(0, 2).join("と")}を押し出す` : "攻勢を強める";
+  if (lead) {
+    return `${name}は${flagLine}。Wikipediaに残る「${lead}」が攻撃の輪郭となる。`;
+  }
+  return `${name}は${flagLine}。`;
+}
+
+function sceneDefenseLine(a, b, aName, bName) {
+  const diff = dimensionDiff(a, b, "defense");
+  if (diff >= 3) {
+    const lead = sceneLeadSentence(a, "defense");
+    return lead
+      ? `${aName}は耐久で耐える。「${lead}」という記述どおり、攻撃を受けきる。`
+      : `${aName}は耐久で耐え、攻撃を受けきる。`;
+  }
+  if (diff <= -3) {
+    const lead = sceneLeadSentence(b, "defense");
+    return lead
+      ? `${bName}は耐久で耐える。「${lead}」という記述どおり、攻撃を受けきる。`
+      : `${bName}は耐久で耐え、攻撃を受けきる。`;
+  }
+  return "互いに決定打を許さず、消耗戦に入る。";
+}
+
+function sceneIqLine(a, b, aName, bName) {
+  const diff = Number(a.record.iq_score ?? 0) - Number(b.record.iq_score ?? 0);
+  const aExplicit = explicitIqNumber(a.record);
+  const bExplicit = explicitIqNumber(b.record);
+  if (aExplicit !== null && bExplicit !== null && aExplicit !== bExplicit) {
+    const sharper = aExplicit > bExplicit ? aName : bName;
+    return `知略でも差は明確で、${sharper}が相手の次手を読んで罠を張る。`;
+  }
+  if (diff >= 3) return `${aName}が戦局を読み、先回りの一手を打つ。`;
+  if (diff <= -3) return `${bName}が戦局を読み、先回りの一手を打つ。`;
+  return "";
+}
+
+function sceneDecisiveLine(a, b, aName, bName) {
+  const aScore = battleScore(a);
+  const bScore = battleScore(b);
+  if (aScore === bScore) {
+    return "決着はつかず、両者動きを止めて睨み合う。想像上のこの戦いも、根拠スコアでは引き分けだ。";
+  }
+  const diff = Math.abs(aScore - bScore);
+  const dims = scoreKeys.map((key) => ({ key, diff: dimensionDiff(a, b, key) }));
+  dims.sort((x, y) => Math.abs(y.diff) - Math.abs(x.diff));
+  const top = dims[0];
+  const winnerName = aScore > bScore ? aName : bName;
+  const topLead = sceneLeadSentence(top.diff > 0 ? a : b, top.key);
+  const dimLabel = scoreLabels[top.key] ?? top.key;
+  if (Math.abs(top.diff) >= 2 && topLead) {
+    return `決め手となったのは${dimLabel}。「${topLead}」の記述が決定打となり、${winnerName}が${diff}点差で押し切る。`;
+  }
+  return `${winnerName}が${diff}点差で押し切り、戦いはここで幕を下ろす。`;
+}
+
+function battleImaginaryScene(a, b) {
+  const aName = battleDisplayName(a);
+  const bName = battleDisplayName(b);
+  const lines = [
+    sceneOpeningLine(a, b),
+    sceneSpeedLine(a, b, aName, bName),
+    sceneAttackLine(Number(a.record.scores?.attack ?? 0) >= Number(b.record.scores?.attack ?? 0) ? a : b,
+      Number(a.record.scores?.attack ?? 0) >= Number(b.record.scores?.attack ?? 0) ? aName : bName),
+    sceneDefenseLine(a, b, aName, bName),
+    sceneIqLine(a, b, aName, bName),
+    sceneDecisiveLine(a, b, aName, bName),
+  ].filter(Boolean);
+  return `
+    <section class="battle-scene">
+      <h3>想像戦闘シーン <span class="scene-badge">想像・参考</span></h3>
+      <p class="scene-caveat">Wikipedia根拠文とスコア差から組み立てたテンプレート生成です。原作描写ではありません。</p>
+      ${lines.map((line) => `<p class="scene-line">${escapeHtml(line)}</p>`).join("")}
+    </section>
+  `;
+}
+
 function stageNotice(entry, label) {
   if (!entry.requestedStage) return "";
   if (entry.matchedVersion) {
@@ -731,6 +859,7 @@ function renderBattle() {
       </thead>
       <tbody>${battleRows(a, b)}</tbody>
     </table>
+    ${battleImaginaryScene(a, b)}
     <div class="battle-evidence">
       <article class="character-card">
         <h3>${escapeHtml(aName)}</h3>

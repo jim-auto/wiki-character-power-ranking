@@ -484,6 +484,43 @@ input {
   margin: 0;
 }
 
+.battle-scene {
+  padding: 16px 18px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  display: grid;
+  gap: 8px;
+}
+
+.battle-scene h3 {
+  margin: 0;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scene-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--line);
+  color: var(--muted);
+}
+
+.scene-caveat {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.scene-line {
+  margin: 0;
+  line-height: 1.7;
+}
+
 .battle-result {
   display: grid;
   gap: 16px;
